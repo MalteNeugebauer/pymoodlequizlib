@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 18420  -->
+  <question type="description">
+    <name>
+      <text>zzz INSTANT TUTORING default-config</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<script>
+    {
+        "groups": [{
+                "id": "start",
+                "name": "Start",
+                "questions": ["i"]
+            },
+            {
+                "id": "syn",
+                "name": "Eingabe lernen",
+                "questions": ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
+            },
+            {
+                "id": "t1-fra-01",
+                "name": "Bruchrechnung 1: Warm up",
+                "questions": ["a", "b", "c", "d"]
+            },
+            {
+                "id": "t1-fra-02",
+                "name": "Bruchrechnung 2: Kürzen und erweitern",
+                "questions": ["i) a", "i) b", "i) c", "i)d", "ii) a", "ii) b", "ii) c"]
+            },
+            {
+                "id": "t1-fra-03",
+                "name": "Bruchrechnung 3: Addieren und Subtrahieren",
+                "questions": ["a", "b", "c", "d", "e", "f"]
+            },
+            {
+                "id": "t1-fra-04",
+                "name": "Bruchrechnung 4: Multiplikation &amp; Division von Brüchen",
+                "questions": ["a", "b", "c", "d", "e", "f", "g", "h"]
+            },
+            {
+                "id": "t1-fra-05",
+                "name": "Bruchrechnung 5: Kombinationen",
+                "questions": ["a", "b", "c"]
+            },
+            {
+                "id": "t1-fra-06",
+                "name": "Bruchrechnung 6: Textaufgabe",
+                "questions": ["a"]
+            },
+            {
+                "id": "t2-ter-01",
+                "name": "Termumformung 2: Rechnen mit Klammern",
+                "questions": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"]
+            }
+        ]
+    }
+</script>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>0</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+</quiz>

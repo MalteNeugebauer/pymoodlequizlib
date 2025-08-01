@@ -1,0 +1,24 @@
+<node>
+<name>999</name>
+<answertest>AlgEquiv</answertest>
+<sans>1</sans>
+<tans>1</tans>
+<testoptions></testoptions>
+<quiet>0</quiet>
+<truescoremode>+</truescoremode>
+<truescore>0</truescore>
+<truepenalty></truepenalty>
+<truenextnode>-1</truenextnode>
+<trueanswernote>prt-999-T</trueanswernote>
+<truefeedback format="html">
+  <text></text>
+</truefeedback>
+<falsescoremode>-</falsescoremode>
+<falsescore>0</falsescore>
+<falsepenalty></falsepenalty>
+<falsenextnode>-1</falsenextnode>
+<falseanswernote>prt-999-F</falseanswernote>
+<falsefeedback format="html">
+  <text></text>
+</falsefeedback>
+</node>

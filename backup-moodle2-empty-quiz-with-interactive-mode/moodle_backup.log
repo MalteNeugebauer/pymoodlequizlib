@@ -1,0 +1,26 @@
+[25. Februar 2025 um 08:15] [info] instantiating backup controller 4289e4db0f344647515c6ce9d0ca139c
+[25. Februar 2025 um 08:15] [debug] setting controller status to 100
+[25. Februar 2025 um 08:15] [debug] loading controller plan
+[25. Februar 2025 um 08:15] [debug] setting controller status to 300
+[25. Februar 2025 um 08:15] [debug] applying plan defaults
+[25. Februar 2025 um 08:15] [debug] setting controller status to 400
+[25. Februar 2025 um 08:15] [debug] setting file inclusion to 
+[25. Februar 2025 um 08:15] [info] checking plan security
+[25. Februar 2025 um 08:15] [debug] setting controller status to 500
+[25. Februar 2025 um 08:15] [info] checking plan security
+[25. Februar 2025 um 08:15] [info] checking plan security
+[25. Februar 2025 um 08:15] [info] checking plan security
+[25. Februar 2025 um 08:15] [debug] saving controller to db
+[25. Februar 2025 um 08:15] [debug] calculating controller checksum ba725dedfa7c4201120b0dffff5fa880
+[25. Februar 2025 um 08:15] [debug] loading controller from db
+[25. Februar 2025 um 08:15] [info] checking plan security
+[25. Februar 2025 um 08:15] [info] checking plan security
+[25. Februar 2025 um 08:15] [debug] setting controller status to 700
+[25. Februar 2025 um 08:15] [debug] saving controller to db
+[25. Februar 2025 um 08:15] [debug] calculating controller checksum b8dfe3e9eab3aca56b88183a5fc81833
+[25. Februar 2025 um 08:15] [debug] loading controller from db
+[25. Februar 2025 um 08:15] [debug] setting file inclusion to 1
+[25. Februar 2025 um 08:15] [debug] setting controller status to 800
+[25. Februar 2025 um 08:15] [debug] saving controller to db
+[25. Februar 2025 um 08:15] [debug] calculating controller checksum 05c4cff3cca36a881e7bd33914c1c139
+[25. Februar 2025 um 08:15] [debug] loading controller from db
