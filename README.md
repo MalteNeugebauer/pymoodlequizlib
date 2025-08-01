@@ -1,5 +1,5 @@
 # pymoodlequizlib
-A collection of python scripts and libraries to easily edit quizzes and questions in the learning management system Moodle.
+A collection of python scripts and libraries to easily edit quizzes and questions in the learning management system [Moodle](https://moodle.org).
 
 The main purpose of this repository is to share resources that allow for creating different versions of the same set of Moodle exercises. These versions add gamification or additional feedback to default exercises in Moodle. The focus is on exercises of the [STACK](https://stack-assessment.org) type.
 
@@ -16,7 +16,7 @@ The information of versions and exercises are stored separately. This way, diffe
    - 1 for excluding
  - Choose a version (see below).
  - Run the script [csv_to_mbz.py](csv_to_mbz.py). Make sure to import the chosen version and pass it as an argument to the file generation function. You can define a name for the output file. By default, the output file's name is `output.mbz`.
- - Import the output file in your Moodle course as described in the [Moodle documentation](https://docs.moodle.org/500/en/Course_restore).
+ - Import the output file(s) in your Moodle course as described in the [Moodle documentation](https://docs.moodle.org/500/en/Course_restore).
 
 ## Versions
 For more information on the different versions, see the [math-digital-mentoring repository](https://github.com/MalteNeugebauer/math-digital-mentoring) or [its website](https://malteneugebauer.github.io/math-digital-mentoring/).
