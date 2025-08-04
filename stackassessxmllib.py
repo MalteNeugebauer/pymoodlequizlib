@@ -963,7 +963,7 @@ def moodlexml_to_csv(filepath, output="output.csv", **kwargs):
     tree = etree.parse(filepath, parser=parser)
     root = tree.getroot()
     
-    table = pd.DataFrame(columns=pd.Series(["topic_number", "topic_id", "exercise_number", "exercise_part", "topic_label", "exercise_description", "exercise_variables", "exercise_text", "exercise_content", "exercise_hint", "exercise_note", "already_parsed", "custom_prt", "add_prt_node_on_not_correct", "add_prt_node_wa1", "add_prt_node_wa2", "add_prt_node_wa3", "custom_input", "custom_seed", "custom_general_feedback", "personal_note"]))
+    table = pd.DataFrame(columns=pd.Series(["topic_number", "topic_id", "exercise_number", "exercise_part", "topic_label", "exercise_description", "exercise_variables", "exercise_text", "exercise_content", "exercise_hint", "exercise_note", "already_parsed", "custom_prt", "add_prt_node_on_not_correct", "add_prt_node_wa1", "add_prt_node_wa2", "add_prt_node_wa3", "custom_input", "custom_seed", "custom_general_feedback", "personal_note"])) #, "specificfeedback"
     
     topic_number = 999
     topic_id = "gen" #for generated
@@ -1028,6 +1028,10 @@ def moodlexml_to_csv(filepath, output="output.csv", **kwargs):
             print(f'skip question with too long exercise text (>{exercise_text_max_len}): {exercise_description})')
             continue
         
+        specificfeedback = get_last_child_text_element(question, "specificfeedback").text
+        # To avoid conflicts with some versions, the specific feedback is added at the end of the exercise text. E.g., the Instant Tutoring version needs a "Check" button visible on the page. This button is only present, if the tag `[feedback:prt1]` is present in that exercise. This tag is often placed in the "specificfeedback" field in the STACK form in Moodle. For more information on the specific feedback field, see: https://docs.stack-assessment.org/en/Authoring/CASText/#question_text .
+        exercise_text = f"{exercise_text}{specificfeedback}"
+        
         exercise_note = get_last_child_text_element(question, "questionnote").text
         
         inputs = []
@@ -1062,9 +1066,8 @@ def moodlexml_to_csv(filepath, output="output.csv", **kwargs):
             for seed in seeds:
                 seed_collector.append(seed)
             custom_seed = etree.tostring(seed_collector, encoding="unicode", method="xml")
-            
         
-        table.loc[-1] = [topic_number, topic_id, exercise_number, exercise_part, topic_label, exercise_description, exercise_variables, exercise_text, exercise_content, exercise_hint, exercise_note, already_parsed, custom_prt, add_prt_node_on_not_correct, add_prt_node_wa1, add_prt_node_wa2, add_prt_node_wa3, custom_input, custom_seed, custom_general_feedback, personal_note]
+        table.loc[-1] = [topic_number, topic_id, exercise_number, exercise_part, topic_label, exercise_description, exercise_variables, exercise_text, exercise_content, exercise_hint, exercise_note, already_parsed, custom_prt, add_prt_node_on_not_correct, add_prt_node_wa1, add_prt_node_wa2, add_prt_node_wa3, custom_input, custom_seed, custom_general_feedback, personal_note] #, specificfeedback
         table.index = table.index + 1
         
         i+=1
