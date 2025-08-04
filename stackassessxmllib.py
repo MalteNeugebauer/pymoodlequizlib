@@ -15,6 +15,7 @@ import pathlib # For checking if a directory exists.
 import distutils # For copying files and folders.
 import time # For adding time information into questions.
 import subprocess # For running terminal commands.
+import math # For floor function.
 
 parser = etree.XMLParser(strip_cdata=False)
 
@@ -918,7 +919,160 @@ def generate_Pool_from_file(filepath, version=None, **kwargs):
     
     Pool = QuestionPool(version, Exercises_To_Parse)
     return Pool
+
+
+#%% Functions for Moodle_xml_to_csv
+def get_last_child_element(element, child_tag):
+    to_return = False
+    for child in element.iterchildren(child_tag):
+        to_return = child
+    if to_return == False:
+        print(f"didnt find {child_tag} in element")
+    return to_return
+
+def get_last_child_text_element(element, child_tag):
+    to_return = ""
+    for child in element.iterchildren(child_tag):
+        for child_text_element in child.iterchildren("text"):
+            to_return = child_text_element
+    if to_return == False:
+        print(f"didnt find {child_tag} text in element")
+    return to_return
+
+def strip_encoding_information(string):
+    return string[2:-1]
+
+def get_enumerated_alpha(i, lowercase=True):
+    start_letters = 97 if lowercase == True else 65
+    j = i
+    letters = []
+    letter_num = j % 26
+    letters.append(chr(letter_num+start_letters))
+    times_through_the_alphabet = math.floor((j-letter_num) / 26)
     
+    while times_through_the_alphabet != 0:
+        j = times_through_the_alphabet
+        letter_num = j % 26
+        letters.append(chr(letter_num+start_letters-1))
+        times_through_the_alphabet = math.floor((j-letter_num) / 26)
+        
+    return ''.join(letters[::-1])
+
+def moodlexml_to_csv(filepath, output="output.csv", **kwargs):
+    parser = etree.XMLParser(strip_cdata=False)
+    tree = etree.parse(filepath, parser=parser)
+    root = tree.getroot()
     
+    table = pd.DataFrame(columns=pd.Series(["topic_number", "topic_id", "exercise_number", "exercise_part", "topic_label", "exercise_description", "exercise_variables", "exercise_text", "exercise_content", "exercise_hint", "exercise_note", "already_parsed", "custom_prt", "add_prt_node_on_not_correct", "add_prt_node_wa1", "add_prt_node_wa2", "add_prt_node_wa3", "custom_input", "custom_seed", "custom_general_feedback", "personal_note"]))
     
+    topic_number = 999
+    topic_id = "gen" #for generated
+    exercise_number = 999
+    topic_label = "generated"
+    already_parsed = 0
+    add_prt_node_on_not_correct = ""
+    add_prt_node_wa1 = ""
+    add_prt_node_wa2 = ""
+    add_prt_node_wa3 = ""
+    custom_seed = ""
+    custom_general_feedback = ""
+    personal_note = ""
+    
+    question_skip = 0
+    
+    i = 0
+    
+    for question in root.iterchildren("question"):
+        
+        exercise_part = get_enumerated_alpha(i)
+        
+        if question.attrib["type"] != "stack":
+            question_skip += 1
+            print("skip non stack question")
+            continue
+        
+        exercise_description = ""
+        exercise_variables = ""
+        exercise_text = ""
+        exercise_content = ""
+        exercise_hint = ""
+        exercise_note = ""
+        custom_prt = ""
+        custom_input = ""
+        
+        exercise_description = get_last_child_text_element(question, "name").text
+        exercise_variables = get_last_child_text_element(question, "questionvariables").text
+        exercise_text = get_last_child_text_element(question, "questiontext").text
+        
+        #in this special case: remove img tag, remove speech bubble and save content as hint
+        regex_digital_mentor_additionals = re.compile(r'<.*?class="bubble">([\d\D]*)<\/.*?>[\d\D]*<img.*?class="dm-icon.*?>')
+        regex_scripts = re.compile(r'<script[\d\D]*?</script>')
+        
+        matches = []
+        hint_matches_object = regex_digital_mentor_additionals.finditer(exercise_text)
+        for match in hint_matches_object:
+            matches.append(match)
+            
+        if len(matches) != 1:
+            print(f"no digital mentoring hints found in {exercise_description}, continue")
+        else:
+            exercise_hint = matches[0].group(1)
+            
+        exercise_text = regex_digital_mentor_additionals.sub("", exercise_text)
+        exercise_text = regex_scripts.sub("", exercise_text)
+        
+        
+        exercise_text_max_len = 100000
+        if len(exercise_text) > exercise_text_max_len:
+            question_skip += 1
+            print(f'skip question with too long exercise text (>{exercise_text_max_len}): {exercise_description})')
+            continue
+        
+        exercise_note = get_last_child_text_element(question, "questionnote").text
+        
+        inputs = []
+        for input_element in question.iterchildren("input"):
+            inputs.append(input_element)
+        
+        if len(inputs) == 1:
+            custom_input = etree.tostring(inputs[0], encoding="unicode", method="xml")
+        else:
+            input_collector = etree.Element("input_fields")
+            for input_element in inputs:
+                input_collector.append(input_element)
+            custom_input = etree.tostring(input_collector, encoding="unicode", method="xml")
+        
+        prts = []
+        for prt in question.iterchildren("prt"):
+            prts.append(prt)
+        
+        if len(prts) == 1:
+            custom_prt = etree.tostring(prts[0], encoding="unicode", method="xml")
+        else:
+            prt_collector = etree.Element("prt_fields")
+            for prt in prts:
+                prt_collector.append(prt)
+            custom_prt = etree.tostring(prt_collector, encoding="unicode", method="xml")
+            
+        seeds = []
+        for seed in question.iterchildren("deployedseed"):
+            seeds.append(seed)
+        if len(seeds) > 0:
+            seed_collector = etree.Element("seed_fields")
+            for seed in seeds:
+                seed_collector.append(seed)
+            custom_seed = etree.tostring(seed_collector, encoding="unicode", method="xml")
+            
+        
+        table.loc[-1] = [topic_number, topic_id, exercise_number, exercise_part, topic_label, exercise_description, exercise_variables, exercise_text, exercise_content, exercise_hint, exercise_note, already_parsed, custom_prt, add_prt_node_on_not_correct, add_prt_node_wa1, add_prt_node_wa2, add_prt_node_wa3, custom_input, custom_seed, custom_general_feedback, personal_note]
+        table.index = table.index + 1
+        
+        i+=1
+        
+    table.sort_index()
+    
+    table.to_csv(output, **kwargs)
+            
+    print(f"skipped {question_skip} questions")
+    return table
     
