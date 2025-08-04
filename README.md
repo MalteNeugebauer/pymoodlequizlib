@@ -11,7 +11,8 @@ The information of versions and exercises are stored separately. This way, diffe
 ## Usage
  - Install the [requirements](requirements.txt). E.g. with `mamba create -n pymoodlequizlib --file requirements.txt`.
  - Store the information of your STACK exercises in a single CSV file like those in [exercises](exercises) or choose on of the files there.
- - If you only want a selection of the exercises to be included in the (modified) quiz, you can fill the `already parsed` column with values:
+- You can include exercises from your Moodle system or from question pools by downloading them in Moodle XML format and use [xml_to_csv.py](xml_to_csv.py) to convert them into CSV.
+ - If you only want a selection of the exercises to be included in the (modified) quiz, you can fill the `already parsed` column in your CSV file with values:
    - 0 for including
    - 1 for excluding
  - Choose a version (see below).
