@@ -15,4 +15,4 @@ importlib.reload(qv_instant_tutoring)
 
 #%% Main routine
 
-Pool = stackassessxmllib.generate_quiz_mbz_from_file("exercises/test_exercises.csv", template_path="backup-moodle2-empty-quiz-with-interactive-mode", version=qv_instant_tutoring.InstantTutoringTEDRelVersion, output_folder="output-tedrel", delimiter=";")
+Pool = stackassessxmllib.generate_quiz_mbz_from_file("exercises/test_exercises.csv", template_path="backup-moodle2-empty-quiz-with-interactive-mode", version=qv_instant_tutoring.InstantTutoringTEDRelVersion, output_folder="output-tedrel", exclude_column="already_parsed", delimiter=";")

@@ -896,8 +896,10 @@ class MoodleQuestion:
     
 DefaultVersion = QuestionVersion("default")
 
-def get_exercises_as_Moodle_Question_array(filepath, **kwargs):
+def get_exercises_as_Moodle_Question_array(filepath, exclude_column=None, **kwargs):
     df = pd.read_csv(filepath, **kwargs)
+    if exclude_column is not None:
+        df = df[df[exclude_column] != 1] 
     Exercises_To_Parse = []
     for data in df.itertuples():
         Exercise_To_Parse = MoodleQuestion(data.topic_number, data.topic_id, data.exercise_number, data.exercise_part, data.topic_label, data.exercise_description, data.exercise_variables, data.exercise_text, data.exercise_content, data.exercise_hint, data.specificfeedback, data.custom_general_feedback, data.exercise_note, data.custom_prt, data.add_prt_node_on_not_correct, [data.add_prt_node_wa1, data.add_prt_node_wa2, data.add_prt_node_wa3], data.custom_input, data.custom_seed, None if "its_keep_orig_input" not in dir(data) else data.its_keep_orig_input) #,  question_template_file_path="default_question_en.xml"
@@ -906,20 +908,20 @@ def get_exercises_as_Moodle_Question_array(filepath, **kwargs):
     return Exercises_To_Parse
     
 
-def generate_questions_xml_from_file(filepath, output="output.xml", version=None, **kwargs):
-    Pool = generate_Pool_from_file(filepath, version, **kwargs)
+def generate_questions_xml_from_file(filepath, output="output.xml", version=None,  exclude_column=None, **kwargs):
+    Pool = generate_Pool_from_file(filepath, version, exclude_column=exclude_column, **kwargs)
     Pool.write_to_xml_file(output)
     return Pool
 
-def generate_quiz_mbz_from_file(filepath, template_path, output_folder="output", version=None, **kwargs):
-    Pool = generate_Pool_from_file(filepath, version, **kwargs)
+def generate_quiz_mbz_from_file(filepath, template_path, output_folder="output",  exclude_column=None, version=None, **kwargs):
+    Pool = generate_Pool_from_file(filepath, version, exclude_column=exclude_column, **kwargs)
     Pool.write_to_mbz_file(output_folder, template_path)
     return Pool
     
-def generate_Pool_from_file(filepath, version=None, **kwargs):
+def generate_Pool_from_file(filepath, version=None,  exclude_column=None, **kwargs):
     if version == None:
         version = DefaultVersion
-    Exercises_To_Parse = get_exercises_as_Moodle_Question_array(filepath, **kwargs)
+    Exercises_To_Parse = get_exercises_as_Moodle_Question_array(filepath, exclude_column=exclude_column, **kwargs)
     if version.needs_exercises_as_callback_arg == True:
         version.callback_kwargs["Exercises"] = Exercises_To_Parse
     
