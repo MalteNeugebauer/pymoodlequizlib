@@ -698,7 +698,7 @@ class QuestionVersion:
 
 
 class MoodleQuestion:
-    def __init__(self, topic_number, topic_id, exercise_number, exercise_part, topic_label, exercise_description, exercise_variables, exercise_text, exercise_content, exercise_hint, custom_general_feedback, exercise_note, custom_prt, add_prt_node_on_not_correct, add_prt_node_wa, custom_input, custom_seed, its_keep_orig_input,  question_template_file_path=None):
+    def __init__(self, topic_number, topic_id, exercise_number, exercise_part, topic_label, exercise_description, exercise_variables, exercise_text, exercise_content, exercise_hint, specificfeedback, custom_general_feedback, exercise_note, custom_prt, add_prt_node_on_not_correct, add_prt_node_wa, custom_input, custom_seed, its_keep_orig_input,  question_template_file_path=None):
         self.topic_number = topic_number
         self.topic_id = topic_id
         self.exercise_number = exercise_number
@@ -712,6 +712,7 @@ class MoodleQuestion:
         self.exercise_text = exercise_text
         self.exercise_content = exercise_content
         self.exercise_hint = exercise_hint
+        self.specificfeedback = specificfeedback
         self.custom_general_feedback = custom_general_feedback
         self.exercise_note = exercise_note
         self.custom_prt = None if pd.isna(custom_prt) else etree.fromstring(custom_prt, parser)
@@ -743,6 +744,11 @@ class MoodleQuestion:
         for questiontext_element in self.root.iterchildren("questiontext"):
             for questiontext_text_element in questiontext_element.iterchildren("text"):
                 questiontext_text_element.text = etree.CDATA(f"<p>{self.exercise_text}</p>\n{exercise_content_string}")
+                
+        if not pd.isna(self.specificfeedback):
+            for specificfeedback_element in self.root.iterchildren("specificfeedback"):
+                for specificfeedback_text_element in specificfeedback_element.iterchildren("text"):
+                    specificfeedback_text_element.text = etree.CDATA(self.specificfeedback)
 
         for questionvariables_element in self.root.iterchildren("questionvariables"):
             for questionvariables_text_element in questionvariables_element.iterchildren("text"):
@@ -894,7 +900,7 @@ def get_exercises_as_Moodle_Question_array(filepath, **kwargs):
     df = pd.read_csv(filepath, **kwargs)
     Exercises_To_Parse = []
     for data in df.itertuples():
-        Exercise_To_Parse = MoodleQuestion(data.topic_number, data.topic_id, data.exercise_number, data.exercise_part, data.topic_label, data.exercise_description, data.exercise_variables, data.exercise_text, data.exercise_content, data.exercise_hint, data.custom_general_feedback, data.exercise_note, data.custom_prt, data.add_prt_node_on_not_correct, [data.add_prt_node_wa1, data.add_prt_node_wa2, data.add_prt_node_wa3], data.custom_input, data.custom_seed, None if "its_keep_orig_input" not in dir(data) else data.its_keep_orig_input) #,  question_template_file_path="default_question_en.xml"
+        Exercise_To_Parse = MoodleQuestion(data.topic_number, data.topic_id, data.exercise_number, data.exercise_part, data.topic_label, data.exercise_description, data.exercise_variables, data.exercise_text, data.exercise_content, data.exercise_hint, data.specificfeedback, data.custom_general_feedback, data.exercise_note, data.custom_prt, data.add_prt_node_on_not_correct, [data.add_prt_node_wa1, data.add_prt_node_wa2, data.add_prt_node_wa3], data.custom_input, data.custom_seed, None if "its_keep_orig_input" not in dir(data) else data.its_keep_orig_input) #,  question_template_file_path="default_question_en.xml"
         Exercises_To_Parse.append(Exercise_To_Parse)
         
     return Exercises_To_Parse
@@ -963,10 +969,11 @@ def moodlexml_to_csv(filepath, output="output.csv", **kwargs):
     tree = etree.parse(filepath, parser=parser)
     root = tree.getroot()
     
-    table = pd.DataFrame(columns=pd.Series(["topic_number", "topic_id", "exercise_number", "exercise_part", "topic_label", "exercise_description", "exercise_variables", "exercise_text", "exercise_content", "exercise_hint", "exercise_note", "already_parsed", "custom_prt", "add_prt_node_on_not_correct", "add_prt_node_wa1", "add_prt_node_wa2", "add_prt_node_wa3", "custom_input", "custom_seed", "custom_general_feedback", "personal_note"])) #, "specificfeedback"
+    table = pd.DataFrame(columns=pd.Series(["topic_number", "topic_id", "parent_label", "exercise_number", "exercise_part", "topic_label", "exercise_description", "exercise_variables", "exercise_text", "exercise_content", "exercise_hint", "specificfeedback", "exercise_note", "already_parsed", "custom_prt", "add_prt_node_on_not_correct", "add_prt_node_wa1", "add_prt_node_wa2", "add_prt_node_wa3", "custom_input", "custom_seed", "custom_general_feedback", "personal_note"]))
     
     topic_number = 999
     topic_id = "gen" #for generated
+    parent_label = "Generated"
     exercise_number = 999
     topic_label = "generated"
     already_parsed = 0
@@ -1028,10 +1035,7 @@ def moodlexml_to_csv(filepath, output="output.csv", **kwargs):
             print(f'skip question with too long exercise text (>{exercise_text_max_len}): {exercise_description})')
             continue
         
-        specificfeedback = get_last_child_text_element(question, "specificfeedback").text
-        # To avoid conflicts with some versions, the specific feedback is added at the end of the exercise text. E.g., the Instant Tutoring version needs a "Check" button visible on the page. This button is only present, if the tag `[feedback:prt1]` is present in that exercise. This tag is often placed in the "specificfeedback" field in the STACK form in Moodle. For more information on the specific feedback field, see: https://docs.stack-assessment.org/en/Authoring/CASText/#question_text .
-        exercise_text = f"{exercise_text}{specificfeedback}"
-        
+        specificfeedback = get_last_child_text_element(question, "specificfeedback").text        
         exercise_note = get_last_child_text_element(question, "questionnote").text
         
         inputs = []
@@ -1067,7 +1071,7 @@ def moodlexml_to_csv(filepath, output="output.csv", **kwargs):
                 seed_collector.append(seed)
             custom_seed = etree.tostring(seed_collector, encoding="unicode", method="xml")
         
-        table.loc[-1] = [topic_number, topic_id, exercise_number, exercise_part, topic_label, exercise_description, exercise_variables, exercise_text, exercise_content, exercise_hint, exercise_note, already_parsed, custom_prt, add_prt_node_on_not_correct, add_prt_node_wa1, add_prt_node_wa2, add_prt_node_wa3, custom_input, custom_seed, custom_general_feedback, personal_note] #, specificfeedback
+        table.loc[-1] = [topic_number, topic_id, parent_label, exercise_number, exercise_part, topic_label, exercise_description, exercise_variables, exercise_text, exercise_content, exercise_hint, specificfeedback, exercise_note, already_parsed, custom_prt, add_prt_node_on_not_correct, add_prt_node_wa1, add_prt_node_wa2, add_prt_node_wa3, custom_input, custom_seed, custom_general_feedback, personal_note]
         table.index = table.index + 1
         
         i+=1
