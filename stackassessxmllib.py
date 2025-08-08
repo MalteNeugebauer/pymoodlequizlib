@@ -370,7 +370,7 @@ class QuestionPool:
         #output_path.mkdir(parents=True, exist_ok=True)
         
         #distutils.dir_util.copy_tree(path_to_template_folder, str(output_path))
-        shutil.copytree(path_to_template_folder, str(output_path))
+        shutil.copytree(path_to_template_folder, str(output_path), dirs_exist_ok=True)
         
         # Manually create a question bank and insert the questions' references to a manually created quiz file.
         ## Prepare variables for question bank.
