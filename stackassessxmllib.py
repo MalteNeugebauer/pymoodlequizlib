@@ -12,7 +12,8 @@ import pandas as pd
 import json
 import re
 import pathlib # For checking if a directory exists.
-import distutils # For copying files and folders.
+#import distutils # For copying files and folders.
+import shutil # For copying files and folders.
 import time # For adding time information into questions.
 import subprocess # For running terminal commands.
 import math # For floor function.
@@ -356,7 +357,7 @@ class QuestionPool:
             filepath = f"output-{self.Question_Ver.name}.xml"
         self.tree.write(filepath, pretty_print=True)
         
-    def write_to_mbz_file(self, output_folder="", template_path="./template"):
+    def write_to_mbz_file(self, output_folder="", quiz_name=None, template_path="./template"):
         # Check if template folder exists.
         template_path_object = pathlib.Path(template_path)
         if not template_path_object.is_dir():
@@ -366,9 +367,10 @@ class QuestionPool:
         #path_to_template_folder = "./backup-moodle2-empty-quiz-with-interactive-mode/"
 
         output_path = pathlib.Path(output_folder)
-        output_path.mkdir(parents=True, exist_ok=True)
+        #output_path.mkdir(parents=True, exist_ok=True)
         
-        distutils.dir_util.copy_tree(path_to_template_folder, str(output_path))
+        #distutils.dir_util.copy_tree(path_to_template_folder, str(output_path))
+        shutil.copytree(path_to_template_folder, str(output_path))
         
         # Manually create a question bank and insert the questions' references to a manually created quiz file.
         ## Prepare variables for question bank.
@@ -399,6 +401,13 @@ class QuestionPool:
             sumgrades_value = sumgrades_elem.text
             if float(sumgrades_value) == 0:
                 sumgrades_elem.text = "1.00000"
+                
+        # Set the quiz's name, if desired. Elsewise, the template's name is kept.
+        if quiz_name != None:
+            for name in quiz.iterchildren("name"):
+                name.text = quiz_name
+            # Additionally, the name in ./moodle_backup.xml (<title>-Tag) should be changed to enhance user experience. That name is shown to users in the restoring process.
+            # Additionally, the name in ./activities/quiz_35/grades.xml (<itemname>-Tag) should also be changed to ensure compatibility with all necessary functions. Potentially, differing names may conflict with some grading routines.
         
         
         question_instances = None
@@ -896,8 +905,7 @@ class MoodleQuestion:
     
 DefaultVersion = QuestionVersion("default")
 
-def get_exercises_as_Moodle_Question_array(filepath, exclude_column=None, **kwargs):
-    df = pd.read_csv(filepath, **kwargs)
+def get_exercises_as_Moodle_Question_array_from_df(df, exclude_column=None):
     if exclude_column is not None:
         df = df[df[exclude_column] != 1] 
     Exercises_To_Parse = []
@@ -906,6 +914,26 @@ def get_exercises_as_Moodle_Question_array(filepath, exclude_column=None, **kwar
         Exercises_To_Parse.append(Exercise_To_Parse)
         
     return Exercises_To_Parse
+
+def get_exercises_as_Moodle_Question_array(filepath, exclude_column=None, **kwargs):
+    df = pd.read_csv(filepath, **kwargs)
+    return get_exercises_as_Moodle_Question_array_from_df(df, exclude_column=None)
+
+def get_topic_Moodle_Questions_as_dict(filepath, exclude_column=None, **kwargs):
+    # Compared to get_exercises_as_Moodle_Question_array, this function takes the columns `topic_number` and `parent_label` into account to create separate quizzes for each topic_number from one csv file. It returns a list of dictionaries in the form `{"topic_number1":{"suggested_name":"parent_label1, parent_label2", "Exercises":topic_df}, {...}, ...}`.
+    df = pd.read_csv(filepath, **kwargs)
+    grouped_obj = df.groupby("topic_number")
+    topic_dfs = {x:grouped_obj.get_group(x) for x in grouped_obj.groups}
+    topic_dict = {}
+    for topic_number, topic_df in topic_dfs.items():
+        topic_Exercises = get_exercises_as_Moodle_Question_array_from_df(topic_df, exclude_column=exclude_column)
+        if(len(topic_Exercises) <= 0):
+            continue
+        topic_dict[topic_number] = {}
+        topic_dict[topic_number]["suggested_name"] = ', '.join(list(topic_df.parent_label.value_counts().index))
+        topic_dict[topic_number]["Exercises"] = topic_Exercises
+        
+    return topic_dict
     
 
 def generate_questions_xml_from_file(filepath, output="output.xml", version=None,  exclude_column=None, **kwargs):
@@ -913,19 +941,37 @@ def generate_questions_xml_from_file(filepath, output="output.xml", version=None
     Pool.write_to_xml_file(output)
     return Pool
 
-def generate_quiz_mbz_from_file(filepath, template_path, output_folder="output",  exclude_column=None, version=None, **kwargs):
+def generate_quiz_mbz_from_file(filepath, template_path, output_folder="output",  quiz_name=None, exclude_column=None, version=None, **kwargs):
     Pool = generate_Pool_from_file(filepath, version, exclude_column=exclude_column, **kwargs)
-    Pool.write_to_mbz_file(output_folder, template_path)
+    Pool.write_to_mbz_file(output_folder, quiz_name=quiz_name, template_path=template_path)
     return Pool
-    
-def generate_Pool_from_file(filepath, version=None,  exclude_column=None, **kwargs):
+
+def generate_quizzes_mbz_from_file(filepath, template_path, output_folder="output", exclude_column=None, version=None, **kwargs):
+    # Compared to generate_quiz_mbz_from_file, this function takes the columns `topic_number` and `parent_label` into account to create separate quizzes for each topic_number from one csv file.
     if version == None:
         version = DefaultVersion
-    Exercises_To_Parse = get_exercises_as_Moodle_Question_array(filepath, exclude_column=exclude_column, **kwargs)
-    if version.needs_exercises_as_callback_arg == True:
-        version.callback_kwargs["Exercises"] = Exercises_To_Parse
+    topic_dict = get_topic_Moodle_Questions_as_dict(filepath, exclude_column, **kwargs)
+    Pools = {}
+    for topic_number, topic_info in topic_dict.items():
+        Pool = generate_Pool_from_Moodle_Questions(topic_info["Exercises"], version)
+        Pool.write_to_mbz_file(pathlib.Path(".") / output_folder / f"{topic_number}", quiz_name=topic_info["suggested_name"], template_path=template_path)
+        Pools[topic_number] = Pool
+
+    return Pools
+#def generate_quiz_mbz_from_Pool(Pool, template_path, output_folder="output",  exclude_column=None, version=None, **kwargs):
     
-    Pool = QuestionPool(version, Exercises_To_Parse)
+def generate_Pool_from_Moodle_Questions(Moodle_Questions, version=None):
+    if version == None:
+        version = DefaultVersion
+    if version.needs_exercises_as_callback_arg == True:
+        version.callback_kwargs["Exercises"] = Moodle_Questions
+    
+    Pool = QuestionPool(version, Moodle_Questions)
+    return Pool
+
+def generate_Pool_from_file(filepath, version=None,  exclude_column=None, **kwargs):
+    Exercises_To_Parse = get_exercises_as_Moodle_Question_array(filepath, exclude_column=exclude_column, **kwargs)    
+    Pool = generate_Pool_from_Moodle_Questions(Exercises_To_Parse, version,  exclude_column)
     return Pool
 
 

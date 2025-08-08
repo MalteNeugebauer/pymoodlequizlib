@@ -13,4 +13,4 @@ importlib.reload(stackassessxmllib)
 
 #%% Main routine
 
-table = stackassessxmllib.moodlexml_to_csv(filepath="import_example/test_exercsises.xml", exclude_column="already_parsed", output="output.csv", index=False, header=True)
+table = stackassessxmllib.moodlexml_to_csv(filepath="import_example/test_exercsises.xml", output="output/output.csv", index=False, header=True)

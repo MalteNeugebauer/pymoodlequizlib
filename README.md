@@ -16,7 +16,7 @@ The information of versions and exercises are stored separately. This way, diffe
    - 0 for including
    - 1 for excluding
  - Choose a [version](#version) (see below).
- - Run the script [csv_to_mbz.py](csv_to_mbz.py). Make sure to import the chosen version and pass it as an argument to the file generation function. You can define a name for the output file. By default, the output file's name is `output.mbz`.
+ - Run the script [csv_to_mbz.py](csv_to_mbz.py). Make sure to import the chosen version and pass it as an argument to the file generation function. You can define a name for the output file. By default, an `mbz` file named according to the colum `topic_number` is stored in a folder named `output`.
  - Import the output file(s) in your Moodle course as described in the [Moodle documentation](https://docs.moodle.org/500/en/Course_restore).
 
 ## Versions
