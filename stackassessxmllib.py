@@ -750,7 +750,7 @@ class MoodleQuestion:
 
         for questionname_element in self.root.iterchildren("name"):
             for questionname_text_element in questionname_element.iterchildren("text"):
-                questionname_text_element.text = f"t{self.topic_number}-{self.exercise_number:02d}-{self.exercise_part} {self.exercise_description}"
+                questionname_text_element.text = f"t{self.topic_number}-{int(self.exercise_number):02d}-{self.exercise_part} {self.exercise_description}"
 
         exercise_content_string = "" if pd.isna(self.exercise_content) else f"<p>{self.exercise_content}</p>"
         for questiontext_element in self.root.iterchildren("questiontext"):
