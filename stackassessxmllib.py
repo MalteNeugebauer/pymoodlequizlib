@@ -95,7 +95,7 @@ default_question_xml = """<quiz>
       <tans>ta1</tans>
       <boxsize>15</boxsize>
       <strictsyntax>1</strictsyntax>
-      <insertstars>5</insertstars>
+      <insertstars>7</insertstars>
       <syntaxhint></syntaxhint>
       <syntaxattribute>0</syntaxattribute>
       <forbidwords></forbidwords>
