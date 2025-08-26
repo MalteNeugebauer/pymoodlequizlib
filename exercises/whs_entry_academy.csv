@@ -1,4 +1,4 @@
-topic_number;topic_id;parent_label;exercise_number;exercise_part;topic_label;exercise_description;exercise_variables;exercise_text;exercise_content;exercise_hint;specificfeedback;exercise_note;already_parsed;custom_prt;add_prt_node_on_not_correct;add_prt_node_wa1;add_prt_node_wa2;add_prt_node_wa3;custom_input;custom_seed;custom_general_feedback;its_keep_orig_input;personal_note
+﻿topic_number;topic_id;parent_label;exercise_number;exercise_part;topic_label;exercise_description;exercise_variables;exercise_text;exercise_content;exercise_hint;specificfeedback;exercise_note;already_parsed;custom_prt;add_prt_node_on_not_correct;add_prt_node_wa1;add_prt_node_wa2;add_prt_node_wa3;custom_input;custom_seed;custom_general_feedback;its_keep_orig_input;personal_note
 0;syn;Syntax;1;a;Syntax;Gleichung eingeben (Multiplikation);"SYN_A:[[a1,y=3*x+5],[a2,y=4*x+3],[a3,y=2*x+1],[a4,y=2*x-5],[a5,y=5*x-3],[a6,y=4*x-6]];SYN_a:rand(SYN_A);ta1:SYN_a[2];";Geben Sie die Gleichung \({@ta1@}\) in das Eingabefeld ein.;[[input:ans1]] [[validation:ans1]][[feedback:prt1]];"Okay! Hier eine leichte Aufgabe zur Eingabe. Benutze für jede Multiplikation das Symbol * (Stern).
     <!--<span class=""show-on-mobile-only""><br><br>Nutze die <a href=""javascript:;"" onclick=""let userFocusTop = document.createElement('div');userFocusTop.classList.add('user-focus', 'hide-top');let pageHeight = document.documentElement.scrollHeight;userFocusTop.style.height=Math.ceil(pageHeight+window.pageYOffset)+'px';userFocusTop.onclick = removeTutorialFocus;document.body.appendChild(userFocusTop);"">Buttons über deiner Tastatur</a>, um die wichtigsten Mathe-Operatoren schnell zu finden.</span>-->
     <br><br>Falls du ohne Tastatur unterwegs bist, kannst du mithilfe des <a href=""javascript:;"" onclick=""tutorialFocusElement(document.querySelector('.mathsbutton'));"">Mathe-Operatoren-Buttons</a> zusätzliche Buttons aktivieren, um alle Mathe-Operatoren schnell zu finden.
@@ -1156,6 +1156,189 @@ lsg : expand(aufg)
 2;ter;Termumformung;5;g;1., 2. und 3. Binomische Formel;Term zusammenfassen zur Anwendung 3. binom. Formel - Brüche;"basedivisor:(rand(4)+1)*2+2; myvars:rand_selection([a,b,c,x,y,z], 2); ta1:((1/basedivisor)*myvars[1]+(1/basedivisor)*myvars[2])*((1/basedivisor)*myvars[1]-(1/basedivisor)*myvars[2]); largersummand:1/basedivisor+1/2;";Schreibe den Ausdruck als Binomische Formel um.;\(\frac{{@num(largersummand)@}}{{@denom(largersummand)@}}\,{@myvars[1]@}^2+{@myvars[2]@}^2-\frac{1}{2}\,{@myvars[1]@}^2-1 \frac{1}{@basedivisor@} {@myvars[2]@}^2 =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\(\frac{{@num(largersummand)@}}{{@denom(largersummand)@}}\,{@myvars[1]@}^2+{@myvars[2]@}^2-\frac{1}{2}\,{@myvars[1]@}^2-1 \frac{1}{@basedivisor@} {@myvars[2]@}^2 = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1769248904</deployedseed><deployedseed>882695019</deployedseed><deployedseed>2120989077</deployedseed><deployedseed>808578123</deployedseed></seed_fields>;;0;2024-09-04
 2;ter;Termumformung;5;h;1., 2. und 3. Binomische Formel;Faktorisieren mit 2. binom. Formel - Brüche;"myvars:rand_selection([a,b,c,x,y,z], 2); denombasenum:rand(6)+3; basenum:rand_with_prohib(2, 8, [denombasenum]); ta1:(1/denombasenum*myvars[1]-basenum*myvars[2])^2; exercise:expand(ta1);";Schreibe den Ausdruck als Binomische Formel um.;\({@exercise@} =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1882952364</deployedseed><deployedseed>13787018</deployedseed><deployedseed>1721675513</deployedseed><deployedseed>500155795</deployedseed></seed_fields>;;0;2024-09-04
 2;ter;Termumformung;5;i;1., 2. und 3. Binomische Formel;Faktorisieren mit 1. binom. Formel - Brüche und Potenzen;"myvars:rand_selection([a,b,c,x,y,z], 2); denombasenum:rand(7)+2; basenum:rand_with_prohib(2, 8, [denombasenum]); mypowers:makelist(rand(3)+2,2); ta1:(1/denombasenum*myvars[1]^mypowers[1]+basenum*myvars[2]^mypowers[2])^2; exercise:expand(ta1);";Schreibe den Ausdruck als Binomische Formel um.;\({@exercise@} =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>220846117</deployedseed><deployedseed>477441395</deployedseed><deployedseed>1456936768</deployedseed><deployedseed>1411921949</deployedseed></seed_fields>;;0;2024-09-04
+2;ter;Termumformung;7;a;Binomische Formeln in Brüchen;Binomische Formeln in Brüche a);"/*Beispielaufgabe: (49*(x+5)^2)/(7*x*(x+5))*/
+rand_1:rand([3,5,7,9]);
+rand_2:rand_1^2;
+rand_3:rand(10)+1;
+zaehler:rand_2*(x+rand_3)^2;
+nenner:rand_1*x*(x+rand_3);
+tans:zaehler/nenner;                     /*Für Schreibweise (7*(x+5))/x */
+tans_alt_1:expand(tans);                 /*Für Schreibweise (35/x)+7   */
+tans_alt_2:(rand_1*x+rand_1*rand_3)/x;   /*Für Schreibweise (7*x+35)/x */
+simp:false;
+tans_alt_3:zaehler/nenner;               /*Für Schreibweise (49*(x+5)^2)/(7*x*(x+5))*/";"<p>Berechne und fasse so weit wie möglich zusammen.</p>
+<p>\(\large\frac{@zaehler@}{@nenner@}\) = [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>0</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Eingabe genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Eingabe genau wie erste alternative Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans_alt_1</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description>Prüfen, ob Eingabe genau wie zweite alternative Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans_alt_2</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>3</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <description>Prüfen, ob eingabe genau wie Aufgabenstellung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans_alt_3</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-4-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Aufgabenstellung zu kopieren.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>4</falsenextnode>
+        <falseanswernote>prt1-4-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>4</name>
+        <description>Prüfen, ob Eingabe äquivalent zu Musterlösung</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.25</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-5-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Das kannst du noch weiter vereinfachen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-5-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>1178747320</deployedseed>
+    <deployedseed>1034268205</deployedseed>
+    <deployedseed>1234531339</deployedseed>
+    <deployedseed>864491987</deployedseed>
+    <deployedseed>2145975887</deployedseed>
+    <deployedseed>837705451</deployedseed>
+    <deployedseed>1865180414</deployedseed>
+    <deployedseed>903159677</deployedseed>
+    <deployedseed>416469213</deployedseed>
+    <deployedseed>1147736372</deployedseed>
+    <deployedseed>820145591</deployedseed>
+    <deployedseed>1470922504</deployedseed>
+    <deployedseed>597457832</deployedseed>
+    <deployedseed>1503503946</deployedseed>
+    <deployedseed>1913774964</deployedseed>
+    <deployedseed>786481162</deployedseed>
+    <deployedseed>679463654</deployedseed>
+    <deployedseed>1420867457</deployedseed>
+    <deployedseed>1015918047</deployedseed>
+  </seed_fields>";;;Sebastian F
 2;ter;Termumformung;8;a;Textaufgaben;Bruch mit Summen aus Wurzeln geschickt auflösen;"poweroftwo:rand([2,4]); basenum:rand([3,5]); mysterynum:2^poweroftwo*basenum; ta1:(sqrt(basenum)+sqrt(mysterynum))/(sqrt(basenum)-sqrt(mysterynum)); simp:false; exercise:(sqrt(basenum)+sqrt(mysterynum))/(sqrt(basenum)-sqrt(mysterynum));";Erweitere den gegebenen Bruch, sodass Zähler und Nenner ganzzahlig werden. Deine Lösung soll ein Bruch sein, der keine Summen, Wurzeln o.ä. enthält.;\({@exercise@} =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1840509983</deployedseed><deployedseed>2121448268</deployedseed><deployedseed>1563375159</deployedseed><deployedseed>1576470869</deployedseed></seed_fields>;;0;2024-09-04
 3;frabin;;1;j;Binom. Formeln;Binomische Formeln I - Anwendungsaufgabe;"aa:4;
 bb:5;
