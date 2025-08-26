@@ -661,7 +661,10 @@ class QuestionPool:
         
         # Compress whole folder with `tar -zcvf output.mbz output/`
         output_file_path = output_path.parent / f"{output_path.name}.mbz"
-        command = f'tar -cv -I \'gzip -6\' -f {output_file_path} -C {output_path} .'
+        # The following command doesn't work in windows. It's kept here for the case that one day a specifc degree of compression is necessary.
+        # command = f'tar -cv -I \'gzip -6\' -f {output_file_path} -C {output_path} .'
+        # The following command works in Linux and Windows.
+        command = f'tar -czv -f {output_file_path} -C {output_path} .'
         process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
         process.wait()
         
