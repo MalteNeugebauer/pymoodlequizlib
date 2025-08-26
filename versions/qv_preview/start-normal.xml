@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 17967  -->
+  <question type="description">
+    <name>
+      <text>000 Start 0.1</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<script src="https://marvin.hs-bochum.de/~mneugebauer/alquiz-qpool-normal.js"></script><p dir="ltr" style="text-align: left;">Some information about the ongoing quiz and how to use it.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>0</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+  </question>
+
+</quiz>

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 18535  -->
+  <question type="stack">
+    <name>
+      <text>Start GamiExamPrep 0.8 (Einstiegsakademie)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<script src="https://marvin.hs-bochum.de/~mneugebauer/alquiz-fantasy-bg-ver3.js"></script>
+<script>
+    let quizObject = {
+        groups: {
+            start: "Start",
+            syn: "Eingabe lernen",
+            t1_fra_1: "Bruchrechnung 1: Warm up",
+            t1_fra_2: "Bruchrechnung 2: Kürzen und erweitern",
+            t1_fra_3: "Bruchrechnung 3: Addieren und Subtrahieren",
+            t1_fra_4: "Bruchrechnung 4: Multiplikation &amp; Division von Brüchen",
+            t1_fra_5: "Bruchrechnung 5: Kombinationen",
+            t1_fra_6: "Bruchrechnung 6: Textaufgabe",
+            t2_ter_2: "Termumformung 2: Rechnen mit Klammern"
+        },
+        questions: {
+            start: {
+                name: "Home",
+                group: "start"
+            },
+            syn_a1: {
+                name: "Gleichung eingeben",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            syn_a2: {
+                name: "Bruch &amp; Division eingeben",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            syn_b1: {
+                name: "Potenzen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            syn_b2: {
+                name: "Rationale Ausdrücke",
+                variants: 3,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            syn_c: {
+                name: "Wurzelzeichen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            syn_d: {
+                name: "Mehrere Lösungen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            syn_e: {
+                name: "Gleichung mehrschrittig lösen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            syn_f: {
+                name: "Griechische Buchstaben",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            syn_main: {
+                name: "Syntax Endgegner",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_1_a: {
+                name: "Welcher Bruch ist größer?",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_1_b: {
+                name: "Gib einen kleineren Bruch an!",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_1_c: {
+                name: "Ist das ein Bruch?",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_1_d: {
+                name: "Pizza aufteilen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_2_ia: {
+                name: "Kürzen zweier einfacher Brüche",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_2_ib: {
+                name: "Kürzen zweier Brüche mit Variablen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_2_ic: {
+                name: "Kürzen zweier Brüche mit Variablen und Zahlen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_2_id: {
+                name: "Kürzen zweier Brüche mit Termen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_2_iia: {
+                name: "Einfachen Bruch erweitern",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_2_iib: {
+                name: "Bruch mit Variablen erweitern",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_2_iic: {
+                name: "Bruch mit Variablen und Zahlen erweitern",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_3_a: {
+                name: "Einfache Addition von Brüchen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_3_b: {
+                name: "Addition von Brüchen mit Variablen und gleichem Nenner",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_3_c: {
+                name: "Addition von Brüchen mit Variablen und unterschiedlichen Nennern",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_3_d: {
+                name: "Addition von Brüchen mit einer Variablen und unterschiedlichen Nennern",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_3_e: {
+                name: "Addition von Brüchen mit Variablen und unterschiedlichen Nennern I",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_3_f: {
+                name: "Addition von Brüchen mit Variablen und unterschiedlichen Nennern II",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_4_a: {
+                name: "Multiplikation zweier einfacher Brüche",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_4_b: {
+                name: "Multiplikation zweier Brüche mit Variablen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_4_c: {
+                name: "Multiplikation Bruch mit Zahlen, Bruch mit Variablen, Ganzzahl",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_4_d: {
+                name: "Multiplikation zweier Brüche mit Termen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_4_e: {
+                name: "Einfacher Doppelbruch",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_4_f: {
+                name: "Bruch und Geteilt-Rechnung",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_4_g: {
+                name: "Doppelbruch mit Zahlen und Variablen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_4_h: {
+                name: "Doppelbruch mit Termen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_5_a: {
+                name: "Bruchrechnung Kombination I",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_5_b: {
+                name: "Bruchrechnung Kombination II",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_5_c: {
+                name: "Bruchrechnung Kombination III",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t1_fra_6_a: {
+                name: "Textaufgabe Minussi",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_a: {
+                name: "Klammern auflösen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_b: {
+                name: "Minusklammer auflösen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_c: {
+                name: "Minusklammer mit Zahl auflösen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_d: {
+                name: "Klammer in Klammer auflösen",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_e: {
+                name: "Addition und Multiplikation von Klammern",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_f: {
+                name: "(Minus-)Klammern in (Minus-)Klammern",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_g: {
+                name: "Doppel(minus-)klammern",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_h: {
+                name: "Kombinationen mit Minusklammern",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_i: {
+                name: "Klammern auflösen mit Potenzen II",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_j: {
+                name: "Klammern auflösen mit Potenzen II",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_k: {
+                name: "Klammern auflösen mit Potenzen III",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_l: {
+                name: "Klammern auflösen mit Potenzen IV",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_m: {
+                name: "Klammern auflösen mit Potenzen V",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            },
+            t2_ter_2_n: {
+                name: "Klammern auflösen mit Potenzen VI",
+                variants: 4,
+                color: "#000000",
+                filter: "invert(0%) sepia(100%) saturate(2%) hue-rotate(159deg) brightness(97%) contrast(100%)"
+            }
+        }
+    };
+    let ALQuiz = new FantasyQuiz(quizObject);
+    ALQuiz.setCurrentQuestionId("start");
+    document.addEventListener("DOMContentLoaded", function() {
+        ALQuiz.init();
+    });
+</script>
+<p dir="ltr" style="text-align: left;display:none;">Some formula to load Mathjax \(x=1\)<br></p>
+
+<p>[[input:ans1]] [[validation:ans1]]</p>
+<p>[[input:ans2]] [[validation:ans2]]<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2023010400</text>
+    </stackversion>
+    <questionvariables>
+      <text>ta1:x=42;</text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text><![CDATA[<p>[[feedback:prt1]]</p>]]></text>
+    </specificfeedback>
+    <questionnote>
+      <text></text>
+    </questionnote>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>0</assumereal>
+    <prtcorrect format="html">
+      <text>Richtige Antwort, gut gemacht!</text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text>Ihre Antwort ist teilweise korrekt.</text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text>Falsche Antwort.</text>
+    </prtincorrect>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>ta1</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>7</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>string</type>
+      <tans><![CDATA["Filled by Javascript"]]></tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>5</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options>hideanswer</options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  </question>
+
+</quiz>
