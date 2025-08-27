@@ -463,310 +463,50 @@ ta1alt:expand(num(fraction))/expand(denom(fraction))+mynumbers[2];";Addiere bzw.
 2;ter;Termumformung;2;n;Termumformungen;Klammern auflösen mit Potenzen VI;"nums:rand_selection(makelist(i+1,i,5),3); myvars:rand_selection([a,b,c,x,y,z],2); exercise:(-nums[1]*myvars[1]-nums[2]*myvars[2])-((myvars[1]^2*myvars[2]+nums[3]*myvars[1]*myvars[2]^2)-(myvars[2]^2+myvars[1]^2)); ta1:expand(exercise);";Berechne und fasse soweit wie möglich zusammen.;\((-{@nums[1]@}\cdot{@myvars[1]@}-{@nums[2]@}\cdot{@myvars[2]@})-(({@myvars[1]@}^2\cdot{@myvars[2]@}+{@nums[3]@}\cdot{@myvars[1]@}\cdot{@myvars[2]@}^2)-({@myvars[2]@}^2+{@myvars[1]@}^2)) =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\((-{@nums[1]@}\cdot{@myvars[1]@}-{@nums[2]@}\cdot{@myvars[2]@})-(({@myvars[1]@}^2\cdot{@myvars[2]@}+{@nums[3]@}\cdot{@myvars[1]@}\cdot{@myvars[2]@}^2)-({@myvars[2]@}^2+{@myvars[1]@}^2)) = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1077680438</deployedseed><deployedseed>831477889</deployedseed><deployedseed>204570994</deployedseed><deployedseed>541084006</deployedseed><deployedseed>1670415546</deployedseed><deployedseed>506584933</deployedseed></seed_fields>;;0;
 2;ter;Termumformung;3;a;1. & 2. Binomische Formel;1. Binomische Formel einfach;"var : rand_selection([a,b,c,d,f,g,h,k,m,n,u,v,x,y,z],2)
 aufg : (var[1]+var[2])^2
-lsg : expand(aufg)";"<p>Lösen Sie die Klammern mit der Binomischen Formel auf.</p>
+ta1 : expand(aufg)";"<p>Lösen Sie die Klammern mit der Binomischen Formel auf.</p>
 <p></p>
 <p>\({@aufg@}=\) [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>
 <hr>
-<p></p>";;;;\({@aufg@}={@lsg@}\);0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>EqualComAss</answertest>
-        <sans>ans1</sans>
-        <tans>lsg</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>lsg</tans>
-      <boxsize>15</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>1</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";<seed_fields><deployedseed>99961203</deployedseed><deployedseed>1875403484</deployedseed><deployedseed>1317660073</deployedseed><deployedseed>1832555187</deployedseed></seed_fields>;;0;2024-09-03
+<p></p>";;;;\({@aufg@}={@ta1@}\);0;;;;;;;<seed_fields><deployedseed>99961203</deployedseed><deployedseed>1875403484</deployedseed><deployedseed>1317660073</deployedseed><deployedseed>1832555187</deployedseed></seed_fields>;;0;2024-09-03
 2;ter;Termumformung;3;b;1. & 2. Binomische Formel;2. Binomische Formel einfach;"var : rand([a,b,c,d,f,g,h,k,m,n,u,v,x,y,z])
 fa : rand_with_step(2,10,1)
 fb : rand_with_prohib(2,10,[a])
 aufg : (fa*var-fb)^2
-lsg : expand(aufg)";"<p>Lösen Sie die Klammern mit der Binomischen Formel auf.</p>
+ta1: expand(aufg)";"<p>Lösen Sie die Klammern mit der Binomischen Formel auf.</p>
 <p></p>
 <p>\({@aufg@}=\) [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>
 <hr>
-<p></p>";;;;\({@aufg@}={@lsg@}\);0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>EqualComAss</answertest>
-        <sans>ans1</sans>
-        <tans>lsg</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>lsg</tans>
-      <boxsize>15</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>1</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";<seed_fields><deployedseed>72294951</deployedseed><deployedseed>2044883871</deployedseed><deployedseed>559064052</deployedseed><deployedseed>999241054</deployedseed></seed_fields>;;0;2024-09-03
+<p></p>";;;;\({@aufg@}={@ta1@}\);0;;;;;;;<seed_fields><deployedseed>72294951</deployedseed><deployedseed>2044883871</deployedseed><deployedseed>559064052</deployedseed><deployedseed>999241054</deployedseed></seed_fields>;;0;2024-09-03
 2;ter;Termumformung;3;c;1. & 2. Binomische Formel;2. Binomische Formel mit Variablen;"var : rand_selection([a,b,c,d,f,g,h,k,m,n,u,v,x,y,z],2)
 fa : rand_with_step(2,10,1)
 fb : rand_with_prohib(2,10,[fa])
 aufg : (fa*var[1]-fb*var[2])^2
-lsg : expand(aufg)";"<p>Lösen Sie die Klammern mit der Binomischen Formel auf.</p>
+ta1 : expand(aufg)";"<p>Lösen Sie die Klammern mit der Binomischen Formel auf.</p>
 <p></p>
 <p>\({@aufg@}=\) [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>
 <hr>
-<p></p>";;;;\({@aufg@}={@lsg@}\);0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>EqualComAss</answertest>
-        <sans>ans1</sans>
-        <tans>lsg</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>lsg</tans>
-      <boxsize>15</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>1</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";<seed_fields><deployedseed>2037637502</deployedseed><deployedseed>1950513515</deployedseed><deployedseed>131646018</deployedseed><deployedseed>1733593158</deployedseed></seed_fields>;;0;2024-09-03
-2;ter;Termumformung;3;e;1. & 2. Binomische Formel;1. Binomische Formel mit Bruch;"var : rand([a,b,c,d,f,g,h,k,m,n,u,v,x,y,z]); fa : rand_with_step(2,10,1); fb : rand([2,3,5,7]); fbdenom: rand_with_prohib(2,7,[fb]); aufg : (fa*var^2+(fb/fbdenom)*var)^2; lsg : expand(aufg);";"<p>Lösen Sie die Klammern mit der Binomischen Formel auf.</p>
+<p></p>";;;;\({@aufg@}={@ta1@}\);0;;;;;;;<seed_fields><deployedseed>2037637502</deployedseed><deployedseed>1950513515</deployedseed><deployedseed>131646018</deployedseed><deployedseed>1733593158</deployedseed></seed_fields>;;0;2024-09-03
+2;ter;Termumformung;3;e;1. & 2. Binomische Formel;1. Binomische Formel mit Bruch;"var : rand([a,b,c,d,f,g,h,k,m,n,u,v,x,y,z]); fa : rand_with_step(2,10,1); fb : rand([2,3,5,7]); fbdenom: rand_with_prohib(2,7,[fb]); aufg : (fa*var^2+(fb/fbdenom)*var)^2; ta1 : expand(aufg);";"<p>Lösen Sie die Klammern mit der Binomischen Formel auf.</p>
 <p></p>
 <p>\({@aufg@}=\) [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>
 <hr>
-<p></p>";;;;\({@aufg@}={@lsg@}\);0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>EqualComAss</answertest>
-        <sans>ans1</sans>
-        <tans>lsg</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>lsg</tans>
-      <boxsize>15</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>1</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";<seed_fields><deployedseed>1353735489</deployedseed><deployedseed>1763406555</deployedseed><deployedseed>2043727482</deployedseed><deployedseed>1094854057</deployedseed></seed_fields>;;0;2024-09-03
+<p></p>";;;;\({@aufg@}={@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1353735489</deployedseed><deployedseed>1763406555</deployedseed><deployedseed>2043727482</deployedseed><deployedseed>1094854057</deployedseed></seed_fields>;;0;2024-09-03
 2;ter;Termumformung;3;f;1. & 2. Binomische Formel;Binomische Formel Vorzeichen Trick;"var : rand_selection([a,b,c,d,f,g,h,k,m,n,u,v,x,y,z],2)
 fa : rand_with_step(2,10,1)
 fb : rand_with_prohib(2,10,[a])
 aufg : (-fa*var[1]+fb*var[2]^2)^2 /*CAS sortiert den - Term immer als 2. Summanden, deshalb Aufgabenstellung ""hart"" eingegeben, siehe Fragetext*/
-lsg : expand(aufg)
+ta1 : expand(aufg)
 
 var1 : var[1]
 var2 : var[2]";"<p>Lösen Sie die Klammern mit der Binomischen Formel auf.</p>
 <p></p>
 <p>\(\displaystyle (-{@fa@} {@var1@}+{@fb@}{@var2@}^2)^2=\) [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>
 <hr>
-<p></p>";;;;\({@aufg@}={@lsg@}\);0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>EqualComAss</answertest>
-        <sans>ans1</sans>
-        <tans>lsg</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>lsg</tans>
-      <boxsize>15</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>1</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";<seed_fields><deployedseed>1737620689</deployedseed><deployedseed>345544142</deployedseed><deployedseed>2000720234</deployedseed><deployedseed>1907763843</deployedseed></seed_fields>;;0;2024-09-03
+<p></p>";;;;\({@aufg@}={@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1737620689</deployedseed><deployedseed>345544142</deployedseed><deployedseed>2000720234</deployedseed><deployedseed>1907763843</deployedseed></seed_fields>;;0;2024-09-03
 2;ter;Termumformung;3;g;1. & 2. Binomische Formel;Binomische Formel Vorzeichen Trick II;"var : rand_selection([a,b,c,d,f,g,h,k,m,n,u,v,x,y,z],2)
 
 aufg : ((-var[1])-(var[2]))^2 
-lsg : expand(aufg)
+ta1: expand(aufg)
 
 var1 : var[1]
 var2 : var[2]
@@ -775,66 +515,14 @@ var2 : var[2]
 <p></p>
 <p>\( ((-{@var1@})-({@var2@}))^2 =\) [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>
 <hr>
-<p></p>";;;;\({@aufg@}={@lsg@}\);0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>EqualComAss</answertest>
-        <sans>ans1</sans>
-        <tans>lsg</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>lsg</tans>
-      <boxsize>15</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>1</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";<seed_fields><deployedseed>1256873462</deployedseed><deployedseed>2140979307</deployedseed><deployedseed>55602665</deployedseed><deployedseed>1620175017</deployedseed></seed_fields>;;0;2024-09-03
+<p></p>";;;;\({@aufg@}={@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1256873462</deployedseed><deployedseed>2140979307</deployedseed><deployedseed>55602665</deployedseed><deployedseed>1620175017</deployedseed></seed_fields>;;0;2024-09-03
 2;ter;Termumformung;3;h;1. & 2. Binomische Formel;2. Binomische Formel mit Bruch und Vorzeichen Trick;"var : rand_selection([a,b,c,d,f,g,h,k,m,n,u,v,x,y,z],2)
 
 fa : rand([1,3,5])/4
 fb : rand([-1,-3,-5])/2
 
 aufg : (fa*var[1]+(fb*var[2]))^2 
-lsg : expand(aufg)
+ta1 : expand(aufg)
 
 var1 : var[1]
 var2 : var[2]
@@ -843,313 +531,53 @@ var2 : var[2]
 <p></p>
 <p>\(\displaystyle  \left( {@fa@}{@var1@}+ \left( {@fb@} {@var2@} \right) \right)^2 =\) [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>
 <hr>
-<p></p>";;;;\({@aufg@}={@lsg@}\);0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>EqualComAss</answertest>
-        <sans>ans1</sans>
-        <tans>lsg</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>lsg</tans>
-      <boxsize>30</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>1</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";<seed_fields><deployedseed>1912136364</deployedseed><deployedseed>460560125</deployedseed><deployedseed>280507251</deployedseed><deployedseed>68613937</deployedseed></seed_fields>;;0;2024-09-03
+<p></p>";;;;\({@aufg@}={@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1912136364</deployedseed><deployedseed>460560125</deployedseed><deployedseed>280507251</deployedseed><deployedseed>68613937</deployedseed></seed_fields>;;0;2024-09-03
 2;ter;Termumformung;4;a;3. Binomische Formel;3. Binomische Formel einfach;"var : rand([a,b,c,d,f,g,h,k,m,u,v,x,y,z])
 n : rand([2,3,4])
 sb : rand([2,3,4,5,6])
 aufg : (var^n+sb)*(var^n-sb)
-lsg : expand(aufg)";"<p>Wenden Sie die 3. Binomische Formel an.</p>
+ta1 : expand(aufg)";"<p>Wenden Sie die 3. Binomische Formel an.</p>
 <p></p>
 <p>\({@aufg@}=\) [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>
 <hr>
-<p></p>";;;;\({@aufg@}={@lsg@}\);0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>EqualComAss</answertest>
-        <sans>ans1</sans>
-        <tans>lsg</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>lsg</tans>
-      <boxsize>15</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>1</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";<seed_fields><deployedseed>453814387</deployedseed><deployedseed>589454504</deployedseed><deployedseed>1763310986</deployedseed><deployedseed>530299392</deployedseed></seed_fields>;;0;2024-09-03
+<p></p>";;;;\({@aufg@}={@ta1@}\);0;;;;;;;<seed_fields><deployedseed>453814387</deployedseed><deployedseed>589454504</deployedseed><deployedseed>1763310986</deployedseed><deployedseed>530299392</deployedseed></seed_fields>;;0;2024-09-03
 2;ter;Termumformung;4;b;3. Binomische Formel;3. Binomische Formel Zahlen und Variablen;"var : rand_selection([a,b,c,d,f,g,h,k,m,u,v,x,y,z],2)
 var1 : var[1]
 var2 : var[2]
 fa : rand([2,3,4,5,6,7,8])
 n : rand([2,3,4])
 aufg : (fa*var1+var2^n)*(fa*var1-var2^n)
-lsg : expand(aufg)";"<p>Wenden Sie die 3. Binomische Formel an.</p>
+ta1 : expand(aufg)";"<p>Wenden Sie die 3. Binomische Formel an.</p>
 <p></p>
 <p>\({@aufg@}=\) [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>
 <hr>
-<p></p>";;;;\({@aufg@}={@lsg@}\);0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>EqualComAss</answertest>
-        <sans>ans1</sans>
-        <tans>lsg</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>lsg</tans>
-      <boxsize>15</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>1</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";<seed_fields><deployedseed>1912960965</deployedseed><deployedseed>263139616</deployedseed><deployedseed>315636498</deployedseed><deployedseed>1337732366</deployedseed></seed_fields>;;0;2024-09-03
+<p></p>";;;;\({@aufg@}={@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1912960965</deployedseed><deployedseed>263139616</deployedseed><deployedseed>315636498</deployedseed><deployedseed>1337732366</deployedseed></seed_fields>;;0;2024-09-03
 2;ter;Termumformung;4;c;3. Binomische Formel;3. Binomische Formel Brüche;"var : rand_selection([a,b,c,d,f,g,h,k,m,u,v,x,y,z],2)
 var1 : var[1]
 var2 : var[2]
 fa : rand([1,2,4,5])/3
 fb : rand([1,2,3,4,6])/5
 aufg : (fa*var1+fb*var2)*(fa*var1-fb*var2)
-lsg : expand(aufg)
+ta1 : expand(aufg)
 
 ";"<p>Wenden Sie die 3. Binomische Formel an.</p>
 <p></p>
 <p>\(\displaystyle \left({@fa@}{@var1@}-{@fb@}{@var2@}\right)\cdot \left({@fa@}{@var1@}+{@fb@}{@var2@}\right) =\) [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>
 <hr>
-<p></p>";;;;\({@aufg@}={@lsg@}\);0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>EqualComAss</answertest>
-        <sans>ans1</sans>
-        <tans>lsg</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>lsg</tans>
-      <boxsize>20</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>1</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";<seed_fields><deployedseed>234574561</deployedseed><deployedseed>717760098</deployedseed><deployedseed>1853273445</deployedseed><deployedseed>1002251016</deployedseed></seed_fields>;;0;2024-09-03
+<p></p>";;;;\({@aufg@}={@ta1@}\);0;;;;;;;<seed_fields><deployedseed>234574561</deployedseed><deployedseed>717760098</deployedseed><deployedseed>1853273445</deployedseed><deployedseed>1002251016</deployedseed></seed_fields>;;0;2024-09-03
 2;ter;Termumformung;4;d;3. Binomische Formel;3. Binomische Formel Terme;"var : rand_selection([a,b,c,d,f,g,h,k,m,u,v,x,y,z],3)
 var1 : var[1]
 var2 : var[2]
 var3 : var[3]
 n : rand([2,3,4])
 aufg : (var1*var2^n+var3)*(var1*var2^n-var3)
-lsg : expand(aufg)
+ta1 : expand(aufg)
 
 ";"<p>Wenden Sie die 3. Binomische Formel an.</p>
 <p></p>
 <p>\(\displaystyle {@aufg@} =\) [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>
 <hr>
-<p></p>";;;;\({@aufg@}={@lsg@}\);0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>EqualComAss</answertest>
-        <sans>ans1</sans>
-        <tans>lsg</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>lsg</tans>
-      <boxsize>20</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>1</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";<seed_fields><deployedseed>928011929</deployedseed><deployedseed>531825411</deployedseed><deployedseed>861953565</deployedseed><deployedseed>1830822804</deployedseed></seed_fields>;;0;2024-09-03
+<p></p>";;;;\({@aufg@}={@ta1@}\);0;;;;;;;<seed_fields><deployedseed>928011929</deployedseed><deployedseed>531825411</deployedseed><deployedseed>861953565</deployedseed><deployedseed>1830822804</deployedseed></seed_fields>;;0;2024-09-03
 2;ter;Termumformung;5;a;1., 2. und 3. Binomische Formel;Faktorisieren mit 3. binom. Formel;"basenum:rand(4)+2; myvar:rand([a,b,c,x,y,z]); exercise:basenum^2-myvar^2; ta1:(basenum+myvar)*(basenum-myvar);";Schreibe den Ausdruck als Binomische Formel um.;\({@exercise@} =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1564884613</deployedseed><deployedseed>997994364</deployedseed><deployedseed>1158444903</deployedseed><deployedseed>1965926944</deployedseed></seed_fields>;;0;2024-09-04
 2;ter;Termumformung;5;b;1., 2. und 3. Binomische Formel;Faktorisieren mit 1. binom. Formel - nur Variablen;"myvars:rand_selection([a,b,c,x,y,z], 2); ta1:(myvars[1]+myvars[2])^2; exercise:expand(ta1);";Schreibe den Ausdruck als Binomische Formel um.;\({@exercise@} =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>186842913</deployedseed><deployedseed>309686975</deployedseed><deployedseed>1217932332</deployedseed><deployedseed>1565210704</deployedseed></seed_fields>;;0;2024-09-04
 2;ter;Termumformung;5;c;1., 2. und 3. Binomische Formel;Faktorisieren mit 2. binom. Formel und 2 ausklammern;"myvar:rand([a,b,c,x,y,z]); mynum:rand(3)+3; factor:2; ta1:factor*(myvar-mynum)^2; exercise:expand(ta1);";Schreibe den Ausdruck als Binomische Formel um.;\({@exercise@} =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>794973553</deployedseed><deployedseed>1223402817</deployedseed><deployedseed>2136493319</deployedseed><deployedseed>548724726</deployedseed></seed_fields>;;0;2024-09-04
