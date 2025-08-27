@@ -36,12 +36,13 @@ numerators[2]:-numerators[2];
 summands:makelist(numerators[i]/denominators[i],i,3);
 exercise:summands[1]+summands[2]+summands[3];
 common_denom:denominators[1]*denominators[2]*denominators[3];
-ta1:
+fracs_on_one_bar:
 (
   numerators[1]*denominators[2]*denominators[3]+
   numerators[2]*denominators[1]*denominators[3]+
   numerators[3]*denominators[1]*denominators[2]
 )/common_denom;
+ta1:factor(fracs_on_one_bar);
 ta1alt:expand(num(ta1))/expand(denom(ta1));
 wrong_denom1:myvars[3]^2-1;
 wrong_denom2:(myvars[3]-1)*myvars[3];";Addiere bzw. subtrahiere und fasse soweit wie möglich zusammen.;\({@exercise@} =\)[[input:ans1]] [[validation:ans1]] [[feedback:prt1]];Achtung: Summe im Nenner!;;\({@exercise@} = {@ta1@}\);0;"<prt>
