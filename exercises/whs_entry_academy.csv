@@ -44,6 +44,7 @@ fracs_on_one_bar:
 )/common_denom;
 ta1:factor(fracs_on_one_bar);
 ta1alt:expand(num(ta1))/expand(denom(ta1));
+list_num_summands:args(num(fracs_on_one_bar)); list_num_summands_simple:makelist(list_num_summands[i]/myvars[3],i,1,length(list_num_summands)); simplified_num:0; for i:1 thru length(list_num_summands_simple) step 1 do (simplified_num:simplified_num+list_num_summands_simple[i]); simplified_denom:denom(fracs_on_one_bar)/myvars[3]; ta1alt2:simplified_num/simplified_denom;
 wrong_denom1:myvars[3]^2-1;
 wrong_denom2:(myvars[3]-1)*myvars[3];";Addiere bzw. subtrahiere und fasse soweit wie möglich zusammen.;\({@exercise@} =\)[[input:ans1]] [[validation:ans1]] [[feedback:prt1]];Achtung: Summe im Nenner!;;\({@exercise@} = {@ta1@}\);0;"<prt>
       <name>prt1</name>
@@ -95,12 +96,13 @@ wrong_denom2:(myvars[3]-1)*myvars[3];";Addiere bzw. subtrahiere und fasse soweit
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>2</falsenextnode>
+        <falsenextnode>6</falsenextnode>
         <falseanswernote>prt1-2-F</falseanswernote>
         <falsefeedback format=""html"">
           <text/>
         </falsefeedback>
       </node>
+<node>         <name>6</name>         <answertest>EqualComAss</answertest>         <sans>ans1</sans>         <tans>ta1alt2</tans>         <testoptions/>         <quiet>0</quiet>         <truescoremode>=</truescoremode>         <truescore>1</truescore>         <truepenalty/>         <truenextnode>-1</truenextnode>         <trueanswernote>prt1-7-T</trueanswernote>         <truefeedback format=""html"">           <text/>         </truefeedback>         <falsescoremode>-</falsescoremode>         <falsescore>0</falsescore>         <falsepenalty/>         <falsenextnode>2</falsenextnode>         <falseanswernote>prt1-7-F</falseanswernote>         <falsefeedback format=""html"">           <text/>         </falsefeedback>       </node>
       <node>
         <name>2</name>
         <answertest>AlgEquiv</answertest>
