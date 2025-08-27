@@ -555,8 +555,8 @@ ta1 : expand(aufg)";"<p>Wenden Sie die 3. Binomische Formel an.</p>
 2;ter;Termumformung;4;c;3. Binomische Formel;3. Binomische Formel Brüche;"var : rand_selection([a,b,c,d,f,g,h,k,m,u,v,x,y,z],2)
 var1 : var[1]
 var2 : var[2]
-fa : rand([1,2,4,5])/3
-fb : rand([1,2,3,4,6])/5
+fa : rand([2,4,5])/3
+fb : rand([2,3,4,6])/5
 aufg : (fa*var1+fb*var2)*(fa*var1-fb*var2)
 ta1 : expand(aufg)
 
