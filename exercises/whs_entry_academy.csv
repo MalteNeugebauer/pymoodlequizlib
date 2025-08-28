@@ -771,6 +771,333 @@ tans_alt_3:zaehler/nenner;               /*Für Schreibweise (49*(x+5)^2)/(7*x*(
     <deployedseed>1015918047</deployedseed>
   </seed_fields>";;;Sebastian F
 2;ter;Termumformung;8;a;Textaufgaben;Bruch mit Summen aus Wurzeln geschickt auflösen;"poweroftwo:rand([2,4]); basenum:rand([3,5]); mysterynum:2^poweroftwo*basenum; ta1:(sqrt(basenum)+sqrt(mysterynum))/(sqrt(basenum)-sqrt(mysterynum)); simp:false; exercise:(sqrt(basenum)+sqrt(mysterynum))/(sqrt(basenum)-sqrt(mysterynum));";Erweitere den gegebenen Bruch, sodass Zähler und Nenner ganzzahlig werden. Deine Lösung soll ein Bruch sein, der keine Summen, Wurzeln o.ä. enthält.;\({@exercise@} =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1840509983</deployedseed><deployedseed>2121448268</deployedseed><deployedseed>1563375159</deployedseed><deployedseed>1576470869</deployedseed></seed_fields>;;0;2024-09-04
+2;ter;Termumformung;9;a;Textaufgabe;Textaufgabe a);"/*Randomisierte Ziffern:*/
+faktor_1:1+rand(18);
+faktor_2:2+rand(18);
+summand:rand_with_step(1,20,1);
+subtrahend:rand_with_prohib(1,20,[summand]);
+
+/*Musterlösung:*/
+tans:faktor_2*(faktor_1*x+summand)-subtrahend;
+tans_alt:faktor_2*faktor_1*x+summand-subtrahend;";"<p>Schreibe die folgende Rechenvorschrift als Term:</p>
+<p>Multipliziere die Summe aus dem {@faktor_1@}fachen einer Zahl und {@summand@} mit {@faktor_2@} und subtrahiere davon {@subtrahend@}.</p>
+<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>tans = {@tans@};   tans_alt = {@tans_alt@}</p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Eingabe äquivalent zu Musterlösung ist, unabhängig von verwendeter Variable</description>
+        <answertest>SubstEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>1</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Eingabe äquivalent zu alternativer Musterlösung ist, unabhängig von verwendeter Variable</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans_alt</tans>
+        <testoptions/>
+        <quiet>1</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>10</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>1152974216</deployedseed>
+    <deployedseed>1038919160</deployedseed>
+    <deployedseed>1897974497</deployedseed>
+    <deployedseed>512904469</deployedseed>
+    <deployedseed>618565540</deployedseed>
+    <deployedseed>807731720</deployedseed>
+    <deployedseed>1863419336</deployedseed>
+    <deployedseed>1872443247</deployedseed>
+    <deployedseed>1164920748</deployedseed>
+    <deployedseed>2049880276</deployedseed>
+  </seed_fields>";;;Sebastian F
+2;ter;Termumformung;9;b;Textaufgabe;Textaufgabe b);"/*Randomisierte Ziffern:*/
+summand:1+rand(19);
+simp:false;
+/*Musterlösung:*/
+tans:2*x^2-(x^2+summand);
+tans_alt:x^2+summand;";"<p>Schreibe die folgende Rechenvorschrift als Term:</p>
+<p>Multipliziere eine Zahl mit sich selbst, addiere {@summand@}, subtrahiere die Summe vom Doppelten der mit sich selbst multiplizierten Zahl.</p>
+<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>tans = {@tans@};   tans_alt = {@tans_alt@}</p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>0</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Eingabe äquivalent zu Musterlösung, unabhängig von verwendeter Variable</description>
+        <answertest>SubstEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>1</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Eingabe äquivalent zu alternativer Musterlösung, unabhängig von verwendeter Variable</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>1</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>10</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>839948382</deployedseed>
+    <deployedseed>176394483</deployedseed>
+    <deployedseed>1799578040</deployedseed>
+    <deployedseed>1725392605</deployedseed>
+    <deployedseed>89102666</deployedseed>
+    <deployedseed>509770531</deployedseed>
+    <deployedseed>1064796007</deployedseed>
+    <deployedseed>410723015</deployedseed>
+    <deployedseed>1901759484</deployedseed>
+    <deployedseed>1129790468</deployedseed>
+    <deployedseed>860274484</deployedseed>
+    <deployedseed>871019475</deployedseed>
+  </seed_fields>";;;Sebastian F
+2;ter;Termumformung;9;c;Textaufgabe;Textaufgabe c);"/*Randomisierte Ziffern:*/
+summand:1+rand(19);
+subtrahend:1+rand(19);
+
+/*Muterlösung:*/
+tans:((x+summand)/3)-(x-subtrahend);
+tans_alt_1:(x+summand-3*(x-subtrahend))/3;
+tans_alt_2:(-2*x+(summand+3*subtrahend))/3;";"<p>Schreibe die folgende Rechenvorschrift als Term:</p>
+<p>Subtrahiere vom Drittel einer um {@summand@} vermehrten Zahl die Differenz der Zahl und {@subtrahend@}.</p>
+<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>tans = {@tans@};   tans_alt_1 = {@tans_alt_1@};   tans_alt_2 = {@tans_alt_2@}</p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Eingabe äquivalent zu Musterlösung, unabhängig von verwendeter Variable</description>
+        <answertest>SubstEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>1</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Eingabe äquivalent zu alternatien Musterlösung, unabhängig von verwendeter Variable</description>
+        <answertest>SubstEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans_alt_1</tans>
+        <testoptions/>
+        <quiet>1</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description>Prüfen, ob Eingabe äquivalent zu alternatien Musterlösung, unabhängig von verwendeter Variable</description>
+        <answertest>SubstEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans_alt_2</tans>
+        <testoptions/>
+        <quiet>1</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>10</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>1697081371</deployedseed>
+    <deployedseed>721040229</deployedseed>
+    <deployedseed>516282236</deployedseed>
+    <deployedseed>1954231821</deployedseed>
+    <deployedseed>612213645</deployedseed>
+    <deployedseed>117855830</deployedseed>
+    <deployedseed>934356204</deployedseed>
+    <deployedseed>1730991368</deployedseed>
+    <deployedseed>1942933040</deployedseed>
+    <deployedseed>380439015</deployedseed>
+    <deployedseed>74607584</deployedseed>
+    <deployedseed>1069438278</deployedseed>
+    <deployedseed>349059573</deployedseed>
+    <deployedseed>485307242</deployedseed>
+    <deployedseed>1415777969</deployedseed>
+    <deployedseed>1724618008</deployedseed>
+    <deployedseed>352014332</deployedseed>
+    <deployedseed>1505657743</deployedseed>
+    <deployedseed>1200747184</deployedseed>
+    <deployedseed>1134825705</deployedseed>
+  </seed_fields>";;;Sebastian F
 3;frabin;;1;j;Binom. Formeln;Binomische Formeln I - Anwendungsaufgabe;"aa:4;
 bb:5;
 c:3;
