@@ -3699,7 +3699,7 @@ Vorzeichen von \(q\) in \(x^2 + p\,x + q = 0\;\) umkehren.<br></p>]]></text>
     </prt>
   ";;;;;;<seed_fields><deployedseed>523289464</deployedseed><deployedseed>908900087</deployedseed><deployedseed>1968838550</deployedseed><deployedseed>325085310</deployedseed></seed_fields>;;0;2024-08-23
 5;rul;"Potenzen, Wurzeln; Logarithmen";4;e;Gemischtes;Potenz aus Brüchen;"myvars:rand_selection([a,b,c,x,y,z],4); mypowers:rand_selection(makelist(i,i,2,6),3); ta1:((myvars[1]^(-mypowers[2])*myvars[2])/(myvars[3]^(-mypowers[1])*myvars[4]^(-mypowers[2])))^mypowers[2]*((myvars[2]*myvars[4])/(myvars[1]*myvars[3]^(-mypowers[2])))^(-mypowers[3]); simp:false; factors:random_permutation([((myvars[1]^(-mypowers[2])*myvars[2])/(myvars[3]^(-mypowers[1])*myvars[4]^(-mypowers[2])))^mypowers[2], ((myvars[2]*myvars[4])/(myvars[1]*myvars[3]^(-mypowers[2])))^(-mypowers[3])]); exercise:factors[1]*factors[2];";Vereinfache und fasse so weit wie möglich zusammen. Achte genauestens auf die verwendeten Rechenzeichen!;\({@exercise@} =\)[[input:ans1]] [[validation:ans1]] [[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>158322129</deployedseed><deployedseed>890211491</deployedseed><deployedseed>230306758</deployedseed><deployedseed>1792947673</deployedseed></seed_fields>;;0;2024-08-23
-5;rul;"Potenzen, Wurzeln; Logarithmen";4;f;Gemischtes;Summe aus Brüchen mit Potenzen;"myvars:rand_selection([a,b,c,x,y,z],2); first_frac:(myvars[1]^(myvars[2]-2))/(1-myvars[1]); fractions:random_permutation([(myvars[1]^(myvars[2]-1))/(1+myvars[1]), (myvars[1]^myvars[2])/(1-myvars[1]^2)]); fractions:append([first_frac], fractions); /* not resolving as desired:  ta1:fractions[1] - fractions[2] - fractions[3];*/ common_denom:denom(fractions[1])*denom(fractions[2])*denom(fractions[3]); ta1: factor(   expand(          (       num(fractions[1])*denom(fractions[2])*denom(fractions[3])       -       (num(fractions[2])*denom(fractions[1])*denom(fractions[3]))       -       (num(fractions[3])*denom(fractions[1])*denom(fractions[2]))     )     /     common_denom   ) ); ta1alt:num(ta1)/expand(denom(ta1)); simp:false; exercise:fractions[1] - fractions[2] - fractions[3];";Vereinfache und fasse so weit wie möglich zusammen. Achte genauestens auf die verwendeten Rechenzeichen!;\({@exercise@} =\)[[input:ans1]] [[validation:ans1]] [[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;"<prt>
+5;rul;"Potenzen, Wurzeln; Logarithmen";4;f;Gemischtes;Summe aus Brüchen mit Potenzen;"myvars:rand_selection([a,b,c,x,y,z],2); first_frac:(myvars[1]^(myvars[2]-2))/(1-myvars[1]); fractions:random_permutation([(myvars[1]^(myvars[2]-1))/(1+myvars[1]), (myvars[1]^myvars[2])/(1-myvars[1]^2)]); fractions:append([first_frac], fractions); /* not resolving as desired:  ta1:fractions[1] - fractions[2] - fractions[3];*/ common_denom:denom(fractions[1])*denom(fractions[2])*denom(fractions[3]); ta1: factor(   expand(          (       num(fractions[1])*denom(fractions[2])*denom(fractions[3])       -       (num(fractions[2])*denom(fractions[1])*denom(fractions[3]))       -       (num(fractions[3])*denom(fractions[1])*denom(fractions[2]))     )     /     common_denom   ) ); ta1alt:num(ta1)/expand(denom(ta1)); ta1alt2:(num(ta1alt)*(-1))/(denom(ta1alt)*(-1)); simp:false; exercise:fractions[1] - fractions[2] - fractions[3];";Vereinfache und fasse so weit wie möglich zusammen. Achte genauestens auf die verwendeten Rechenzeichen!;\({@exercise@} =\)[[input:ans1]] [[validation:ans1]] [[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -3755,8 +3755,9 @@ Vorzeichen von \(q\) in \(x^2 + p\,x + q = 0\;\) umkehren.<br></p>]]></text>
           <text/>
         </falsefeedback>
       </node>
+<node>         <name>2</name>         <answertest>EqualComAss</answertest>         <sans>ans1</sans>         <tans>ta1alt2</tans>         <testoptions/>         <quiet>0</quiet>         <truescoremode>=</truescoremode>         <truescore>1</truescore>         <truepenalty/>         <truenextnode>-1</truenextnode>         <trueanswernote>prt1-2-T</trueanswernote>         <truefeedback format=""html"">           <text/>         </truefeedback>         <falsescoremode>-</falsescoremode>         <falsescore>0</falsescore>         <falsepenalty/>         <falsenextnode>3</falsenextnode>         <falseanswernote>prt1-2-F</falseanswernote>         <falsefeedback format=""html"">           <text/>         </falsefeedback>       </node>
       <node>
-        <name>2</name>
+        <name>3</name>
         <answertest>AlgEquiv</answertest>
         <sans>ans1</sans>
         <tans>ta1</tans>
@@ -3766,7 +3767,7 @@ Vorzeichen von \(q\) in \(x^2 + p\,x + q = 0\;\) umkehren.<br></p>]]></text>
         <truescore>0.1</truescore>
         <truepenalty/>
         <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-3-T</trueanswernote>
+        <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
           <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du kannst noch weiter vereinfachen.<br></p>]]></text>
         </truefeedback>
@@ -3774,7 +3775,7 @@ Vorzeichen von \(q\) in \(x^2 + p\,x + q = 0\;\) umkehren.<br></p>]]></text>
         <falsescore>0</falsescore>
         <falsepenalty/>
         <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-3-F</falseanswernote>
+        <falseanswernote>prt1-4-F</falseanswernote>
         <falsefeedback format=""html"">
           <text/>
         </falsefeedback>
