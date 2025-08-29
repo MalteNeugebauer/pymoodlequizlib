@@ -8646,7 +8646,7 @@ loes:a2*x^2+b2*x+c2;";"<p></p><p>Bestimmen Sie die Funktion zum Graph und geben 
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0</truescore>
+        <truescore>0.1</truescore>
         <truepenalty>0</truepenalty>
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
@@ -8659,7 +8659,7 @@ loes:a2*x^2+b2*x+c2;";"<p></p><p>Bestimmen Sie die Funktion zum Graph und geben 
         <falsenextnode>-1</falsenextnode>
         <falseanswernote>prt1-2-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Die Antwort ist leider falsch. Bitte vergleichen Sie die Graphen. Ihre Funktion ist im rot: {@bild2@}</p>]]></text>
+          <text><![CDATA[<p>Die Antwort ist leider falsch. Bitte vergleichen Sie die Graphen. Ihre Funktion ist im Bild rot: {@bild2@}</p>]]></text>
         </falsefeedback>
       </node>
     </prt>
@@ -8737,7 +8737,7 @@ loes:a2*x^2+b2*x+c2;";"<p></p><p>Bestimmen Sie die Funktion zum Graph und geben 
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0</truescore>
+        <truescore>0.1</truescore>
         <truepenalty>0</truepenalty>
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
@@ -8750,7 +8750,7 @@ loes:a2*x^2+b2*x+c2;";"<p></p><p>Bestimmen Sie die Funktion zum Graph und geben 
         <falsenextnode>-1</falsenextnode>
         <falseanswernote>prt1-2-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Die Antwort ist leider falsch. Bitte vergleichen Sie die Graphen. Ihre Funktion ist im rot: {@bild2@}</p>]]></text>
+          <text><![CDATA[<p>Die Antwort ist leider falsch. Bitte vergleichen Sie die Graphen. Ihre Funktion ist im Bild rot: {@bild2@}</p>]]></text>
         </falsefeedback>
       </node>
     </prt>
