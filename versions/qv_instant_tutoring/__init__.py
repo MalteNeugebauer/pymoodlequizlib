@@ -119,7 +119,12 @@ def it_version_change_text(**kwargs):
                         sans.text = regex.sub(f"last({name})", sans.text)
                     #else:
                     #    print(f"{name} is not in {sans.text} ({Question.exercise_description})")
-
+            if Question.its_keep_orig_input != 1:
+                for feedbackvariables in prt.iterchildren("feedbackvariables"):
+                    for feedbackvariablestext in feedbackvariables.iterchildren("text"):
+                        if feedbackvariablestext != None and feedbackvariablestext.text != None:
+                            re_search_anss = re.compile(r'(ans\d*)')
+                            feedbackvariablestext.text = re_search_anss.sub(r'last(\1)', feedbackvariablestext.text)
     return True
 
 
