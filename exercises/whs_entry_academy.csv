@@ -587,6 +587,491 @@ ta1 : expand(aufg)
 2;ter;Termumformung;5;g;1., 2. und 3. Binomische Formel;Term zusammenfassen zur Anwendung 3. binom. Formel - Brüche;"basedivisorroot:rand(3)+2; basedivisor:basedivisorroot^2; myvars:rand_selection([a,b,c,x,y,z], 2); ta1:((1/basedivisorroot)*myvars[1]+(1/basedivisorroot)*myvars[2])*((1/basedivisorroot)*myvars[1]-(1/basedivisorroot)*myvars[2]); largersummand:1/basedivisor+1/2;";Schreibe den Ausdruck als Binomische Formel um.;\(\frac{{@num(largersummand)@}}{{@denom(largersummand)@}}\,{@myvars[1]@}^2+{@myvars[2]@}^2-\frac{1}{2}\,{@myvars[1]@}^2-1 \frac{1}{@basedivisor@} {@myvars[2]@}^2 =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\(\frac{{@num(largersummand)@}}{{@denom(largersummand)@}}\,{@myvars[1]@}^2+{@myvars[2]@}^2-\frac{1}{2}\,{@myvars[1]@}^2-1 \frac{1}{@basedivisor@} {@myvars[2]@}^2 = {@ta1@}\);0;"<prt><name>prt1</name><value>1.0000000</value><autosimplify>1</autosimplify><feedbackstyle>1</feedbackstyle><feedbackvariables><text>simp:false; ta1alt:((1/basedivisorroot)*myvars[1]+(1/basedivisorroot)*myvars[2])*((1/basedivisorroot)*myvars[1]-(1/basedivisorroot)*myvars[2]);</text></feedbackvariables><node><name>0</name><answertest>EqualComAss</answertest><sans>ans1</sans><tans>ta1</tans><testoptions></testoptions><quiet>0</quiet><truescoremode>=</truescoremode><truescore>1</truescore><truepenalty></truepenalty><truenextnode>-1</truenextnode><trueanswernote>prt1-1-T</trueanswernote><truefeedback format=""html""><text></text></truefeedback><falsescoremode>=</falsescoremode><falsescore>0</falsescore><falsepenalty></falsepenalty><falsenextnode>1</falsenextnode><falseanswernote>prt1-1-F</falseanswernote><falsefeedback format=""html""><text></text></falsefeedback></node><node><name>1</name><answertest>EqualComAss</answertest><sans>ans1</sans><tans>ta1alt</tans><testoptions></testoptions><quiet>0</quiet><truescoremode>=</truescoremode><truescore>1</truescore><truepenalty></truepenalty><truenextnode>-1</truenextnode><trueanswernote>prt1-2-T</trueanswernote><truefeedback format=""html""><text></text></truefeedback><falsescoremode>-</falsescoremode><falsescore>0</falsescore><falsepenalty></falsepenalty><falsenextnode>2</falsenextnode><falseanswernote>prt1-2-F</falseanswernote><falsefeedback format=""html""><text></text></falsefeedback></node><node><name>2</name><answertest>AlgEquiv</answertest><sans>ans1</sans><tans>ta1</tans><testoptions></testoptions><quiet>0</quiet><truescoremode>=</truescoremode><truescore>0.1</truescore><truepenalty></truepenalty><truenextnode>-1</truenextnode><trueanswernote>prt1-3-T</trueanswernote><truefeedback format=""html""><text><![CDATA[<p dir=""ltr"" style=""text-align: left;""></p><p dir=""ltr"">Du kannst noch weiter vereinfachen.<br></p><br><p></p>]]></text></truefeedback><falsescoremode>-</falsescoremode><falsescore>0</falsescore><falsepenalty></falsepenalty><falsenextnode>-1</falsenextnode><falseanswernote>prt1-3-F</falseanswernote><falsefeedback format=""html""><text></text></falsefeedback></node></prt>";;;;;;<seed_fields><deployedseed>1769248904</deployedseed><deployedseed>882695019</deployedseed><deployedseed>2120989077</deployedseed><deployedseed>808578123</deployedseed></seed_fields>;;0;2024-09-04
 2;ter;Termumformung;5;h;1., 2. und 3. Binomische Formel;Faktorisieren mit 2. binom. Formel - Brüche;"myvars:rand_selection([a,b,c,x,y,z], 2); denombasenum:rand(6)+3; basenum:rand_with_prohib(2, 8, [denombasenum]); ta1:(1/denombasenum*myvars[1]-basenum*myvars[2])^2; exercise:expand(ta1);";Schreibe den Ausdruck als Binomische Formel um.;\({@exercise@} =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1882952364</deployedseed><deployedseed>13787018</deployedseed><deployedseed>1721675513</deployedseed><deployedseed>500155795</deployedseed></seed_fields>;;0;2024-09-04
 2;ter;Termumformung;5;i;1., 2. und 3. Binomische Formel;Faktorisieren mit 1. binom. Formel - Brüche und Potenzen;"myvars:rand_selection([a,b,c,x,y,z], 2); denombasenum:rand(7)+2; basenum:rand_with_prohib(2, 8, [denombasenum]); mypowers:makelist(rand(3)+2,2); ta1:(1/denombasenum*myvars[1]^mypowers[1]+basenum*myvars[2]^mypowers[2])^2; exercise:expand(ta1);";Schreibe den Ausdruck als Binomische Formel um.;\({@exercise@} =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>220846117</deployedseed><deployedseed>477441395</deployedseed><deployedseed>1456936768</deployedseed><deployedseed>1411921949</deployedseed></seed_fields>;;0;2024-09-04
+2;ter;Termumformung;6;a;Lückentextaufgabe;Lückentextaufgabe a);"/*(2*x+...)^2=...+...+81*/
+
+b:1+rand(10);
+a_1:rand([2, 3, 4, 5, 6, 7, 8, 9]);
+c:a_1^2;
+a_2:(b*x)^2;
+a_3:2*b*x*a_1;
+tans:(b*x+a_1)^2=a_2+a_3+c;";"<p>Fülle die Lücken der Gleichung und schreiben die vollständige Gleichung in das Eingabefeld.</p>
+<p class=""MsoNormal"">[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( ( \) {@b@} \( \cdot x+ \) \( ...)^2= ...+...+ \) {@c@} \(\Rightarrow\) Lösung = {@tans@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Gleichung äquivalent zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>({#b#}*x+...)^2=...+...+{#c#};</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>1195198685</deployedseed>
+    <deployedseed>1624474732</deployedseed>
+    <deployedseed>509737446</deployedseed>
+    <deployedseed>107259305</deployedseed>
+    <deployedseed>1516251589</deployedseed>
+    <deployedseed>457694700</deployedseed>
+    <deployedseed>17607443</deployedseed>
+    <deployedseed>491073867</deployedseed>
+    <deployedseed>1646133961</deployedseed>
+    <deployedseed>2078796142</deployedseed>
+    <deployedseed>205871248</deployedseed>
+    <deployedseed>340779355</deployedseed>
+    <deployedseed>1140421940</deployedseed>
+    <deployedseed>1053761800</deployedseed>
+    <deployedseed>1028108983</deployedseed>
+    <deployedseed>1661243142</deployedseed>
+    <deployedseed>150935236</deployedseed>
+    <deployedseed>1257917787</deployedseed>
+    <deployedseed>1329142294</deployedseed>
+    <deployedseed>1609631998</deployedseed>
+  </seed_fields>";;;Sebastian F
+2;ter;Termumformung;6;b;Lückentextaufgabe;Lückentextaufgabe b);"/*(a-b)^2=a^2-2*a*b+b^2;*/
+/*(...-b)^2=...-2*a*b+...*/
+
+a:(2+rand(20))*y;
+b:2+rand(20);
+tans:(a-b)^2=a^2-2*a*b+b^2;
+
+c:2*a*b;";"<p>Fülle die Lücken der Gleichung und schreiben die vollständige Gleichung in das Eingabefeld.</p>
+<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( ( ... -{@b@} )^2= ... {@c@}+... \Rightarrow Lösung = {@tans@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Gleichug äquivalent zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>(...-{#b#})^2=...-{#c#}+...</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>538226998</deployedseed>
+    <deployedseed>70844458</deployedseed>
+    <deployedseed>2066944283</deployedseed>
+    <deployedseed>1766278277</deployedseed>
+    <deployedseed>2109854294</deployedseed>
+    <deployedseed>960515928</deployedseed>
+    <deployedseed>831527969</deployedseed>
+    <deployedseed>1128997225</deployedseed>
+    <deployedseed>1182150336</deployedseed>
+    <deployedseed>1990809678</deployedseed>
+    <deployedseed>2101649491</deployedseed>
+    <deployedseed>2122446069</deployedseed>
+    <deployedseed>1080204971</deployedseed>
+    <deployedseed>893669859</deployedseed>
+    <deployedseed>1728324718</deployedseed>
+    <deployedseed>132085302</deployedseed>
+    <deployedseed>1348780787</deployedseed>
+    <deployedseed>1612472321</deployedseed>
+    <deployedseed>122772606</deployedseed>
+    <deployedseed>1185490615</deployedseed>
+  </seed_fields>";;;Sebastian F
+2;ter;Termumformung;6;c;Lückentextaufgabe;Lückentextaufgabe c);"/*( a + b )*( a - b )=a^2-b^2;*/
+/*(...+...)*(...-7*x)=64-...*/
+
+a:2+rand(10);
+b:(2+rand(10))*x;
+tans:(a+b)*(a-b)=a^2-b^2;
+
+c:a^2;";"<p>Fülle die Lücken der Gleichung und schreiben die vollständige Gleichung in das Eingabefeld.</p>
+<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( (...+...)*(...-{@b@}) = {@c@}+... \Rightarrow Lösung = {@tans@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Gleichug äqivalent zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>(...+...)*(...-{#b#})={#c#}-...</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>538226998</deployedseed>
+    <deployedseed>70844458</deployedseed>
+    <deployedseed>2066944283</deployedseed>
+    <deployedseed>1766278277</deployedseed>
+    <deployedseed>2109854294</deployedseed>
+    <deployedseed>960515928</deployedseed>
+    <deployedseed>831527969</deployedseed>
+    <deployedseed>1128997225</deployedseed>
+    <deployedseed>1182150336</deployedseed>
+    <deployedseed>1990809678</deployedseed>
+    <deployedseed>2101649491</deployedseed>
+    <deployedseed>2122446069</deployedseed>
+    <deployedseed>1080204971</deployedseed>
+    <deployedseed>893669859</deployedseed>
+    <deployedseed>1728324718</deployedseed>
+    <deployedseed>132085302</deployedseed>
+    <deployedseed>1348780787</deployedseed>
+    <deployedseed>1612472321</deployedseed>
+    <deployedseed>122772606</deployedseed>
+    <deployedseed>1185490615</deployedseed>
+  </seed_fields>";;;Sebastian F
+2;ter;Termumformung;6;d;Lückentextaufgabe;Lückentextaufgabe d);"/*( x - y )^2=x^2-2*x*y+ y^2;*/
+/*(5*a-...)^2=...-...  +100*b^2;*/
+
+x:(2+rand(10))*a;
+y:(2+rand(10))*b;
+tans:(x-y)^2=x^2-2*x*y+y^2;";"<p>Fülle die Lücken der Gleichung und schreiben die vollständige Gleichung in das Eingabefeld.</p>
+<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( ({@x@}-...)^2=...-...+{@y@} \Rightarrow Lösung = {@tans@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Gleichug äqivalent zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>({#x#}-...)^2=...-...  +{#y#}</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>538226998</deployedseed>
+    <deployedseed>70844458</deployedseed>
+    <deployedseed>2066944283</deployedseed>
+    <deployedseed>1766278277</deployedseed>
+    <deployedseed>2109854294</deployedseed>
+    <deployedseed>960515928</deployedseed>
+    <deployedseed>831527969</deployedseed>
+    <deployedseed>1128997225</deployedseed>
+    <deployedseed>1182150336</deployedseed>
+    <deployedseed>1990809678</deployedseed>
+    <deployedseed>2101649491</deployedseed>
+    <deployedseed>2122446069</deployedseed>
+    <deployedseed>1080204971</deployedseed>
+    <deployedseed>893669859</deployedseed>
+    <deployedseed>1728324718</deployedseed>
+    <deployedseed>132085302</deployedseed>
+    <deployedseed>1348780787</deployedseed>
+    <deployedseed>1612472321</deployedseed>
+    <deployedseed>122772606</deployedseed>
+    <deployedseed>1185490615</deployedseed>
+  </seed_fields>";;;Sebastian F
+2;ter;Termumformung;6;e;Lückentextaufgabe;Lückentextaufgabe e);"/*( a + b )^2=a^2+2*a*b +b^2;*/
+/*(...+...)^2=9*x^2+12*x+...;*/
+
+a:(2+rand(10))*x;
+b:2+rand(10);
+tans:(a+b)^2=a^2+2*a*b+b^2;
+
+c:2*a*b;";"<p>Fülle die Lücken der Gleichung und schreiben die vollständige Gleichung in das Eingabefeld.</p>
+<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( (...+...)^2={@a@}^2+{@c@}+...\Rightarrow Lösung = {@tans@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Gleichug äqivalent zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>(...+...)^2={#a#}^2+{#c#}+...</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>538226998</deployedseed>
+    <deployedseed>70844458</deployedseed>
+    <deployedseed>2066944283</deployedseed>
+    <deployedseed>1766278277</deployedseed>
+    <deployedseed>2109854294</deployedseed>
+    <deployedseed>960515928</deployedseed>
+    <deployedseed>831527969</deployedseed>
+    <deployedseed>1128997225</deployedseed>
+    <deployedseed>1182150336</deployedseed>
+    <deployedseed>1990809678</deployedseed>
+    <deployedseed>2101649491</deployedseed>
+    <deployedseed>2122446069</deployedseed>
+    <deployedseed>1080204971</deployedseed>
+    <deployedseed>893669859</deployedseed>
+    <deployedseed>1728324718</deployedseed>
+    <deployedseed>132085302</deployedseed>
+    <deployedseed>1348780787</deployedseed>
+    <deployedseed>1612472321</deployedseed>
+    <deployedseed>122772606</deployedseed>
+    <deployedseed>1185490615</deployedseed>
+  </seed_fields>";;;Sebastian F
+2;ter;Termumformung;6;f;Lückentextaufgabe;Lückentextaufgabe f);"/*( a - b )^2=a^2   -2*a*b +b^2;*/
+/*(...-...)^2=36*k^4-12*k^2+...;*/
+
+exponent:2+rand(8);
+a:(2+rand(10))*k^exponent;
+b:2+rand(10);
+tans:(a-b)^2=a^2-2*a*b+b^2;
+
+c:a*b;";"<p>Fülle die Lücken der Gleichung und schreiben die vollständige Gleichung in das Eingabefeld.</p>
+<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( (...-...)^2={@a@}-{@c@}+... \Rightarrow Lösung = {@tans@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Gleichug äqivalent zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>(...-...)^2={#a#}-{#c#}+...</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>538226998</deployedseed>
+    <deployedseed>70844458</deployedseed>
+    <deployedseed>2066944283</deployedseed>
+    <deployedseed>1766278277</deployedseed>
+    <deployedseed>2109854294</deployedseed>
+    <deployedseed>960515928</deployedseed>
+    <deployedseed>831527969</deployedseed>
+    <deployedseed>1128997225</deployedseed>
+    <deployedseed>1182150336</deployedseed>
+    <deployedseed>1990809678</deployedseed>
+    <deployedseed>2101649491</deployedseed>
+    <deployedseed>2122446069</deployedseed>
+    <deployedseed>1080204971</deployedseed>
+    <deployedseed>893669859</deployedseed>
+    <deployedseed>1728324718</deployedseed>
+    <deployedseed>132085302</deployedseed>
+    <deployedseed>1348780787</deployedseed>
+    <deployedseed>1612472321</deployedseed>
+    <deployedseed>122772606</deployedseed>
+    <deployedseed>1185490615</deployedseed>
+  </seed_fields>";;;Sebastian F
 2;ter;Termumformung;7;a;Binomische Formeln in Brüchen;Binomische Formeln in Brüche a);"/*Beispielaufgabe: (49*(x+5)^2)/(7*x*(x+5))*/
 rand_1:rand([3,5,7,9]);
 rand_2:rand_1^2;
