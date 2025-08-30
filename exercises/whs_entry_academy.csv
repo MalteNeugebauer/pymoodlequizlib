@@ -12450,6 +12450,528 @@ listFrage_3:[[1,false,""D > 0""], [2,false,""D = 0""], [3,true,""D < 0""]];";"<h
     <deployedseed>1062150962</deployedseed>
     <deployedseed>1220953813</deployedseed>
   </seed_fields>";;;Sebastian F
+7;fun;Funktionen;9;a) - c);Quadratische Funktionen zeichen und analysieren;Funktionen Aufgabe 9;"/*---------------------------Funktionen-----------------------------*/
+
+/*Funktion formatiert eine übergebene Liste von [x=n, x=n+1, ...] zu [n, n+1, ...]*/
+formatiere(l):=block(
+    [result:[]],
+    for i:1 thru length(l) do (
+        result:append(result, [rhs(l[i])])
+    ),
+    result
+);
+
+/*Funktion berechnet die y-Werte der Schnittpunkte der beden Funktion f(x) & g(x)*/
+berechne_SP_yWert(l):=block(
+    [result:[]],
+    for j:1 thru length(l) do block(
+        y_Wert:f([l[j]]),
+        result:append(result, y_Wert)
+    ),
+result
+);
+
+/*Funktion verbindet zwei Listen zu einer, sodass die Indizes paarweise in den Ergebnisliste stehen -> list1:[1,2,3];  list2:[4,5,6]  ->  resultList:[[1,4], [2,5], [3,6]]*/
+mergeList(l1,l2):=block(
+    [result:[]],
+    for i:1 thru length(l1) do block(
+        element_l1:l1[i],
+        element_l2:l2[i],
+        result:append(result, [[element_l1,element_l2]])
+    ),
+result
+);
+
+/*-----------------------------------------------------------------------*/
+
+/*[[a_f,b_f,c_f, a_g, b_g, c_g], ...]*/
+parameter_list:[[1, 1, 0, 1, -1, -4], [2, -3, -2, -2, -1, 2], [1, -2, 0, -1, -4, 4], [1, -1, 0, -1, -3, 4], [2, 1, -2, -2, 1, 2], [1, -2, -1, -1, 1, 4], [1, -2, 4, 1, -4, 0], [1, 1, 0, 1, -3, 0], [-1, 1, 0, 1, -1, -4]];
+
+i:rand_with_step(1, length(parameter_list), 1);
+a_f:parameter_list[i][1];
+b_f:parameter_list[i][2];
+c_f:parameter_list[i][3];
+a_g:parameter_list[i][4];
+b_g:parameter_list[i][5];
+c_g:parameter_list[i][6];
+
+f(x):=a_f*(x+b_f)^2+c_f;
+g(x):=a_g*(x+b_g)^2+c_g;
+
+
+f_x0:f(0);                                   /*Schnittpunkt von f(x) mit y-Achse*/
+g_x0:g(0);                                   /*Schnittpunkt von g(x) mit y-Achse*/
+
+list_f_y0_UNFORMATIERT:realroots(f(x)=0);    /*Schnittpunkt von f(x) mit x-Achse*/
+list_g_y0_UNFORMATIERT:realroots(g(x)=0);    /*Schnittpunkt von f(x) mit x-Achse*/
+
+list_f_y0:formatiere(list_f_y0_UNFORMATIERT);
+list_g_y0:formatiere(list_g_y0_UNFORMATIERT);
+
+
+list_SP_xWert_UNFORMATIERT:realroots(f(x)=g(x));        /*Liste mit x-Werten der Schnittpunkte zwischen f(x) & g(x) -> [x=n, x=n+1, ..]*/
+
+list_SP_xWert:formatiere(list_SP_xWert_UNFORMATIERT);   /*Liste mit x-Werten der Schnittpunkte zwischen f(x) & g(x) -> [n, n+1, ..]*/
+
+list_SP_yWert:berechne_SP_yWert(list_SP_xWert);    /*Liste mit y-Werten der Schnittpunkte zwischen f(x) & g(x) -> [n, n+1, ...]*/
+
+list_SP_xWert_yWert_f_g:mergeList(list_SP_xWert, list_SP_yWert);   /*Liste, welche x- und y-Werte enthält -> [x1, y1, x2, x2, ...];
+
+/*-------------------------Musterlösungen------------------------*/
+
+scheitelpunkt_f_tans:[-b_f, c_f];
+scheitelpunkt_g_tans:[-b_g, c_g];
+
+streckung_f_tans:a_f;
+streckung_g_tans:a_g;
+
+f_x0;
+list_f_y0;
+g_x0;
+list_g_y0;
+
+list_SP_xWert_yWert_f_g;     /*[[s1_x, s1_y], [s2_x, s2_y], ...]*/";"<p>a) Zeichne die beiden Funktionen.</p>
+<p>\(f(x) =\) {@f(x)@};  \(g(x) =\) {@g(x)@}</p>
+<p style=""display: none;"">[[input:ans1]] [[validation:ans1]]</p>
+<p style=""display: none;"">[[input:ans2]] [[validation:ans2]]</p>
+<p style=""display: none;"">[[input:ans3]] [[validation:ans3]]</p>
+<p style=""display: none;"">[[input:ans4]] [[validation:ans4]]</p>
+<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1"" input-ref-ans2 = ""inputans2"" input-ref-ans3 = ""inputans3"" input-ref-ans4 = ""inputans4""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-8, 8, 8, -8], axis: false, grid: true, showNavigation: true, showCopyright: false }); /*Default-Gitter mit axis:false deaktivieren. Sonst Gitter bei jedem zweiten Wert*/ /*Gitter manuell erzeugen: X-Achse mit Gitter bei jedem Wert*/ var xaxis = board.create('axis', [[0,0], [1,0]], { ticks: { drawLabels: true, tickDistance: 1, /*Gitterabstand 1*/ majorHeight: 10, minorTicks: 0 } }); /*Gitter manuell erzeugen: Y-Achse mit Gitter bei jedem Wert*/ var yaxis = board.create('axis', [[0,0], [0,1]], { ticks: { drawLabels: true, tickDistance: 1, majorHeight: 10, minorTicks: 0 } }); var scheitelpunkt_f = board.create('point', [2, 2], { name: 'S1', fixed: false, color: '#003399', size: 4, showInfobox: true, snapToGrid:true }); var scheitelpunkt_g = board.create('point', [-2, -2], { name: 'S2', fixed: false, color: '#8B0000', size: 4, showInfobox: true, snapToGrid:true }); stack_jxg.bind_point(inputans1, scheitelpunkt_f); /*Scheitelpunkt_f an Inputfeld ans1 binden*/ stack_jxg.bind_point(inputans3, scheitelpunkt_g); /*Scheitelpunkt_g an Inputfeld ans3 binden*/ var slider_streckung_f = board.create('slider', [[2,6], [7,6], [-4, 0.25, 4]], { name: 'Streckung f(x)', visible: true, snapWidth: 0.25, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); var slider_streckung_g = board.create('slider', [[-7,6], [-2,6], [-4, -0.25, 4]], { name: 'Streckung g(x)', visible: true, snapWidth: 0.25, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); /*Automatisch generierten Wert RECHTS neben dem Slider ausblenden (Streckung = 'Streckungswert')*/ slider_streckung_f.label.setAttribute({visible: false}); slider_streckung_g.label.setAttribute({visible: false}); /*Eigener Text UNTER dem Slider im Format (Streckung = 'Streckungswert')*/ var text_streckung_f = board.create('text', [ function() { return (slider_streckung_f.point1.X() + slider_streckung_f.point2.X()) / 2; }, function() { return slider_streckung_f.point1.Y() - 0.5; }, function() { return 'Streckung f(x) = ' + slider_streckung_f.Value().toFixed(2); } ], { anchorX: 'middle', anchorY: 'top', fontSize: 14 }); var text_streckung_g = board.create('text', [ function() { return (slider_streckung_g.point1.X() + slider_streckung_g.point2.X()) / 2; }, function() { return slider_streckung_g.point1.Y() - 0.5; }, function() { return 'Streckung g(x) = ' + slider_streckung_g.Value().toFixed(2); } ], { anchorX: 'middle', anchorY: 'top', fontSize: 14 }); stack_jxg.bind_slider(inputans2, slider_streckung_f); /*Slider an Inputfeld ans2 binden*/ stack_jxg.bind_slider(inputans4, slider_streckung_g); /*Slider an Inputfeld ans4 binden*/ var f = function(x) {return slider_streckung_f.Value()*(x-scheitelpunkt_f.X())**2+scheitelpunkt_f.Y(); }; var graph_f = board.create('functiongraph', [f]); var g = function(x) {return slider_streckung_g.Value()*(x-scheitelpunkt_g.X())**2+scheitelpunkt_g.Y(); }; var graph_g = board.create('functiongraph', [g], {strokeColor: '#8B0000'}); [[/jsxgraph]]</p>
+<p>b) Lies ihre Achsenabschnittpunkte ab und bestimme diese jeweils rechnersich.</p>
+<p>\(f(x_0) =\) [[input:ans5]]  \(; y_0 =\) [[input:ans6]]</p>
+<p>[[validation:ans5]] [[validation:ans6]]</p>
+<p>\(g(x_0) =\) [[input:ans7]]  \(; y_0 =\) [[input:ans8]]</p>
+<p>[[validation:ans7]] [[validation:ans8]]</p>
+<p>c) Lies ihre(n) Schnittpunkt(e) miteinander ab und bestimme diesen rechnerisch. <em>Gebe als Ergebnis eine Liste ein, welche alle Schnittpunkte zwischen</em> \(f(x)\) und \(g(x)\) <em>enthält.</em></p>
+<p>[[input:ans9]] [[validation:ans9]] \(\Rightarrow [[S_{1 x-Wert}, S_{1 y-Wert}], [S_{2 x-Wert}, S_{2 y-Wert}], ...]\)</p>";;;<p>[[feedback:prt1]]</p>;"<p>\( f(x_0) = {@f_x0@}; \ y_0 = {@list_f_y0@} \\</p>
+<p>g(x_0) = {@g_x0@}; \ y_0 = {@list_g_y0@} \\</p>
+<p>Liste \ Schnittpunkte = {@list_SP_xWert_yWert_f_g@} \)</p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text><![CDATA[/*
+ans1 -> Scheitelpunkt f(x)
+ans2 -> Streckung f(x)
+ans3 -> Scheitelpunkt g(x)
+ans4 -> Streckung g(x)
+*/
+
+S_xWert_f:ans1[1];    /*x-Wert der Studenteneingabe des Scheitelpunktes von f(x)*/
+S_yWert_f:ans1[2];    /*y-Wert der Studenteneingabe des Scheitelpunktes von f(x)*/
+scheitelpunkt_f_ans:[S_xWert_f, S_yWert_f];
+
+S_xWert_g:ans3[1];    /*x-Wert der Studenteneingabe des Scheitelpunktes von g(x)*/
+S_yWert_g:ans3[2];    /*y-Wert der Studenteneingabe des Scheitelpunktes von g(x)*/
+scheitelpunkt_g_ans:[S_xWert_g, S_yWert_g];
+
+streckung_f_ans:ans2;     /*Streckfaktor des Studenten von f(x)*/
+streckung_g_ans:ans4;     /*Streckfaktor des Studenten von g(x)*/
+
+func_f_ans:=streckung_f*(x+S_xWert_f)+S_yWert_f;  /*f(x) von Student*/
+func_g_ans:=streckung_g*(x+S_xWert_g)+S_yWert_g;  /*g(x) von Student*/]]></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Scheitelpunkt von f(x) korrekt.</description>
+        <answertest>CasEqual</answertest>
+        <sans>scheitelpunkt_f_ans</sans>
+        <tans>scheitelpunkt_f_tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty/>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Der Scheitelpunkt von f(x) ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Streckfaktor von f(x) korrekt.</description>
+        <answertest>CasEqual</answertest>
+        <sans>streckung_f_ans</sans>
+        <tans>streckung_f_tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty/>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Der Streckfaktor von f(x) ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description>Prüfen, ob Scheitelpunkt von g(x) korrekt.</description>
+        <answertest>CasEqual</answertest>
+        <sans>scheitelpunkt_g_ans</sans>
+        <tans>scheitelpunkt_g_tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty/>
+        <truenextnode>3</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>3</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Der Scheitelpunkt von g(x) ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <description>Prüfen, ob Streckfaktor von g(x) korrekt.</description>
+        <answertest>CasEqual</answertest>
+        <sans>streckung_g_ans</sans>
+        <tans>streckung_g_tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty/>
+        <truenextnode>4</truenextnode>
+        <trueanswernote>prt1-4-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>4</falsenextnode>
+        <falseanswernote>prt1-4-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Der Streckfaktor von g(x) ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>4</name>
+        <description>Prüfe, ob x_0 von f(x) korrekt.</description>
+        <answertest>CasEqual</answertest>
+        <sans>ans5</sans>
+        <tans>f_x0</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty/>
+        <truenextnode>5</truenextnode>
+        <trueanswernote>prt1-5-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>5</falsenextnode>
+        <falseanswernote>prt1-5-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>\(x_0\) von \(f(x)\) ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>5</name>
+        <description>Prüfe, ob y_0 von f(x) korrekt.</description>
+        <answertest>CasEqual</answertest>
+        <sans>ans6</sans>
+        <tans>list_f_y0</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty/>
+        <truenextnode>6</truenextnode>
+        <trueanswernote>prt1-6-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>6</falsenextnode>
+        <falseanswernote>prt1-6-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>\(y_0\) von \(f(x)\) von f(x) ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>6</name>
+        <description>Prüfe, ob x_0 von g(x) korrekt</description>
+        <answertest>CasEqual</answertest>
+        <sans>ans7</sans>
+        <tans>g_x0</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty/>
+        <truenextnode>7</truenextnode>
+        <trueanswernote>prt1-7-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>7</falsenextnode>
+        <falseanswernote>prt1-7-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>\(x_0\) von \(g(x)\) ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>7</name>
+        <description>Prüfe, ob y_0 von g(x) korrekt.</description>
+        <answertest>CasEqual</answertest>
+        <sans>ans8</sans>
+        <tans>list_g_y0</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty/>
+        <truenextnode>8</truenextnode>
+        <trueanswernote>prt1-8-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>8</falsenextnode>
+        <falseanswernote>prt1-8-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>\(y_0\) von \(f(x)\) von f(x) ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>8</name>
+        <description>Prüfe, ob Schnittpunkte zwischen f(x) und g(x) korrekt.</description>
+        <answertest>CasEqual</answertest>
+        <sans>ans9</sans>
+        <tans>list_SP_xWert_yWert_f_g</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.2</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-9-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-9-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Die Liste mit Schnittpunkten zwischen f(x) und g(x) ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>scheitelpunkt_f_tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>streckung_f_tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>scheitelpunkt_g_tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans4</name>
+      <type>algebraic</type>
+      <tans>streckung_g_tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans5</name>
+      <type>algebraic</type>
+      <tans>f_x0</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>x1</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans6</name>
+      <type>algebraic</type>
+      <tans>list_f_y0</tans>
+      <boxsize>12</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>[y1, y2, ...]</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans7</name>
+      <type>algebraic</type>
+      <tans>g_x0</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>x1</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans8</name>
+      <type>algebraic</type>
+      <tans>list_g_y0</tans>
+      <boxsize>12</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>[y1, y2, ...]</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans9</name>
+      <type>algebraic</type>
+      <tans>list_SP_xWert_yWert_f_g</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>1403195567</deployedseed>
+    <deployedseed>797791101</deployedseed>
+    <deployedseed>1642295922</deployedseed>
+    <deployedseed>181490906</deployedseed>
+    <deployedseed>1221929367</deployedseed>
+    <deployedseed>1864472024</deployedseed>
+    <deployedseed>882206200</deployedseed>
+    <deployedseed>1969512943</deployedseed>
+    <deployedseed>316643652</deployedseed>
+    <deployedseed>1054478956</deployedseed>
+    <deployedseed>365877281</deployedseed>
+  </seed_fields>";;;Sebastian F
 7;fun;Funktionen;99;a;Funktionsgleichung angeben;Funktion beschreiben – quadratisch_einfache Varianten_DOMAIN_1817680;"avar:rand_with_prohib(-3,3,[0]);
 bvarprep:rand_with_step(-3,3,1);
 bvar:bvarprep/2;
