@@ -11183,6 +11183,420 @@ their_c:ev(rhs(their_eqn),x=0);</text>
       <options/>
     </input>
     ";<seed_fields><deployedseed>1196532218</deployedseed><deployedseed>1030185492</deployedseed><deployedseed>1491859228</deployedseed><deployedseed>2023322506</deployedseed></seed_fields>;;1;2024-08-14
+7;fun;Funktionen;4;a;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 a);"m:rand_with_prohib(-6,6,[0]);
+d:rand_with_step(-8,8,1);
+fkt:m*x+d;
+x_0:round(rhs(solve([m*x+d=0],[x])[1]));   /*gerundete, ganzzahlige Schnittstelle mit x-Achse*/
+S:d;                                /*Schnittstelle mit y-Achse*/
+size:max(abs(x_0),abs(S));          /*Definiert die größe des Koordinatenquadranten*/
+
+if size <= 5 then size:6;           /*Wenn zu kleine Werte für x_0 oder S herauskommen, soll der Auschnitt des Quadranten vergrößert werden*/
+
+if x_0 = 0 and S = 0 then
+    bild:plot(fkt, [x, -(size+2), 2], [y, -(size+2), 2], [xtics, -(size+2), 1, 2], [ytics, -(size+2), 1, 2], [axes, true], grid2d);
+
+if x_0 <= 0 and S < 0 then
+    bild:plot(fkt, [x, -(size+1), 1], [y, -(size+1), 1], [xtics, -(size+1), 1, 1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
+
+if x_0 <= 0 and S > 0 then
+    bild:plot(fkt, [x, -(size+1), 1], [y, -1, size+1], [xtics, -(size+1), 1, 1], [ytics, -1, 1, size+1], [axes, true], grid2d);
+
+if x_0 > 0 and S <= 0 then
+    bild:plot(fkt, [x, -1, size+1], [y, -(size+1), 1], [xtics, -1, 1, size+1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
+
+if x_0 > 0 and S > 0 then
+    bild:plot(fkt, [x, -1, size+1], [y, -1, size+1], [xtics, -1, 1, size], [ytics, -1, 1, size+1], [axes, true], grid2d);
+
+tans:fkt;
+";"<p></p>
+<p>Gib die Funktionsgleichung der folgenden linearen Funktion an.</p>
+<p>{@bild@}</p>
+<p>\(f(x) = \)[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@tans@}</p>
+<p>{@bild@}</p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description/>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>5</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>964870650</deployedseed>
+    <deployedseed>451140076</deployedseed>
+    <deployedseed>1548836190</deployedseed>
+    <deployedseed>1503016976</deployedseed>
+    <deployedseed>233508732</deployedseed>
+    <deployedseed>738294988</deployedseed>
+    <deployedseed>526890043</deployedseed>
+    <deployedseed>246180067</deployedseed>
+    <deployedseed>339012468</deployedseed>
+    <deployedseed>1205999568</deployedseed>
+    <deployedseed>1258224003</deployedseed>
+    <deployedseed>1598415720</deployedseed>
+    <deployedseed>9791960</deployedseed>
+    <deployedseed>183358727</deployedseed>
+    <deployedseed>1629010692</deployedseed>
+    <deployedseed>769907329</deployedseed>
+    <deployedseed>546756702</deployedseed>
+    <deployedseed>398163302</deployedseed>
+    <deployedseed>2034632167</deployedseed>
+    <deployedseed>134787595</deployedseed>
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;4;b;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 b);"m:rand_with_prohib(-6,6,[0]);
+d:rand_with_step(-8,8,1);
+fkt:m*x+d;
+x_0:round(rhs(solve([m*x+d=0],[x])[1]));   /*gerundete, ganzzahlige Schnittstelle mit x-Achse*/
+S:d;                                /*Schnittstelle mit y-Achse*/
+size:max(abs(x_0),abs(S));          /*Definiert die größe des Koordinatenquadranten*/
+
+if size <= 5 then size:6;           /*Wenn zu kleine Werte für x_0 oder S herauskommen, soll der Auschnitt des Quadranten vergrößert werden*/
+
+if x_0 = 0 and S = 0 then
+    bild:plot(fkt, [x, -(size+2), 2], [y, -(size+2), 2], [xtics, -(size+2), 1, 2], [ytics, -(size+2), 1, 2], [axes, true], grid2d);
+
+if x_0 <= 0 and S < 0 then
+    bild:plot(fkt, [x, -(size+1), 1], [y, -(size+1), 1], [xtics, -(size+1), 1, 1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
+
+if x_0 <= 0 and S > 0 then
+    bild:plot(fkt, [x, -(size+1), 1], [y, -1, size+1], [xtics, -(size+1), 1, 1], [ytics, -1, 1, size+1], [axes, true], grid2d);
+
+if x_0 > 0 and S <= 0 then
+    bild:plot(fkt, [x, -1, size+1], [y, -(size+1), 1], [xtics, -1, 1, size+1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
+
+if x_0 > 0 and S > 0 then
+    bild:plot(fkt, [x, -1, size+1], [y, -1, size+1], [xtics, -1, 1, size], [ytics, -1, 1, size+1], [axes, true], grid2d);
+
+
+
+tans:fkt;
+";"<p></p>
+<p>Gib die Funktionsgleichung der folgenden linearen Funktion an.</p>
+<p>{@bild@}</p>
+<p>\(f(x) = \)[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@tans@}</p>
+<p>{@bild@}</p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description/>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>5</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>964870650</deployedseed>
+    <deployedseed>451140076</deployedseed>
+    <deployedseed>1548836190</deployedseed>
+    <deployedseed>1503016976</deployedseed>
+    <deployedseed>233508732</deployedseed>
+    <deployedseed>738294988</deployedseed>
+    <deployedseed>526890043</deployedseed>
+    <deployedseed>246180067</deployedseed>
+    <deployedseed>339012468</deployedseed>
+    <deployedseed>1205999568</deployedseed>
+    <deployedseed>1258224003</deployedseed>
+    <deployedseed>1598415720</deployedseed>
+    <deployedseed>9791960</deployedseed>
+    <deployedseed>183358727</deployedseed>
+    <deployedseed>1629010692</deployedseed>
+    <deployedseed>769907329</deployedseed>
+    <deployedseed>546756702</deployedseed>
+    <deployedseed>398163302</deployedseed>
+    <deployedseed>2034632167</deployedseed>
+    <deployedseed>134787595</deployedseed>
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;4;c;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 c);"m:rand_with_prohib(-6,6,[0]);
+d:rand_with_step(-8,8,1);
+fkt:m*x+d;
+x_0:round(rhs(solve([m*x+d=0],[x])[1]));   /*gerundete, ganzzahlige Schnittstelle mit x-Achse*/
+S:d;                                /*Schnittstelle mit y-Achse*/
+size:max(abs(x_0),abs(S));          /*Definiert die größe des Koordinatenquadranten*/
+
+if size <= 5 then size:6;           /*Wenn zu kleine Werte für x_0 oder S herauskommen, soll der Auschnitt des Quadranten vergrößert werden*/
+
+if x_0 = 0 and S = 0 then
+    bild:plot(fkt, [x, -(size+2), 2], [y, -(size+2), 2], [xtics, -(size+2), 1, 2], [ytics, -(size+2), 1, 2], [axes, true], grid2d);
+
+if x_0 <= 0 and S < 0 then
+    bild:plot(fkt, [x, -(size+1), 1], [y, -(size+1), 1], [xtics, -(size+1), 1, 1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
+
+if x_0 <= 0 and S > 0 then
+    bild:plot(fkt, [x, -(size+1), 1], [y, -1, size+1], [xtics, -(size+1), 1, 1], [ytics, -1, 1, size+1], [axes, true], grid2d);
+
+if x_0 > 0 and S <= 0 then
+    bild:plot(fkt, [x, -1, size+1], [y, -(size+1), 1], [xtics, -1, 1, size+1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
+
+if x_0 > 0 and S > 0 then
+    bild:plot(fkt, [x, -1, size+1], [y, -1, size+1], [xtics, -1, 1, size], [ytics, -1, 1, size+1], [axes, true], grid2d);
+
+
+
+tans:fkt;
+";"<p></p>
+<p>Gib die Funktionsgleichung der folgenden linearen Funktion an.</p>
+<p>{@bild@}</p>
+<p>\(f(x) = \)[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@tans@}</p>
+<p>{@bild@}</p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description/>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>5</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>964870650</deployedseed>
+    <deployedseed>451140076</deployedseed>
+    <deployedseed>1548836190</deployedseed>
+    <deployedseed>1503016976</deployedseed>
+    <deployedseed>233508732</deployedseed>
+    <deployedseed>738294988</deployedseed>
+    <deployedseed>526890043</deployedseed>
+    <deployedseed>246180067</deployedseed>
+    <deployedseed>339012468</deployedseed>
+    <deployedseed>1205999568</deployedseed>
+    <deployedseed>1258224003</deployedseed>
+    <deployedseed>1598415720</deployedseed>
+    <deployedseed>9791960</deployedseed>
+    <deployedseed>183358727</deployedseed>
+    <deployedseed>1629010692</deployedseed>
+    <deployedseed>769907329</deployedseed>
+    <deployedseed>546756702</deployedseed>
+    <deployedseed>398163302</deployedseed>
+    <deployedseed>2034632167</deployedseed>
+    <deployedseed>134787595</deployedseed>
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;4;d;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 d);"m:rand_with_prohib(-6,6,[0]);
+d:rand_with_step(-8,8,1);
+fkt:m*x+d;
+x_0:round(rhs(solve([m*x+d=0],[x])[1]));   /*gerundete, ganzzahlige Schnittstelle mit x-Achse*/
+S:d;                                /*Schnittstelle mit y-Achse*/
+size:max(abs(x_0),abs(S));          /*Definiert die größe des Koordinatenquadranten*/
+
+if size <= 5 then size:6;           /*Wenn zu kleine Werte für x_0 oder S herauskommen, soll der Auschnitt des Quadranten vergrößert werden*/
+
+if x_0 = 0 and S = 0 then
+    bild:plot(fkt, [x, -(size+2), 2], [y, -(size+2), 2], [xtics, -(size+2), 1, 2], [ytics, -(size+2), 1, 2], [axes, true], grid2d);
+
+if x_0 <= 0 and S < 0 then
+    bild:plot(fkt, [x, -(size+1), 1], [y, -(size+1), 1], [xtics, -(size+1), 1, 1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
+
+if x_0 <= 0 and S > 0 then
+    bild:plot(fkt, [x, -(size+1), 1], [y, -1, size+1], [xtics, -(size+1), 1, 1], [ytics, -1, 1, size+1], [axes, true], grid2d);
+
+if x_0 > 0 and S <= 0 then
+    bild:plot(fkt, [x, -1, size+1], [y, -(size+1), 1], [xtics, -1, 1, size+1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
+
+if x_0 > 0 and S > 0 then
+    bild:plot(fkt, [x, -1, size+1], [y, -1, size+1], [xtics, -1, 1, size], [ytics, -1, 1, size+1], [axes, true], grid2d);
+
+
+
+tans:fkt;
+";"<p></p>
+<p>Gib die Funktionsgleichung der folgenden linearen Funktion an.</p>
+<p>{@bild@}</p>
+<p>\(f(x) = \)[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@tans@}</p>
+<p>{@bild@}</p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description/>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>5</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>964870650</deployedseed>
+    <deployedseed>451140076</deployedseed>
+    <deployedseed>1548836190</deployedseed>
+    <deployedseed>1503016976</deployedseed>
+    <deployedseed>233508732</deployedseed>
+    <deployedseed>738294988</deployedseed>
+    <deployedseed>526890043</deployedseed>
+    <deployedseed>246180067</deployedseed>
+    <deployedseed>339012468</deployedseed>
+    <deployedseed>1205999568</deployedseed>
+    <deployedseed>1258224003</deployedseed>
+    <deployedseed>1598415720</deployedseed>
+    <deployedseed>9791960</deployedseed>
+    <deployedseed>183358727</deployedseed>
+    <deployedseed>1629010692</deployedseed>
+    <deployedseed>769907329</deployedseed>
+    <deployedseed>546756702</deployedseed>
+    <deployedseed>398163302</deployedseed>
+    <deployedseed>2034632167</deployedseed>
+    <deployedseed>134787595</deployedseed>
+  </seed_fields>";;;Sebastian F
 7;fun;Funktionen;99;a;Funktionsgleichung angeben;Funktion beschreiben – quadratisch_einfache Varianten_DOMAIN_1817680;"avar:rand_with_prohib(-3,3,[0]);
 bvarprep:rand_with_step(-3,3,1);
 bvar:bvarprep/2;
