@@ -10281,6 +10281,255 @@ ta:(-b1*k1-b2*k2)/(b1*cf1+b2*cf2);";"<p>Lösen Sie die Gleichung nach {@v@} auf:
 <options></options>
 </input>
 ";<seed_fields><deployedseed>1344828444</deployedseed><deployedseed>1088226565</deployedseed><deployedseed>1728147521</deployedseed><deployedseed>1319613055</deployedseed></seed_fields>;;0;2024-08-14
+7;fun;Funktionen;2;2I;Koordinatenlücken berechnen;Funktionen Aufgabe 2.1;"a:2+rand(20);                                  /*Steigung*/
+b:2+rand(20);                                  /*y-Achsenabschnitt*/
+fkt:y=a*x+b;                                   /*Funktion*/
+
+cx1:rand_with_step(-20,20,1);                  /*x1-Koordinate*/
+cx2:rand_with_prohib(-20,20,[cx1]);            /*x2-Koordinate*/
+cx3:rand_with_prohib(-20,20,[cx1,cx2]);        /*x3-Koordinate*/
+cx4:rand_with_prohib(-20,20,[cx1,cx2,cx3]);    /*x4-Koordinate*/
+
+cy1:a*cx1+b;                                   /*y1-Koordinate*/
+cy2:a*cx2+b;                                   /*y2-Koordinate*/
+cy3:a*cx3+b;                                   /*y3-Koordinate*/
+cy4:a*cx4+b;                                   /*y4-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
+<p>a) \(A({@cx1@}|y)\)</p>
+<p>     y= [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>
+<p>b) \(B({@cx2@}|y)\)</p>
+<p>     y= [[input:ans2]] [[validation:ans2]] [[feedback:prt2]]</p>
+<p>c) \(C(x|{@cy3@})\)</p>
+<p>     y= [[input:ans3]] [[validation:ans3]] [[feedback:prt3]]</p>
+<p>d) \(D(x|{@cy4@})\)</p>
+<p>     y= [[input:ans4]] [[validation:ans4]] [[feedback:prt4]]</p>";;;;"<p>{@fkt@} <span style=""font-size: 12.0pt; line-height: 107%;"">\[\Rightarrow\]</span> \(A({@cx1@}|{@cy1@})\); \(B({@cx2@}|{@cy2@})\); \(C({@cx3@}|{@cy3@})\); \(D({@cx4@}|{@cy4@})\)</p>";0;"<prt_fields><prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob x1 genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>cy1</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt2</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob x2 genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans2</sans>
+        <tans>cy2</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt2-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt3</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob x3 genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans3</sans>
+        <tans>cy3</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt3-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt4</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob x4 genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans4</sans>
+        <tans>cy4</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt4-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt4-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    </prt_fields>";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>cy1</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>cy2</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>cy3</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans4</name>
+      <type>algebraic</type>
+      <tans>cy4</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>1775133776</deployedseed>
+    <deployedseed>663315207</deployedseed>
+    <deployedseed>936737429</deployedseed>
+    <deployedseed>1131591441</deployedseed>
+    <deployedseed>1399303701</deployedseed>
+    <deployedseed>463990519</deployedseed>
+    <deployedseed>1541751019</deployedseed>
+    <deployedseed>346459341</deployedseed>
+    <deployedseed>457914396</deployedseed>
+    <deployedseed>135597021</deployedseed>
+    <deployedseed>1048996637</deployedseed>
+    <deployedseed>1697910755</deployedseed>
+    <deployedseed>1748341038</deployedseed>
+    <deployedseed>1608684216</deployedseed>
+    <deployedseed>239448328</deployedseed>
+    <deployedseed>417758011</deployedseed>
+    <deployedseed>1721898157</deployedseed>
+    <deployedseed>115893547</deployedseed>
+    <deployedseed>231806336</deployedseed>
+    <deployedseed>1048059925</deployedseed>
+  </seed_fields>";;;Sebastian F
 7;fun;Funktionen;3;a;Graphen zeichnen;NEU Gerade zeichnen und Ns angeben_einfach_HS BO DigiTeach;"m:rand([1,-1])*rand([2,3,4,1/2,1/3,1/4]);
 c:rand_with_prohib(-5,5,[0]);
 eqn:y=m*x+c;
