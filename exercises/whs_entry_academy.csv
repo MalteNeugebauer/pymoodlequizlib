@@ -10281,7 +10281,7 @@ ta:(-b1*k1-b2*k2)/(b1*cf1+b2*cf2);";"<p>Lösen Sie die Gleichung nach {@v@} auf:
 <options></options>
 </input>
 ";<seed_fields><deployedseed>1344828444</deployedseed><deployedseed>1088226565</deployedseed><deployedseed>1728147521</deployedseed><deployedseed>1319613055</deployedseed></seed_fields>;;0;2024-08-14
-7;fun;Funktionen;2;2I;Koordinatenlücken berechnen;Funktionen Aufgabe 2.1;"a:2+rand(20);                                  /*Steigung*/
+7;fun;Funktionen;2;2I;Koordinatenlücken berechnen - Funktion bestimmen & analysieren;Funktionen Aufgabe 2.1;"a:2+rand(20);                                  /*Steigung*/
 b:2+rand(20);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
 
@@ -10529,6 +10529,251 @@ cy4:a*cx4+b;                                   /*y4-Koordinate*/";"<p>Bestimme d
     <deployedseed>115893547</deployedseed>
     <deployedseed>231806336</deployedseed>
     <deployedseed>1048059925</deployedseed>
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;2;2II;Koordinatenlücken berechnen - Funktion bestimmen & analysieren;Funktionen Aufgabe 2.2;"m:rand_with_prohib(-10,10,[0]);         /* Steigung */
+c:rand_with_prohib(-10,10,[0]);         /* y-Achsenabschnitt */
+fkt:m*x+c;                              /* Funktionsterm */
+
+/*x-Werte:*/
+x1:rand_with_step(-10,10,1);
+x2:rand_with_prohib(-10,10,[x1]);
+x3:rand_with_prohib(-10,10,[x1,x2]);
+x4:rand_with_prohib(-10,10,[x1,x2,x3]);
+/*y-Werte:*/
+y1:m*x1+c;
+y2:m*x2+c;
+y3:m*x3+c;
+y4:m*x4+c;
+
+/*Aufsteigend geordnete Liste mit Koordinaten:*/
+list_coordinate:sort([[x1,y1],[x2,y2],[x3,y3],[x4,y4]]);
+
+/*Teilaufgabe a)*/
+tans1:m;
+
+/*Teilaufgabe b)*/
+tans2:rhs(solve([y1=m*x1+d],[d])[1]);
+
+/*Teilaufgabe c)*/
+tans3:fkt;
+
+/*Teilaufgabe d)*/
+tans4:rhs(solve([0=m*x+c],[x])[1]);";"<p>Tragen Sie die gegebenen Werte in ein Koordinatensystem ein und zeichnen Sie den Graphen der Funktion.</p>
+<table style=""border-collapse: collapse; width: 100%; border-width: 1px; margin-left: auto; margin-right: auto;"" border=""1""><colgroup><col style=""width: 19.9138%;""><col style=""width: 20.1724%;""><col style=""width: 20.0431%;""><col style=""width: 20.0431%;""><col style=""width: 19.7845%;""></colgroup>
+<tbody>
+<tr>
+<td> </td>
+<td style=""text-align: center;""><strong>\(P_1\)</strong></td>
+<td style=""text-align: center;""><strong>\(P_2\)</strong></td>
+<td style=""text-align: center;""><strong>\(P_3\)</strong></td>
+<td style=""text-align: center;""><strong>\(P_4\)</strong></td>
+</tr>
+<tr>
+<td style=""text-align: left;"">
+<h4>x</h4>
+</td>
+<td style=""text-align: center;"">{@list_coordinate[1][1]@}</td>
+<td style=""text-align: center;"">{@list_coordinate[2][1]@}</td>
+<td style=""text-align: center;""> </td>
+<td style=""text-align: center;""> </td>
+</tr>
+<tr>
+<td style=""text-align: left;"">
+<h4>y</h4>
+</td>
+<td style=""text-align: center;""> </td>
+<td style=""text-align: center;""> </td>
+<td style=""text-align: center;"">{@list_coordinate[3][2]@}</td>
+<td style=""text-align: center;"">{@list_coordinate[4][2]@}</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>a) Lies den Schnittpunkt des Graphen mit der y-Achse ab.</p>
+<p>    \(S\) = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>
+<p></p>
+<p>b) Gib die Steigung der Geraden an.</p>
+<p>    \(m\) = [[input:ans2]] [[validation:ans2]] [[feedback:prt2]]</p>
+<p></p>
+<p><em>Was fällt dir auf, wenn du die ergebniss von a) und b) betrachtest?</em></p>
+<p></p>
+<p>c) Bestimme die Nullstelle grafisch und rechnerisch.</p>
+<p>    \(f(x_0)\) = [[input:ans3]] [[validation:ans3]] [[feedback:prt3]]</p>";;;;"<p>\(f(x)\) = {@fkt@};  \(y\) = {@tans1@};   \(m\) = {@tans2@};   \(x_0\) = {@tans4@}</p>";0;"<prt_fields><prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob m-Eingabe äquivalent zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans1</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt2</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob y-Achsenab.-Eingabe äquivalent zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans2</sans>
+        <tans>tans2</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt2-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt3</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob f(x)-Eingabe genau wie Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans3</sans>
+        <tans>tans3</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt3-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    </prt_fields>";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans1</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options>allowempty</options>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>tans2</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>tans3</tans>
+      <boxsize>10</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>358156695</deployedseed>
+    <deployedseed>762892795</deployedseed>
+    <deployedseed>153255654</deployedseed>
+    <deployedseed>163497262</deployedseed>
+    <deployedseed>402276236</deployedseed>
+    <deployedseed>1458242895</deployedseed>
+    <deployedseed>1892104102</deployedseed>
+    <deployedseed>1172997271</deployedseed>
+    <deployedseed>258628054</deployedseed>
+    <deployedseed>726268769</deployedseed>
+    <deployedseed>1442164725</deployedseed>
+    <deployedseed>1850291302</deployedseed>
+    <deployedseed>1397666660</deployedseed>
+    <deployedseed>518797683</deployedseed>
+    <deployedseed>11293092</deployedseed>
+    <deployedseed>450721719</deployedseed>
+    <deployedseed>1476444701</deployedseed>
+    <deployedseed>2117132671</deployedseed>
+    <deployedseed>1438350113</deployedseed>
+    <deployedseed>1317863422</deployedseed>
   </seed_fields>";;;Sebastian F
 7;fun;Funktionen;3;a;Graphen zeichnen;NEU Gerade zeichnen und Ns angeben_einfach_HS BO DigiTeach;"m:rand([1,-1])*rand([2,3,4,1/2,1/3,1/4]);
 c:rand_with_prohib(-5,5,[0]);
