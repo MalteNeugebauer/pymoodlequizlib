@@ -12972,6 +12972,508 @@ func_g_ans:=streckung_g*(x+S_xWert_g)+S_yWert_g;  /*g(x) von Student*/]]></text>
     <deployedseed>1054478956</deployedseed>
     <deployedseed>365877281</deployedseed>
   </seed_fields>";;;Sebastian F
+7;fun;Funktionen;10;a;Quadratische Funkion Zeichen;Funktionen Aufgabe 10 a);;"<p>Skizziere die quadratische Funktion in ein passendes Koordinatensystem mit folgenden Eigenschaften:</p>
+<p>a) nach unten geöffnet, gestaucht, mit zwei Nullstellen.</p>
+<p style=""display: none;"">[[input:ans1]] [[validation:ans1]]</p>
+<p style=""display: none;"">[[input:ans2]] [[validation:ans2]]</p>
+<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1"" input-ref-ans2 = ""inputans2""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-10, 10, 10, -10], axis: false, grid: true, showNavigation: false, showCopyright: false }); /*Default-Gitter mit axis:false deaktivieren. Sonst Gitter bei jedem zweiten Wert*/ /*Gitter manuell erzeugen: X-Achse mit Gitter bei jedem Wert*/ var xaxis = board.create('axis', [[0,0], [1,0]], { ticks: { drawLabels: true, tickDistance: 1, /*Gitterabstand 1*/ majorHeight: 10, minorTicks: 0 } }); /*Gitter manuell erzeugen: Y-Achse mit Gitter bei jedem Wert*/ var yaxis = board.create('axis', [[0,0], [0,1]], { ticks: { drawLabels: true, tickDistance: 1, majorHeight: 10, minorTicks: 0 } }); var scheitelpunkt = board.create('point', [0, 0], { name: 'S', fixed: false, color: '#003399', size: 4, showInfobox: true, snapToGrid:true }); stack_jxg.bind_point(inputans1, scheitelpunkt); /*Scheitelpunkt an Inputfeld ans1 binden*/ var slider_streckung = board.create('slider', [[2,6], [7,6], [-4, 0.25, 4]], { name: '', visible: true, snapWidth: 0.25, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); /*Automatisch generierten Wert RECHTS neben dem Slider ausblenden (Streckung = 'Streckungswert')*/ slider_streckung.label.setAttribute({visible: false}); /*Eigener Text UNTER dem Slider im Format (Streckung = 'Streckungswert')*/ var text_steigung = board.create('text', [ function() { return (slider_streckung.point1.X() + slider_streckung.point2.X()) / 2; }, function() { return slider_streckung.point1.Y() - 0.5; }, function() { return 'Streckung = ' + slider_streckung.Value().toFixed(2); } ], { anchorX: 'middle', anchorY: 'top', fontSize: 14 }); stack_jxg.bind_slider(inputans2, slider_streckung); /*Slider an Inputfeld ans2 binden*/ var f = function(x) {return slider_streckung.Value()*(x-scheitelpunkt.X())**2+scheitelpunkt.Y(); }; var graph = board.create('functiongraph', [f]); [[/jsxgraph]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@ta1@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text><![CDATA[ans1_Sx:ans1[1];                                      /*x-Koordinate des Scheitelpunktes*/
+ans1_Sy:ans1[2];                                      /*y-Koordnate des Scheitelpunktes*/
+ans_Funktion:ans2*(x-ans1_Sx)^2+ans1_Sy;              /*Funktion, welche die Studenten mit JSX zeichen.*/
+
+ist_steigung_negativ:is(ans2<0);                      /*tans1*/
+ist_gestaucht:is(ans2>-1 and ans2<1);                 /*tans2*/
+
+hat_zwei_NS:is(length(realroots(ans_Funktion)) = 2);  /*tans3*/]]></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Funktion nach unten geöffnet ist.</description>
+        <answertest>CasEqual</answertest>
+        <sans>ist_steigung_negativ</sans>
+        <tans>true</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.3</truescore>
+        <truepenalty/>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Öffnung ist korrekt.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Öffnung ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfe, ob Funktion gestaucht ist.</description>
+        <answertest>CasEqual</answertest>
+        <sans>ist_gestaucht</sans>
+        <tans>true</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.4</truescore>
+        <truepenalty/>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Stauchung ist korrekt.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Stauchung ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description>Prüfe, ob Funktion zwei Nullstellen hat.</description>
+        <answertest>CasEqual</answertest>
+        <sans>hat_zwei_NS</sans>
+        <tans>true</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.3</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Nullstellen sind korrekt.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Nullstellen sind nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  ";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>[0,2]</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>-0.5</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";;;;Sebastian F
+7;fun;Funktionen;10;b;Quadratische Funkion Zeichen;Funktionen Aufgabe 10 b);;"<p>Skizziere die quadratische Funktion in ein passendes Koordinatensystem mit folgenden Eigenschaften:</p>
+<p>a) nach oben geöffnet, gestreckt, mit einer Nullstelle.</p>
+<p style=""display: none;"">[[input:ans1]] [[validation:ans1]]</p>
+<p style=""display: none;"">[[input:ans2]] [[validation:ans2]]</p>
+<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1"" input-ref-ans2 = ""inputans2""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-10, 10, 10, -10], axis: false, grid: true, showNavigation: false, showCopyright: false }); /*Default-Gitter mit axis:false deaktivieren. Sonst Gitter bei jedem zweiten Wert*/ /*Gitter manuell erzeugen: X-Achse mit Gitter bei jedem Wert*/ var xaxis = board.create('axis', [[0,0], [1,0]], { ticks: { drawLabels: true, tickDistance: 1, /*Gitterabstand 1*/ majorHeight: 10, minorTicks: 0 } }); /*Gitter manuell erzeugen: Y-Achse mit Gitter bei jedem Wert*/ var yaxis = board.create('axis', [[0,0], [0,1]], { ticks: { drawLabels: true, tickDistance: 1, majorHeight: 10, minorTicks: 0 } }); var scheitelpunkt = board.create('point', [0, 0], { name: 'S', fixed: false, color: '#003399', size: 4, showInfobox: true, snapToGrid:true }); stack_jxg.bind_point(inputans1, scheitelpunkt); /*Scheitelpunkt an Inputfeld ans1 binden*/ var slider_streckung = board.create('slider', [[2,6], [7,6], [-4, 0.25, 4]], { name: '', visible: true, snapWidth: 0.25, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); /*Automatisch generierten Wert RECHTS neben dem Slider ausblenden (Streckung = 'Streckungswert')*/ slider_streckung.label.setAttribute({visible: false}); /*Eigener Text UNTER dem Slider im Format (Streckung = 'Streckungswert')*/ var text_steigung = board.create('text', [ function() { return (slider_streckung.point1.X() + slider_streckung.point2.X()) / 2; }, function() { return slider_streckung.point1.Y() - 0.5; }, function() { return 'Streckung = ' + slider_streckung.Value().toFixed(2); } ], { anchorX: 'middle', anchorY: 'top', fontSize: 14 }); stack_jxg.bind_slider(inputans2, slider_streckung); /*Slider an Inputfeld ans2 binden*/ var f = function(x) {return slider_streckung.Value()*(x-scheitelpunkt.X())**2+scheitelpunkt.Y(); }; var graph = board.create('functiongraph', [f]); [[/jsxgraph]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@ta1@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text><![CDATA[ans1_Sx:ans1[1];                                      /*x-Koordinate des Scheitelpunktes*/
+ans1_Sy:ans1[2];                                      /*y-Koordnate des Scheitelpunktes*/
+ans_Funktion:ans2*(x-ans1_Sx)^2+ans1_Sy;              /*Funktion, welche die Studenten mit JSX zeichen.*/
+
+ist_steigung_positiv:is(ans2>0);                      /*tans1*/
+ist_gestreckt:is(ans2<-1 or ans2>1);                  /*tans2*/
+
+hat_eine_NS:is(length(realroots(ans_Funktion)) = 1);  /*tans3*/]]></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Funktion nach oben geöffnet ist.</description>
+        <answertest>CasEqual</answertest>
+        <sans>ist_steigung_positiv</sans>
+        <tans>true</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.3</truescore>
+        <truepenalty/>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Öffnung ist korrekt.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Öffnung ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfe, ob Funktion gestreckt ist.</description>
+        <answertest>CasEqual</answertest>
+        <sans>ist_gestreckt</sans>
+        <tans>true</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.4</truescore>
+        <truepenalty/>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Streckung ist korrekt.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Streckung ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description>Prüfe, ob Funktion eine Nullstelle hat.</description>
+        <answertest>CasEqual</answertest>
+        <sans>hat_eine_NS</sans>
+        <tans>true</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.3</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Nullstellen sind korrekt.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Nullstellen sind nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  ";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>[0,0]</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>2</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";;;;Sebastian F
+7;fun;Funktionen;10;c;Quadratische Funkion Zeichen;Funktionen Aufgabe 10 c);;"<p>Skizziere die quadratische Funktion in ein passendes Koordinatensystem mit folgenden Eigenschaften:</p>
+<p>a) nach unten geöffnet, gestreckt, ohne Nullstelle.</p>
+<p style=""display: none;"">[[input:ans1]] [[validation:ans1]]</p>
+<p style=""display: none;"">[[input:ans2]] [[validation:ans2]]</p>
+<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1"" input-ref-ans2 = ""inputans2""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-10, 10, 10, -10], axis: false, grid: true, showNavigation: false, showCopyright: false }); /*Default-Gitter mit axis:false deaktivieren. Sonst Gitter bei jedem zweiten Wert*/ /*Gitter manuell erzeugen: X-Achse mit Gitter bei jedem Wert*/ var xaxis = board.create('axis', [[0,0], [1,0]], { ticks: { drawLabels: true, tickDistance: 1, /*Gitterabstand 1*/ majorHeight: 10, minorTicks: 0 } }); /*Gitter manuell erzeugen: Y-Achse mit Gitter bei jedem Wert*/ var yaxis = board.create('axis', [[0,0], [0,1]], { ticks: { drawLabels: true, tickDistance: 1, majorHeight: 10, minorTicks: 0 } }); var scheitelpunkt = board.create('point', [0, 0], { name: 'S', fixed: false, color: '#003399', size: 4, showInfobox: true, snapToGrid:true }); stack_jxg.bind_point(inputans1, scheitelpunkt); /*Scheitelpunkt an Inputfeld ans1 binden*/ var slider_streckung = board.create('slider', [[2,6], [7,6], [-4, 0.25, 4]], { name: '', visible: true, snapWidth: 0.25, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); /*Automatisch generierten Wert RECHTS neben dem Slider ausblenden (Streckung = 'Streckungswert')*/ slider_streckung.label.setAttribute({visible: false}); /*Eigener Text UNTER dem Slider im Format (Streckung = 'Streckungswert')*/ var text_steigung = board.create('text', [ function() { return (slider_streckung.point1.X() + slider_streckung.point2.X()) / 2; }, function() { return slider_streckung.point1.Y() - 0.5; }, function() { return 'Streckung = ' + slider_streckung.Value().toFixed(2); } ], { anchorX: 'middle', anchorY: 'top', fontSize: 14 }); stack_jxg.bind_slider(inputans2, slider_streckung); /*Slider an Inputfeld ans2 binden*/ var f = function(x) {return slider_streckung.Value()*(x-scheitelpunkt.X())**2+scheitelpunkt.Y(); }; var graph = board.create('functiongraph', [f]); [[/jsxgraph]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@ta1@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text><![CDATA[ans1_Sx:ans1[1];                                      /*x-Koordinate des Scheitelpunktes*/
+ans1_Sy:ans1[2];                                      /*y-Koordnate des Scheitelpunktes*/
+ans_Funktion:ans2*(x-ans1_Sx)^2+ans1_Sy;              /*Funktion, welche die Studenten mit JSX zeichen.*/
+
+ist_steigung_negativ:is(ans2<0);                      /*tans1*/
+ist_gestreckt:is(ans2<-1 or ans2>1);                  /*tans2*/
+
+hat_keine_NS:is(length(realroots(ans_Funktion)) = 0);  /*tans3*/]]></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Funktion nach unten geöffnet ist.</description>
+        <answertest>CasEqual</answertest>
+        <sans>ist_steigung_negativ</sans>
+        <tans>true</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.3</truescore>
+        <truepenalty/>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Öffnung ist korrekt.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Öffnung ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfe, ob Funktion gestreckt ist.</description>
+        <answertest>CasEqual</answertest>
+        <sans>ist_gestreckt</sans>
+        <tans>true</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.4</truescore>
+        <truepenalty/>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Streckung ist korrekt.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Streckung ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description>Prüfe, ob Funktion keine Nullstellen hat.</description>
+        <answertest>CasEqual</answertest>
+        <sans>hat_keine_NS</sans>
+        <tans>true</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.3</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Nullstellen sind korrekt.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Nullstellen sind nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  ";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>[4,-2]</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>-2</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";;;;Sebastian F
+7;fun;Funktionen;10;d;Quadratische Funkion Zeichen;Funktionen Aufgabe 10 d);;"<p>Skizziere die quadratische Funktion in ein passendes Koordinatensystem mit folgenden Eigenschaften:</p>
+<p>a) Normalparabel ohne Nullstelle.</p>
+<p style=""display: none;"">[[input:ans1]] [[validation:ans1]]</p>
+<p style=""display: none;"">[[input:ans2]] [[validation:ans2]]</p>
+<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1"" input-ref-ans2 = ""inputans2""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-10, 10, 10, -10], axis: false, grid: true, showNavigation: false, showCopyright: false }); /*Default-Gitter mit axis:false deaktivieren. Sonst Gitter bei jedem zweiten Wert*/ /*Gitter manuell erzeugen: X-Achse mit Gitter bei jedem Wert*/ var xaxis = board.create('axis', [[0,0], [1,0]], { ticks: { drawLabels: true, tickDistance: 1, /*Gitterabstand 1*/ majorHeight: 10, minorTicks: 0 } }); /*Gitter manuell erzeugen: Y-Achse mit Gitter bei jedem Wert*/ var yaxis = board.create('axis', [[0,0], [0,1]], { ticks: { drawLabels: true, tickDistance: 1, majorHeight: 10, minorTicks: 0 } }); var scheitelpunkt = board.create('point', [0, 0], { name: 'S', fixed: false, color: '#003399', size: 4, showInfobox: true, snapToGrid:true }); stack_jxg.bind_point(inputans1, scheitelpunkt); /*Scheitelpunkt an Inputfeld ans1 binden*/ var slider_streckung = board.create('slider', [[2,6], [7,6], [-4, 0.25, 4]], { name: '', visible: true, snapWidth: 0.25, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); /*Automatisch generierten Wert RECHTS neben dem Slider ausblenden (Streckung = 'Streckungswert')*/ slider_streckung.label.setAttribute({visible: false}); /*Eigener Text UNTER dem Slider im Format (Streckung = 'Streckungswert')*/ var text_steigung = board.create('text', [ function() { return (slider_streckung.point1.X() + slider_streckung.point2.X()) / 2; }, function() { return slider_streckung.point1.Y() - 0.5; }, function() { return 'Streckung = ' + slider_streckung.Value().toFixed(2); } ], { anchorX: 'middle', anchorY: 'top', fontSize: 14 }); stack_jxg.bind_slider(inputans2, slider_streckung); /*Slider an Inputfeld ans2 binden*/ var f = function(x) {return slider_streckung.Value()*(x-scheitelpunkt.X())**2+scheitelpunkt.Y(); }; var graph = board.create('functiongraph', [f]); [[/jsxgraph]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@ta1@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>ans1_Sx:ans1[1];                                      /*x-Koordinate des Scheitelpunktes*/
+ans1_Sy:ans1[2];                                      /*y-Koordnate des Scheitelpunktes*/
+ans_Funktion:ans2*(x-ans1_Sx)^2+ans1_Sy;              /*Funktion, welche die Studenten mit JSX zeichen.*/
+
+ist_Normalparabel:is(ans2=-1 or ans2=1);                  /*tans1*/
+
+hat_keine_NS:is(length(realroots(ans_Funktion)) = 0);     /*tans2*/</text>
+      </feedbackvariables>
+      <node>
+        <name>1</name>
+        <description>Prüfe, ob Funktion gestreckt ist.</description>
+        <answertest>CasEqual</answertest>
+        <sans>ist_Normalparabel</sans>
+        <tans>true</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.5</truescore>
+        <truepenalty/>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Streckung/Stauchung ist korrekt.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Es ist keine Normalparabel.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description>Prüfe, ob Funktion keine Nullstellen hat.</description>
+        <answertest>CasEqual</answertest>
+        <sans>hat_keine_NS</sans>
+        <tans>true</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.5</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Nullstellen sind korrekt.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Nullstellen sind nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  ";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>[4,-2]</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>-1</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";;;;Sebastian F
 7;fun;Funktionen;99;a;Funktionsgleichung angeben;Funktion beschreiben – quadratisch_einfache Varianten_DOMAIN_1817680;"avar:rand_with_prohib(-3,3,[0]);
 bvarprep:rand_with_step(-3,3,1);
 bvar:bvarprep/2;
