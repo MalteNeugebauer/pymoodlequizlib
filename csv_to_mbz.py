@@ -9,15 +9,18 @@ Created on Fri Aug  1 12:13:28 2025
 #%% Import modules.
 import stackassessxmllib
 import versions.qv_instant_tutoring as qv_instant_tutoring
+import versions.qv_preview as qv_preview
+import versions.qv_math_magician as qv_math_magician
 import importlib # For reloading modules in development state.
 importlib.reload(stackassessxmllib)
 importlib.reload(qv_instant_tutoring)
+importlib.reload(qv_math_magician)
 
 #%% Main routine
 
 version = qv_instant_tutoring.InstantTutoringTEDRelVersion
 
-Pools = stackassessxmllib.generate_quizzes_mbz_from_file(filepath="exercises/test_exercises.csv", template_path="backup-moodle2-empty-quiz-with-interactive-mode", version=version, exclude_column="already_parsed", delimiter=";")
+Pools = stackassessxmllib.generate_quizzes_mbz_from_file(filepath="exercises/whs_entry_academy.csv", template_path="backup-moodle2-empty-quiz-with-interactive-mode", version=version, exclude_column="already_parsed", delimiter=";")
 
 # Overview of versions
 ## version = None # Moodle Default version.
