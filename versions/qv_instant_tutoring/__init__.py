@@ -108,6 +108,9 @@ def it_version_change_text(**kwargs):
         if name == "":
             continue
 
+        name_replacement = f"{name}_its_replaced"
+        search_sans_name = re.compile(f'{name}')
+
         for input_tans_element in input_element.iterchildren("tans"):
             input_tans_element.text = f"[{input_tans_element.text}]"
 
@@ -115,16 +118,16 @@ def it_version_change_text(**kwargs):
             for node in prt.iterchildren("node"):
                 for sans in node.iterchildren("sans"):
                     if name in sans.text:
-                        regex = re.compile(f'{name}')
-                        sans.text = regex.sub(f"last({name})", sans.text)
+                        sans.text = search_sans_name.sub(name_replacement, sans.text)
                     #else:
                     #    print(f"{name} is not in {sans.text} ({Question.exercise_description})")
             if Question.its_keep_orig_input != 1:
                 for feedbackvariables in prt.iterchildren("feedbackvariables"):
                     for feedbackvariablestext in feedbackvariables.iterchildren("text"):
                         if feedbackvariablestext != None and feedbackvariablestext.text != None:
-                            re_search_anss = re.compile(r'(ans\d*)')
-                            feedbackvariablestext.text = re_search_anss.sub(r'last(\1)', feedbackvariablestext.text)
+                            replace_ans_fields_text = f"/*---Replacing student answer input values to let original code align with equivalence reasoning nature of Instant Tutoring Version---*/\n{name_replacement}:last({name});\n"
+                            feedbackvariablestext.text = search_sans_name.sub(name_replacement, feedbackvariablestext.text)
+                            feedbackvariablestext.text = f"{replace_ans_fields_text}\n{feedbackvariablestext.text}"
     return True
 
 
