@@ -1255,6 +1255,771 @@ tans_alt_3:zaehler/nenner;               /*Für Schreibweise (49*(x+5)^2)/(7*x*(
     <deployedseed>1420867457</deployedseed>
     <deployedseed>1015918047</deployedseed>
   </seed_fields>";;;Sebastian F
+2;ter;Termumformung;7;b;Binomische Formeln in Brüchen;Binomische Formeln in Brüche b);"/*Aufgabenstellung: (rand_2*x*(x-rand_3))/(rand_1*(x+rand_3)*(x-rand_3)) - (x^3*(x+rand_4))/(rand_1*(x+rand_4))*/
+
+/*Randomisierte Faktoren*/
+rand_3:1+rand(10);
+rand_1:1+rand(10);
+rand_2:rand_1+2;
+rand_4:rand_3+1;
+
+/*Zähler:*/
+zaehler_1:rand_2*x*(x-rand_3);
+zaehler_2:x^3*(x+rand_4);
+
+/*Nenner:*/
+nenner_1:rand_1*(x+rand_3)*(x-rand_3);
+nenner_2:rand_1*(x+rand_4)^2;
+
+/*Musterlösung:*/
+bruch_1:zaehler_1/nenner_1;
+bruch_2:zaehler_2/nenner_2;
+tans:ratsimp(bruch_1/bruch_2);  /*-((x*(x^3+x^2-5*x-10))/(3*(x+1)*(x+2)))*/
+
+tans_alt_1:(rand_2*x*(x+rand_4)-x^3*(x+rand_3))/(rand_1*(x+rand_3)*(x+rand_4));
+/*(5*x*(x+2)-x^3*(x+1))/(3*(x+1)*(x+2))*/
+
+common_denom:nenner_1*nenner_2;
+common_numerator:zaehler_1*nenner_2-zaehler_2*nenner_1;
+ergebnis:common_numerator/common_denom;
+tans_alt_2:factor(ratsimp(ergebnis));
+/*-(x*(x^3+x^2-5*x-10))/(3*(x+1)*(x+2)))*/
+
+simp:false;
+tans_alt_3:(rand_2*x*(x-rand_3))/(rand_1*(x+rand_3)*(x-rand_3)) - (x^3*(x+rand_4))/(rand_1*(x+rand_4));";"<p>Berechne und fasse so weit wie möglich zusammen.</p>
+<p>\[\frac{@zaehler_1@}{@nenner_1@} - \frac{@zaehler_2@}{@nenner_2@}\] = [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>tans:{@tans@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Eingabe genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Eingabe genau wie erste alternative Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans_alt_1</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description>Prüfen, ob Eingabe genau wie zweite alternative Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans_alt_2</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>3</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <description>Prüfen, ob Eingabe genau wie Aufgabenstellung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans_alt_3</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-4-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Aufgabenstellung zu kopieren.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>4</falsenextnode>
+        <falseanswernote>prt1-4-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>4</name>
+        <description>Prüfen, ob Eingabe äquivalent zu Musterlösung</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-5-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Das kannst du noch weiter vereinfachen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-5-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>545465809</deployedseed>
+    <deployedseed>496155609</deployedseed>
+    <deployedseed>792008578</deployedseed>
+    <deployedseed>682738805</deployedseed>
+    <deployedseed>1351151943</deployedseed>
+    <deployedseed>1876537158</deployedseed>
+    <deployedseed>1214271924</deployedseed>
+    <deployedseed>907836933</deployedseed>
+    <deployedseed>1560476654</deployedseed>
+    <deployedseed>1571906934</deployedseed>
+    <deployedseed>383658217</deployedseed>
+    <deployedseed>1559162084</deployedseed>
+    <deployedseed>1746370649</deployedseed>
+    <deployedseed>1892808028</deployedseed>
+    <deployedseed>1855753282</deployedseed>
+    <deployedseed>1500912146</deployedseed>
+    <deployedseed>960144946</deployedseed>
+    <deployedseed>1697733594</deployedseed>
+    <deployedseed>1232969504</deployedseed>
+    <deployedseed>1813565323</deployedseed>
+    <deployedseed>63517501</deployedseed>
+    <deployedseed>1327078153</deployedseed>
+    <deployedseed>11636297</deployedseed>
+    <deployedseed>1053728852</deployedseed>
+    <deployedseed>1972215751</deployedseed>
+    <deployedseed>1778254238</deployedseed>
+    <deployedseed>1574205741</deployedseed>
+    <deployedseed>70679468</deployedseed>
+    <deployedseed>1997778098</deployedseed>
+    <deployedseed>406107027</deployedseed>
+  </seed_fields>";;;Sebastian F
+2;ter;Termumformung;7;c;Binomische Formeln in Brüchen;Binomische Formeln in Brüche c);"/*Aufgabenstellung:*/
+/*(rand_1*a-rand_2*b)/(rand_2*c+rand_1*e)*(rand_1*a+rand_2*b)/(rand_3*a^2-rand_4*b^2)*/
+
+/*Randomisierte Ziffern:*/
+rand_1:2+rand(10);
+rand_2:2+rand_1;
+rand_3:rand_1^2;
+rand_4:rand_2^2;
+
+/*Zähler & Nenner:*/
+zaehler_1:rand_1*a-rand_2*b;
+zaehler_2:rand_1*a+rand_2*b;
+nenner_1:rand_2*c+rand_1*e;
+nenner_2:rand_3*a^2-rand_4*b^2;
+
+/*Musterlösung:*/
+tans:expand(zaehler_1*zaehler_2)/(nenner_1*nenner_2);
+
+simp:false;
+tans_copy:((rand_1*a-rand_2*b)/(rand_2*c+rand_1*e))*((rand_1*a+rand_2*b)/(rand_3*a^2-rand_4*b^2));";"<p>Berechne und fasse so weit wie möglich zusammen.</p>
+<p>\[\frac{@zaehler_1@}{@nenner_1@} \cdot \frac{@zaehler_2@}{@nenner_2@}\] = [[input:ans1]] [[validation:ans1]]</p>
+<p></p>";;;<p>[[feedback:prt1]]</p>;<p>tans:{@tans@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>tans_alt:((rand_1*a-rand_2*b)*(rand_1*a+rand_2*b))/((rand_2*c+rand_1*e)*(rand_3*a^2-rand_4*b^2));</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Eingabe genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Eingabe genau wie Aufgabenstellung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans_copy</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>E reicht nicht die Aufgabenstellung zu kopieren.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description>Prüfen, ob Eingabe äquivalent zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.5</truescore>
+        <truepenalty/>
+        <truenextnode>3</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <description>Prüfen, ob Zähler ausmultipliziert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans_alt</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0.6</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-4-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Achte darauf den Zähler auszumultiplizieren.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-4-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>545465809</deployedseed>
+    <deployedseed>496155609</deployedseed>
+    <deployedseed>792008578</deployedseed>
+    <deployedseed>682738805</deployedseed>
+    <deployedseed>1351151943</deployedseed>
+    <deployedseed>1876537158</deployedseed>
+    <deployedseed>1214271924</deployedseed>
+    <deployedseed>907836933</deployedseed>
+    <deployedseed>1560476654</deployedseed>
+    <deployedseed>1571906934</deployedseed>
+    <deployedseed>389972069</deployedseed>
+    <deployedseed>1427697650</deployedseed>
+  </seed_fields>";;;Sebastian F
+2;ter;Termumformung;7;d;Binomische Formeln in Brüchen;Binomische Formeln in Brüche d);"/*Randomisierte Ziffern:*/
+rand_1:rand([4,9,16,25,36,49]);
+rand_2:2*sqrt(rand_1);
+rand_3:1+rand(10);
+rand_4:sqrt(rand_1);
+
+/*Zähler & Nenner:*/
+zaehler_1:a^2+rand_2*a+rand_1;
+zaehler_2:b-rand_1;
+nenner_1:b^2-rand_3;
+nenner_2:a+rand_4;
+
+/*Musterlösung:*/
+tans:(factor(zaehler_1)*zaehler_2)/(nenner_1*nenner_2);
+simp:false;
+tans_alt_1:((a^2+rand_2*a+rand_1)*(b-rand_1))/((b^2-rand_3)*(a+rand_4));
+tans_alt_2:((a+rand_4)^2*(b-rand_1))/((b^2-rand_3)*(a+rand_4));";"<p>Berechne und fasse so weit wie möglich zusammen.</p>
+<p><span lang=""FR"" style=""mso-ansi-language: FR;"">\[\frac{@zaehler_1@}{@nenner_1@} \cdot \frac{@zaehler_2@}{@nenner_2@}\]</span> = [[input:ans1]] [[validation:ans1]]</p>
+<p></p>";;;<p>[[feedback:prt1]]</p>;<p>tans:{@tans@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>0</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Eingabe genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob ein Eingabe äquivalent zur Musterlösung</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.5</truescore>
+        <truepenalty/>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Du kannst noch weiter vereinfachen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description>Prüfen, ob Zähler NICHT faktorisiert</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans_alt_1</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Achte darauf den Zähler zu faktorisieren.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>3</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>3</name>
+        <description>Prüfen, ob NICHT gekürzt</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans_alt_2</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-4-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Du kannst noch weiter kürzen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0.2</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-4-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>24</deployedseed>
+    <deployedseed>514023171</deployedseed>
+    <deployedseed>254078023</deployedseed>
+    <deployedseed>1905064594</deployedseed>
+    <deployedseed>459165032</deployedseed>
+    <deployedseed>1632733075</deployedseed>
+    <deployedseed>130574658</deployedseed>
+    <deployedseed>957078428</deployedseed>
+    <deployedseed>1080145327</deployedseed>
+    <deployedseed>2071388237</deployedseed>
+    <deployedseed>558923590</deployedseed>
+    <deployedseed>1406198689</deployedseed>
+    <deployedseed>5827810</deployedseed>
+    <deployedseed>1474876400</deployedseed>
+    <deployedseed>396500441</deployedseed>
+    <deployedseed>2044410847</deployedseed>
+    <deployedseed>2025408809</deployedseed>
+    <deployedseed>178044767</deployedseed>
+    <deployedseed>1265888554</deployedseed>
+    <deployedseed>764535175</deployedseed>
+    <deployedseed>1858203485</deployedseed>
+  </seed_fields>";;;Sebastian F
+2;ter;Termumformung;7;e;Binomische Formeln in Brüchen;Binomische Formeln in Brüche e);"/*Randomisierte Ziffern:*/
+rand_1:rand([3,9,16,25,36,49]);
+rand_2:sqrt(rand_1);
+rand_3:1+rand(10);
+rand_4:1+rand(10);
+
+/*Zähler:*/
+zaehler_1:rand_3;
+zaehler_2:rand_3;
+zaehler_3:x^2-rand_1;
+
+/*Nenner:*/
+nenner_1:x+rand_2;
+nenner_2:x-rand_2;
+nenner_3:rand_4*x;
+
+/*Musterlösung:*/
+tans_ungerundet:ratsimp((zaehler_1/nenner_1+zaehler_2/nenner_2)*(zaehler_3/nenner_3));
+tans_gerundet:float(round(tans_ungerundet*100)/100);
+
+
+/*-----------------------------------Validierungsfunktion----------------------------------*/
+
+
+anzahl_signifikante_nachkommastelle(d):=block(
+    [s,nachkommastellen],
+    s:string(d),
+    nachkommastellen:split(s, ""."")[2],
+    nachkommastellen_list:charlist(nachkommastellen),
+    nachkommastellen_list_length:length(nachkommastellen_list),
+    if nachkommastellen_list_length = 0 then
+        return (0)
+    elseif nachkommastellen_list_length = 1 and nachkommastellen_list[1] = ""0"" then
+        return (0)
+    elseif nachkommastellen_list_length > 1 then
+    return (nachkommastellen_list_length)
+);
+
+
+entfernePunktUndLetzteZiffer(d):=block(
+    [dAlsString, dAlsList, dOhnePunkt, dOhnePunktUndLetzteZiffer:[]],
+    dAlsString:string(d),
+    dAlsList:charlist(dAlsString),
+    dOhnePunkt:delete(""."", dAlsList),
+    for i:1 thru length(dOhnePunkt)-1 do (
+        dOhnePunktUndLetzteZiffer:append(dOhnePunktUndLetzteZiffer, [dOhnePunkt[i]])
+    ),
+    return (dOhnePunktUndLetzteZiffer)
+);
+
+
+is_fraction(zahl) := block(
+    zahl_betrag:abs(zahl),
+    (not integerp(zahl_betrag)) and
+    (not floatnump(zahl_betrag)) and
+    (op(zahl_betrag) = ""/"")
+);
+
+
+validationtester(ans, tans) := block(
+    [anz_nk_ans, anz_nk_tans,
+        nachkommastellen_ans,
+        nachkommastellen_tans,
+        nachkommast_letzteZiffer_ans, nachkommast_letzteZiffer_tans,
+        vorkommastellen_ans, vorkommastellen_tans,
+        alleZiffernAusserLetzte_ans, alleZiffernAusserLetzte_tans, ergebnis:""""],
+    if integerp(ans) and integerp(tans) then (
+        if is(equal(ans, tans)) then (
+            return (ergebnis)
+        )
+        else (
+            ergebnis:""nicht korrekt"",
+            return (ergebnis)
+        )
+    )
+    else if integerp(ans) and floatnump(tans) then (
+        vorkommastellen_tans:split(string(tans), ""."")[1],
+        nachkommastellen_tans:[split(string(tans), ""."")[2]],
+        if is(equal(string(ans), vorkommastellen_tans)) and length(nachkommastellen_tans) = 1 and nachkommastellen_tans[1] = ""0"" then (
+            return (ergebnis)
+        )
+        else (
+            ergebnis:""nicht korrekt"",
+            return (ergebnis)
+        )
+    )
+    else if floatnump(ans) and integerp(tans) then (
+        vorkommastellen_ans:split(string(ans), ""."")[1],
+        nachkommastellen_ans:[split(string(ans), ""."")[2]],
+        if is(equal(string(tans), vorkommastellen_ans)) and length(nachkommastellen_ans) = 1 and nachkommastellen_ans[1] = ""0"" then (
+            return (ergebnis)
+        )
+        else (
+            ergebnis:""nicht korrekt"",
+            return (ergebnis)
+        )
+    )
+    else if is_fraction(ans) and floatnump(tans) or floatnump(ans) and is_fraction(tans) then (
+        if is(equal(ans, tans)) then (
+            return (ergebnis)
+        )
+        else (
+            ergebnis:""nicht korrekt"",
+            return (ergebnis)
+        )
+    )
+    else if floatnump(ans) and floatnump(tans) then (
+        if is(equal(ans, tans)) then (
+            return (ergebnis)
+        )
+        else (
+            vorkommastellen_ans:split(string(ans), ""."")[1],
+            vorkommastellen_tans:split(string(tans), ""."")[1],
+            anz_nk_ans: anzahl_signifikante_nachkommastelle(ans),
+            anz_nk_tans:anzahl_signifikante_nachkommastelle(tans),
+            if vorkommastellen_ans = vorkommastellen_tans and anz_nk_ans # anz_nk_tans then (
+                ergebnis:""Falsche Anzahl an Nachkommastellen"",
+                return (ergebnis)
+            )
+            else (
+                nachkommast_letzteZiffer_ans: last(charlist(string(ans))),
+                nachkommast_letzteZiffer_tans:last(charlist(string(tans))),
+                alleZiffernAusserLetzte_ans:entfernePunktUndLetzteZiffer(ans),
+                alleZiffernAusserLetzte_tans:entfernePunktUndLetzteZiffer(tans),
+                if is(equal(alleZiffernAusserLetzte_ans, alleZiffernAusserLetzte_tans)) and nachkommast_letzteZiffer_ans # nachkommast_letzteZiffer_tans then (
+                    ergebnis:""Falsch gerundet"",
+                    return (ergebnis)
+                )
+                else (
+                    ergebnis:""nicht korrekt"",
+                    return (ergebnis)
+                )
+            )
+        )
+    )
+);
+
+
+validate(ans, tans_ungerundet, tans_gerundet):=block(
+    [ergebnis:""""],
+    if is(equal(ans, tans_ungerundet)) or is(equal(ans, tans_gerundet)) then (
+        return (ergebnis)
+    )
+    else (
+        ergebnis:validationtester(ans, tans_gerundet),
+        return (ergebnis)
+    )
+);";"<p>Berechne und fasse so weit wie möglich zusammen.</p>
+<p><em>Falls du Kommazahlen eingeben möchtest, dann runde diese auf <strong>genau zwei Nachkommastellen</strong>.</em></p>
+<p><span lang=""FR"" style=""mso-ansi-language: FR;"">\[\left( \frac{@zaehler_1@}{@nenner_1@} + \frac{@zaehler_2@}{@nenner_2@} \right) \cdot \left( \frac{@zaehler_3@}{@nenner_3@} \right)\] = [[input:ans1]] [[validation:ans1]]</span></p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans_ungerundet@} bzw. {@tans_gerundet@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>validationtestresult1:validate(ans1, tans_ungerundet, tans_gerundet);</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Eingabe äquivalent zu Musterlösung</description>
+        <answertest>CasEqual</answertest>
+        <sans>validationtestresult1</sans>
+        <tans><![CDATA[""""]]></tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>{@validationtestresult1@}</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans_ungerundet</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>1895282090</deployedseed>
+    <deployedseed>1359603969</deployedseed>
+    <deployedseed>501932260</deployedseed>
+    <deployedseed>557775666</deployedseed>
+    <deployedseed>1760570113</deployedseed>
+    <deployedseed>1598909465</deployedseed>
+    <deployedseed>968328867</deployedseed>
+    <deployedseed>1324630510</deployedseed>
+    <deployedseed>842663559</deployedseed>
+    <deployedseed>1747259339</deployedseed>
+    <deployedseed>347440655</deployedseed>
+    <deployedseed>1750314393</deployedseed>
+    <deployedseed>2063651112</deployedseed>
+    <deployedseed>269336302</deployedseed>
+    <deployedseed>1508496627</deployedseed>
+    <deployedseed>1933600405</deployedseed>
+    <deployedseed>1363328052</deployedseed>
+    <deployedseed>618438593</deployedseed>
+    <deployedseed>880578036</deployedseed>
+    <deployedseed>1889215117</deployedseed>
+  </seed_fields>";;;Sebastian F
 2;ter;Termumformung;8;a;Textaufgaben;Bruch mit Summen aus Wurzeln geschickt auflösen;"poweroftwo:rand([2,4]); basenum:rand([3,5]); mysterynum:2^poweroftwo*basenum; ta1:(sqrt(basenum)+sqrt(mysterynum))/(sqrt(basenum)-sqrt(mysterynum)); simp:false; exercise:(sqrt(basenum)+sqrt(mysterynum))/(sqrt(basenum)-sqrt(mysterynum));";Erweitere den gegebenen Bruch, sodass Zähler und Nenner ganzzahlig werden. Deine Lösung soll ein Bruch sein, der keine Summen, Wurzeln o.ä. enthält.;\({@exercise@} =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1840509983</deployedseed><deployedseed>2121448268</deployedseed><deployedseed>1563375159</deployedseed><deployedseed>1576470869</deployedseed></seed_fields>;;0;2024-09-04
 2;ter;Termumformung;9;a;Textaufgabe;Textaufgabe a);"/*Randomisierte Ziffern:*/
 faktor_1:1+rand(18);
