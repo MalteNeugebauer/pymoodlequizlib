@@ -13152,6 +13152,174 @@ tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der fo
     <deployedseed>444237957</deployedseed>
     <deployedseed>1234196624</deployedseed>
   </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;7;g;Nullstellen quadratische Funktionen;Funktionen Aufgabe 7.2;"listFrage_1:[[1,false,""D > 0""], [2,true,""D = 0""], [3,false,""D < 0""]];
+
+listFrage_2:[[1,true,""D > 0""], [2,false,""D = 0""], [3,false,""D < 0""]];
+
+listFrage_3:[[1,false,""D > 0""], [2,false,""D = 0""], [3,true,""D < 0""]];";"<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;""><strong>7.2</strong> Angenommen du berechnest a) mit der pq-Formel. Dann bestimmt das, was unter der Wurzel steht (Diskriminante \(\Delta\)) wie viele Nullstellen die Funktion hat. Hier wird die Wurzel Null, d.h. es gibt eine Nullstelle. Welche Bedingungen müssen allgemein für die Koeffizienten \(a_1\) und \(a_0\) der Funktion \(f(x)=x^2+a_1 \cdot x+a_0\) erfüllt sein, damit \(f(x)\) eine, zwei oder keine Nullstelle besitzt?</span></p>
+<ul>
+<li class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">Eine Nullstelle    = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</span></li>
+<li class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">Zwei Nullstellen = [[input:ans2]] [[validation:ans2]] [[feedback:prt2]]</span></li>
+<li class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">Keine Nulstelle   = [[input:ans3]] [[validation:ans3]] [[feedback:prt3]]</span></li>
+</ul>";;;;"<p>\( {@listFrage_1@} \\</p>
+<p>{@listFrage_2@} \\</p>
+<p>{@listFrage_3@} \)</p>";0;"<prt_fields><prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description/>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>2</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt2</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description/>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans2</sans>
+        <tans>1</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt2-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt3</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description/>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans3</sans>
+        <tans>3</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt3-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+  </prt_fields>";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>dropdown</type>
+      <tans>listFrage_1</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>dropdown</type>
+      <tans>listFrage_2</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>dropdown</type>
+      <tans>listFrage_3</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";;;1;Sebastian F
 7;fun;Funktionen;9;a) - c);Quadratische Funktionen zeichen und analysieren;Funktionen Aufgabe 9;"/*---------------------------Funktionen-----------------------------*/
 
 /*Funktion formatiert eine übergebene Liste von [x=n, x=n+1, ...] zu [n, n+1, ...]*/
