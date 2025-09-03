@@ -12669,91 +12669,102 @@ tans:fkt;
     <deployedseed>2034632167</deployedseed>
     <deployedseed>134787595</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;7;a)-f);Nullstellen von quadratischen Funktionen;Funktionen Aufgabe 7;"/*----------------Aufgabe a)---------------------*/
-list_gl1:[[1,-6], [5,6], [-3,2], [4,3], [-7,12], [2,-8], [-4,3], [3,-10], [7,10], [-5,6], [8,15], [-6,5], [9,20], [10,21], [-8,16], [1,-2], [-9,20], [2,1], [4,4], [6,9], [8,16], [10,25]];
+7;fun;Funktionen;7;a;Nullstellen quadratische Funktionen;Funktionen Aufgabe 7.1 a);"/*----------------Aufgabe a)---------------------*/
+list_gl:[[1,-6], [5,6], [-3,2], [4,3], [-7,12], [2,-8], [-4,3], [3,-10], [7,10], [-5,6], [8,15], [-6,5], [9,20], [10,21], [-8,16], [1,-2], [-9,20], [2,1], [4,4], [6,9], [8,16], [10,25]];
 
-i_1:rand_with_step(1,length(list_gl1),1);           /*Laufvariable für a)*/
-b_1:list_gl1[i_1][1];
-c_1:list_gl1[i_1][2];
-gl1:x^2+b_1*x+c_1;
-tans1:solve([gl1],[x]);
-
-
-/*----------------Aufgabe b)---------------------*/
-list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
-
-i_2:rand_with_step(1,length(list),1);               /*Laufvariable für b)*/
-a_2:list[i_2][1];
-b_2:list[i_2][2];
-c_2:list[i_2][3];
-gl2:a_2*x^2+b_2*x+c_2;
-tans2:solve([gl2],[x]);
-
-/*----------------Aufgabe c)---------------------*/
-i_3:rand_with_prohib(1,length(list),[i_2]);               /*Laufvariable für c)*/
-a_3:list[i_3][1];
-b_3:list[i_3][2];
-c_3:list[i_3][3];
-gl3:a_3*x^2+b_3*x+c_3;
-tans3:solve([gl3],[x]);
-
-/*----------------Aufgabe d)---------------------*/
-i_4:rand_with_prohib(1,length(list),[i_2, i_3]);               /*Laufvariable für d)*/
-a_4:list[i_4][1];
-b_4:list[i_4][2];
-c_4:list[i_4][3];
-gl4:a_4*x^2+b_4*x+c_4;
-tans4:solve([gl4],[x]);
-
-/*----------------Aufgabe e)---------------------*/
-i_5:rand_with_prohib(1,length(list),[i_2, i_3, i_4]);               /*Laufvariable für e)*/
-a_5:list[i_5][1];
-b_5:list[i_5][2];
-c_5:list[i_5][3];
-gl5:a_5*x^2+b_5*x+c_5;
-tans5:solve([gl5],[x]);
-
-/*----------------Aufgabe f)---------------------*/
-i_6:rand_with_prohib(1,length(list),[i_2, i_3, i_4, i_5]);               /*Laufvariable für f)*/
-a_6:list[i_6][1];
-b_6:list[i_6][2];
-c_6:list[i_6][3];
-gl6:a_6*x^2+b_6*x+c_6;
-tans6:solve([gl6],[x]);
-
-/*randompermutation*/
-
-/*---------------------------------------Aufgabenteil2-----------------------------------*/
-listFrage_1:[[1,false,""D > 0""], [2,true,""D = 0""], [3,false,""D < 0""]];
-
-listFrage_2:[[1,true,""D > 0""], [2,false,""D = 0""], [3,false,""D < 0""]];
-
-listFrage_3:[[1,false,""D > 0""], [2,false,""D = 0""], [3,true,""D < 0""]];";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+i:rand_with_step(1,length(list_gl),1);           /*Laufvariable für a)*/
+b:list_gl[i][1];
+c:list_gl[i][2];
+gl:x^2+b*x+c;
+tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
 <p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
 <p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \([x_1 = ..., x_2 = ..., x_n = ...]\)</strong></p>
-<p>a) \(f(x) = {@gl1@} \Rightarrow L = \) [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>
-<p>b) \(g(x) = {@gl2@} \Rightarrow L = \) [[input:ans2]] [[validation:ans2]] [[feedback:prt2]]</p>
-<p>c) \(h(x) = {@gl3@} \Rightarrow L = \) [[input:ans3]] [[validation:ans3]] [[feedback:prt3]]</p>
-<p>d) \(i(x) = {@gl4@} \Rightarrow L = \) [[input:ans4]] [[validation:ans4]] [[feedback:prt4]]</p>
-<p>e) \(j(x) = {@gl5@} \Rightarrow L = \) [[input:ans5]] [[validation:ans5]] [[feedback:prt5]]</p>
-<p>f) \(k(x) = {@gl6@} \Rightarrow L = \) [[input:ans6]] [[validation:ans6]] [[feedback:prt6]]</p>
-<p></p>
-<hr>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;""><strong>7.2</strong> Angenommen du berechnest a) mit der pq-Formel. Dann bestimmt das, was unter der Wurzel steht (Diskriminante \(\Delta\)) wie viele Nullstellen die Funktion hat. Hier wird die Wurzel Null, d.h. es gibt eine Nullstelle. Welche Bedingungen müssen allgemein für die Koeffizienten \(a_1\) und \(a_0\) der Funktion \(f(x)=x^2+a_1 \cdot x+a_0\) erfüllt sein, damit \(f(x)\) eine, zwei oder keine Nullstelle besitzt?</span></p>
-<ul>
-<li class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">Eine Nullstelle    = [[input:ans7]] [[validation:ans7]] [[feedback:prt7]]</span></li>
-<li class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">Zwei Nullstellen = [[input:ans8]] [[validation:ans8]] [[feedback:prt8]]</span></li>
-<li class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">Keine Nulstelle   = [[input:ans9]] [[validation:ans9]] [[feedback:prt9]]</span></li>
-</ul>
-<p class=""MsoNormal""></p>";;;;"<p>\( {@gl1@} \Rightarrow {@tans1@} \\</p>
-<p>{@gl2@} \Rightarrow {@tans2@} \\</p>
-<p>{@gl3@} \Rightarrow {@tans3@} \\</p>
-<p>{@gl4@} \Rightarrow {@tans4@} \\</p>
-<p>{@gl5@} \Rightarrow {@tans5@} \\</p>
-<p>{@gl6@} \Rightarrow {@tans6@} \\</p>
-<p>{@listFrage_1@} \\</p>
-<p>{@listFrage_2@} \\</p>
-<p>{@listFrage_3@} \\ \)</p>";0;"<prt_fields><prt>
+<p>a) \(f(x) = {@gl@} \Rightarrow L = \) [[input:ans1]] [[validation:ans1]]</p>
+<p class=""MsoNormal""></p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@tans@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>10</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>784162503</deployedseed>
+    <deployedseed>1123645944</deployedseed>
+    <deployedseed>711731343</deployedseed>
+    <deployedseed>897130844</deployedseed>
+    <deployedseed>580894598</deployedseed>
+    <deployedseed>541566216</deployedseed>
+    <deployedseed>1884006246</deployedseed>
+    <deployedseed>1208991939</deployedseed>
+    <deployedseed>1060176550</deployedseed>
+    <deployedseed>658811347</deployedseed>
+    <deployedseed>439840107</deployedseed>
+    <deployedseed>1240813119</deployedseed>
+    <deployedseed>1536491455</deployedseed>
+    <deployedseed>1998082377</deployedseed>
+    <deployedseed>5402694</deployedseed>
+    <deployedseed>1030605980</deployedseed>
+    <deployedseed>814668503</deployedseed>
+    <deployedseed>1807571295</deployedseed>
+    <deployedseed>1062150962</deployedseed>
+    <deployedseed>1220953813</deployedseed>
+  </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;7;b;Nullstellen quadratische Funktionen;Funktionen Aufgabe 7.1 b);"/*----------------Aufgabe b)---------------------*/
+list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
+
+i:rand_with_step(1,length(list),1);               /*Laufvariable für b)*/
+a:list[i][1];
+b:list[i][2];
+c:list[i][3];
+gl:a*x^2+b*x+c;
+tans1:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+<p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
+<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \([x_1 = ..., x_2 = ..., x_n = ...]\)</strong></p>
+<p>b) \(g(x) = {@gl@} \Rightarrow L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@tans1@} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -12787,279 +12798,7 @@ listFrage_3:[[1,false,""D > 0""], [2,false,""D = 0""], [3,true,""D < 0""]];";"<h
         </falsefeedback>
       </node>
     </prt>
-    <prt>
-      <name>prt2</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans2</sans>
-        <tans>tans2</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt2-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt2-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    <prt>
-      <name>prt3</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans3</sans>
-        <tans>tans3</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt3-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt3-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    <prt>
-      <name>prt4</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans4</sans>
-        <tans>tans4</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt4-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt4-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    <prt>
-      <name>prt5</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans5</sans>
-        <tans>tans5</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt5-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt5-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    <prt>
-      <name>prt6</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans6</sans>
-        <tans>tans6</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt6-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt6-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    <prt>
-      <name>prt7</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans7</sans>
-        <tans>2</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt7-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt7-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    <prt>
-      <name>prt8</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans8</sans>
-        <tans>1</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt8-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt8-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    <prt>
-      <name>prt9</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans9</sans>
-        <tans>3</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt9-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt9-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    </prt_fields>";;;;;"<input_fields><input>
+    ";;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
       <tans>tans1</tans>
@@ -13074,13 +12813,75 @@ listFrage_3:[[1,false,""D > 0""], [2,false,""D = 0""], [3,true,""D < 0""]];";"<h
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
-      <showvalidation>3</showvalidation>
+      <showvalidation>1</showvalidation>
       <options/>
     </input>
-    <input>
-      <name>ans2</name>
+    ";"<seed_fields><deployedseed>1021391908</deployedseed>
+    <deployedseed>921452651</deployedseed>
+    <deployedseed>349353096</deployedseed>
+    <deployedseed>1764147270</deployedseed>
+    <deployedseed>961254937</deployedseed>
+    <deployedseed>279650499</deployedseed>
+    <deployedseed>1262141002</deployedseed>
+    <deployedseed>2033640637</deployedseed>
+    <deployedseed>629697586</deployedseed>
+    <deployedseed>1916036869</deployedseed>
+    <deployedseed>630523279</deployedseed>
+    <deployedseed>1050502219</deployedseed>
+    <deployedseed>1995866956</deployedseed>
+    <deployedseed>1164326018</deployedseed>
+    <deployedseed>29375749</deployedseed>
+    <deployedseed>75314502</deployedseed>
+  </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;7;c;Nullstellen quadratische Funktionen;Funktionen Aufgabe 7.1 c);"list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
+
+/*----------------Aufgabe c)---------------------*/
+i:rand_with_step(1,length(list),1);               /*Laufvariable für c)*/
+a:list[i][1];
+b:list[i][2];
+c:list[i][3];
+gl:a*x^2+b*x+c;
+tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+<p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
+<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \([x_1 = ..., x_2 = ..., x_n = ...]\)</strong></p>
+<p>c) \(h(x) = {@gl@} \Rightarrow L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@tans@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans2</tans>
+      <tans>tans</tans>
       <boxsize>10</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
@@ -13092,13 +12893,75 @@ listFrage_3:[[1,false,""D > 0""], [2,false,""D = 0""], [3,true,""D < 0""]];";"<h
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
-      <showvalidation>3</showvalidation>
+      <showvalidation>1</showvalidation>
       <options/>
     </input>
-    <input>
-      <name>ans3</name>
+    ";"<seed_fields><deployedseed>136494209</deployedseed>
+    <deployedseed>1966337366</deployedseed>
+    <deployedseed>1184988769</deployedseed>
+    <deployedseed>1092300341</deployedseed>
+    <deployedseed>1752464500</deployedseed>
+    <deployedseed>263653464</deployedseed>
+    <deployedseed>1133724840</deployedseed>
+    <deployedseed>220572283</deployedseed>
+    <deployedseed>137049382</deployedseed>
+    <deployedseed>710920018</deployedseed>
+    <deployedseed>134251843</deployedseed>
+    <deployedseed>289098256</deployedseed>
+    <deployedseed>1814991282</deployedseed>
+  </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;7;d;Nullstellen quadratische Funktionen;Funktionen Aufgabe 7.1 d);"list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
+
+
+/*----------------Aufgabe d)---------------------*/
+i:rand_with_step(1,length(list),1);               /*Laufvariable für d)*/
+a:list[i][1];
+b:list[i][2];
+c:list[i][3];
+gl:a*x^2+b*x+c;
+tans:solve([gl],[x]);
+
+";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+<p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
+<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \([x_1 = ..., x_2 = ..., x_n = ...]\)</strong></p>
+<p>d) \(i(x) = {@gl@} \Rightarrow L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@tans@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans3</tans>
+      <tans>tans</tans>
       <boxsize>10</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
@@ -13110,13 +12973,78 @@ listFrage_3:[[1,false,""D > 0""], [2,false,""D = 0""], [3,true,""D < 0""]];";"<h
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
-      <showvalidation>3</showvalidation>
+      <showvalidation>1</showvalidation>
       <options/>
     </input>
-    <input>
-      <name>ans4</name>
+    ";"<seed_fields><deployedseed>1394714616</deployedseed>
+    <deployedseed>501223372</deployedseed>
+    <deployedseed>221498258</deployedseed>
+    <deployedseed>382444655</deployedseed>
+    <deployedseed>720960692</deployedseed>
+    <deployedseed>849845333</deployedseed>
+    <deployedseed>1846846069</deployedseed>
+    <deployedseed>1464689473</deployedseed>
+    <deployedseed>1756530480</deployedseed>
+    <deployedseed>875979042</deployedseed>
+    <deployedseed>479225727</deployedseed>
+    <deployedseed>1566927216</deployedseed>
+    <deployedseed>1960929430</deployedseed>
+    <deployedseed>1710430124</deployedseed>
+    <deployedseed>1502928139</deployedseed>
+    <deployedseed>424202400</deployedseed>
+    <deployedseed>1941915329</deployedseed>
+    <deployedseed>842171860</deployedseed>
+    <deployedseed>1210278930</deployedseed>
+  </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;7;e;Nullstellen quadratische Funktionen;Funktionen Aufgabe 7.1 e);"list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
+
+/*----------------Aufgabe e)---------------------*/
+i:rand_with_step(1,length(list),1);               /*Laufvariable für e)*/
+a:list[i][1];
+b:list[i][2];
+c:list[i][3];
+gl:a*x^2+b*x+c;
+tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+<p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
+<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \([x_1 = ..., x_2 = ..., x_n = ...]\)</strong></p>
+<p>e) \(j(x) = {@gl@} \Rightarrow L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@tans@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans4</tans>
+      <tans>tans</tans>
       <boxsize>10</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
@@ -13128,13 +13056,70 @@ listFrage_3:[[1,false,""D > 0""], [2,false,""D = 0""], [3,true,""D < 0""]];";"<h
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
-      <showvalidation>3</showvalidation>
+      <showvalidation>1</showvalidation>
       <options/>
     </input>
-    <input>
-      <name>ans5</name>
+    ";"<seed_fields><deployedseed>917134473</deployedseed>
+    <deployedseed>1269532391</deployedseed>
+    <deployedseed>1512759251</deployedseed>
+    <deployedseed>1787756799</deployedseed>
+    <deployedseed>1363443080</deployedseed>
+    <deployedseed>1372293678</deployedseed>
+    <deployedseed>799146241</deployedseed>
+    <deployedseed>143338144</deployedseed>
+    <deployedseed>843951104</deployedseed>
+    <deployedseed>231285176</deployedseed>
+    <deployedseed>315095760</deployedseed>
+  </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;7;f;Nullstellen quadratische Funktionen;Funktionen Aufgabe 7.1 f);"list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
+
+/*----------------Aufgabe f)---------------------*/
+i:rand_with_step(1,length(list),1);               /*Laufvariable für f)*/
+a:list[i][1];
+b:list[i][2];
+c:list[i][3];
+gl:a*x^2+b*x+c;
+tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+<p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
+<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \([x_1 = ..., x_2 = ..., x_n = ...]\)</strong></p>
+<p>f) \(k(x) = {@gl@} \Rightarrow L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@tans@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans5</tans>
+      <tans>tans</tans>
       <boxsize>10</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
@@ -13146,102 +13131,27 @@ listFrage_3:[[1,false,""D > 0""], [2,false,""D = 0""], [3,true,""D < 0""]];";"<h
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
-      <showvalidation>3</showvalidation>
+      <showvalidation>1</showvalidation>
       <options/>
     </input>
-    <input>
-      <name>ans6</name>
-      <type>algebraic</type>
-      <tans>tans6</tans>
-      <boxsize>10</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>0</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>1</forbidfloat>
-      <requirelowestterms>1</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>3</showvalidation>
-      <options/>
-    </input>
-    <input>
-      <name>ans7</name>
-      <type>dropdown</type>
-      <tans>listFrage_1</tans>
-      <boxsize>15</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>0</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>1</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>0</mustverify>
-      <showvalidation>0</showvalidation>
-      <options/>
-    </input>
-    <input>
-      <name>ans8</name>
-      <type>dropdown</type>
-      <tans>listFrage_2</tans>
-      <boxsize>15</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>0</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>1</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>0</mustverify>
-      <showvalidation>0</showvalidation>
-      <options/>
-    </input>
-    <input>
-      <name>ans9</name>
-      <type>dropdown</type>
-      <tans>listFrage_3</tans>
-      <boxsize>15</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>0</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>1</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>0</mustverify>
-      <showvalidation>0</showvalidation>
-      <options/>
-    </input>
-    </input_fields>";"<seed_fields><deployedseed>784162503</deployedseed>
-    <deployedseed>1123645944</deployedseed>
-    <deployedseed>711731343</deployedseed>
-    <deployedseed>897130844</deployedseed>
-    <deployedseed>580894598</deployedseed>
-    <deployedseed>541566216</deployedseed>
-    <deployedseed>1884006246</deployedseed>
-    <deployedseed>1208991939</deployedseed>
-    <deployedseed>1060176550</deployedseed>
-    <deployedseed>658811347</deployedseed>
-    <deployedseed>439840107</deployedseed>
-    <deployedseed>1240813119</deployedseed>
-    <deployedseed>1536491455</deployedseed>
-    <deployedseed>1998082377</deployedseed>
-    <deployedseed>5402694</deployedseed>
-    <deployedseed>1030605980</deployedseed>
-    <deployedseed>814668503</deployedseed>
-    <deployedseed>1807571295</deployedseed>
-    <deployedseed>1062150962</deployedseed>
-    <deployedseed>1220953813</deployedseed>
-  </seed_fields>";;;Sebastian F
+    ";"<seed_fields><deployedseed>457635000</deployedseed>
+    <deployedseed>302720062</deployedseed>
+    <deployedseed>169077741</deployedseed>
+    <deployedseed>467522508</deployedseed>
+    <deployedseed>1745162638</deployedseed>
+    <deployedseed>1961653776</deployedseed>
+    <deployedseed>682364919</deployedseed>
+    <deployedseed>357140280</deployedseed>
+    <deployedseed>1760269150</deployedseed>
+    <deployedseed>2025168196</deployedseed>
+    <deployedseed>1555284625</deployedseed>
+    <deployedseed>1194953676</deployedseed>
+    <deployedseed>866457596</deployedseed>
+    <deployedseed>80327630</deployedseed>
+    <deployedseed>1200819982</deployedseed>
+    <deployedseed>444237957</deployedseed>
+    <deployedseed>1234196624</deployedseed>
+  </seed_fields>";;1;Sebastian F
 7;fun;Funktionen;9;a) - c);Quadratische Funktionen zeichen und analysieren;Funktionen Aufgabe 9;"/*---------------------------Funktionen-----------------------------*/
 
 /*Funktion formatiert eine übergebene Liste von [x=n, x=n+1, ...] zu [n, n+1, ...]*/
