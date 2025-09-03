@@ -12151,7 +12151,7 @@ their_c:ev(rhs(their_eqn),x=0);</text>
       <options/>
     </input>
     ";<seed_fields><deployedseed>1196532218</deployedseed><deployedseed>1030185492</deployedseed><deployedseed>1491859228</deployedseed><deployedseed>2023322506</deployedseed></seed_fields>;;1;2024-08-14
-7;fun;Funktionen;3;I-III;Graphen zeichnen;Funktionen Aufgabe 3;"fx_zähler:rand([1,2,3,4,5,6,7,8,9]);
+7;fun;Funktionen;3;3II;Graphen zeichnen;Funktionen Aufgabe 3 II;"fx_zähler:rand([1,2,3,4,5,6,7,8,9]);
 nenner:rand_with_prohib(2,9,[fx_zähler]);
 d:1+rand(5);
 f(x):=(fx_zähler/nenner)*x+d;       /*Maxima-Funktion f(x)*/
@@ -12168,58 +12168,34 @@ gP1_y:-(gx_zähler/nenner)*gP1_x+c;     /*y-Koordinate für P1 auf g(x)*/
 gP2_x:2;                               /*x-Koordinate für P2 auf g(x)*/
 gP2_y:-(gx_zähler/nenner)*gP2_x+c;     /*y-Koordinate für P2 auf g(x)*/
 
-xS:rhs(solve([f(x)=g(x)],[x])[1]);         /*x-Schnittwert*/
+xS:rhs(solve([f(x)=g(x)],[x])[1]);     /*x-Schnittwert*/
 yS:(fx_zähler/nenner)*xS+d;            /*y-Schnittwert*/
-xSBetrag:abs(xS);
-ySBetrag:abs(yS);
 
-bild:plot([f(x), g(x)], [x,-10,10],[y,-10,10],grid2d);
+xS_koordSystem:floor(xS);
+yS_koordSystem:floor(yS);
 
+tans:[x=xS, y=yS];
 
-/*tans1 and tans2 are defined below*/
-/*---------------------*/
-
-tans3:xS;
-/*---------------------*/
-
-tans4:yS;
-";"<p></p>
-<p><em>Hinweis: Beschreibe zwei Vorgänge, wie man einen linearen Graphen zeichnen kann.</em></p>
-<p>a) Zeichne dann die beiden folgenden Graphen.</p>
-<p><span lang=""FR"" style=""font-size: 12.0pt; line-height: 107%; font-family: 'Aptos',sans-serif; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Aptos; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: minor-bidi; mso-ansi-language: FR; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"">\(f(x) = \frac{@fx_zähler@}{@nenner@}x+{@d@}\);   \(g(x) = -\frac{@gx_zähler@}{@nenner@}x+{@c@}\);</span></p>
-<p style=""display: none;"">[[input:ans1]] [[validation:ans1]]</p>
-<p style=""display: none;"">[[input:ans2]] [[validation:ans2]]</p>
-<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1"" input-ref-ans2 = ""inputans2""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-{@sconcat(xSBetrag+5)@}, {@sconcat(ySBetrag+5)@}, {@sconcat(xSBetrag+5)@}, -{@sconcat(ySBetrag+5)@}], axis: true, grid: true, showNavigation: true, showCopyright: false }); var f1 = board.create('point', [{@sconcat(fP1_x)@}, {@sconcat(fP1_y)@}], { color: '#003399', name: 'F1', showInfobox: true, snapToGrid: true }); var f2 = board.create('point', [{@sconcat(fP2_x)@}, {@sconcat(fP2_y)@}], { color: '#003399', name: 'F2', showInfobox: true, snapToGrid: true }); var v1 = board.create('line', [f1, f2], { strokeColor: '#7f99cc', showInfobox: true, fixed: true }); var g1 = board.create('point', [{@sconcat(gP1_x)@}, {@sconcat(gP1_y)@}], { color: '#8B0000', name: 'G1', showInfobox: true, snapToGrid: true }); var g2 = board.create('point', [{@sconcat(gP2_x)@}, {@sconcat(gP2_y)@}], { color: '#8B0000', name: 'G2', showInfobox: true, snapToGrid: true }); var v2 = board.create('line', [g1, g2], { strokeColor: '#C66C6C', showInfobox: true, fixed: true }); stack_jxg.bind_point_dual(inputans1, f1, f2); stack_jxg.bind_point_dual(inputans2, g1, g2);[[/jsxgraph]]</p>
-<p>[[feedback:prt1]]</p>
-<p>[[feedback:prt2]]</p>
-<p>b) Bestimme den Schnittpunkt der beiden Geraden durch Ablesen im Koordinatensystem und durch eine Rechnung.</p>
-<p>\(S = (\) [[input:ans3]] \(|\) [[input:ans4]] \()\)</p>
-<p>[[validation:ans3]] [[feedback:prt3]]</p>
-<p>[[validation:ans4]] [[feedback:prt4]]</p>";;;;"<p>\(f(x) = \) {@fx@};   \(g(x) = \) {@gx@}</p>
-<p>{@bild@}</p>";0;"<prt_fields><prt>
+/*Koordinatensystem und Funktionen:*/
+bild:plot([f(x), g(x)],[x, xS_koordSystem-5, xS_koordSystem+5],[y, yS_koordSystem-5, yS_koordSystem+5],[axes,true], [xtics, xS_koordSystem-5, 1, xS_koordSystem+5], [ytics, yS_koordSystem-5, 1, yS_koordSystem+5], grid2d);";"<p>b) Bestimme den Schnittpunkt \(S\) der beiden Graphen rechnerisch und prüfe dann durch Ablesen im Koordinatensystem.</p>
+<p>\( f(x) = {@f(x)@};  \ \ g(x) = {@g(x)@} \)</p>
+<p>{@bild@}</p>
+<p><em>Gib den Schnittpunkt wie folgt ein: \( [x = ..., y = ...] \)</em></p>
+<p>\( S = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\( f(x) = {@f(x)@}; \ \ g(x) = {@g(x)@} \ \ \Rightarrow \ \ S({@xS@}|{@yS@}) \\\\ \)</p>
+<p>{@bild@}</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
       <feedbackstyle>1</feedbackstyle>
       <feedbackvariables>
-        <text>ans1_fx_P1_x:ans1[1][1];               /*x-Koordinate der Studenteneingabe für P1 von f(x)*/
-ans1_fx_P2_x:ans1[2][1];               /*x-Koordinate der Studenteneingabe für P2 von f(x)*/
-
-tans1_fx_P1_y:(fx_zähler/nenner)*ans1_fx_P1_x+d;
-tans1_fx_P2_y:(fx_zähler/nenner)*ans1_fx_P2_x+d;
-
-tans1:[[ans1_fx_P1_x, tans1_fx_P1_y], [ans1_fx_P2_x, tans1_fx_P2_y]];
-
-
-
-</text>
+        <text/>
       </feedbackvariables>
       <node>
         <name>0</name>
-        <description>Prüfen, ob Gerade von fx korrekt.</description>
-        <answertest>EqualComAss</answertest>
+        <description>Prüfen, ob Schnittpunkt äquivalent zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
         <sans>ans1</sans>
-        <tans>tans1</tans>
+        <tans>tans</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>=</truescoremode>
@@ -12236,162 +12212,18 @@ tans1:[[ans1_fx_P1_x, tans1_fx_P1_y], [ans1_fx_P2_x, tans1_fx_P2_y]];
         <falsenextnode>-1</falsenextnode>
         <falseanswernote>prt1-1-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Deine Gerade von f(x) ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-    </prt>
-    <prt>
-      <name>prt2</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text>ans2_gx_P1_x:ans2[1][1];              /*x-Koordinate der Studenteneingabe für P1 von g(x)*/
-ans2_gx_P2_x:ans2[2][1];              /*x-Koordinate der Studenteneingabe für P2 von g(x)*/
-
-tans2_gx_P1_y:-(gx_zähler/nenner)*ans2_gx_P1_x+c;
-tans2_gx_P2_y:-(gx_zähler/nenner)*ans2_gx_P2_x+c;
-
-tans2:[[ans2_gx_P1_x, tans2_gx_P1_y], [ans2_gx_P2_x, tans2_gx_P2_y]];</text>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfen, ob Gerade von gx korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>ans2</sans>
-        <tans>tans2</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt2-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt2-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Deine Gerade von g(x) ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-    </prt>
-    <prt>
-      <name>prt3</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfen, ob x-Schnittstellenwert genau wie Musterlösung.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>ans3</sans>
-        <tans>tans3</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt3-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt3-1-F</falseanswernote>
-        <falsefeedback format=""html"">
           <text/>
         </falsefeedback>
       </node>
     </prt>
-    <prt>
-      <name>prt4</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfen, ob y-Schnittstellenwert genau wie Musterlösung.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>ans4</sans>
-        <tans>tans4</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt4-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt4-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    </prt_fields>";;;;;"<input_fields><input>
+    ";;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>[[0, f(0)], [1,f(1)]]</tans>
+      <tans>tans</tans>
       <boxsize>15</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>1</forbidfloat>
-      <requirelowestterms>1</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    <input>
-      <name>ans2</name>
-      <type>algebraic</type>
-      <tans>[[0, g(0)], [1,g(1)]]</tans>
-      <boxsize>15</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>0</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>1</forbidfloat>
-      <requirelowestterms>1</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    <input>
-      <name>ans3</name>
-      <type>algebraic</type>
-      <tans>tans3</tans>
-      <boxsize>4</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>0</insertstars>
-      <syntaxhint/>
+      <syntaxhint>[x = ..., y = ...]</syntaxhint>
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
@@ -12402,35 +12234,27 @@ tans2:[[ans2_gx_P1_x, tans2_gx_P1_y], [ans2_gx_P2_x, tans2_gx_P2_y]];</text>
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    <input>
-      <name>ans4</name>
-      <type>algebraic</type>
-      <tans>tans4</tans>
-      <boxsize>4</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>0</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>1</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    </input_fields>";"<seed_fields><deployedseed>1403195567</deployedseed>
-    <deployedseed>797791101</deployedseed>
-    <deployedseed>1642295922</deployedseed>
-    <deployedseed>181490906</deployedseed>
-    <deployedseed>1221929367</deployedseed>
-    <deployedseed>1864472024</deployedseed>
-    <deployedseed>882206200</deployedseed>
-    <deployedseed>1969512943</deployedseed>
-    <deployedseed>316643652</deployedseed>
-    <deployedseed>1054478956</deployedseed>
-  </seed_fields>";;;Sebastian F
+    ";"<seed_fields><deployedseed>2141766911</deployedseed>
+    <deployedseed>2005356722</deployedseed>
+    <deployedseed>1331416467</deployedseed>
+    <deployedseed>1907589826</deployedseed>
+    <deployedseed>21231803</deployedseed>
+    <deployedseed>1141865564</deployedseed>
+    <deployedseed>1385196918</deployedseed>
+    <deployedseed>1524592619</deployedseed>
+    <deployedseed>1880916026</deployedseed>
+    <deployedseed>1801568676</deployedseed>
+    <deployedseed>381177909</deployedseed>
+    <deployedseed>230475818</deployedseed>
+    <deployedseed>965898656</deployedseed>
+    <deployedseed>776978325</deployedseed>
+    <deployedseed>2111590720</deployedseed>
+    <deployedseed>743130929</deployedseed>
+    <deployedseed>121980730</deployedseed>
+    <deployedseed>1531219235</deployedseed>
+    <deployedseed>704071844</deployedseed>
+    <deployedseed>573531080</deployedseed>
+  </seed_fields>";;1;Sebastian F
 7;fun;Funktionen;4;a;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 a);"m:rand_with_prohib(-6,6,[0]);
 d:rand_with_step(-8,8,1);
 fkt:m*x+d;
