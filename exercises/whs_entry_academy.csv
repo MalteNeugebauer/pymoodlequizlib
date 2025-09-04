@@ -594,7 +594,7 @@ a_1:rand([2, 3, 4, 5, 6, 7, 8, 9]);
 c:a_1^2;
 a_2:(b*x)^2;
 a_3:2*b*x*a_1;
-tans:(b*x+a_1)^2=a_2+a_3+c;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p>
+tans:(b*x+a_1)^2=a_2+a_3+c;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p><p>\(({@b@} \cdot x+\dots)^2=\dots+\dots+{@c@}\)</p>
 <p class=""MsoNormal"">[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( ( \) {@b@} \( \cdot x+ \) \( ...)^2= ...+...+ \) {@c@} \(\Rightarrow\) Lösung = {@tans@}</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
@@ -675,7 +675,7 @@ a:(2+rand(20))*y;
 b:2+rand(20);
 tans:(a-b)^2=a^2-2*a*b+b^2;
 
-c:2*a*b;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p>
+c:2*a*b;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p><p>\((\dots-{@b@})^2=\dots-{@c@}+\dots\)</p>
 <p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( ( ... -{@b@} )^2= ... {@c@}+... \Rightarrow Lösung = {@tans@} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
@@ -756,7 +756,7 @@ a:2+rand(10);
 b:(2+rand(10))*x;
 tans:(a+b)*(a-b)=a^2-b^2;
 
-c:a^2;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p>
+c:a^2;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p><p>\((\dots+\dots) \cdot (\dots-{@b@})={@c@}-\dots\)</p>
 <p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( (...+...)*(...-{@b@}) = {@c@}+... \Rightarrow Lösung = {@tans@} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
@@ -835,7 +835,7 @@ c:a^2;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Glei
 
 x:(2+rand(10))*a;
 y:(2+rand(10))*b;
-tans:(x-y)^2=x^2-2*x*y+y^2;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p>
+tans:(x-y)^2=x^2-2*x*y+y^2;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p><p>\(({@x@}-\dots)^2=\dots-\dots  +{@y@}\)</p>
 <p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( ({@x@}-...)^2=...-...+{@y@} \Rightarrow Lösung = {@tans@} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
@@ -916,7 +916,7 @@ a:(2+rand(10))*x;
 b:2+rand(10);
 tans:(a+b)^2=a^2+2*a*b+b^2;
 
-c:2*a*b;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p>
+c:2*a*b;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p><p>\((\dots+\dots)^2={@a@}^2+{@c@}+\dots\)</p>
 <p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( (...+...)^2={@a@}^2+{@c@}+...\Rightarrow Lösung = {@tans@} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
@@ -998,7 +998,7 @@ a:(2+rand(10))*k^exponent;
 b:2+rand(10);
 tans:(a-b)^2=a^2-2*a*b+b^2;
 
-c:a*b;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p>
+c:a*b;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p><p>\((\dots-\dots)^2={@a@}-{@c@}+\dots\)</p>
 <p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( (...-...)^2={@a@}-{@c@}+... \Rightarrow Lösung = {@tans@} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
