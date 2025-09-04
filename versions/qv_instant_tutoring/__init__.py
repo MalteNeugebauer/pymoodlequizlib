@@ -124,7 +124,9 @@ def it_version_change_text(**kwargs):
             if Question.its_keep_orig_input != 1:
                 for feedbackvariables in prt.iterchildren("feedbackvariables"):
                     for feedbackvariablestext in feedbackvariables.iterchildren("text"):
-                        if feedbackvariablestext != None and feedbackvariablestext.text != None:
+                        if feedbackvariablestext != None:
+                            if feedbackvariablestext.text == None:
+                                feedbackvariablestext.text = "";
                             replace_ans_fields_text = f"/*---Replacing student answer input values to let original code align with equivalence reasoning nature of Instant Tutoring Version---*/\n{name_replacement}:last({name});\n"
                             feedbackvariablestext.text = search_sans_name.sub(name_replacement, feedbackvariablestext.text)
                             feedbackvariablestext.text = f"{replace_ans_fields_text}\n{feedbackvariablestext.text}"
