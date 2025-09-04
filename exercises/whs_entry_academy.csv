@@ -998,8 +998,8 @@ a:(2+rand(10))*k^exponent;
 b:2+rand(10);
 tans:(a-b)^2=a^2-2*a*b+b^2;
 
-c:a*b;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p><p>\((\dots-\dots)^2={@a@}-{@c@}+\dots\)</p>
-<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( (...-...)^2={@a@}-{@c@}+... \Rightarrow Lösung = {@tans@} \)</p>;0;"<prt>
+c:2*a*b;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p>
+<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( (...-...)^2={@a^2@}-{@c@}+... \Rightarrow Lösung = {@tans@} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -1040,7 +1040,7 @@ c:a*b;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Glei
       <boxsize>15</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>1</insertstars>
-      <syntaxhint>(...-...)^2={#a#}-{#c#}+...</syntaxhint>
+      <syntaxhint>(...-...)^2={#a^2#}-{#c#}+...</syntaxhint>
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
