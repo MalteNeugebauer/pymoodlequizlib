@@ -108,7 +108,8 @@ def it_version_change_text(**kwargs):
         if name == "":
             continue
 
-        name_replacement = f"{name}_its_replaced"
+        name_replacement_feedback_vars = f"{name}_its_replaced"
+        name_replacement_sans = f"last({name})"
         search_sans_name = re.compile(f'{name}')
 
         for input_tans_element in input_element.iterchildren("tans"):
@@ -118,7 +119,7 @@ def it_version_change_text(**kwargs):
             for node in prt.iterchildren("node"):
                 for sans in node.iterchildren("sans"):
                     if name in sans.text:
-                        sans.text = search_sans_name.sub(name_replacement, sans.text)
+                        sans.text = search_sans_name.sub(name_replacement_sans, sans.text)
                     #else:
                     #    print(f"{name} is not in {sans.text} ({Question.exercise_description})")
             if Question.its_keep_orig_input != 1:
@@ -127,8 +128,8 @@ def it_version_change_text(**kwargs):
                         if feedbackvariablestext != None:
                             if feedbackvariablestext.text == None:
                                 feedbackvariablestext.text = "";
-                            replace_ans_fields_text = f"/*---Replacing student answer input values to let original code align with equivalence reasoning nature of Instant Tutoring Version---*/\n{name_replacement}:last({name});\n"
-                            feedbackvariablestext.text = search_sans_name.sub(name_replacement, feedbackvariablestext.text)
+                            replace_ans_fields_text = f"/*---Replacing student answer input values to let original code align with equivalence reasoning nature of Instant Tutoring Version---*/\n{name_replacement_feedback_vars}:last({name});\n"
+                            feedbackvariablestext.text = search_sans_name.sub(name_replacement_feedback_vars, feedbackvariablestext.text)
                             feedbackvariablestext.text = f"{replace_ans_fields_text}\n{feedbackvariablestext.text}"
     return True
 
