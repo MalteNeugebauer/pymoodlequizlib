@@ -2020,8 +2020,8 @@ validate(ans, tans_ungerundet, tans_gerundet):=block(
     <deployedseed>880578036</deployedseed>
     <deployedseed>1889215117</deployedseed>
   </seed_fields>";;;Sebastian F
-2;ter;Termumformung;8;a;Textaufgaben;Bruch mit Summen aus Wurzeln geschickt auflösen;"poweroftwo:rand([2,4]); basenum:rand([3,5]); mysterynum:2^poweroftwo*basenum; ta1:(sqrt(basenum)+sqrt(mysterynum))/(sqrt(basenum)-sqrt(mysterynum)); simp:false; exercise:(sqrt(basenum)+sqrt(mysterynum))/(sqrt(basenum)-sqrt(mysterynum));";Erweitere den gegebenen Bruch, sodass Zähler und Nenner ganzzahlig werden. Deine Lösung soll ein Bruch sein, der keine Summen, Wurzeln o.ä. enthält.;\({@exercise@} =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1840509983</deployedseed><deployedseed>2121448268</deployedseed><deployedseed>1563375159</deployedseed><deployedseed>1576470869</deployedseed></seed_fields>;;0;2024-09-04
-2;ter;Termumformung;9;a;Textaufgabe;Textaufgabe a);"/*Randomisierte Ziffern:*/
+2;ter;Termumformung;8;a;Textaufgaben I;Bruch mit Summen aus Wurzeln geschickt auflösen;"poweroftwo:rand([2,4]); basenum:rand([3,5]); mysterynum:2^poweroftwo*basenum; ta1:(sqrt(basenum)+sqrt(mysterynum))/(sqrt(basenum)-sqrt(mysterynum)); simp:false; exercise:(sqrt(basenum)+sqrt(mysterynum))/(sqrt(basenum)-sqrt(mysterynum));";Erweitere den gegebenen Bruch, sodass Zähler und Nenner ganzzahlig werden. Deine Lösung soll ein Bruch sein, der keine Summen, Wurzeln o.ä. enthält.;\({@exercise@} =\)[[input:ans1]][[validation:ans1]][[feedback:prt1]];;;\({@exercise@} = {@ta1@}\);0;;;;;;;<seed_fields><deployedseed>1840509983</deployedseed><deployedseed>2121448268</deployedseed><deployedseed>1563375159</deployedseed><deployedseed>1576470869</deployedseed></seed_fields>;;0;2024-09-04
+2;ter;Termumformung;9;a;Textaufgaben II;Textaufgabe a);"/*Randomisierte Ziffern:*/
 faktor_1:1+rand(18);
 faktor_2:2+rand(18);
 summand:rand_with_step(1,20,1);
@@ -2030,7 +2030,7 @@ subtrahend:rand_with_prohib(1,20,[summand]);
 /*Musterlösung:*/
 tans:faktor_2*(faktor_1*x+summand)-subtrahend;
 tans_alt:faktor_2*faktor_1*x+summand-subtrahend;";"<p>Schreibe die folgende Rechenvorschrift als Term:</p>
-<p>Multipliziere die Summe aus dem {@faktor_1@}fachen einer Zahl und {@summand@} mit {@faktor_2@} und subtrahiere davon {@subtrahend@}.</p>
+<p>Multipliziere die Summe aus dem {@faktor_1@}fachen einer Zahl \(x\) und {@summand@} mit {@faktor_2@} und subtrahiere davon {@subtrahend@}.</p>
 <p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>tans = {@tans@};   tans_alt = {@tans_alt@}</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
@@ -2125,7 +2125,7 @@ simp:false;
 /*Musterlösung:*/
 tans:2*x^2-(x^2+summand);
 tans_alt:x^2+summand;";"<p>Schreibe die folgende Rechenvorschrift als Term:</p>
-<p>Multipliziere eine Zahl mit sich selbst, addiere {@summand@}, subtrahiere die Summe vom Doppelten der mit sich selbst multiplizierten Zahl.</p>
+<p>Multipliziere eine Zahl \(x\) mit sich selbst, addiere {@summand@}, subtrahiere die Summe vom Doppelten der mit sich selbst multiplizierten Zahl.</p>
 <p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>tans = {@tans@};   tans_alt = {@tans_alt@}</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
@@ -2224,7 +2224,7 @@ subtrahend:1+rand(19);
 tans:((x+summand)/3)-(x-subtrahend);
 tans_alt_1:(x+summand-3*(x-subtrahend))/3;
 tans_alt_2:(-2*x+(summand+3*subtrahend))/3;";"<p>Schreibe die folgende Rechenvorschrift als Term:</p>
-<p>Subtrahiere vom Drittel einer um {@summand@} vermehrten Zahl die Differenz der Zahl und {@subtrahend@}.</p>
+<p>Subtrahiere vom Drittel einer um {@summand@} vermehrten Zahl \(x\) die Differenz der Zahl und {@subtrahend@}.</p>
 <p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>tans = {@tans@};   tans_alt_1 = {@tans_alt_1@};   tans_alt_2 = {@tans_alt_2@}</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
