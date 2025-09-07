@@ -11366,6 +11366,220 @@ cy:a*cx+b;                                   /*y-Koordinate*/";"<p>Bestimme die 
     <deployedseed>1516607222</deployedseed>
     <deployedseed>420401887</deployedseed>
   </seed_fields>";;;Sebastian F
+7;fun;Funktionen;1;III_a;Geradengleichung aus Punkten erstellen;Funktionen Aufgabe 1.3 a);"a:rand_with_prohib(-20,20,[-1,1,0]);    /*Steigung*/
+b:rand_with_prohib(-20,20,[-1,1,0]);    /*y-Achsenabschnitt*/
+tans:y=a*x+b;                           /*Funktion*/
+
+cx1:rand_with_step(-20,20,1);           /*x1-Koordinate*/
+cy1:a*cx1+b;                            /*y1-Koordinate*/
+
+cx2:rand_with_prohib(-20,20,[cx1]);     /*x1-Koordinate*/
+cy2:a*cx2+b;                            /*y1-Koordinate*/";"<p>Von einer Geraden sind zwei Punkte bekannt. Bestimme die Geradengleichung.</p>
+<p>\(P_1({@cx1@}|{@cy1@});   P_2({@cx2@}|{@cy2@}) \Rightarrow\) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(P_1({@cx1@}|{@cy1@});   P_2({@cx2@}|{@cy2@}) \Rightarrow {@tans@}\)</p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob Eingabe genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfe, ob Eingabe äquivalent wie Musterlösung</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.5</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Du kannst deine Geradengleichung noch weiter vereinfachen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>10</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>y=...</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>1599686867</deployedseed>
+    <deployedseed>798298404</deployedseed>
+    <deployedseed>1852543767</deployedseed>
+    <deployedseed>1213472987</deployedseed>
+    <deployedseed>1432360687</deployedseed>
+    <deployedseed>12804109</deployedseed>
+    <deployedseed>416726090</deployedseed>
+    <deployedseed>2105072680</deployedseed>
+    <deployedseed>720179898</deployedseed>
+    <deployedseed>1612280965</deployedseed>
+    <deployedseed>621259312</deployedseed>
+    <deployedseed>1085797159</deployedseed>
+    <deployedseed>1360789546</deployedseed>
+    <deployedseed>765326278</deployedseed>
+    <deployedseed>401921037</deployedseed>
+    <deployedseed>1545627937</deployedseed>
+    <deployedseed>1699981367</deployedseed>
+    <deployedseed>1210882201</deployedseed>
+    <deployedseed>959553624</deployedseed>
+    <deployedseed>167309559</deployedseed>
+  </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;1;III_b;Geradengleichung aus Punkten erstellen;Funktionen Aufgabe 1.3 b);"a:rand_with_prohib(-20,20,[-1,1,0]);    /*Steigung*/
+b:rand_with_prohib(-20,20,[-1,1,0]);    /*y-Achsenabschnitt*/
+tans:y=a*x+b;                           /*Funktion*/
+
+cx1:rand_with_step(-20,20,1);           /*x1-Koordinate*/
+cy1:a*cx1+b;                            /*y1-Koordinate*/
+
+cx2:rand_with_prohib(-20,20,[cx1]);     /*x1-Koordinate*/
+cy2:a*cx2+b;                            /*y1-Koordinate*/";"<p>Von einer Geraden sind zwei Punkte bekannt. Bestimme die Geradengleichung.</p>
+<p>\(P_1({@cx1@}|{@cy1@});   P_2({@cx2@}|{@cy2@}) \Rightarrow\) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(P_1({@cx1@}|{@cy1@});   P_2({@cx2@}|{@cy2@}) \Rightarrow {@tans@}\)</p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob Eingabe genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfe, ob Eingabe äquivalent wie Musterlösung</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.5</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Du kannst deine Geradengleichung noch weiter vereinfachen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>10</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>y=...</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>1599686867</deployedseed>
+    <deployedseed>798298404</deployedseed>
+    <deployedseed>1852543767</deployedseed>
+    <deployedseed>1213472987</deployedseed>
+    <deployedseed>1432360687</deployedseed>
+    <deployedseed>12804109</deployedseed>
+    <deployedseed>416726090</deployedseed>
+    <deployedseed>2105072680</deployedseed>
+    <deployedseed>720179898</deployedseed>
+    <deployedseed>1612280965</deployedseed>
+    <deployedseed>621259312</deployedseed>
+    <deployedseed>1085797159</deployedseed>
+    <deployedseed>1360789546</deployedseed>
+    <deployedseed>765326278</deployedseed>
+    <deployedseed>401921037</deployedseed>
+    <deployedseed>1545627937</deployedseed>
+    <deployedseed>1699981367</deployedseed>
+    <deployedseed>1210882201</deployedseed>
+    <deployedseed>959553624</deployedseed>
+    <deployedseed>167309559</deployedseed>
+  </seed_fields>";;1;Sebastian F
 7;fun;Funktionen;2;2I a);Koordinatenlücken berechnen;Funktionen Aufgabe 2.1 a);"a:2+rand(20);                                  /*Steigung*/
 b:2+rand(20);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
