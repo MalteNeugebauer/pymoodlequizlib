@@ -11046,6 +11046,346 @@ ta:(-b1*k1-b2*k2)/(b1*cf1+b2*cf2);";"<p>Lösen Sie die Gleichung nach {@v@} auf:
 <options></options>
 </input>
 ";<seed_fields><deployedseed>1344828444</deployedseed><deployedseed>1088226565</deployedseed><deployedseed>1728147521</deployedseed><deployedseed>1319613055</deployedseed></seed_fields>;;0;2024-08-14
+7;fun;Funktionen;1;I_a;Koordinatenaufgabe;Funktionen Aufgabe 1.1 a);"a:2+rand(20);  /*Steigung*/
+b:2+rand(20);  /*y-Achsenabschnitt*/
+fkt:y=a*x-b;   /*Funktion*/
+
+/*Aufgabenteil a)*/
+cx:rand_with_step(-20,20,1);  /*x-Koordinare*/
+cy:a*cx-b;                    /*y-Koordinate*/
+cy2:cy+1+rand(6);             /*Zufallszahl entweder 1 oder 0*/
+cy2_list:[cy,cy2];            /*Liste aus richtigem und falschen y-Wert*/
+cy2_rand:rand(cy2_list);      /*zufälliger richtiger/falscher y-Wert*/
+tans:is(cy=cy2_rand);";"<p>Überprüfe, ob die Punkte auf der Geraden \({@fkt@}\) liegen.</p>
+<p>a) \(A({@cx@}|{@cy2_rand@})\)</p>
+<p>     y= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@fkt@} | \(A({@cx@}|{@cy2_rand@})\)<span style=""font-size: 12.0pt; line-height: 107%;""> \(\Rightarrow\) {@tans@}</span></p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Eingabe zu Punkt A wie in Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>boolean</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>202834327</deployedseed>
+    <deployedseed>1554372333</deployedseed>
+    <deployedseed>429754033</deployedseed>
+    <deployedseed>743761321</deployedseed>
+    <deployedseed>1285933379</deployedseed>
+    <deployedseed>1445461379</deployedseed>
+    <deployedseed>1914869039</deployedseed>
+    <deployedseed>1825790744</deployedseed>
+    <deployedseed>552638766</deployedseed>
+    <deployedseed>794242985</deployedseed>
+    <deployedseed>735569825</deployedseed>
+    <deployedseed>1480421019</deployedseed>
+    <deployedseed>99438013</deployedseed>
+    <deployedseed>701903994</deployedseed>
+    <deployedseed>2035684879</deployedseed>
+    <deployedseed>1805034269</deployedseed>
+    <deployedseed>1965618755</deployedseed>
+    <deployedseed>849899819</deployedseed>
+    <deployedseed>419917106</deployedseed>
+    <deployedseed>750871252</deployedseed>
+  </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;1;I_b;Koordunatenaufgabe;Funktionen Aufgabe 1.1 b);"a:2+rand(20);  /*Steigung*/
+b:2+rand(20);  /*y-Achsenabschnitt*/
+fkt:y=a*x-b;   /*Funktion*/
+
+/*Aufgabenteil b)*/
+cx:rand_with_step(-20,20,1);  /*x-Koordinare*/
+cy:a*cx-b;                    /*y-Koordinate*/
+cy2:cy+1+rand(6);             /*Zufallszahl entweder 1 oder 0*/
+cy2_list:[cy,cy2];            /*Liste aus richtigem und falschen y-Wert*/
+cy2_rand:rand(cy2_list);      /*zufälliger richtiger/falscher y-Wert*/
+tans:is(cy=cy2_rand);";"<p>Überprüfe, ob die Punkte auf der Geraden \({@fkt@}\) liegen.</p>
+<p>b) \(B({@cx@}|{@cy2_rand@})\)</p>
+<p>     y= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@fkt@} | \(B({@cx@}|{@cy2_rand@})\)<span style=""font-size: 12.0pt; line-height: 107%;""> \(\Rightarrow\) {@tans@}</span></p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Eingabe zu Punkt B wie in Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>boolean</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>1473195047</deployedseed>
+    <deployedseed>2044053087</deployedseed>
+    <deployedseed>829804346</deployedseed>
+    <deployedseed>1195738065</deployedseed>
+    <deployedseed>1682960117</deployedseed>
+    <deployedseed>1384528638</deployedseed>
+    <deployedseed>54550080</deployedseed>
+    <deployedseed>96970787</deployedseed>
+    <deployedseed>1567163663</deployedseed>
+    <deployedseed>1982882456</deployedseed>
+    <deployedseed>1816574700</deployedseed>
+    <deployedseed>437580614</deployedseed>
+    <deployedseed>1851788585</deployedseed>
+    <deployedseed>1633075927</deployedseed>
+    <deployedseed>1332437818</deployedseed>
+    <deployedseed>523811052</deployedseed>
+    <deployedseed>976661373</deployedseed>
+    <deployedseed>1985625020</deployedseed>
+    <deployedseed>780823157</deployedseed>
+    <deployedseed>1825182270</deployedseed>
+  </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;1;I_c;Koordinatenaufgabe;Funktionen Aufgabe 1.1 c);"a:2+rand(20);  /*Steigung*/
+b:2+rand(20);  /*y-Achsenabschnitt*/
+fkt:y=a*x-b;   /*Funktion*/
+
+/*Aufgabenteil c)*/
+cx:rand_with_step(-20,20,1);  /*x-Koordinare*/
+cy:a*cx-b;                    /*y-Koordinate*/
+cy2:cy+1+rand(6);             /*Zufallszahl entweder 1 oder 0*/
+cy2_list:[cy,cy2];            /*Liste aus richtigem und falschen y-Wert*/
+cy2_rand:rand(cy2_list);      /*zufälliger richtiger/falscher y-Wert*/
+tans:is(cy=cy2_rand);";"<p>Überprüfe, ob die Punkte auf der Geraden \({@fkt@}\) liegen.</p>
+<p>c) \(C({@cx@}|{@cy2_rand@})\)</p>
+<p>     y= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@fkt@} | \(C({@cx@}|{@cy2_rand@})\)<span style=""font-size: 12.0pt; line-height: 107%;""> \(\Rightarrow\) {@tans@}</span></p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Eingabe zu Punkt C wie in Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>boolean</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>1344409868</deployedseed>
+    <deployedseed>397077581</deployedseed>
+    <deployedseed>859209195</deployedseed>
+    <deployedseed>1755818022</deployedseed>
+    <deployedseed>876448900</deployedseed>
+    <deployedseed>1345065909</deployedseed>
+    <deployedseed>722274682</deployedseed>
+    <deployedseed>23477025</deployedseed>
+    <deployedseed>1743507058</deployedseed>
+    <deployedseed>961907142</deployedseed>
+    <deployedseed>189873585</deployedseed>
+    <deployedseed>245609704</deployedseed>
+    <deployedseed>1796419234</deployedseed>
+    <deployedseed>1150081204</deployedseed>
+    <deployedseed>1765072256</deployedseed>
+    <deployedseed>1523874349</deployedseed>
+    <deployedseed>348355528</deployedseed>
+    <deployedseed>1482522407</deployedseed>
+    <deployedseed>1996296710</deployedseed>
+    <deployedseed>770092581</deployedseed>
+  </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;1;I_d;Koordinatenaufgabe;Funktionen Aufgabe 1.1 d);"a:2+rand(20);  /*Steigung*/
+b:2+rand(20);  /*y-Achsenabschnitt*/
+fkt:y=a*x-b;   /*Funktion*/
+
+/*Aufgabenteil d)*/
+cx:rand_with_step(-20,20,1);  /*x-Koordinare*/
+cy:a*cx-b;                    /*y-Koordinate*/
+cy2:cy+1+rand(6);             /*Zufallszahl entweder 1 oder 0*/
+cy2_list:[cy,cy2];            /*Liste aus richtigem und falschen y-Wert*/
+cy2_rand:rand(cy2_list);      /*zufälliger richtiger/falscher y-Wert*/
+tans:is(cy=cy2_rand);";"<p>Überprüfe, ob die Punkte auf der Geraden \({@fkt@}\) liegen.</p>
+<p>d) \(D({@cx@}|{@cy2_rand@})\)</p>
+<p>     y= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@fkt@} | \(D({@cx@}|{@cy2_rand@})\)<span style=""font-size: 12.0pt; line-height: 107%;""> \(\Rightarrow\) {@tans@}</span></p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Eingabe zu Punkt D wie in Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>boolean</type>
+      <tans>tans</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>1662890108</deployedseed>
+    <deployedseed>1018983867</deployedseed>
+    <deployedseed>1001562697</deployedseed>
+    <deployedseed>1268976994</deployedseed>
+    <deployedseed>695898925</deployedseed>
+    <deployedseed>182024933</deployedseed>
+    <deployedseed>652752348</deployedseed>
+    <deployedseed>2080435342</deployedseed>
+    <deployedseed>44101316</deployedseed>
+    <deployedseed>138354750</deployedseed>
+    <deployedseed>188461903</deployedseed>
+    <deployedseed>1592207829</deployedseed>
+    <deployedseed>33823669</deployedseed>
+    <deployedseed>379849703</deployedseed>
+    <deployedseed>48007645</deployedseed>
+    <deployedseed>609091774</deployedseed>
+    <deployedseed>1154328864</deployedseed>
+    <deployedseed>688623029</deployedseed>
+    <deployedseed>2109075354</deployedseed>
+    <deployedseed>387120696</deployedseed>
+  </seed_fields>";;1;Sebastian F
 7;fun;Funktionen;1;II_a;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 a);"a:2+rand(20);                                  /*Steigung*/
 b:2+rand(20);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
