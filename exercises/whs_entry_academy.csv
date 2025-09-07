@@ -11046,6 +11046,326 @@ ta:(-b1*k1-b2*k2)/(b1*cf1+b2*cf2);";"<p>Lösen Sie die Gleichung nach {@v@} auf:
 <options></options>
 </input>
 ";<seed_fields><deployedseed>1344828444</deployedseed><deployedseed>1088226565</deployedseed><deployedseed>1728147521</deployedseed><deployedseed>1319613055</deployedseed></seed_fields>;;0;2024-08-14
+7;fun;Funktionen;1;II_a;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 a);"a:2+rand(20);                                  /*Steigung*/
+b:2+rand(20);                                  /*y-Achsenabschnitt*/
+fkt:y=a*x+b;                                   /*Funktion*/
+
+cx:rand_with_step(-20,20,1);                  /*x-Koordinate*/
+cy:a*cx+b;                                    /*y-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
+<p>a) \(A({@cx@}|y)\)</p>
+<p>     y= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@fkt@} \( \Rightarrow A({@cx@}|{@cy@}) \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob x genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>cy</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>cy</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>2127692390</deployedseed>
+    <deployedseed>1014340557</deployedseed>
+    <deployedseed>488529753</deployedseed>
+    <deployedseed>999569351</deployedseed>
+    <deployedseed>674548122</deployedseed>
+    <deployedseed>1490615055</deployedseed>
+    <deployedseed>795570498</deployedseed>
+    <deployedseed>2051523234</deployedseed>
+    <deployedseed>885045589</deployedseed>
+    <deployedseed>18572394</deployedseed>
+    <deployedseed>645520022</deployedseed>
+    <deployedseed>2084484285</deployedseed>
+    <deployedseed>1098741240</deployedseed>
+    <deployedseed>1160192328</deployedseed>
+    <deployedseed>119817511</deployedseed>
+    <deployedseed>759527330</deployedseed>
+    <deployedseed>1724676409</deployedseed>
+    <deployedseed>247718106</deployedseed>
+    <deployedseed>1627900164</deployedseed>
+    <deployedseed>286133126</deployedseed>
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;1;II_b;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 b);"a:2+rand(20);                                  /*Steigung*/
+b:2+rand(20);                                  /*y-Achsenabschnitt*/
+fkt:y=a*x+b;                                   /*Funktion*/
+
+cx:rand_with_step(-20,20,1);                 /*x-Koordinate*/
+cy:a*cx+b;                                   /*y-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
+<p>b) \(B({@cx@}|y)\)</p>
+<p>     y= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@fkt@} \( \Rightarrow B({@cx@}|{@cy@}) \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob x2 genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>cy</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>cy</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>1926388958</deployedseed>
+    <deployedseed>674229938</deployedseed>
+    <deployedseed>1001627615</deployedseed>
+    <deployedseed>628939321</deployedseed>
+    <deployedseed>1019050981</deployedseed>
+    <deployedseed>983269236</deployedseed>
+    <deployedseed>1396691948</deployedseed>
+    <deployedseed>1549710779</deployedseed>
+    <deployedseed>1938035983</deployedseed>
+    <deployedseed>1862445940</deployedseed>
+    <deployedseed>1908369555</deployedseed>
+    <deployedseed>1438782760</deployedseed>
+    <deployedseed>1599152293</deployedseed>
+    <deployedseed>479891480</deployedseed>
+    <deployedseed>453113511</deployedseed>
+    <deployedseed>1434286032</deployedseed>
+    <deployedseed>576667301</deployedseed>
+    <deployedseed>925997</deployedseed>
+    <deployedseed>737504805</deployedseed>
+    <deployedseed>1694534726</deployedseed>
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;1;II_c;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 c);"a:2+rand(20);                                  /*Steigung*/
+b:2+rand(20);                                  /*y-Achsenabschnitt*/
+fkt:y=a*x+b;                                   /*Funktion*/
+
+cx:rand_with_step(-20,20,1);                  /*x-Koordinate*/
+cy:a*cx+b;                                    /*y-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
+<p>c) \(C(x|{@cy@})\)</p>
+<p>     x= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@fkt@} \( \Rightarrow C({@cx@}|{@cy@}) \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob x3 genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>cx</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>cx</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>1136162026</deployedseed>
+    <deployedseed>161376435</deployedseed>
+    <deployedseed>176490158</deployedseed>
+    <deployedseed>1238073190</deployedseed>
+    <deployedseed>2012633612</deployedseed>
+    <deployedseed>1413240940</deployedseed>
+    <deployedseed>883789179</deployedseed>
+    <deployedseed>1144281190</deployedseed>
+    <deployedseed>1521438533</deployedseed>
+    <deployedseed>1024102077</deployedseed>
+    <deployedseed>2038215111</deployedseed>
+    <deployedseed>1295909377</deployedseed>
+    <deployedseed>580307130</deployedseed>
+    <deployedseed>1794630918</deployedseed>
+    <deployedseed>740426622</deployedseed>
+    <deployedseed>198147383</deployedseed>
+    <deployedseed>202948275</deployedseed>
+    <deployedseed>1721935929</deployedseed>
+    <deployedseed>860006431</deployedseed>
+    <deployedseed>858221091</deployedseed>
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;1;II_d;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 d);"a:2+rand(20);                                  /*Steigung*/
+b:2+rand(20);                                  /*y-Achsenabschnitt*/
+fkt:y=a*x+b;                                   /*Funktion*/
+
+cx:rand_with_step(-20,20,1);                 /*x-Koordinate*/
+cy:a*cx+b;                                   /*y-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
+<p>d) \(D(x|{@cy@})\)</p>
+<p>     x= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@fkt@} \( \Rightarrow D({@cx@}|{@cy@}) \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob x genau wie Musterlösung</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>cx</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>cx</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>125228795</deployedseed>
+    <deployedseed>1219345956</deployedseed>
+    <deployedseed>514354503</deployedseed>
+    <deployedseed>937077779</deployedseed>
+    <deployedseed>2052189976</deployedseed>
+    <deployedseed>1299381908</deployedseed>
+    <deployedseed>2134915871</deployedseed>
+    <deployedseed>1780203286</deployedseed>
+    <deployedseed>1378653705</deployedseed>
+    <deployedseed>1849641766</deployedseed>
+    <deployedseed>1351141585</deployedseed>
+    <deployedseed>1427329521</deployedseed>
+    <deployedseed>1224302633</deployedseed>
+    <deployedseed>1116175823</deployedseed>
+    <deployedseed>91100007</deployedseed>
+    <deployedseed>2051813643</deployedseed>
+    <deployedseed>696383167</deployedseed>
+    <deployedseed>419219342</deployedseed>
+    <deployedseed>1516607222</deployedseed>
+    <deployedseed>420401887</deployedseed>
+  </seed_fields>";;;Sebastian F
 7;fun;Funktionen;2;2I a);Koordinatenlücken berechnen;Funktionen Aufgabe 2.1 a);"a:2+rand(20);                                  /*Steigung*/
 b:2+rand(20);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
