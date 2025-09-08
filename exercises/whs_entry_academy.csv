@@ -12294,7 +12294,7 @@ tans1:rhs(solve([y1=m*x1+d],[d])[1]);";"<p>Trage die gegebenen Werte in ein Koor
 </table>
 <hr>
 <p>a) Lies den Schnittpunkt des Graphen mit der y-Achse ab.</p>
-<p>    \(S\) = [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(f(x)\) = {@fkt@};  \(y\) = {@tans1@};</p>";0;"<prt>
+<p>    \(b\) = [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(f(x)\) = {@fkt@};  \(y\) = {@tans1@};</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
