@@ -11046,7 +11046,7 @@ ta:(-b1*k1-b2*k2)/(b1*cf1+b2*cf2);";"<p>Lösen Sie die Gleichung nach {@v@} auf:
 <options></options>
 </input>
 ";<seed_fields><deployedseed>1344828444</deployedseed><deployedseed>1088226565</deployedseed><deployedseed>1728147521</deployedseed><deployedseed>1319613055</deployedseed></seed_fields>;;0;2024-08-14
-7;fun;Funktionen;1;I_a;Koordinatenaufgabe;Funktionen Aufgabe 1.1 a);"a:2+rand(20);  /*Steigung*/
+7;fun;Funktionen;0;a;Koordinatenaufgabe;Funktionen Aufgabe 1.1 a);"a:2+rand(20);  /*Steigung*/
 b:2+rand(20);  /*y-Achsenabschnitt*/
 fkt:y=a*x-b;   /*Funktion*/
 
@@ -11131,7 +11131,7 @@ tans:is(cy=cy2_rand);";"<p>Überprüfe, ob die Punkte auf der Geraden \({@fkt@}\
     <deployedseed>419917106</deployedseed>
     <deployedseed>750871252</deployedseed>
   </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;1;I_b;Koordunatenaufgabe;Funktionen Aufgabe 1.1 b);"a:2+rand(20);  /*Steigung*/
+7;fun;Funktionen;0;b;Koordinatenaufgabe;Funktionen Aufgabe 1.1 b);"a:2+rand(20);  /*Steigung*/
 b:2+rand(20);  /*y-Achsenabschnitt*/
 fkt:y=a*x-b;   /*Funktion*/
 
@@ -11216,7 +11216,7 @@ tans:is(cy=cy2_rand);";"<p>Überprüfe, ob die Punkte auf der Geraden \({@fkt@}\
     <deployedseed>780823157</deployedseed>
     <deployedseed>1825182270</deployedseed>
   </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;1;I_c;Koordinatenaufgabe;Funktionen Aufgabe 1.1 c);"a:2+rand(20);  /*Steigung*/
+7;fun;Funktionen;0;c;Koordinatenaufgabe;Funktionen Aufgabe 1.1 c);"a:2+rand(20);  /*Steigung*/
 b:2+rand(20);  /*y-Achsenabschnitt*/
 fkt:y=a*x-b;   /*Funktion*/
 
@@ -11301,7 +11301,7 @@ tans:is(cy=cy2_rand);";"<p>Überprüfe, ob die Punkte auf der Geraden \({@fkt@}\
     <deployedseed>1996296710</deployedseed>
     <deployedseed>770092581</deployedseed>
   </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;1;I_d;Koordinatenaufgabe;Funktionen Aufgabe 1.1 d);"a:2+rand(20);  /*Steigung*/
+7;fun;Funktionen;0;d;Koordinatenaufgabe;Funktionen Aufgabe 1.1 d);"a:2+rand(20);  /*Steigung*/
 b:2+rand(20);  /*y-Achsenabschnitt*/
 fkt:y=a*x-b;   /*Funktion*/
 
@@ -11386,7 +11386,7 @@ tans:is(cy=cy2_rand);";"<p>Überprüfe, ob die Punkte auf der Geraden \({@fkt@}\
     <deployedseed>2109075354</deployedseed>
     <deployedseed>387120696</deployedseed>
   </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;1;II_a;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 a);"a:2+rand(20);                                  /*Steigung*/
+7;fun;Funktionen;1;a;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 a);"a:2+rand(20);                                  /*Steigung*/
 b:2+rand(20);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
 
@@ -11466,7 +11466,7 @@ cy:a*cx+b;                                    /*y-Koordinate*/";"<p>Bestimme die
     <deployedseed>1627900164</deployedseed>
     <deployedseed>286133126</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;1;II_b;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 b);"a:2+rand(20);                                  /*Steigung*/
+7;fun;Funktionen;1;b;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 b);"a:2+rand(20);                                  /*Steigung*/
 b:2+rand(20);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
 
@@ -11546,7 +11546,7 @@ cy:a*cx+b;                                   /*y-Koordinate*/";"<p>Bestimme die 
     <deployedseed>737504805</deployedseed>
     <deployedseed>1694534726</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;1;II_c;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 c);"a:2+rand(20);                                  /*Steigung*/
+7;fun;Funktionen;1;c;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 c);"a:2+rand(20);                                  /*Steigung*/
 b:2+rand(20);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
 
@@ -11626,7 +11626,7 @@ cy:a*cx+b;                                    /*y-Koordinate*/";"<p>Bestimme die
     <deployedseed>860006431</deployedseed>
     <deployedseed>858221091</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;1;II_d;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 d);"a:2+rand(20);                                  /*Steigung*/
+7;fun;Funktionen;1;d;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 d);"a:2+rand(20);                                  /*Steigung*/
 b:2+rand(20);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
 
@@ -11706,7 +11706,7 @@ cy:a*cx+b;                                   /*y-Koordinate*/";"<p>Bestimme die 
     <deployedseed>1516607222</deployedseed>
     <deployedseed>420401887</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;1;III_a;Geradengleichung aus Punkten erstellen;Funktionen Aufgabe 1.3 a);"a:rand_with_prohib(-20,20,[-1,1,0]);    /*Steigung*/
+7;fun;Funktionen;2;a;Geradengleichung aus Punkten erstellen;Funktionen Aufgabe 1.3 a);"a:rand_with_prohib(-20,20,[-1,1,0]);    /*Steigung*/
 b:rand_with_prohib(-20,20,[-1,1,0]);    /*y-Achsenabschnitt*/
 tans:y=a*x+b;                           /*Funktion*/
 
@@ -11813,7 +11813,7 @@ cy2:a*cx2+b;                            /*y1-Koordinate*/";"<p>Von einer Geraden
     <deployedseed>959553624</deployedseed>
     <deployedseed>167309559</deployedseed>
   </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;1;III_b;Geradengleichung aus Punkten erstellen;Funktionen Aufgabe 1.3 b);"a:rand_with_prohib(-20,20,[-1,1,0]);    /*Steigung*/
+7;fun;Funktionen;2;b;Geradengleichung aus Punkten erstellen;Funktionen Aufgabe 1.3 b);"a:rand_with_prohib(-20,20,[-1,1,0]);    /*Steigung*/
 b:rand_with_prohib(-20,20,[-1,1,0]);    /*y-Achsenabschnitt*/
 tans:y=a*x+b;                           /*Funktion*/
 
@@ -11920,7 +11920,7 @@ cy2:a*cx2+b;                            /*y1-Koordinate*/";"<p>Von einer Geraden
     <deployedseed>959553624</deployedseed>
     <deployedseed>167309559</deployedseed>
   </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;2;2I a);Koordinatenlücken berechnen;Funktionen Aufgabe 2.1 a);"a:2+rand(20);                                  /*Steigung*/
+7;fun;Funktionen;3;a;Koordinatenlücken berechnen;Funktionen Aufgabe 2.1 a);"a:2+rand(20);                                  /*Steigung*/
 b:2+rand(20);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
 
@@ -12000,7 +12000,7 @@ cy1:a*cx1+b;                                   /*y1-Koordinate*/";"<p>Bestimme d
     <deployedseed>231806336</deployedseed>
     <deployedseed>1048059925</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;2;2I b);Koordinatenlücken berechnen;Funktionen Aufgabe 2.1 b);"a:2+rand(20);                                  /*Steigung*/
+7;fun;Funktionen;3;b;Koordinatenlücken berechnen;Funktionen Aufgabe 2.1 b);"a:2+rand(20);                                  /*Steigung*/
 b:2+rand(20);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
 
@@ -12081,7 +12081,7 @@ cy1:a*cx1+b;                                   /*y1-Koordinate*/";"<p>Bestimme d
     <deployedseed>197237524</deployedseed>
     <deployedseed>1744683973</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;2;2I c);Koordinatenlücken berechnen;Funktionen Aufgabe 2.1 c);"a:2+rand(20);                                  /*Steigung*/
+7;fun;Funktionen;3;c;Koordinatenlücken berechnen;Funktionen Aufgabe 2.1 c);"a:2+rand(20);                                  /*Steigung*/
 b:2+rand(20);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
 
@@ -12162,7 +12162,7 @@ cy1:a*cx1+b;                                   /*y1-Koordinate*/";"<p>Bestimme d
     <deployedseed>197237524</deployedseed>
     <deployedseed>1744683973</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;2;2I d);Koordunatenlücken berechnen;Funktionen Aufgabe 2.1 d);"a:2+rand(20);                                  /*Steigung*/
+7;fun;Funktionen;3;d;Koordinatenlücken berechnen;Funktionen Aufgabe 2.1 d);"a:2+rand(20);                                  /*Steigung*/
 b:2+rand(20);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
 
@@ -12243,7 +12243,7 @@ cy1:a*cx1+b;                                   /*y1-Koordinate*/";"<p>Bestimme d
     <deployedseed>197237524</deployedseed>
     <deployedseed>1744683973</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;2;2II a);Funktion bestimmen und analysieren;Funktionen Aufgabe 2.2 a);"m:rand_with_prohib(-10,10,[0]);         /* Steigung */
+7;fun;Funktionen;4;a;Funktion bestimmen und analysieren;Funktionen Aufgabe 2.2 a);"m:rand_with_prohib(-10,10,[0]);         /* Steigung */
 c:rand_with_prohib(-10,10,[0]);         /* y-Achsenabschnitt */
 fkt:m*x+c;                              /* Funktionsterm */
 
@@ -12367,7 +12367,7 @@ tans1:rhs(solve([y1=m*x1+d],[d])[1]);";"<p>Trage die gegebenen Werte in ein Koor
     <deployedseed>1438350113</deployedseed>
     <deployedseed>1317863422</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;2;2II b);Funktion bestimmen und analysieren;Funktionen Aufgabe 2.2 b);"m:rand_with_prohib(-10,10,[0]);         /* Steigung */
+7;fun;Funktionen;4;b;Funktion bestimmen und analysieren;Funktionen Aufgabe 2.2 b);"m:rand_with_prohib(-10,10,[0]);         /* Steigung */
 c:rand_with_prohib(-10,10,[0]);         /* y-Achsenabschnitt */
 fkt:m*x+c;                              /* Funktionsterm */
 
@@ -12493,7 +12493,7 @@ tans2:m;";"<p>Trage die gegebenen Werte in ein Koordinatensystem ein und zeichne
     <deployedseed>945635048</deployedseed>
     <deployedseed>1014759829</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;2;2II c);Funktion bestimmen und analysieren;Funktionen Aufgabe 2.2 c);"m:rand_with_prohib(-10,10,[0]);         /* Steigung */
+7;fun;Funktionen;4;c;Funktion bestimmen und analysieren;Funktionen Aufgabe 2.2 c);"m:rand_with_prohib(-10,10,[0]);         /* Steigung */
 c:rand_with_prohib(-10,10,[0]);         /* y-Achsenabschnitt */
 fkt:m*x+c;                              /* Funktionsterm */
 
@@ -12617,7 +12617,7 @@ tans3:rhs(solve([0=m*x+c],[x])[1]);";"<p>Trage die gegebenen Werte in ein Koordi
     <deployedseed>76199513</deployedseed>
     <deployedseed>617642767</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;3;a;Graphen zeichnen;NEU Gerade zeichnen und Ns angeben_einfach_HS BO DigiTeach;"m:rand([1,-1])*rand([2,3,4,1/2,1/3,1/4]);
+7;fun;Funktionen;5;a;Graphen zeichnen;NEU Gerade zeichnen und Ns angeben_einfach_HS BO DigiTeach;"m:rand([1,-1])*rand([2,3,4,1/2,1/3,1/4]);
 c:rand_with_prohib(-5,5,[0]);
 eqn:y=m*x+c;
 ta_A:[0,c];
@@ -12719,7 +12719,7 @@ their_c:ev(rhs(their_eqn),x=0);</text>
       <options/>
     </input>
     ";<seed_fields><deployedseed>718389159</deployedseed><deployedseed>1556030487</deployedseed><deployedseed>1107684716</deployedseed><deployedseed>1025755951</deployedseed></seed_fields>;;1;2024-08-14
-7;fun;Funktionen;3;b;Graphen zeichnen;NEU Gerade zeichnen und Ns angeben_Bruch_HS BO DigiTeach;"m:rand([1,-1])*rand([2,3,4,1/2,1/3,1/4]);
+7;fun;Funktionen;5;b;Graphen zeichnen;NEU Gerade zeichnen und Ns angeben_Bruch_HS BO DigiTeach;"m:rand([1,-1])*rand([2,3,4,1/2,1/3,1/4]);
 c:rand_with_prohib(-5,5,[0]);
 eqn:y=m*x+c;
 ta_A:[0,c];
@@ -12821,7 +12821,7 @@ their_c:ev(rhs(their_eqn),x=0);</text>
       <options/>
     </input>
     ";<seed_fields><deployedseed>660545638</deployedseed><deployedseed>147428537</deployedseed><deployedseed>2027102914</deployedseed></seed_fields>;;1;2024-08-14
-7;fun;Funktionen;3;c;Graphen zeichnen;NEU Gerade zeichnen und Ns angeben_einfach2_HS BO DigiTeach;"m:rand([1,-1])*rand([2,3,4,1/2,1/3,1/4]);
+7;fun;Funktionen;5;c;Graphen zeichnen;NEU Gerade zeichnen und Ns angeben_einfach2_HS BO DigiTeach;"m:rand([1,-1])*rand([2,3,4,1/2,1/3,1/4]);
 c:rand_with_prohib(-5,5,[0]);
 eqn:y=m*x+c;
 ta_A:[0,c];
@@ -12923,7 +12923,7 @@ their_c:ev(rhs(their_eqn),x=0);</text>
       <options/>
     </input>
     ";<seed_fields><deployedseed>1718157364</deployedseed><deployedseed>1712790299</deployedseed><deployedseed>1025625149</deployedseed><deployedseed>1698136262</deployedseed></seed_fields>;;1;2024-08-14
-7;fun;Funktionen;3;d;Graphen zeichnen;NEU Gerade zeichnen und Ns angeben_Bruch2_HS BO DigiTeach;"m:rand([1,-1])*rand([2,3,4,1/2,1/3,1/4]);
+7;fun;Funktionen;5;d;Graphen zeichnen;NEU Gerade zeichnen und Ns angeben_Bruch2_HS BO DigiTeach;"m:rand([1,-1])*rand([2,3,4,1/2,1/3,1/4]);
 c:rand_with_prohib(-5,5,[0]);
 eqn:y=m*x+c;
 ta_A:[0,c];
@@ -13025,7 +13025,7 @@ their_c:ev(rhs(their_eqn),x=0);</text>
       <options/>
     </input>
     ";<seed_fields><deployedseed>1196532218</deployedseed><deployedseed>1030185492</deployedseed><deployedseed>1491859228</deployedseed><deployedseed>2023322506</deployedseed></seed_fields>;;1;2024-08-14
-7;fun;Funktionen;3;3II;Graphen zeichnen;Funktionen Aufgabe 3 II;"fx_zähler:rand([1,2,3,4,5,6,7,8,9]);
+7;fun;Funktionen;5;e;Graphen zeichnen;Funktionen Aufgabe 3 II;"fx_zähler:rand([1,2,3,4,5,6,7,8,9]);
 nenner:rand_with_prohib(2,9,[fx_zähler]);
 d:1+rand(5);
 f(x):=(fx_zähler/nenner)*x+d;       /*Maxima-Funktion f(x)*/
@@ -13129,7 +13129,7 @@ bild:plot([f(x), g(x)],[x, xS_koordSystem-5, xS_koordSystem+5],[y, yS_koordSyste
     <deployedseed>704071844</deployedseed>
     <deployedseed>573531080</deployedseed>
   </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;4;a;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 a);"m:rand_with_prohib(-6,6,[0]);
+7;fun;Funktionen;6;a;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 a);"m:rand_with_prohib(-6,6,[0]);
 d:rand_with_step(-8,8,1);
 fkt:m*x+d;
 x_0:round(rhs(solve([m*x+d=0],[x])[1]));   /*gerundete, ganzzahlige Schnittstelle mit x-Achse*/
@@ -13231,111 +13231,7 @@ tans:fkt;
     <deployedseed>2034632167</deployedseed>
     <deployedseed>134787595</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;4;b;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 b);"m:rand_with_prohib(-6,6,[0]);
-d:rand_with_step(-8,8,1);
-fkt:m*x+d;
-x_0:round(rhs(solve([m*x+d=0],[x])[1]));   /*gerundete, ganzzahlige Schnittstelle mit x-Achse*/
-S:d;                                /*Schnittstelle mit y-Achse*/
-size:max(abs(x_0),abs(S));          /*Definiert die größe des Koordinatenquadranten*/
-
-if size <= 5 then size:6;           /*Wenn zu kleine Werte für x_0 oder S herauskommen, soll der Auschnitt des Quadranten vergrößert werden*/
-
-if x_0 = 0 and S = 0 then
-    bild:plot(fkt, [x, -(size+2), 2], [y, -(size+2), 2], [xtics, -(size+2), 1, 2], [ytics, -(size+2), 1, 2], [axes, true], grid2d);
-
-if x_0 <= 0 and S < 0 then
-    bild:plot(fkt, [x, -(size+1), 1], [y, -(size+1), 1], [xtics, -(size+1), 1, 1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
-
-if x_0 <= 0 and S > 0 then
-    bild:plot(fkt, [x, -(size+1), 1], [y, -1, size+1], [xtics, -(size+1), 1, 1], [ytics, -1, 1, size+1], [axes, true], grid2d);
-
-if x_0 > 0 and S <= 0 then
-    bild:plot(fkt, [x, -1, size+1], [y, -(size+1), 1], [xtics, -1, 1, size+1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
-
-if x_0 > 0 and S > 0 then
-    bild:plot(fkt, [x, -1, size+1], [y, -1, size+1], [xtics, -1, 1, size], [ytics, -1, 1, size+1], [axes, true], grid2d);
-
-
-
-tans:fkt;
-";"<p></p>
-<p>Gib die Funktionsgleichung der folgenden linearen Funktion an.</p>
-<p>{@bild@}</p>
-<p>\(f(x) = \)[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@tans@}</p>
-<p>{@bild@}</p>";0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description/>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>tans</tans>
-      <boxsize>5</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>1</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>1</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";"<seed_fields><deployedseed>964870650</deployedseed>
-    <deployedseed>451140076</deployedseed>
-    <deployedseed>1548836190</deployedseed>
-    <deployedseed>1503016976</deployedseed>
-    <deployedseed>233508732</deployedseed>
-    <deployedseed>738294988</deployedseed>
-    <deployedseed>526890043</deployedseed>
-    <deployedseed>246180067</deployedseed>
-    <deployedseed>339012468</deployedseed>
-    <deployedseed>1205999568</deployedseed>
-    <deployedseed>1258224003</deployedseed>
-    <deployedseed>1598415720</deployedseed>
-    <deployedseed>9791960</deployedseed>
-    <deployedseed>183358727</deployedseed>
-    <deployedseed>1629010692</deployedseed>
-    <deployedseed>769907329</deployedseed>
-    <deployedseed>546756702</deployedseed>
-    <deployedseed>398163302</deployedseed>
-    <deployedseed>2034632167</deployedseed>
-    <deployedseed>134787595</deployedseed>
-  </seed_fields>";;;Sebastian F
-7;fun;Funktionen;4;c;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 c);"m:rand_with_prohib(-6,6,[0]);
+7;fun;Funktionen;6;b;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 b);"m:rand_with_prohib(-6,6,[0]);
 d:rand_with_step(-8,8,1);
 fkt:m*x+d;
 x_0:round(rhs(solve([m*x+d=0],[x])[1]));   /*gerundete, ganzzahlige Schnittstelle mit x-Achse*/
@@ -13439,7 +13335,111 @@ tans:fkt;
     <deployedseed>2034632167</deployedseed>
     <deployedseed>134787595</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;4;d;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 d);"m:rand_with_prohib(-6,6,[0]);
+7;fun;Funktionen;6;c;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 c);"m:rand_with_prohib(-6,6,[0]);
+d:rand_with_step(-8,8,1);
+fkt:m*x+d;
+x_0:round(rhs(solve([m*x+d=0],[x])[1]));   /*gerundete, ganzzahlige Schnittstelle mit x-Achse*/
+S:d;                                /*Schnittstelle mit y-Achse*/
+size:max(abs(x_0),abs(S));          /*Definiert die größe des Koordinatenquadranten*/
+
+if size <= 5 then size:6;           /*Wenn zu kleine Werte für x_0 oder S herauskommen, soll der Auschnitt des Quadranten vergrößert werden*/
+
+if x_0 = 0 and S = 0 then
+    bild:plot(fkt, [x, -(size+2), 2], [y, -(size+2), 2], [xtics, -(size+2), 1, 2], [ytics, -(size+2), 1, 2], [axes, true], grid2d);
+
+if x_0 <= 0 and S < 0 then
+    bild:plot(fkt, [x, -(size+1), 1], [y, -(size+1), 1], [xtics, -(size+1), 1, 1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
+
+if x_0 <= 0 and S > 0 then
+    bild:plot(fkt, [x, -(size+1), 1], [y, -1, size+1], [xtics, -(size+1), 1, 1], [ytics, -1, 1, size+1], [axes, true], grid2d);
+
+if x_0 > 0 and S <= 0 then
+    bild:plot(fkt, [x, -1, size+1], [y, -(size+1), 1], [xtics, -1, 1, size+1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
+
+if x_0 > 0 and S > 0 then
+    bild:plot(fkt, [x, -1, size+1], [y, -1, size+1], [xtics, -1, 1, size], [ytics, -1, 1, size+1], [axes, true], grid2d);
+
+
+
+tans:fkt;
+";"<p></p>
+<p>Gib die Funktionsgleichung der folgenden linearen Funktion an.</p>
+<p>{@bild@}</p>
+<p>\(f(x) = \)[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@tans@}</p>
+<p>{@bild@}</p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description/>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>5</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>964870650</deployedseed>
+    <deployedseed>451140076</deployedseed>
+    <deployedseed>1548836190</deployedseed>
+    <deployedseed>1503016976</deployedseed>
+    <deployedseed>233508732</deployedseed>
+    <deployedseed>738294988</deployedseed>
+    <deployedseed>526890043</deployedseed>
+    <deployedseed>246180067</deployedseed>
+    <deployedseed>339012468</deployedseed>
+    <deployedseed>1205999568</deployedseed>
+    <deployedseed>1258224003</deployedseed>
+    <deployedseed>1598415720</deployedseed>
+    <deployedseed>9791960</deployedseed>
+    <deployedseed>183358727</deployedseed>
+    <deployedseed>1629010692</deployedseed>
+    <deployedseed>769907329</deployedseed>
+    <deployedseed>546756702</deployedseed>
+    <deployedseed>398163302</deployedseed>
+    <deployedseed>2034632167</deployedseed>
+    <deployedseed>134787595</deployedseed>
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;6;d;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 d);"m:rand_with_prohib(-6,6,[0]);
 d:rand_with_step(-8,8,1);
 fkt:m*x+d;
 x_0:round(rhs(solve([m*x+d=0],[x])[1]));   /*gerundete, ganzzahlige Schnittstelle mit x-Achse*/
@@ -14026,7 +14026,7 @@ tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der fo
     <deployedseed>444237957</deployedseed>
     <deployedseed>1234196624</deployedseed>
   </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;16;a;Textaufgabe;Funktionen Aufgabe 16 a);"a:rand_with_step(-10, 0, 1);
+7;fun;Funktionen;8;a;Textaufgabe;Funktionen Aufgabe 16 a);"a:rand_with_step(-10, 0, 1);
 b:rand_with_step(1, 50, 3);
 c:rand_with_step(1, 50, 2);
 d:rand_with_step(20, 100, 1);
@@ -14143,7 +14143,7 @@ tans:h(sekunden);";"<p>In einem Experiment wird ein Objekt aus einer Höhe von {
     <deployedseed>108865669</deployedseed>
     <deployedseed>1230003432</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;16;b;Textaufgabe;Funktionen Aufgabe 16 b);"/*---------------------------------Funktionen--------------------------*/
+7;fun;Funktionen;8;b;Textaufgabe;Funktionen Aufgabe 16 b);"/*---------------------------------Funktionen--------------------------*/
 /*Funktion zum formatieren einer Liste von [x=1, x=2, ...] zu [1, 2, ...]*/
 liste_formatieren(l):=block(
     [ergebnis:[], i],
@@ -14487,7 +14487,7 @@ validationtestresult3:validate(rhs(ans1[2]), rhs(tans_gerundet[2]));</text>
       <options/>
     </input>
     ";;;1;Sebastian F
-7;fun;Funktionen;16;c;Textaufgabe;Funktionen Aufgabe 16 c);"a:rand_with_step(-10, 0, 1);
+7;fun;Funktionen;8;c;Textaufgabe;Funktionen Aufgabe 16 c);"a:rand_with_step(-10, 0, 1);
 b:rand_with_step(1, 50, 3);
 c:rand_with_step(1, 50, 2);
 d:rand_with_step(20, 100, 1);
@@ -14718,7 +14718,7 @@ validate(ans, list_element_ungerundet, list_element_gerundet):=block(
     <deployedseed>1308394592</deployedseed>
     <deployedseed>773241070</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;16;d;Textaufgabe;Funktionen Aufgabe 16 d);"/*---------------------------------Funktionen--------------------------*/
+7;fun;Funktionen;8;d;Textaufgabe;Funktionen Aufgabe 16 d);"/*---------------------------------Funktionen--------------------------*/
 
 /*Funktion rundet Elemente einer übergebenen Liste auf zwei Nachkommastellen.
 [12,12.1,12.2,12.994,12.995] -> [12.0,12.1,12.2,12.99,13.0]*/
@@ -14958,7 +14958,7 @@ validate(ans, list_element_ungerundet, list_element_gerundet):=block(
     <deployedseed>773912582</deployedseed>
     <deployedseed>1228201725</deployedseed>
   </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;99;a;Funktionsgleichung angeben;Funktion beschreiben – quadratisch_einfache Varianten_DOMAIN_1817680;"avar:rand_with_prohib(-3,3,[0]);
+7;fun;Funktionen;9;a;Funktionsgleichung angeben;Funktion beschreiben – quadratisch_einfache Varianten_DOMAIN_1817680;"avar:rand_with_prohib(-3,3,[0]);
 bvarprep:rand_with_step(-3,3,1);
 bvar:bvarprep/2;
 cvarprep:rand_with_prohib(-3,3,[0]);
@@ -15049,7 +15049,7 @@ loes:a2*x^2+b2*x+c2;";"<p></p><p>Bestimmen Sie die Funktion zum Graph und geben 
       <options/>
     </input>
     ";<seed_fields><deployedseed>1781061523</deployedseed><deployedseed>1455564596</deployedseed><deployedseed>861385721</deployedseed><deployedseed>1478236667</deployedseed></seed_fields>;;0;2024-08-14 exercise number is 12 but set to 99 for technical reasons
-7;fun;Funktionen;99;b;Funktionsgleichung angeben;Funktion beschreiben – quadratisch_schwere Varianten_DOMAIN_1817680;"avar:rand_with_prohib(-3,3,[0]);
+7;fun;Funktionen;9;b;Funktionsgleichung angeben;Funktion beschreiben – quadratisch_schwere Varianten_DOMAIN_1817680;"avar:rand_with_prohib(-3,3,[0]);
 bvarprep:rand_with_step(-3,3,1);
 bvar:bvarprep/2;
 cvarprep:rand_with_prohib(-3,3,[0]);
