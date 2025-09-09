@@ -999,6 +999,7 @@ b:2+rand(10);
 tans:(a-b)^2=a^2-2*a*b+b^2;
 
 c:2*a*b;";"<p>Fülle die Lücken der Gleichung und schreibe die vollständige Gleichung in das Eingabefeld.</p>
+<p>\( (\dots-\dots)^2={@a^2@}-{@c@}+\dots \)</p>
 <p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>Aufgabe: \( (...-...)^2={@a^2@}-{@c@}+... \Rightarrow Lösung = {@tans@} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
