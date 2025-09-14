@@ -7394,6 +7394,974 @@ RUL_a:rand(RUL_A);
       <options/>
     </input>
     ";<seed_fields><deployedseed>1602709371</deployedseed> <deployedseed>547016054</deployedseed></seed_fields>;;0;
+6;equ;Gleichungssysteme;2;a;Lösen von linearen Gleichungen;Lösen von linearen Gleichungen a);"/*Randomisierte Dezimalzahlen zwischen 1.00 bis 9.99 mit höchstens einer Nachkommastellen:*/
+a:float(round(10*(1+9*rand(1.0)))/10);
+b:float(round(10*(1+9*rand(1.0)))/10);
+
+aufgabe:a+x=b;
+
+tans:solve([aufgabe],[x])[1];        /*Musterlösung*/       
+equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+<p>a) {@aufgabe@}</p>
+<p>  \(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Lösungsmenge wie Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>last(ans1)</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>638509884</deployedseed>
+    <deployedseed>75351551</deployedseed>
+    <deployedseed>1350767919</deployedseed>
+    <deployedseed>422122428</deployedseed>
+    <deployedseed>705288680</deployedseed>
+    <deployedseed>931729577</deployedseed>
+    <deployedseed>1566125149</deployedseed>
+    <deployedseed>2049653984</deployedseed>
+    <deployedseed>865479326</deployedseed>
+    <deployedseed>712890786</deployedseed>
+    <deployedseed>771794606</deployedseed>
+    <deployedseed>1149879210</deployedseed>
+    <deployedseed>57181054</deployedseed>
+    <deployedseed>992327208</deployedseed>
+    <deployedseed>1153861260</deployedseed>
+    <deployedseed>248028713</deployedseed>
+    <deployedseed>1496323933</deployedseed>
+    <deployedseed>1169075202</deployedseed>
+    <deployedseed>1648946671</deployedseed>
+    <deployedseed>250723702</deployedseed>
+  </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;2;b;Lösen von linearen Gleichungen;Lösen von linearen Gleichungen b);"/*Randomisierte Ziffern:*/
+a:1+rand(10);
+b:a
+c:1+rand(10);
+d:rand_with_step(10,50,4)*(b/c)+a;
+
+aufgabe:a+(b/c)*x=d;
+
+equ1:(b/c)*x=d-a; /*erste Äquivalenzumformung*/
+
+tans:solve([aufgabe],[x])[1]; /*Musterlösung:*/
+
+equivList:[aufgabe, equ1, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+<p>Hinweis: Gib deine Eingabe in dem Format [x=...] ein.</p>
+<p>b) \({@a@}+\large\frac{@b@}{@c@} \cdot x={@d@}\)</p>
+<p>     \(L = \) [[input:ans1]] [[validation:ans1]]</p>
+<p></p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text><![CDATA[/*validationresult:if is(last(ans1) # aufgabe) then return ("""") else return (""Es reicht nicht die Aufgabe abzuschreiben, du musst du sie umformen."");*/]]></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Lösungsmenge genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Aufgabenstellung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>aufgabe</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umfomen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>771192222</deployedseed>
+    <deployedseed>1252878418</deployedseed>
+    <deployedseed>1399458232</deployedseed>
+    <deployedseed>1412616466</deployedseed>
+    <deployedseed>712522073</deployedseed>
+    <deployedseed>1689966515</deployedseed>
+    <deployedseed>359226291</deployedseed>
+    <deployedseed>528729449</deployedseed>
+    <deployedseed>17253133</deployedseed>
+    <deployedseed>1579195975</deployedseed>
+  </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;2;c;Lösen von linearen Gleichungen;Lösen von linearen Gleichungen c);"a:1+rand(10);
+b:1+rand(10);
+zaehler:1+rand(10);
+nenner:1+rand(10);
+
+aufgabe:a*(t-b)=(zaehler/nenner);     /*Ausgangsgleichung*/
+equ1:t-b=(zaehler/nenner)/a;          /*Erste Äquivalenzumformung*/
+tans:solve([aufgabe],[t])[1];         /*Lösungsmenge*/
+equivList:[aufgabe, equ1, tans];
+";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+<p>c) {@aufgabe@}</p>
+<p> \( L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Lösungsmenge genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>tans</tans>
+        <testoptions>2</testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Aufgabenstellung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>aufgabe</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umfomen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>90726105</deployedseed>
+    <deployedseed>43506881</deployedseed>
+    <deployedseed>1078307031</deployedseed>
+    <deployedseed>1949734497</deployedseed>
+    <deployedseed>698051495</deployedseed>
+    <deployedseed>812284524</deployedseed>
+    <deployedseed>1065378062</deployedseed>
+    <deployedseed>1730109325</deployedseed>
+    <deployedseed>522862994</deployedseed>
+    <deployedseed>1331257658</deployedseed>
+    <deployedseed>795533120</deployedseed>
+    <deployedseed>532467427</deployedseed>
+    <deployedseed>1213366708</deployedseed>
+    <deployedseed>2044909424</deployedseed>
+    <deployedseed>1859339563</deployedseed>
+    <deployedseed>379167288</deployedseed>
+    <deployedseed>2056253207</deployedseed>
+    <deployedseed>402523641</deployedseed>
+    <deployedseed>1291160417</deployedseed>
+    <deployedseed>457073320</deployedseed>
+  </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;2;d;Lösen von linearen Gleichungen;Lösen von linearen Gleichungen d);"a:rand_with_step(10,30,3);
+b:1+rand(10);
+c:1+rand(10);
+d:1+rand(10);
+
+aufgabe:a*(y-b)-y*(y-c)+y^2=d;
+tans:solve([aufgabe],[y])[1];
+equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+<p>d) {@aufgabe@}</p>
+<p>  \(L = \)  [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Lösungsmenge genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Aufgabenstellung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>aufgabe</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>-</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umfomen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>887136452</deployedseed>
+    <deployedseed>190070310</deployedseed>
+    <deployedseed>1034353535</deployedseed>
+    <deployedseed>1946342099</deployedseed>
+    <deployedseed>576087989</deployedseed>
+    <deployedseed>1488143214</deployedseed>
+    <deployedseed>498184081</deployedseed>
+    <deployedseed>1537800247</deployedseed>
+    <deployedseed>1664517512</deployedseed>
+    <deployedseed>1802018944</deployedseed>
+    <deployedseed>282192186</deployedseed>
+    <deployedseed>362699369</deployedseed>
+    <deployedseed>155518977</deployedseed>
+    <deployedseed>1917522424</deployedseed>
+    <deployedseed>566825895</deployedseed>
+    <deployedseed>1649431931</deployedseed>
+    <deployedseed>2111890764</deployedseed>
+    <deployedseed>260195014</deployedseed>
+    <deployedseed>128289450</deployedseed>
+    <deployedseed>824616837</deployedseed>
+  </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;2;e;Lösen von linearen Gleichungen;Lösen von linearen Gleichungen e);"a:rand_with_step(10,30,3);
+b:rand_with_step(5,30,5);
+c:rand_with_step(10,100,10);
+d:rand_with_step(5,50,5);
+e:1+rand(10);
+
+aufgabe:a*x-(b*x+c)=d*x+e;
+tans:solve([aufgabe],[x])[1];
+equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+<p>e) {@aufgabe@}</p>
+<p>   \(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Lösungsmenge genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Aufgabenstellung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>aufgabe</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umfomen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>336278720</deployedseed>
+    <deployedseed>1535833050</deployedseed>
+    <deployedseed>710456223</deployedseed>
+    <deployedseed>2075869408</deployedseed>
+    <deployedseed>1039418035</deployedseed>
+    <deployedseed>990126470</deployedseed>
+    <deployedseed>429731625</deployedseed>
+    <deployedseed>954371913</deployedseed>
+    <deployedseed>1908391430</deployedseed>
+    <deployedseed>445461204</deployedseed>
+    <deployedseed>2120561992</deployedseed>
+    <deployedseed>2138961451</deployedseed>
+    <deployedseed>136268818</deployedseed>
+    <deployedseed>1086547775</deployedseed>
+    <deployedseed>576568689</deployedseed>
+    <deployedseed>1179160521</deployedseed>
+    <deployedseed>465431027</deployedseed>
+    <deployedseed>650175623</deployedseed>
+    <deployedseed>1648598498</deployedseed>
+    <deployedseed>415016667</deployedseed>
+  </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;2;f;Lösen von linearen Gleichungen;Lösen von linearen Gleichungen f);"a:rand_with_step(10,30,3);
+b:rand_with_step(5,30,5);
+c:rand_with_step(10,100,10);
+d:rand_with_step(5,50,5);
+e:1+rand(10);
+f:1+rand(10);
+
+aufgabe:a*(x+b)+x+c=-(x-d)+e*x+f;
+tans:solve([aufgabe],[x])[1];
+equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+<p>f) {@aufgabe@}</p>
+<p>  \(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Lösungsmenge genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>1</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Aufgabenstellung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>aufgabe</tans>
+        <testoptions/>
+        <quiet>1</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umfomen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>758669454</deployedseed>
+    <deployedseed>1835228567</deployedseed>
+    <deployedseed>470579488</deployedseed>
+    <deployedseed>542729144</deployedseed>
+    <deployedseed>2337204</deployedseed>
+    <deployedseed>1426945598</deployedseed>
+    <deployedseed>793825941</deployedseed>
+    <deployedseed>720873610</deployedseed>
+    <deployedseed>339731902</deployedseed>
+    <deployedseed>583500725</deployedseed>
+    <deployedseed>1134680578</deployedseed>
+    <deployedseed>903597473</deployedseed>
+    <deployedseed>1321248282</deployedseed>
+    <deployedseed>1053575991</deployedseed>
+    <deployedseed>1516230539</deployedseed>
+    <deployedseed>153660691</deployedseed>
+    <deployedseed>1146431110</deployedseed>
+    <deployedseed>780350458</deployedseed>
+    <deployedseed>1332263677</deployedseed>
+    <deployedseed>871474186</deployedseed>
+  </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;2;g;Lösen von linearen Gleichungen;Lösen von linearen Gleichungen g);"a:rand_with_step(10,20,3);
+b:1+rand(10);
+c:rand_with_step(1,20,2);
+d:rand_with_step(1,20,3);
+e:1+rand(10);
+f:1+rand(10);
+g:1+rand(10);
+h:rand_with_step(10,45,5);
+i:1+rand(10);
+j:1+rand(10);
+k:1+rand(10);
+l:1+rand(10);
+
+aufgabe:a*(b*x+c)+d*(e-f*x)=g*(h-i*x)-j*(x+k)+l;
+tans:solve([aufgabe],[x])[1];
+equivList[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+<p>g) {@aufgabe@}</p>
+<p>   \(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Lösungsmenge genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Aufgabenstellung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>aufgabe</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umfomen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>361710176</deployedseed>
+    <deployedseed>1756745720</deployedseed>
+    <deployedseed>51709084</deployedseed>
+    <deployedseed>737981949</deployedseed>
+    <deployedseed>2030907096</deployedseed>
+    <deployedseed>141411103</deployedseed>
+    <deployedseed>1996740510</deployedseed>
+    <deployedseed>1872721829</deployedseed>
+    <deployedseed>606357011</deployedseed>
+    <deployedseed>330649313</deployedseed>
+    <deployedseed>309997588</deployedseed>
+    <deployedseed>2073516947</deployedseed>
+    <deployedseed>280996879</deployedseed>
+    <deployedseed>2103339840</deployedseed>
+    <deployedseed>1823718189</deployedseed>
+    <deployedseed>357821996</deployedseed>
+    <deployedseed>1960965965</deployedseed>
+    <deployedseed>1665881235</deployedseed>
+    <deployedseed>1730166756</deployedseed>
+  </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;2;h;Lösen von linearen Gleichungen;Lösen von linearen Gleichungen h);"convert_list_to_equation(input):=block([returnvalue],
+  if length(input) # 0 then ( returnvalue:input[1] ),
+  if length(input) > 1 then ( for i:2 thru length(input) do returnvalue:returnvalue nounor input[i]),
+  returnvalue
+);
+
+parameterList:[[1,1,2,1,0,0,0,0,0,0,0,0,0,0], [3,1,4,1,0,0,0,0,0,0,0,0,0,0], [-1,1,5,1,0,0,0,0,0,0,0,0,0,0], [0,1,6,1,0,0,0,0,0,0,0,0,0,0], [-2,1,-3,1,0,0,0,0,0,0,0,0,0,0], [7,1,7,1,0,0,0,0,0,0,0,0,0,0], [10,1,-1,1,0,0,0,0,0,0,0,0,0,0], [5,1,0,1,0,0,0,0,0,0,0,0,0,0], [-4,1,2,1,0,0,0,0,0,0,0,0,0,0], [8,1,-2,1,0,0,0,0,0,0,0,0,0,0], [2,1,3,1,0,0,0,0,0,1,1,0,0,9], [1,1,4,1,0,0,0,0,0,1,1,0,0,-9], [3,1,2,1,0,0,0,0,0,1,1,0,0,-6], [5,1,7,1,0,0,0,0,0,1,1,0,0,-23], [4,1,1,1,0,0,0,0,0,1,1,0,0,6], [2,1,2,1,0,0,0,0,0,1,1,0,0,12], [0,1,5,1,0,0,0,0,0,1,1,0,0,25], [1,1,1,1,0,0,0,0,0,1,1,0,0,19], [2,1,4,1,0,0,0,0,0,1,1,0,0,-38], [3,1,3,1,0,0,0,0,0,1,1,0,0,33]]
+
+z:1+rand(length(parameterList));   /*Laufvariable*/
+a:parameterList[z][1];
+b:parameterList[z][2];
+c:parameterList[z][3];
+d:parameterList[z][4];
+e:parameterList[z][5];
+f:parameterList[z][6];
+g:parameterList[z][7];
+h:parameterList[z][8];
+i:parameterList[z][9];
+j:parameterList[z][10];
+k:parameterList[z][11];
+l:parameterList[z][12];
+m:parameterList[z][13];
+n:parameterList[z][14];
+
+
+aufgabe:(a-b*x)*(c-d*x)+e*(f*x+g)+h*x+i=j*x*(k*x+l)+m*x-n;
+tans:solve([aufgabe],[x]);
+equivList:[aufgabe, convert_list_to_equation(tans)];
+/*equivList:[aufgabe, x=1 nounor x=3];*/";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+<p><em>Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</em></p>
+<p><em>gib deine Eingabe im folgenden <strong>Format </strong>an: </em><strong><em>\( x_n= \ ... \ and \ x_{n+1} \ = \ ... \)</em></strong></p>
+<hr>
+<p>h) {@aufgabe@}</p>
+<p>   \(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Lösungsmenge genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>last(equivList)</tans>
+        <testoptions>validationtester</testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Aufgabenstellung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>aufgabe</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umfomen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>1403740926</deployedseed>
+    <deployedseed>1512633015</deployedseed>
+    <deployedseed>202143210</deployedseed>
+    <deployedseed>1682110756</deployedseed>
+    <deployedseed>1033229861</deployedseed>
+    <deployedseed>1300948445</deployedseed>
+    <deployedseed>2147094850</deployedseed>
+    <deployedseed>1926570323</deployedseed>
+    <deployedseed>704364616</deployedseed>
+    <deployedseed>518957211</deployedseed>
+    <deployedseed>595899839</deployedseed>
+    <deployedseed>1101588552</deployedseed>
+    <deployedseed>44469699</deployedseed>
+    <deployedseed>303317388</deployedseed>
+    <deployedseed>153516524</deployedseed>
+    <deployedseed>1471789677</deployedseed>
+  </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;2;i;Lösen von linearen Gleichungen;Lösen von linearen Gleichungen i);"a:1+rand(10);
+b:1+rand(10);
+c:1+rand(10);
+d:1+rand(10);
+e:rand_with_step(1,20,3);
+
+aufgabe:(x+a)*(x-a)+(x-a)^2=(x-b)*(x+b)-c*(c*x-d)+x^2-e;
+tans:solve([aufgabe],[x])[1];
+equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+<p>i) {@aufgabe@}</p>
+<p>  \(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Lösungsmenge genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Aufgabenstellung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>aufgabe</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umfomen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>783067002</deployedseed>
+    <deployedseed>1402779258</deployedseed>
+    <deployedseed>1940448616</deployedseed>
+    <deployedseed>1117231410</deployedseed>
+    <deployedseed>145804428</deployedseed>
+    <deployedseed>1463394924</deployedseed>
+    <deployedseed>981151994</deployedseed>
+    <deployedseed>25319541</deployedseed>
+    <deployedseed>739646575</deployedseed>
+    <deployedseed>1615472966</deployedseed>
+    <deployedseed>1558204270</deployedseed>
+    <deployedseed>1106597895</deployedseed>
+    <deployedseed>2083419354</deployedseed>
+    <deployedseed>1231275903</deployedseed>
+    <deployedseed>578519479</deployedseed>
+    <deployedseed>1870571415</deployedseed>
+    <deployedseed>815183130</deployedseed>
+    <deployedseed>1854540477</deployedseed>
+    <deployedseed>1099542680</deployedseed>
+    <deployedseed>1871067030</deployedseed>
+  </seed_fields>";;;Sebastian F
 6;equ;Gleichungssysteme;3;a;Zahlenrätsel;Zahlenrätsel a);"summe:rand_with_step(20,60,5);
 faktor_1:rand_with_step(2,6,1);
 faktor_2:faktor_1*2;
