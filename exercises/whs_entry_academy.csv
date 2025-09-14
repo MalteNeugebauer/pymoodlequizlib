@@ -11681,6 +11681,758 @@ z_value_tans:rhs(tans[1][3]);</text>
     <deployedseed>1315893174</deployedseed>
     <deployedseed>2102888323</deployedseed>
   </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;7;1a;Lösen von quadratischen Gleichungen I;Lösen von quadratischen Gleichungen 1 a);"convert_list_to_equation(list):=block(
+    [list_length, i, result],
+    list_length:length(list),
+    i:1,
+    if list_length = 0 then (
+        return (none)
+    )
+    elseif list_length = 1 then (
+        return (list[1])
+    )
+    elseif list_length > 1 then (
+        result:list[i],
+        for i:2 thru list_length do (
+            result:result nounor list[i]
+        ),
+        return (result)
+    )
+);
+
+
+koeffizient:rand([4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 400]);
+gleichung:x^2=koeffizient;
+tans:solve([gleichung],[x]);
+equivList:[gleichung, convert_list_to_equation(tans)];
+";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
+<hr>
+<p>a) {@gleichung@}</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(L = \)</span> [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob Eingabe genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>last(equivList)</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfe, ob Ausgangsgleichung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>gleichung</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umformen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options>hideequiv</options>
+    </input>
+    ";"<seed_fields><deployedseed>1776002786</deployedseed>
+    <deployedseed>2074555171</deployedseed>
+    <deployedseed>388580814</deployedseed>
+    <deployedseed>273844123</deployedseed>
+    <deployedseed>1616039028</deployedseed>
+    <deployedseed>2121355433</deployedseed>
+    <deployedseed>1363909557</deployedseed>
+    <deployedseed>412380646</deployedseed>
+    <deployedseed>543927904</deployedseed>
+    <deployedseed>1475537962</deployedseed>
+    <deployedseed>2125020271</deployedseed>
+    <deployedseed>1304596697</deployedseed>
+    <deployedseed>65754052</deployedseed>
+  </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;7;1b;Lösen von quadratischen Gleichungen I;Lösen von quadratischen Gleichungen 1 b);"convert_list_to_equation(list):=block(
+    [list_length, i, result],
+    list_length:length(list),
+    i:1,
+    if list_length = 0 then (
+        return (none)
+    )
+    elseif list_length = 1 then (
+        return (list[1])
+    )
+    elseif list_length > 1 then (
+        result:list[i],
+        for i:2 thru list_length do (
+            result:result nounor list[i]
+        ),
+        return (result)
+    )
+);
+
+/*convert_list_to_equation(input):=block([returnvalue],
+  if length(input) # 0 then ( returnvalue:input[1] ),
+  if length(input) > 1 then ( for i:2 thru length(input) do returnvalue:returnvalue nounor input[i]),
+  returnvalue
+);*/
+
+/*x^2=koeffizient;*/
+koeffizient:rand([4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, -169, -196, -225, -256, -289, 0]);
+gleichung:b^2-koeffizient=0;
+/*tans:solve([gleichung],[b]);*/
+tans:realroots(gleichung);
+equivList:[gleichung, convert_list_to_equation(tans)];";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
+<hr>
+<p>b) {@gleichung@}</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(L = \)</span> [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob Eingabe genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>last(equivList)</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfe, ob Ausgangsgleichung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>gleichung</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umformen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options>hideequiv</options>
+    </input>
+    ";"<seed_fields><deployedseed>689880505</deployedseed>
+    <deployedseed>87096810</deployedseed>
+    <deployedseed>1892979606</deployedseed>
+    <deployedseed>1676369920</deployedseed>
+    <deployedseed>1933125228</deployedseed>
+    <deployedseed>1475475721</deployedseed>
+    <deployedseed>1114009454</deployedseed>
+    <deployedseed>530799181</deployedseed>
+    <deployedseed>927937019</deployedseed>
+    <deployedseed>536225218</deployedseed>
+    <deployedseed>352210375</deployedseed>
+    <deployedseed>1157683349</deployedseed>
+    <deployedseed>758991730</deployedseed>
+    <deployedseed>1913899476</deployedseed>
+    <deployedseed>1831291827</deployedseed>
+  </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;7;1c;Lösen von quadratischen Gleichungen I;Lösen von quadratischen Gleichungen 1 c);"convert_list_to_equation(list):=block(
+    [list_length, i, result],
+    list_length:length(list),
+    i:1,
+    if list_length = 0 then (
+        return (none)
+    )
+    elseif list_length = 1 then (
+        return (list[1])
+    )
+    elseif list_length > 1 then (
+        result:list[i],
+        for i:2 thru list_length do (
+            result:result nounor list[i]
+        ),
+        return (result)
+    )
+);
+
+koeffizient:rand([4, -9, 16, -25, 36, 49, 64, 81, -100, 121, 144, -169, 196, -225, 256, 289, 400]);
+summand:rand_with_step(20,70,3);
+gleichung:s^2+summand=koeffizient+summand;
+tans:realroots(gleichung);
+equivList:[gleichung, tans];";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
+<hr>
+<p>c) {@gleichung@}</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(L = \)</span> [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob Eingabe genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>last(equivList)</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfe, ob Ausgangsgleichung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>gleichung</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umformen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options>hideequiv</options>
+    </input>
+    ";"<seed_fields><deployedseed>378526596</deployedseed>
+    <deployedseed>749174771</deployedseed>
+    <deployedseed>2120546606</deployedseed>
+    <deployedseed>516224537</deployedseed>
+    <deployedseed>552264189</deployedseed>
+    <deployedseed>1170371633</deployedseed>
+    <deployedseed>65424849</deployedseed>
+    <deployedseed>325522421</deployedseed>
+    <deployedseed>699961796</deployedseed>
+    <deployedseed>1882386519</deployedseed>
+    <deployedseed>1235507783</deployedseed>
+    <deployedseed>1497496211</deployedseed>
+    <deployedseed>1526747663</deployedseed>
+    <deployedseed>933787167</deployedseed>
+    <deployedseed>206094332</deployedseed>
+    <deployedseed>752955234</deployedseed>
+    <deployedseed>1234195373</deployedseed>
+    <deployedseed>599734403</deployedseed>
+    <deployedseed>295786107</deployedseed>
+    <deployedseed>74218293</deployedseed>
+  </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;7;1d;Lösen von quadratischen Gleichungen I;Lösen von quadratischen Gleichungen 1 d);"convert_list_to_equation(list):=block(
+    [list_length, i, result],
+    list_length:length(list),
+    i:1,
+    if list_length = 0 then (
+        return (none)
+    )
+    elseif list_length = 1 then (
+        return (list[1])
+    )
+    elseif list_length > 1 then (
+        result:list[i],
+        for i:2 thru list_length do (
+            result:result nounor list[i]
+        ),
+        return (result)
+    )
+);
+
+a_wert:2+rand(10);
+faktor:rand_with_step(10,40,3);
+gleichung:faktor*a^2=(a_wert^2)*faktor
+tans:realroots(gleichung);
+equivList:[gleichung, tans];";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
+<hr>
+<p>d) {@gleichung@}</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(L = \)</span> [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob Eingabe genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>last(equivList)</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfe, ob Ausgangsgleichung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>gleichung</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umformen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options>hideequiv</options>
+    </input>
+    ";"<seed_fields><deployedseed>790977916</deployedseed>
+    <deployedseed>1027629873</deployedseed>
+    <deployedseed>1794900817</deployedseed>
+    <deployedseed>1226124663</deployedseed>
+    <deployedseed>240030909</deployedseed>
+    <deployedseed>6194263</deployedseed>
+    <deployedseed>1579676836</deployedseed>
+    <deployedseed>497157188</deployedseed>
+    <deployedseed>871897482</deployedseed>
+    <deployedseed>590060808</deployedseed>
+    <deployedseed>1005282513</deployedseed>
+    <deployedseed>443586955</deployedseed>
+    <deployedseed>358249955</deployedseed>
+    <deployedseed>1743834180</deployedseed>
+    <deployedseed>246407570</deployedseed>
+    <deployedseed>2146754008</deployedseed>
+    <deployedseed>712535510</deployedseed>
+    <deployedseed>1395050373</deployedseed>
+    <deployedseed>597718475</deployedseed>
+    <deployedseed>1577238331</deployedseed>
+  </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;7;1e;Lösen von quadratischen Gleichungen I;Lösen von quadratischen Gleichungen 1 e);"convert_list_to_equation(list):=block(
+    [list_length, i, result],
+    list_length:length(list),
+    i:1,
+    if list_length = 0 then (
+        return (none)
+    )
+    elseif list_length = 1 then (
+        return (list[1])
+    )
+    elseif list_length > 1 then (
+        result:list[i],
+        for i:2 thru list_length do (
+            result:result nounor list[i]
+        ),
+        return (result)
+    )
+);
+
+
+a:[2, 3, 5, 0, 21, 8, 3, 5, 15, -2];
+b:[4, 16, 9, 9, 7, 8, 9, 3, -4, 61];
+c:[2, 3, 5, 7, 3, 4, 3, -5, 3, 2];
+i:1+rand(10);
+gleichung:(x^2)/a[i]=b[i]/c[i];
+tans:realroots(gleichung);
+equivList:[gleichung, tans];
+
+";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
+<hr>
+<p>e) {@gleichung@}</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(L = \)</span> [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob Eingabe genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>last(equivList)</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfe, ob Ausgangsgleichung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>gleichung</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umformen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options>hideequiv</options>
+    </input>
+    ";"<seed_fields><deployedseed>858673662</deployedseed>
+    <deployedseed>824246737</deployedseed>
+    <deployedseed>1201894152</deployedseed>
+    <deployedseed>1960025156</deployedseed>
+    <deployedseed>271019075</deployedseed>
+    <deployedseed>635385056</deployedseed>
+    <deployedseed>142154203</deployedseed>
+    <deployedseed>1418752977</deployedseed>
+    <deployedseed>1024903388</deployedseed>
+    <deployedseed>468437088</deployedseed>
+    <deployedseed>167010533</deployedseed>
+    <deployedseed>1990763984</deployedseed>
+    <deployedseed>862596157</deployedseed>
+    <deployedseed>1547368928</deployedseed>
+    <deployedseed>1949194672</deployedseed>
+    <deployedseed>1538822702</deployedseed>
+    <deployedseed>1189771284</deployedseed>
+    <deployedseed>1799306268</deployedseed>
+  </seed_fields>";;;Sebastian F
+6;equ;Gleichungssysteme;7;1f;Lösen von quadratischen Gleichungen I;Lösen von quadratischen Gleichungen 1 f);"convert_list_to_equation(list):=block(
+    [list_length, i, result],
+    list_length:length(list),
+    i:1,
+    if list_length = 0 then (
+        return (none)
+    )
+    elseif list_length = 1 then (
+        return (list[1])
+    )
+    elseif list_length > 1 then (
+        result:list[i],
+        for i:2 thru list_length do (
+            result:result nounor list[i]
+        ),
+        return (result)
+    )
+);
+
+subtrahend:1+rand(20);
+gleichung:r*(r-subtrahend)=0;
+tans:realroots(gleichung);
+equivList:[gleichung, tans];
+";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
+<hr>
+<p>f) {@gleichung@}</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(L = \)</span> [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob Eingabe genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>last(equivList)</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfe, ob Ausgangsgleichung nur kopiert.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>last(ans1)</sans>
+        <tans>gleichung</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Es reicht nicht die Ausgangsgleichung zu kopieren, du musst sie umformen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>equiv</type>
+      <tans>equivList</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint>firstline</syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options>hideequiv</options>
+    </input>
+    ";"<seed_fields><deployedseed>1084940452</deployedseed>
+    <deployedseed>1700955080</deployedseed>
+    <deployedseed>1719449050</deployedseed>
+    <deployedseed>1910854226</deployedseed>
+    <deployedseed>353319391</deployedseed>
+    <deployedseed>1742708878</deployedseed>
+    <deployedseed>1864192525</deployedseed>
+    <deployedseed>1474996234</deployedseed>
+    <deployedseed>1635300043</deployedseed>
+    <deployedseed>1721454790</deployedseed>
+    <deployedseed>1198594523</deployedseed>
+  </seed_fields>";;;Sebastian F
 6;equ;Gleichungssysteme;99;a;Test;Matrix Test;"lmxchar:"""";
 loesung: matrix([0,1]);";Geben Sie die Matrix \([0, 1]\) ein.<br><p><br></p><p>[[input:ans1]]</p><p>[[validation:ans1]][[feedback:prt1]]</p>;;;;;1;;;;;;"<input>
       <name>ans1</name>
