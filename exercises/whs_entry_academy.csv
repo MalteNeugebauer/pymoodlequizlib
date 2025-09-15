@@ -11834,7 +11834,7 @@ gleichung:b^2-koeffizient=0;
 tans:realroots(gleichung);
 equivList:[gleichung, convert_list_to_equation(tans)];";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
-<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x = ... or x = ...\)</strong></span></em></p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
 <hr>
 <p>b) {@gleichung@}</p>
@@ -11954,9 +11954,9 @@ koeffizient:rand([4, -9, 16, -25, 36, 49, 64, 81, -100, 121, 144, -169, 196, -22
 summand:rand_with_step(20,70,3);
 gleichung:s^2+summand=koeffizient+summand;
 tans:realroots(gleichung);
-equivList:[gleichung, tans];";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
+equivList:[gleichung, convert_list_to_equation(tans)];";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
-<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x = ... or x = ...\)</strong></span></em></p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
 <hr>
 <p>c) {@gleichung@}</p>
@@ -12081,9 +12081,9 @@ a_wert:2+rand(10);
 faktor:rand_with_step(10,40,3);
 gleichung:faktor*a^2=(a_wert^2)*faktor
 tans:realroots(gleichung);
-equivList:[gleichung, tans];";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
+equivList:[gleichung, convert_list_to_equation(tans)];";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
-<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x = ... or x = ...\)</strong></span></em></p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
 <hr>
 <p>d) {@gleichung@}</p>
@@ -12211,11 +12211,9 @@ c:[2, 3, 5, 7, 3, 4, 3, -5, 3, 2];
 i:1+rand(10);
 gleichung:(x^2)/a[i]=b[i]/c[i];
 tans:realroots(gleichung);
-equivList:[gleichung, tans];
-
-";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
+equivList:[gleichung, convert_list_to_equation(tans)];";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
-<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x = ... or x = ... \)</strong></span></em></p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
 <hr>
 <p>e) {@gleichung@}</p>
@@ -12337,10 +12335,9 @@ equivList:[gleichung, tans];
 subtrahend:1+rand(20);
 gleichung:r*(r-subtrahend)=0;
 tans:realroots(gleichung);
-equivList:[gleichung, tans];
-";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
+equivList:[gleichung, convert_list_to_equation(tans)];";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen.</p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
-<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x = ... or x = ...\)</strong></span></em></p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
 <hr>
 <p>f) {@gleichung@}</p>
@@ -12458,7 +12455,7 @@ gleichung:a^2-a-koeffizient=0;
 tans:realroots(gleichung);
 equivList:[gleichung, convert_list_to_equation(tans)];";"<p>Löse mit einem Verfahren deiner Wahl und gib die Lösungsmenge \(L\) an.</p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
-<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x = ... or x = ...\)</strong></span></em></p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
 <hr>
 <p>a) {@gleichung@}</p>
@@ -12578,7 +12575,7 @@ gleichung:t^2-faktor*t+summand=0;
 tans:realroots(gleichung);
 equivList:[gleichung, convert_list_to_equation(tans)];";"<p>Löse mit einem Verfahren deiner Wahl und gib die Lösungsmenge \(L\) an.</p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
-<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x = ... or x = ... \)</strong></span></em></p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
 <hr>
 <p>b) {@gleichung@}</p>
@@ -12706,7 +12703,7 @@ gleichung:(x-a)^2=b;
 tans:realroots(gleichung);
 equivList:[gleichung, convert_list_to_equation(tans)];";"<p>Löse mit einem Verfahren deiner Wahl und gib die Lösungsmenge \(L\) an.</p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
-<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x = ... or x = ... \)</strong></span></em></p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
 <hr>
 <p>c) {@gleichung@}</p>
@@ -12834,7 +12831,7 @@ gleichung:faktor*s^2-subtrahend=s;
 tans:solve([gleichung],[s]);
 equivList:[gleichung, convert_list_to_equation(tans)];";"<p>Löse mit einem Verfahren deiner Wahl und gib die Lösungsmenge \(L\) an.</p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
-<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x = ... or x = ...\)</strong></span></em></p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
 <hr>
 <p>d) {@gleichung@}</p>
@@ -12951,7 +12948,7 @@ gleichung:b^2-a*b=-c
 tans:realroots(gleichung);
 equivList:[gleichung, convert_list_to_equation(tans)];";"<p>Löse mit einem Verfahren deiner Wahl und gib die Lösungsmenge \(L\) an.</p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
-<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x = ... or x = ...\)</strong></span></em></p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
 <hr>
 <p>e) {@gleichung@}</p>
@@ -13083,7 +13080,7 @@ gleichung:a*x-(x+b)^2=(x-b)^2-c*(x+d);
 tans:realroots(gleichung);
 equivList:[gleichung, convert_list_to_equation(tans)];";"<p>Löse mit einem Verfahren deiner Wahl und gib die Lösungsmenge \(L\) an.</p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Hinweis: Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</span></em></p>
-<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x_n \ = \ ... \ or \ x_{n+1} \ = \ ... \)</strong></span></em></p>
+<p><em><span style=""font-size: 12.0pt; line-height: 107%;"">gebe diese im folgenden <strong>Format </strong>an: <strong>\(x = ... or x = ...\)</strong></span></em></p>
 <p><em><span style=""font-size: 12.0pt; line-height: 107%;"">Im Falle von <strong>keinen Lösungen</strong>, gib \(<strong>none</strong>\) an.</span></em></p>
 <hr>
 <p>f) {@gleichung@}</p>
