@@ -8385,238 +8385,95 @@ tans:gleichung_ergebnis[1];
 ";"<p>Die Zahl {@summe@} soll in drei Summanden zerlegt werden, so dass jeder Summand um {@faktor_1@} kleiner als der vorherige ist. Wie groß sind die Summanden?</p>
 <p>(Eingabe vom Größten (1) zum Kleinsten (3), Falls Brüche vorhanden, dann kürze!)</p>
 <ol>
-<li>Summand = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</li>
-<li>Summand = [[input:ans2]] [[validation:ans2]] [[feedback:prt2]]</li>
-<li>Summand = [[input:ans3]] [[validation:ans3]] [[feedback:prt3]]</li>
-</ol>";;;;"<p> \(Summe = {@summe@}; \ Faktor= {@faktor_1@}; \\</p>
-<p>Summand_1  = {@summand_1@}; \ Summand_2  = {@summand_2@}; \ Summand_3  = {@summand_3@} \)</p>";0;"<prt_fields><prt>
+<li>Summand = [[input:ans1]] [[validation:ans1]]</li>
+<li>Summand = [[input:ans2]] [[validation:ans2]]</li>
+<li>Summand = [[input:ans3]] [[validation:ans3]]</li>
+</ol>";;;<p>[[feedback:prt1]]</p>;"<p> \(Summe = {@summe@}; \ Faktor= {@faktor_1@}; \\</p>
+<p>Summand_1  = {@summand_1@}; \ Summand_2  = {@summand_2@}; \ Summand_3  = {@summand_3@} \)</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>0</autosimplify>
       <feedbackstyle>1</feedbackstyle>
       <feedbackvariables>
-        <text>ans1_round:ratsimp(ans1);</text>
+        <text/>
       </feedbackvariables>
       <node>
         <name>0</name>
-        <description>Prüfen, ob alg. äquiv.</description>
+        <description>Prüfen, ob Sum1 alg. äquiv.</description>
         <answertest>AlgEquiv</answertest>
         <sans>ans1</sans>
         <tans>tans1</tans>
         <testoptions/>
         <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>0.5</truescore>
+        <truescoremode>+</truescoremode>
+        <truescore>0.3</truescore>
         <truepenalty/>
         <truenextnode>1</truenextnode>
         <trueanswernote>prt1-1-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
         </truefeedback>
-        <falsescoremode>=</falsescoremode>
+        <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>2</falsenextnode>
+        <falsenextnode>1</falsenextnode>
         <falseanswernote>prt1-1-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Der erste Summand ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>1</name>
-        <description>Prüfen, ob Bruch gekürzt</description>
-        <answertest>EqualComAss</answertest>
-        <sans>ans1</sans>
-        <tans>ans1_round</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-2-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0.5</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-2-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Du kannst deinen Bruch noch weiter kürzen.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>2</name>
-        <description>Prüft, ob überhaupt eine Eingabe getätigt wurde.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>EMPTYANSWER</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-3-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text><![CDATA[<p>Um den 2. und 3. Summand zu berechnen, musst du vorher den ersten ermitteln.</p>]]></text>
-        </truefeedback>
-        <falsescoremode>-</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-3-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    <prt>
-      <name>prt2</name>
-      <value>1.0000000</value>
-      <autosimplify>0</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text>ans2_round:ratsimp(ans2);</text>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfen, ob alg. äquiv.</description>
+        <description>Prüfen, ob Sum2 alg. äquiv.</description>
         <answertest>AlgEquiv</answertest>
         <sans>ans2</sans>
         <tans>tans2</tans>
         <testoptions/>
         <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>0.5</truescore>
+        <truescoremode>+</truescoremode>
+        <truescore>0.3</truescore>
         <truepenalty/>
-        <truenextnode>1</truenextnode>
-        <trueanswernote>prt2-1-T</trueanswernote>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
         </truefeedback>
-        <falsescoremode>=</falsescoremode>
+        <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
         <falsenextnode>2</falsenextnode>
-        <falseanswernote>prt2-1-F</falseanswernote>
+        <falseanswernote>prt1-2-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>1</name>
-        <description>Prüfen, ob Bruch gekürzt</description>
-        <answertest>EqualComAss</answertest>
-        <sans>ans2</sans>
-        <tans>ans2_round</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt2-2-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0.5</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt2-2-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Der zweite Summand ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>2</name>
-        <description>Prüft, ob überhaupt eine Eingabe getätigt wurde.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans2</sans>
-        <tans>EMPTYANSWER</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt2-3-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text><![CDATA[<p>Um den 3. Summanden zu berechnen, musst du vorher den zweiten ermitteln.</p>]]></text>
-        </truefeedback>
-        <falsescoremode>-</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt2-3-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    <prt>
-      <name>prt3</name>
-      <value>1.0000000</value>
-      <autosimplify>0</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text>ans3_round:ratsimp(ans3);</text>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfen, ob alg. äquiv.</description>
+        <description>Prüfen, ob Sum3 alg. äquiv.</description>
         <answertest>AlgEquiv</answertest>
         <sans>ans3</sans>
         <tans>tans3</tans>
         <testoptions/>
         <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>0.5</truescore>
+        <truescoremode>+</truescoremode>
+        <truescore>0.4</truescore>
         <truepenalty/>
-        <truenextnode>1</truenextnode>
-        <trueanswernote>prt3-1-T</trueanswernote>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
         </truefeedback>
-        <falsescoremode>=</falsescoremode>
+        <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
         <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt3-1-F</falseanswernote>
+        <falseanswernote>prt1-3-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>1</name>
-        <description>Prüfen, ob Bruch gekürzt</description>
-        <answertest>EqualComAss</answertest>
-        <sans>ans3</sans>
-        <tans>ans3_round</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt3-2-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0.5</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt3-2-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Der dritte Summand ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
     </prt>
-    </prt_fields>";;;;;"<input_fields><input>
+    ";;;;;"<input_fields><input>
       <name>ans1</name>
       <type>algebraic</type>
       <tans>tans1</tans>
@@ -8627,12 +8484,12 @@ tans:gleichung_ergebnis[1];
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
       <showvalidation>1</showvalidation>
-      <options>allowempty</options>
+      <options/>
     </input>
     <input>
       <name>ans2</name>
@@ -8645,12 +8502,12 @@ tans:gleichung_ergebnis[1];
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
       <showvalidation>1</showvalidation>
-      <options>allowempty</options>
+      <options/>
     </input>
     <input>
       <name>ans3</name>
@@ -8663,8 +8520,8 @@ tans:gleichung_ergebnis[1];
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
-      <requirelowestterms>0</requirelowestterms>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
       <showvalidation>1</showvalidation>
@@ -8725,13 +8582,13 @@ faktor_string:faktor_list[i][2];
 ";"<p>Bei welchen 5 aufeinander folgenden geraden Zahlen ist die Summe <strong>{@faktor_string@} </strong>so groß wie die Summe der <strong>beiden kleinsten Zahlen</strong>?</p>
 <p>(Eingabe vom Kleinsten (1) zum Größten (3))</p>
 <ol>
-<li>Zahl= [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</li>
-<li>Zahl= [[input:ans2]] [[validation:ans2]] [[feedback:prt2]]</li>
-<li>Zahl= [[input:ans3]] [[validation:ans3]] [[feedback:prt3]]</li>
-<li>Zahl= [[input:ans4]] [[validation:ans4]] [[feedback:prt4]]</li>
-<li>Zahl= [[input:ans5]] [[validation:ans5]] [[feedback:prt5]]</li>
-</ol>";;;;"<p>\(Summe_{gesamt} = {@summe@}; \ Faktor = {@faktor_string@}; \\</p>
-<p>Zahl_1 = {@zahl_1@}; \ Zahl_2 = {@zahl_2@}; \ Zahl_3 = {@zahl_3@}; \ Zahl_4 = {@zahl_4@}; \ Zahl_5 = {@zahl_5@}; \)</p>";0;"<prt_fields><prt>
+<li>Zahl= [[input:ans1]] [[validation:ans1]]</li>
+<li>Zahl= [[input:ans2]] [[validation:ans2]]</li>
+<li>Zahl= [[input:ans3]] [[validation:ans3]]</li>
+<li>Zahl= [[input:ans4]] [[validation:ans4]]</li>
+<li>Zahl= [[input:ans5]] [[validation:ans5]]</li>
+</ol>";;;<p>[[feedback:prt1]]</p>;"<p>\(Summe_{gesamt} = {@summe@}; \ Faktor = {@faktor_string@}; \\</p>
+<p>Zahl_1 = {@zahl_1@}; \ Zahl_2 = {@zahl_2@}; \ Zahl_3 = {@zahl_3@}; \ Zahl_4 = {@zahl_4@}; \ Zahl_5 = {@zahl_5@}; \)</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>0</autosimplify>
@@ -8741,267 +8598,131 @@ faktor_string:faktor_list[i][2];
       </feedbackvariables>
       <node>
         <name>0</name>
-        <description>Prüfen, ob Eingabe genau wie Musterlösung</description>
-        <answertest>EqualComAss</answertest>
+        <description>Prüfen, ob erste Zahl äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
         <sans>ans1</sans>
         <tans>tans1</tans>
         <testoptions/>
         <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
+        <truescoremode>+</truescoremode>
+        <truescore>0.2</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
+        <truenextnode>1</truenextnode>
         <trueanswernote>prt1-1-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
         </truefeedback>
-        <falsescoremode>=</falsescoremode>
+        <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
         <falsenextnode>1</falsenextnode>
         <falseanswernote>prt1-1-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Die erste Zahl ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>1</name>
-        <description>Prüft, ob überhaupt eine Eingabe getätigt wurde.</description>
+        <description>Prüfen, ob zweite Zahl äquiv zu Musterlösung.</description>
         <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>EMPTYANSWER</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-2-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text><![CDATA[<p>Um die 2., 3., 4. und 5. Zahl zu berechnen, musst du vorher die erste Zahl ermitteln.</p>]]></text>
-        </truefeedback>
-        <falsescoremode>-</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-2-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    <prt>
-      <name>prt2</name>
-      <value>1.0000000</value>
-      <autosimplify>0</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfen, ob Eingabe genau wie Musterlösung</description>
-        <answertest>EqualComAss</answertest>
         <sans>ans2</sans>
         <tans>tans2</tans>
         <testoptions/>
         <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt2-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>1</falsenextnode>
-        <falseanswernote>prt2-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>1</name>
-        <description>Prüft, ob überhaupt eine Eingabe getätigt wurde.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans2</sans>
-        <tans>EMPTYANSWER</tans>
-        <testoptions/>
-        <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0</truescore>
+        <truescore>0.2</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt2-2-T</trueanswernote>
+        <truenextnode>2</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Um die 3., 4. und 5. Zahl zu berechnen, musst du vorher die zweite Zahl berechnen.</p>]]></text>
+          <text/>
         </truefeedback>
-        <falsescoremode>-</falsescoremode>
+        <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt2-2-F</falseanswernote>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Die zweite Zahl ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
-    </prt>
-    <prt>
-      <name>prt3</name>
-      <value>1.0000000</value>
-      <autosimplify>0</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
       <node>
-        <name>0</name>
-        <description>Prüfen, ob Eingabe genau wie Musterlösung</description>
-        <answertest>EqualComAss</answertest>
+        <name>2</name>
+        <description>Prüfen, ob dritte Zahl äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
         <sans>ans3</sans>
         <tans>tans3</tans>
         <testoptions/>
         <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt3-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>1</falsenextnode>
-        <falseanswernote>prt3-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>1</name>
-        <description>Prüft, ob überhaupt eine Eingabe getätigt wurde.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans3</sans>
-        <tans>EMPTYANSWER</tans>
-        <testoptions/>
-        <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0</truescore>
+        <truescore>0.2</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt3-2-T</trueanswernote>
+        <truenextnode>3</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Um die 4. und 5. Zahl zu berechnen, musst du vorher die dritte Zahl ermitteln.</p>]]></text>
+          <text/>
         </truefeedback>
-        <falsescoremode>-</falsescoremode>
+        <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt3-2-F</falseanswernote>
+        <falsenextnode>3</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Die dritte Zahl ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
-    </prt>
-    <prt>
-      <name>prt4</name>
-      <value>1.0000000</value>
-      <autosimplify>0</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
       <node>
-        <name>0</name>
-        <description>Prüfen, ob Eingabe genau wie Musterlösung</description>
-        <answertest>EqualComAss</answertest>
+        <name>3</name>
+        <description>Prüfen, ob vierte Zahl äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
         <sans>ans4</sans>
         <tans>tans4</tans>
         <testoptions/>
         <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt4-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>1</falsenextnode>
-        <falseanswernote>prt4-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>1</name>
-        <description>Prüft, ob überhaupt eine Eingabe getätigt wurde.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans4</sans>
-        <tans>EMPTYANSWER</tans>
-        <testoptions/>
-        <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0</truescore>
+        <truescore>0.2</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt4-2-T</trueanswernote>
+        <truenextnode>4</truenextnode>
+        <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Um die 5. Zahl zu berechnen, musst du vorher die vierte Zahl ermitteln.</p>]]></text>
+          <text/>
         </truefeedback>
-        <falsescoremode>-</falsescoremode>
+        <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt4-2-F</falseanswernote>
+        <falsenextnode>4</falsenextnode>
+        <falseanswernote>prt1-4-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Die vierte Zahl ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
-    </prt>
-    <prt>
-      <name>prt5</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
       <node>
-        <name>0</name>
-        <description>Prüfen, ob Eingabe genau wie Musterlösung</description>
-        <answertest>EqualComAss</answertest>
+        <name>4</name>
+        <description>Prüfen, ob fünfte Zahl äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
         <sans>ans5</sans>
         <tans>tans5</tans>
         <testoptions/>
         <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
+        <truescoremode>+</truescoremode>
+        <truescore>0.2</truescore>
         <truepenalty/>
         <truenextnode>-1</truenextnode>
-        <trueanswernote>prt5-1-T</trueanswernote>
+        <trueanswernote>prt1-5-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
         </truefeedback>
-        <falsescoremode>=</falsescoremode>
+        <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
         <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt5-1-F</falseanswernote>
+        <falseanswernote>prt1-5-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Die fünfte Zahl ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
     </prt>
-    </prt_fields>";;;;;"<input_fields><input>
+    ";;;;;"<input_fields><input>
       <name>ans1</name>
       <type>algebraic</type>
       <tans>tans1</tans>
@@ -9012,7 +8733,7 @@ faktor_string:faktor_list[i][2];
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -9030,7 +8751,7 @@ faktor_string:faktor_list[i][2];
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -9048,7 +8769,7 @@ faktor_string:faktor_list[i][2];
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -9066,7 +8787,7 @@ faktor_string:faktor_list[i][2];
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -9084,7 +8805,7 @@ faktor_string:faktor_list[i][2];
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -9105,11 +8826,11 @@ zahl_3:zahl_2+b;
 zahl_4:zahl_2*2;
 summe:zahl_1+zahl_2+zahl_3+zahl_4;";"<p>Von vier Zahlen ist die zweite um {@a@} größer als die erste, um {@b@} kleiner als dritte und halb so groß wie die vierte. Die Summe der vier Zahlen beträgt {@summe@}. Wie lauten die Zahlen?</p>
 <ol>
-<li>Zahl = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</li>
-<li>Zahl = [[input:ans2]] [[validation:ans2]] [[feedback:prt2]]</li>
-<li>Zahl = [[input:ans3]] [[validation:ans3]] [[feedback:prt3]]</li>
-<li>Zahl = [[input:ans4]] [[validation:ans4]] [[feedback:prt4]]</li>
-</ol>";;;;<p>\({@zahl_1@}+{@zahl_2@}+{@zahl_3@}+{@zahl_4@}={@summe@}\)</p>;0;"<prt_fields><prt>
+<li>Zahl = [[input:ans1]] [[validation:ans1]]</li>
+<li>Zahl = [[input:ans2]] [[validation:ans2]]</li>
+<li>Zahl = [[input:ans3]] [[validation:ans3]]</li>
+<li>Zahl = [[input:ans4]] [[validation:ans4]]</li>
+</ol>";;;<p>[[feedback:prt1]]</p>;<p>\({@zahl_1@}+{@zahl_2@}+{@zahl_3@}+{@zahl_4@}={@summe@}\)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -9119,21 +8840,21 @@ summe:zahl_1+zahl_2+zahl_3+zahl_4;";"<p>Von vier Zahlen ist die zweite um {@a@} 
       </feedbackvariables>
       <node>
         <name>0</name>
-        <description>Prüfe, ob Eingabe genau wie Musterlösung</description>
-        <answertest>EqualComAss</answertest>
+        <description>Prüfe, ob erste Zahl äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
         <sans>ans1</sans>
         <tans>zahl_1</tans>
         <testoptions/>
         <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
+        <truescoremode>+</truescoremode>
+        <truescore>0.25</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
+        <truenextnode>1</truenextnode>
         <trueanswernote>prt1-1-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
         </truefeedback>
-        <falsescoremode>=</falsescoremode>
+        <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
         <falsenextnode>1</falsenextnode>
@@ -9144,183 +8865,81 @@ summe:zahl_1+zahl_2+zahl_3+zahl_4;";"<p>Von vier Zahlen ist die zweite um {@a@} 
       </node>
       <node>
         <name>1</name>
-        <description>Prüft, ob überhaupt eine Eingabe getätigt wurde.</description>
+        <description>Prüfe, ob zweite Zahl äquiv zu Musterlösung.</description>
         <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>EMPTYANSWER</tans>
+        <sans>ans2</sans>
+        <tans>zahl_2</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0</truescore>
+        <truescore>0.25</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
+        <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Um die 2., 3. und 4. Zahl zu berechnen, musst du vorher die erste Zahl ermitteln.</p>]]></text>
+          <text/>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
+        <falsenextnode>2</falsenextnode>
         <falseanswernote>prt1-2-F</falseanswernote>
         <falsefeedback format=""html"">
           <text/>
         </falsefeedback>
       </node>
-    </prt>
-    <prt>
-      <name>prt2</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
       <node>
-        <name>0</name>
-        <description>Prüfe, ob Eingabe genau wie Musterlösung</description>
-        <answertest>EqualComAss</answertest>
-        <sans>ans2</sans>
-        <tans>zahl_2</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt2-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>1</falsenextnode>
-        <falseanswernote>prt2-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>1</name>
-        <description>Prüft, ob überhaupt eine Eingabe getätigt wurde.</description>
+        <name>2</name>
+        <description>Prüfe, ob dritte Zahl äquiv zu Musterlösung.</description>
         <answertest>AlgEquiv</answertest>
-        <sans>ans2</sans>
-        <tans>EMPTYANSWER</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt2-2-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text><![CDATA[<p>Um die 3. und 4. Zahl zu berechnen, musst du vorher die zweite Zahl berechnen.</p>]]></text>
-        </truefeedback>
-        <falsescoremode>-</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt2-2-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    <prt>
-      <name>prt3</name>
-      <value>0.2500000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfe, ob Eingabe genau wie Musterlösung</description>
-        <answertest>EqualComAss</answertest>
         <sans>ans3</sans>
         <tans>zahl_3</tans>
         <testoptions/>
         <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt3-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>1</falsenextnode>
-        <falseanswernote>prt3-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>1</name>
-        <description>Prüft, ob überhaupt eine Eingabe getätigt wurde.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans3</sans>
-        <tans>EMPTYANSWER</tans>
-        <testoptions/>
-        <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0</truescore>
+        <truescore>0.25</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt3-2-T</trueanswernote>
+        <truenextnode>3</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Um die 4. Zahl zu berechnen, musst du vorher die dritte Zahl ermitteln.</p>]]></text>
+          <text/>
         </truefeedback>
-        <falsescoremode>-</falsescoremode>
+        <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt3-2-F</falseanswernote>
+        <falsenextnode>3</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
         <falsefeedback format=""html"">
           <text/>
         </falsefeedback>
       </node>
-    </prt>
-    <prt>
-      <name>prt4</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
       <node>
-        <name>0</name>
-        <description>Prüfe, ob Eingabe genau wie Musterlösung</description>
-        <answertest>EqualComAss</answertest>
+        <name>3</name>
+        <description>Prüfe, ob fünfte Zahl äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
         <sans>ans4</sans>
         <tans>zahl_4</tans>
         <testoptions/>
         <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
+        <truescoremode>+</truescoremode>
+        <truescore>0.25</truescore>
         <truepenalty/>
         <truenextnode>-1</truenextnode>
-        <trueanswernote>prt4-1-T</trueanswernote>
+        <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
         </truefeedback>
-        <falsescoremode>=</falsescoremode>
+        <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
         <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt4-1-F</falseanswernote>
+        <falseanswernote>prt1-4-F</falseanswernote>
         <falsefeedback format=""html"">
           <text/>
         </falsefeedback>
       </node>
     </prt>
-    </prt_fields>";;;;;"<input_fields><input>
+    ";;;;;"<input_fields><input>
       <name>ans1</name>
       <type>algebraic</type>
       <tans>zahl_1</tans>
@@ -9331,7 +8950,7 @@ summe:zahl_1+zahl_2+zahl_3+zahl_4;";"<p>Von vier Zahlen ist die zweite um {@a@} 
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -9349,7 +8968,7 @@ summe:zahl_1+zahl_2+zahl_3+zahl_4;";"<p>Von vier Zahlen ist die zweite um {@a@} 
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -9367,7 +8986,7 @@ summe:zahl_1+zahl_2+zahl_3+zahl_4;";"<p>Von vier Zahlen ist die zweite um {@a@} 
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -9385,7 +9004,7 @@ summe:zahl_1+zahl_2+zahl_3+zahl_4;";"<p>Von vier Zahlen ist die zweite um {@a@} 
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
