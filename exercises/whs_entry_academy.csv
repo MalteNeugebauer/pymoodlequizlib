@@ -8370,7 +8370,7 @@ zwischensumme:rand_with_step(21,60,3);
 minuent:3*faktor_1
 summe:zwischensumme-minuent;
 
-gleichung:x+x-faktor_1+x-faktor_2=summe;
+gleichung:x+(x-faktor_1)+(x-faktor_2)=summe;
 gleichung_ergebnis:solve([gleichung],[x]);
 
 summand_1:rhs(gleichung_ergebnis[1]);
@@ -8379,13 +8379,17 @@ summand_3:summand_1-faktor_2;
 
 tans1:summand_1;
 tans2:summand_2;
-tans3:summand_3;";"<p>Die Zahl {@summe@} soll in drei Summanden zerlegt werden, so dass jeder Summand um {@faktor_1@} kleiner als der vorherige ist. Wie groß sind die Summanden?</p>
+tans3:summand_3;
+
+tans:gleichung_ergebnis[1];
+";"<p>Die Zahl {@summe@} soll in drei Summanden zerlegt werden, so dass jeder Summand um {@faktor_1@} kleiner als der vorherige ist. Wie groß sind die Summanden?</p>
 <p>(Eingabe vom Größten (1) zum Kleinsten (3), Falls Brüche vorhanden, dann kürze!)</p>
 <ol>
 <li>Summand = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</li>
 <li>Summand = [[input:ans2]] [[validation:ans2]] [[feedback:prt2]]</li>
 <li>Summand = [[input:ans3]] [[validation:ans3]] [[feedback:prt3]]</li>
-</ol>";;;;<p>\({@tans1@}+{@tans2@}+{@tans3@}={@summe@}\)</p>;0;"<prt_fields><prt>
+</ol>";;;;"<p> \(Summe = {@summe@}; \ Faktor= {@faktor_1@}; \\</p>
+<p>Summand_1  = {@summand_1@}; \ Summand_2  = {@summand_2@}; \ Summand_3  = {@summand_3@} \)</p>";0;"<prt_fields><prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>0</autosimplify>
@@ -8696,8 +8700,11 @@ tans3:summand_3;";"<p>Die Zahl {@summe@} soll in drei Summanden zerlegt werden, 
     <deployedseed>2144255816</deployedseed>
     <deployedseed>1100350665</deployedseed>
     <deployedseed>1781306352</deployedseed>
-  </seed_fields>";;;Sebastian F
-6;equ;Gleichungssysteme;3;b;Zahlenrätsel;Zahlenrätsel b);"gleichung:5*x+20=4*(2*x+2);
+  </seed_fields>";;1;Sebastian F
+6;equ;Gleichungssysteme;3;b;Zahlenrätsel;Zahlenrätsel b);"faktor_list:[[2, ""zweimal""], [3, ""dreimal""], [4, ""viermal""], [5, ""fünfmal""]];
+i:rand_with_step(1, length(faktor_list), 1);
+
+gleichung:5*x+20=faktor_list[i][1]*(2*x+2);
 gleichung_ergebnis:solve([gleichung],[x]);
 
 zahl_1:ratsimp(rhs(gleichung_ergebnis[1]));
@@ -8705,12 +8712,17 @@ zahl_2:ratsimp(zahl_1+2);
 zahl_3:ratsimp(zahl_2+2);
 zahl_4:ratsimp(zahl_3+2);
 zahl_5:ratsimp(zahl_4+2);
+summe:zahl_1 + zahl_2 + zahl_3 + zahl_4 + zahl_5;
 
 tans1:zahl_1;
 tans2:zahl_2;
 tans3:zahl_3;
 tans4:zahl_4;
-tans5:zahl_5;";"<p>Bei welchen 5 aufeinander folgenden gerade(!) Zahlen ist die Summe viermal so groß wie die Summe der beiden kleinsten Zahlen?</p>
+tans5:zahl_5;
+
+/*------Nur für Aufgabentext--------*/
+faktor_string:faktor_list[i][2];
+";"<p>Bei welchen 5 aufeinander folgenden geraden Zahlen ist die Summe <strong>{@faktor_string@} </strong>so groß wie die Summe der <strong>beiden kleinsten Zahlen</strong>?</p>
 <p>(Eingabe vom Kleinsten (1) zum Größten (3))</p>
 <ol>
 <li>Zahl= [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</li>
@@ -8718,7 +8730,8 @@ tans5:zahl_5;";"<p>Bei welchen 5 aufeinander folgenden gerade(!) Zahlen ist die 
 <li>Zahl= [[input:ans3]] [[validation:ans3]] [[feedback:prt3]]</li>
 <li>Zahl= [[input:ans4]] [[validation:ans4]] [[feedback:prt4]]</li>
 <li>Zahl= [[input:ans5]] [[validation:ans5]] [[feedback:prt5]]</li>
-</ol>";;;;<p>{@tans1@}</p>;0;"<prt_fields><prt>
+</ol>";;;;"<p>\(Summe_{gesamt} = {@summe@}; \ Faktor = {@faktor_string@}; \\</p>
+<p>Zahl_1 = {@zahl_1@}; \ Zahl_2 = {@zahl_2@}; \ Zahl_3 = {@zahl_3@}; \ Zahl_4 = {@zahl_4@}; \ Zahl_5 = {@zahl_5@}; \)</p>";0;"<prt_fields><prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>0</autosimplify>
@@ -8988,7 +9001,7 @@ tans5:zahl_5;";"<p>Bei welchen 5 aufeinander folgenden gerade(!) Zahlen ist die 
         </falsefeedback>
       </node>
     </prt>
-  </prt_fields>";;;;;"<input_fields><input>
+    </prt_fields>";;;;;"<input_fields><input>
       <name>ans1</name>
       <type>algebraic</type>
       <tans>tans1</tans>
@@ -9078,14 +9091,18 @@ tans5:zahl_5;";"<p>Bei welchen 5 aufeinander folgenden gerade(!) Zahlen ist die 
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    </input_fields>";;;;Sebastian F
+    </input_fields>";"<seed_fields><deployedseed>48150076</deployedseed>
+    <deployedseed>1450018387</deployedseed>
+    <deployedseed>546653736</deployedseed>
+    <deployedseed>1160513662</deployedseed>
+  </seed_fields>";;1;Sebastian F
 6;equ;Gleichungssysteme;3;c;Zahlenrätsel;Zahlenrätsel c);"/*Randomisierte Ziffern:*/
 a:1+rand(10);
 b:1+rand(20);
 zahl_1:1+rand(20);
-zahl_2:zahl_1*a;
+zahl_2:zahl_1+a;
 zahl_3:zahl_2+b;
-zahl_4:zahl_1*2;
+zahl_4:zahl_2*2;
 summe:zahl_1+zahl_2+zahl_3+zahl_4;";"<p>Von vier Zahlen ist die zweite um {@a@} größer als die erste, um {@b@} kleiner als dritte und halb so groß wie die vierte. Die Summe der vier Zahlen beträgt {@summe@}. Wie lauten die Zahlen?</p>
 <ol>
 <li>Zahl = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</li>
@@ -9395,7 +9412,7 @@ summe:zahl_1+zahl_2+zahl_3+zahl_4;";"<p>Von vier Zahlen ist die zweite um {@a@} 
     <deployedseed>1850647316</deployedseed>
     <deployedseed>828601728</deployedseed>
     <deployedseed>510322811</deployedseed>
-  </seed_fields>";;;Sebastian F
+  </seed_fields>";;1;Sebastian F
 6;equ;Gleichungssysteme;5;a;Lösen von linearen Gleichungssystemen I;5a Lineare Gleichungssysteme;"A : matrix([2,1],[0.6,1]);
 lsgx : rand_with_prohib(-10,10,[0])
 lsgy : rand_with_prohib(-10,10,[0,lsgx])
