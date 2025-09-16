@@ -8860,7 +8860,7 @@ summe:zahl_1+zahl_2+zahl_3+zahl_4;";"<p>Von vier Zahlen ist die zweite um {@a@} 
         <falsenextnode>1</falsenextnode>
         <falseanswernote>prt1-1-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Die erste Zahl ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
@@ -8885,7 +8885,7 @@ summe:zahl_1+zahl_2+zahl_3+zahl_4;";"<p>Von vier Zahlen ist die zweite um {@a@} 
         <falsenextnode>2</falsenextnode>
         <falseanswernote>prt1-2-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Die zweite Zahl ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
@@ -8910,7 +8910,7 @@ summe:zahl_1+zahl_2+zahl_3+zahl_4;";"<p>Von vier Zahlen ist die zweite um {@a@} 
         <falsenextnode>3</falsenextnode>
         <falseanswernote>prt1-3-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Die dritte Zahl ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
@@ -8935,7 +8935,7 @@ summe:zahl_1+zahl_2+zahl_3+zahl_4;";"<p>Von vier Zahlen ist die zweite um {@a@} 
         <falsenextnode>-1</falsenextnode>
         <falseanswernote>prt1-4-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Die vierte Zahl ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
     </prt>
