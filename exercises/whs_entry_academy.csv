@@ -7489,7 +7489,6 @@ equ1:(b/c)*x=d-a; /*erste Äquivalenzumformung*/
 tans:solve([aufgabe],[x])[1]; /*Musterlösung:*/
 
 equivList:[aufgabe, equ1, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
-<p>Hinweis: Gib deine Eingabe in dem Format [x=...] ein.</p>
 <p>b) \({@a@}+\large\frac{@b@}{@c@} \cdot x={@d@}\)</p>
 <p>     \(L = \) [[input:ans1]] [[validation:ans1]]</p>
 <p></p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
@@ -7562,7 +7561,7 @@ equivList:[aufgabe, equ1, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -8157,7 +8156,7 @@ tans:solve([aufgabe],[x]);
 equivList:[aufgabe, convert_list_to_equation(tans)];
 /*equivList:[aufgabe, x=1 nounor x=3];*/";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
 <p><em>Im Falle von <strong>mehreren Elementen</strong> in der Lösungsmenge,</em></p>
-<p><em>gib deine Eingabe im folgenden <strong>Format </strong>an: </em><strong><em>\( x_n= \ ... \ and \ x_{n+1} \ = \ ... \)</em></strong></p>
+<p><em>gib deine Eingabe im folgenden <strong>Format </strong>an: </em><strong><em>\( x= \ ... \ or \ x \ = \ ... \)</em></strong></p>
 <hr>
 <p>h) {@aufgabe@}</p>
 <p>   \(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
