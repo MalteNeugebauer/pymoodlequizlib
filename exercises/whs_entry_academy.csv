@@ -9703,7 +9703,7 @@ ta1:[gl1 nounand gl2 nounand gl3, x=lsgx nounand y=lsgy nounand z=lsgz]; help:sc
       <options>hideequiv</options>
     </input>
     ";<seed_fields><deployedseed>1111147989</deployedseed><deployedseed>741797188</deployedseed><deployedseed>863331150</deployedseed><deployedseed>359164464</deployedseed></seed_fields>;;0;2024-09-03
-6;equ;Gleichungssysteme;6;a;Lösen von linearen Gleichungssystemen II;LGS 3x3 allgemeine Form;"list:[[2,4,6],[0,0,0],[8,24,4],[-2,0,6],[10,10,10],[-4,-2,-6],[12,6,8],[14,14,12],[16,18,20],[22,24,26],[1,3,5],[5,5,5],[7,3,1],[9,9,11],[11,13,15],[13,15,17],[-1,-3,-5],[-3,-1,-3],[19,19,19],[21,23,25]]; /*Liste für Konstanten, bei denen x, y, z Ganzzahlig sind*/
+6;equ;Gleichungssysteme;6;a;Lösen von linearen Gleichungssystemen II;Lösen von linearen Gleichungssystemen 2 a);"list:[[2,4,6],[0,0,0],[8,24,4],[-2,0,6],[10,10,10],[-4,-2,-6],[12,6,8],[14,14,12],[16,18,20],[22,24,26],[1,3,5],[5,5,5],[7,3,1],[9,9,11],[11,13,15],[13,15,17],[-1,-3,-5],[-3,-1,-3],[19,19,19],[21,23,25]]; /*Liste für Konstanten, bei denen x, y, z Ganzzahlig sind*/
 list_triplet:list[1+rand(20)]; /*Zufälliges Listentriplet*/
 
 /*Konstanten:*/
@@ -9716,51 +9716,34 @@ g1:x+y+z=a;
 g2:x-y+z=b;
 g3:x+y-z=c;
 
-tans:solve([g1, g2, g3], [x, y, z])[1];";"<p>Bestimme die Lösungsmengen der Gleichungssysteme ausschließlich mit dem Additions- oder Gauß-Verfahren.</p>
-<p>(Hinweis: Gib deine Eingabe im Format [x=..., y=..., z=...] ein)</p>
+resultList:solve([g1, g2, g3], [x, y, z])[1];
+tans1:rhs(resultList[1]);
+tans2:rhs(resultList[2]);
+tans3:rhs(resultList[3]);";"<p>Bestimme die Lösungsmengen der Gleichungssysteme ausschließlich mit dem Additions- oder Gauß-Verfahren.</p>
 <p><span style=""font-size: 12.0pt; line-height: 107%; font-family: 'Aptos',sans-serif; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Aptos; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: minor-bidi; mso-ansi-language: DE; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;""><span style=""font-size: 12.0pt; line-height: 107%; font-family: 'Aptos',sans-serif; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Aptos; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: minor-bidi; mso-ansi-language: DE; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"">\[<br>\begin{align*}<br>x + y + z &amp;= {@a@} \\<br>x - y + z &amp;= {@b@} \\<span style=""font-size: 12.0pt; line-height: 107%; font-family: 'Aptos',sans-serif; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Aptos; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: minor-bidi; mso-ansi-language: DE; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;""><br>x + y - z &amp;= {@c@}<br>\end{align*}<br>\]</span></span></span></p>
-<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans@}</p>;0;"<prt>
+<hr>
+<p>\(x = \) [[input:ans1]] [[validation:ans1]]</p>
+<p>\(y = \) [[input:ans2]] [[validation:ans2]]</p>
+<p>\(z = \) [[input:ans3]] [[validation:ans3]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans@}</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
       <feedbackstyle>1</feedbackstyle>
       <feedbackvariables>
-        <text>/*x:*/
-x_ans:lhs(ans1[1][1]);
-x_tans:lhs(tans[1][1]);
-
-/*y:*/
-y_ans:lhs(ans1[1][2]);
-y_tans:lhs(tans[1][2]);
-
-/*z:*/
-z_ans:lhs(ans1[1][3]);
-z_tans:lhs(tans[1][3]);
-
-/*x-Wert:*/
-x_value_ans:rhs(ans1[1][1]);
-x_value_tans:rhs(tans[1][1]);
-
-/*y-Wert:*/
-y_value_ans:rhs(ans1[1][2]);
-y_value_tans:rhs(tans[1][2]);
-
-/*z-Wert:*/
-z_value_ans:rhs(ans1[1][3]);
-z_value_tans:rhs(tans[1][3]);</text>
+        <text/>
       </feedbackvariables>
       <node>
         <name>0</name>
-        <description>Prüfe, ob Eingabe genau wie Musterlösung.</description>
-        <answertest>EqualComAss</answertest>
+        <description>Prüfe, ob x äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
         <sans>ans1</sans>
-        <tans>tans</tans>
+        <tans>tans1</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>1</truescore>
+        <truescore>0.4</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
+        <truenextnode>1</truenextnode>
         <trueanswernote>prt1-1-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
@@ -9771,19 +9754,19 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsenextnode>1</falsenextnode>
         <falseanswernote>prt1-1-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Der x-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>1</name>
-        <description>Prüfe, ob Variablenangabe x korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>x_ans</sans>
-        <tans>x_tans</tans>
+        <description>Prüfe, ob y äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans2</sans>
+        <tans>tans2</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
+        <truescore>0.3</truescore>
         <truepenalty/>
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
@@ -9796,21 +9779,21 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsenextnode>2</falsenextnode>
         <falseanswernote>prt1-2-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein erstes Element muss x sein.</p>]]></text>
+          <text><![CDATA[<p>Der y-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>2</name>
-        <description>Prüfe, ob Variablenangabe y korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>y_ans</sans>
-        <tans>y_tans</tans>
+        <description>Prüfe, ob z äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans3</sans>
+        <tans>tans3</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
+        <truescore>0.3</truescore>
         <truepenalty/>
-        <truenextnode>3</truenextnode>
+        <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-3-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
@@ -9818,132 +9801,68 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>3</falsenextnode>
+        <falsenextnode>-1</falsenextnode>
         <falseanswernote>prt1-3-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein zweites Element muss y sein.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>3</name>
-        <description>Prüfe, ob Variablenangabe z korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>z_ans</sans>
-        <tans>z_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
-        <truepenalty/>
-        <truenextnode>4</truenextnode>
-        <trueanswernote>prt1-4-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>4</falsenextnode>
-        <falseanswernote>prt1-4-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein drittes Element muss z sein.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>4</name>
-        <description>Prüfe, ob Variablenwert von x korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>x_value_ans</sans>
-        <tans>x_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>5</truenextnode>
-        <trueanswernote>prt1-5-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>5</falsenextnode>
-        <falseanswernote>prt1-5-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein x-Wert ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>5</name>
-        <description>Prüfe, ob Variablenwert von y korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>y_value_ans</sans>
-        <tans>y_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>6</truenextnode>
-        <trueanswernote>prt1-6-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>6</falsenextnode>
-        <falseanswernote>prt1-6-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein y-Wert ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>6</name>
-        <description>Prüfe, ob Variablenwert von z korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>z_value_ans</sans>
-        <tans>z_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-7-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-7-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein z-Wert ist nicht korrekt.</p>]]></text>
+          <text><![CDATA[<p>Der z-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
     </prt>
-    ";;;;;"<input>
+    ";;;;;"<input_fields><input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans</tans>
-      <boxsize>15</boxsize>
+      <tans>tans1</tans>
+      <boxsize>4</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
-      <syntaxhint>[x=..., y=..., z=...]</syntaxhint>
+      <syntaxhint/>
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>428065835</deployedseed>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>tans2</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>tans3</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>428065835</deployedseed>
     <deployedseed>916334508</deployedseed>
     <deployedseed>1821811957</deployedseed>
     <deployedseed>1952782064</deployedseed>
@@ -9961,8 +9880,8 @@ z_value_tans:rhs(tans[1][3]);</text>
     <deployedseed>417391566</deployedseed>
     <deployedseed>1546991511</deployedseed>
     <deployedseed>1601207509</deployedseed>
-  </seed_fields>";;;Sebastian F
-6;equ;Gleichungssysteme;6;b;Lösen von linearen Gleichungssystemen II;LGS 3x3 allgemeine Form;"/*Listenformat -> [a, b, c, d, e, f, g]*/
+  </seed_fields>";;1;Sebastian F
+6;equ;Gleichungssysteme;6;b;Lösen von linearen Gleichungssystemen II;Lösen von linearen Gleichungssystemen 2 b);"/*Listenformat -> [a, b, c, d, e, f, g]*/
 list:[[0, -5, -6, 1, 5, 3, 3], [-1, -20, -9, 5, 5, 1, 2], [10, 15, 23, 5, 5, 5, 2], [11, -8, 8, 2, 3, 4, 3], [8, 6, -8, 4, 2, 3, 1], [9, -5, 6, 1, 1, 4, 2], [2, 14, 16, 1, 3, 3, 1], [0, 22, -6, 3, 5, 4, 1], [0, -5, 1, 5, 2, 1, 5], [-11, -13, -8, 3, 1, 3, 2], [0, 21, 3, 3, 3, 3, 2], [-4, -18, -12, 3, 2, 1, 3]]; /*Liste für Konstanten, bei denen x, y, z Ganzzahlig sind*/
 
 list_element:list[1+rand(12)]; /*Zufälliges Listenelement*/
@@ -9981,57 +9900,40 @@ g1:x+y+z=a;
 g2:d*x-e*z=b;
 g3:f*y-g*z=c;
 
-tans:solve([g1, g2, g3], [x, y, z])[1];
+resultList:solve([g1, g2, g3], [x, y, z])[1];
+tans1:rhs(resultList[1]);
+tans2:rhs(resultList[2]);
+tans3:rhs(resultList[3]);
 
 /*Folgende Variablen nur für Dartsellungszwecke in Fragetext:*/
 gl1:x+y+z;
 gl2:d*x-e*z;
 gl3:f*y-g*z;
 ";"<p>Bestimme die Lösungsmengen der Gleichungssysteme ausschließlich mit dem Additions- oder Gauß-Verfahren.</p>
-<p>(Hinweis: Gib deine Eingabe im Format [x=..., y=..., z=...] ein)</p>
 <p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[<br>\begin{align*}<br>{@gl1@} &amp;= {@a@} \\<br>{@gl2@} &amp;= {@b@} \\<br>{@gl3@} &amp;= {@c@}<br>\end{align*}<br>\]</span></p>
-<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans@}</p>;0;"<prt>
+<hr>
+<p>\(x = \) [[input:ans1]] [[validation:ans1]]</p>
+<p>\(y = \) [[input:ans2]] [[validation:ans2]]</p>
+<p>\(z = \) [[input:ans3]] [[validation:ans3]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans@}</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
       <feedbackstyle>1</feedbackstyle>
       <feedbackvariables>
-        <text>/*x:*/
-x_ans:lhs(ans1[1][1]);
-x_tans:lhs(tans[1][1]);
-
-/*y:*/
-y_ans:lhs(ans1[1][2]);
-y_tans:lhs(tans[1][2]);
-
-/*z:*/
-z_ans:lhs(ans1[1][3]);
-z_tans:lhs(tans[1][3]);
-
-/*x-Wert:*/
-x_value_ans:rhs(ans1[1][1]);
-x_value_tans:rhs(tans[1][1]);
-
-/*y-Wert:*/
-y_value_ans:rhs(ans1[1][2]);
-y_value_tans:rhs(tans[1][2]);
-
-/*z-Wert:*/
-z_value_ans:rhs(ans1[1][3]);
-z_value_tans:rhs(tans[1][3]);</text>
+        <text/>
       </feedbackvariables>
       <node>
         <name>0</name>
-        <description>Prüfe, ob Eingabe genau wie Musterlösung.</description>
-        <answertest>EqualComAss</answertest>
+        <description>Prüfe, ob x äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
         <sans>ans1</sans>
-        <tans>tans</tans>
+        <tans>tans1</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>1</truescore>
+        <truescore>0.4</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
+        <truenextnode>1</truenextnode>
         <trueanswernote>prt1-1-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
@@ -10042,19 +9944,19 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsenextnode>1</falsenextnode>
         <falseanswernote>prt1-1-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Der x-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>1</name>
-        <description>Prüfe, ob Variablenangabe x korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>x_ans</sans>
-        <tans>x_tans</tans>
+        <description>Prüfe, ob y äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans2</sans>
+        <tans>tans2</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
+        <truescore>0.3</truescore>
         <truepenalty/>
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
@@ -10067,21 +9969,21 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsenextnode>2</falsenextnode>
         <falseanswernote>prt1-2-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein erstes Element muss x sein.</p>]]></text>
+          <text><![CDATA[<p>Der y-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>2</name>
-        <description>Prüfe, ob Variablenangabe y korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>y_ans</sans>
-        <tans>y_tans</tans>
+        <description>Prüfe, ob z äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans3</sans>
+        <tans>tans3</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
+        <truescore>0.3</truescore>
         <truepenalty/>
-        <truenextnode>3</truenextnode>
+        <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-3-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
@@ -10089,132 +9991,68 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>3</falsenextnode>
+        <falsenextnode>-1</falsenextnode>
         <falseanswernote>prt1-3-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein zweites Element muss y sein.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>3</name>
-        <description>Prüfe, ob Variablenangabe z korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>z_ans</sans>
-        <tans>z_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
-        <truepenalty/>
-        <truenextnode>4</truenextnode>
-        <trueanswernote>prt1-4-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>4</falsenextnode>
-        <falseanswernote>prt1-4-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein drittes Element muss z sein.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>4</name>
-        <description>Prüfe, ob Variablenwert von x korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>x_value_ans</sans>
-        <tans>x_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>5</truenextnode>
-        <trueanswernote>prt1-5-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>5</falsenextnode>
-        <falseanswernote>prt1-5-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein x-Wert ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>5</name>
-        <description>Prüfe, ob Variablenwert von y korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>y_value_ans</sans>
-        <tans>y_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>6</truenextnode>
-        <trueanswernote>prt1-6-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>6</falsenextnode>
-        <falseanswernote>prt1-6-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein y-Wert ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>6</name>
-        <description>Prüfe, ob Variablenwert von z korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>z_value_ans</sans>
-        <tans>z_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-7-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-7-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein z-Wert ist nicht korrekt.</p>]]></text>
+          <text><![CDATA[<p>Der z-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
     </prt>
-    ";;;;;"<input>
+    ";;;;;"<input_fields><input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans</tans>
-      <boxsize>15</boxsize>
+      <tans>tans1</tans>
+      <boxsize>4</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
-      <syntaxhint>[x=..., y=..., z=...]</syntaxhint>
+      <syntaxhint/>
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>428065835</deployedseed>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>tans2</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>tans3</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>428065835</deployedseed>
     <deployedseed>916334508</deployedseed>
     <deployedseed>1821811957</deployedseed>
     <deployedseed>1952782064</deployedseed>
@@ -10230,8 +10068,8 @@ z_value_tans:rhs(tans[1][3]);</text>
     <deployedseed>1822028112</deployedseed>
     <deployedseed>1315893174</deployedseed>
     <deployedseed>2102888323</deployedseed>
-  </seed_fields>";;;Sebastian F
-6;equ;Gleichungssysteme;6;c;Lösen von linearen Gleichungssystemen II;LGS 3x3 allgemeine Form;"/*Listenformat -> [a, b, c, d, e, f]*/
+  </seed_fields>";;1;Sebastian F
+6;equ;Gleichungssysteme;6;c;Lösen von linearen Gleichungssystemen II;Lösen von linearen Gleichungssystemen 2 c);"/*Listenformat -> [a, b, c, d, e, f]*/
 list:[[1, -1, 3, 2, 1, 3], [2, -2, 6, 3, 2, 4], [3, -3, 9, 4, 3, 5], [5, -5, 15, 6, 5, 7], [4, -4, 12, 5, 4, 6]]; /*Liste für Konstanten, bei denen x, y, z Ganzzahlig sind*/
 
 list_element:list[1+rand(5)]; /*Zufälliges Listenelement*/
@@ -10249,57 +10087,39 @@ g1:x+y-z=a;
 g2:x-d*y=b;
 g3:e*x+f*y-z=c;
 
-tans:solve([g1, g2, g3], [x, y, z])[1];
+resultList:solve([g1, g2, g3], [x, y, z])[1];
+tans1:rhs(resultList[1]);
+tans2:rhs(resultList[2]);
+tans3:rhs(resultList[3]);
 
 /*Folgende Variablen nur für Dartsellungszwecke in Fragetext:*/
 gl1:x+y-z;
 gl2:x-d*y;
 gl3:e*x+f*y-z;";"<p>Bestimme die Lösungsmengen der Gleichungssysteme ausschließlich mit dem Additions- oder Gauß-Verfahren.</p>
-<p>(Hinweis: Gib deine Eingabe im Format [x=..., y=..., z=...] ein)</p>
 <p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[<br>\begin{align*}<br>{@gl1@} &amp;= {@a@} \\<br>{@gl2@} &amp;= {@b@} \\<br>{@gl3@} &amp;= {@c@}<br>\end{align*}<br>\]</span></p>
-<p></p>
-<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans@}</p>;0;"<prt>
+<hr>
+<p>\(x = \) [[input:ans1]] [[validation:ans1]]</p>
+<p>\(y = \) [[input:ans2]] [[validation:ans2]]</p>
+<p>\(z = \) [[input:ans3]] [[validation:ans3]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans@}</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
       <feedbackstyle>1</feedbackstyle>
       <feedbackvariables>
-        <text>/*x:*/
-x_ans:lhs(ans1[1][1]);
-x_tans:lhs(tans[1][1]);
-
-/*y:*/
-y_ans:lhs(ans1[1][2]);
-y_tans:lhs(tans[1][2]);
-
-/*z:*/
-z_ans:lhs(ans1[1][3]);
-z_tans:lhs(tans[1][3]);
-
-/*x-Wert:*/
-x_value_ans:rhs(ans1[1][1]);
-x_value_tans:rhs(tans[1][1]);
-
-/*y-Wert:*/
-y_value_ans:rhs(ans1[1][2]);
-y_value_tans:rhs(tans[1][2]);
-
-/*z-Wert:*/
-z_value_ans:rhs(ans1[1][3]);
-z_value_tans:rhs(tans[1][3]);</text>
+        <text/>
       </feedbackvariables>
       <node>
         <name>0</name>
-        <description>Prüfe, ob Eingabe genau wie Musterlösung.</description>
-        <answertest>EqualComAss</answertest>
+        <description>Prüfe, ob x äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
         <sans>ans1</sans>
-        <tans>tans</tans>
+        <tans>tans1</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>1</truescore>
+        <truescore>0.4</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
+        <truenextnode>1</truenextnode>
         <trueanswernote>prt1-1-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
@@ -10310,19 +10130,19 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsenextnode>1</falsenextnode>
         <falseanswernote>prt1-1-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Der x-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>1</name>
-        <description>Prüfe, ob Variablenangabe x korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>x_ans</sans>
-        <tans>x_tans</tans>
+        <description>Prüfe, ob y äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans2</sans>
+        <tans>tans2</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
+        <truescore>0.3</truescore>
         <truepenalty/>
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
@@ -10335,21 +10155,21 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsenextnode>2</falsenextnode>
         <falseanswernote>prt1-2-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein erstes Element muss x sein.</p>]]></text>
+          <text><![CDATA[<p>Der y-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>2</name>
-        <description>Prüfe, ob Variablenangabe y korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>y_ans</sans>
-        <tans>y_tans</tans>
+        <description>Prüfe, ob z äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans3</sans>
+        <tans>tans3</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
+        <truescore>0.3</truescore>
         <truepenalty/>
-        <truenextnode>3</truenextnode>
+        <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-3-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
@@ -10357,121 +10177,21 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>3</falsenextnode>
+        <falsenextnode>-1</falsenextnode>
         <falseanswernote>prt1-3-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein zweites Element muss y sein.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>3</name>
-        <description>Prüfe, ob Variablenangabe z korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>z_ans</sans>
-        <tans>z_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
-        <truepenalty/>
-        <truenextnode>4</truenextnode>
-        <trueanswernote>prt1-4-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>4</falsenextnode>
-        <falseanswernote>prt1-4-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein drittes Element muss z sein.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>4</name>
-        <description>Prüfe, ob Variablenwert von x korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>x_value_ans</sans>
-        <tans>x_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>5</truenextnode>
-        <trueanswernote>prt1-5-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>5</falsenextnode>
-        <falseanswernote>prt1-5-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein x-Wert ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>5</name>
-        <description>Prüfe, ob Variablenwert von y korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>y_value_ans</sans>
-        <tans>y_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>6</truenextnode>
-        <trueanswernote>prt1-6-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>6</falsenextnode>
-        <falseanswernote>prt1-6-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein y-Wert ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>6</name>
-        <description>Prüfe, ob Variablenwert von z korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>z_value_ans</sans>
-        <tans>z_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-7-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-7-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein z-Wert ist nicht korrekt.</p>]]></text>
+          <text><![CDATA[<p>Der z-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
     </prt>
-    ";;;;;"<input>
+    ";;;;;"<input_fields><input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans</tans>
-      <boxsize>15</boxsize>
+      <tans>tans1</tans>
+      <boxsize>4</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
-      <syntaxhint>[x=..., y=..., z=...]</syntaxhint>
+      <syntaxhint/>
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
@@ -10482,7 +10202,43 @@ z_value_tans:rhs(tans[1][3]);</text>
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>428065835</deployedseed>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>tans2</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>tans3</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>428065835</deployedseed>
     <deployedseed>916334508</deployedseed>
     <deployedseed>1821811957</deployedseed>
     <deployedseed>1952782064</deployedseed>
@@ -10498,8 +10254,8 @@ z_value_tans:rhs(tans[1][3]);</text>
     <deployedseed>1822028112</deployedseed>
     <deployedseed>1315893174</deployedseed>
     <deployedseed>2102888323</deployedseed>
-  </seed_fields>";;;Sebastian F
-6;equ;Gleichungssysteme;6;d;Lösen von linearen Gleichungssystemen II;LGS 3x3 allgemeine Form;"/*Listenformat -> [a, b, c, d, e, f]*/
+  </seed_fields>";;1;Sebastian F
+6;equ;Gleichungssysteme;6;d;Lösen von linearen Gleichungssystemen II;Lösen von linearen Gleichungssystemen 2 d);"/*Listenformat -> [a, b, c, d, e, f]*/
 list:[[18, -6, 9, 3, 2, 1, 2, 4, 3, 1, -1], [21, 3, 14, 3, -1, 1, 1, 3, 2, 1, 1], [25, 5, 10, 1, 2, 2, 2, 1, 3, 1, 1], [22, -2, 14, 2, 3, -1, 1, 1, 2, -1, 2], [4, 2, 2, 1, 1, 1, 1, -1, -1, 1, 1, 1]]; /*Liste für Konstanten, bei denen x, y, z Ganzzahlig sind*/
 
 list_element:list[1+rand(5)]; /*Zufälliges Listenelement*/
@@ -10522,57 +10278,41 @@ g1:d*x+e*y+f*z=a;
 g2:g*x-h*y-z=b;
 g3:i*x+j*y-k*z=c;
 
-tans:solve([g1, g2, g3], [x, y, z])[1];
+resultList:solve([g1, g2, g3], [x, y, z])[1];
+tans1:rhs(resultList[1]);
+tans2:rhs(resultList[2]);
+tans3:rhs(resultList[3]);
 
 /*Folgende Variablen nur für Dartsellungszwecke in Fragetext:*/
 gl1:d*x+e*y+f*z;
 gl2:g*x-h*y-z;
 gl3:i*x+j*y-k*z;";"<p>Bestimme die Lösungsmengen der Gleichungssysteme ausschließlich mit dem Additions- oder Gauß-Verfahren.</p>
-<p>(Hinweis: Gib deine Eingabe im Format [x=..., y=..., z=...] ein)</p>
 <p><span style=""font-size: 12.0pt; line-height: 107%; font-family: 'Aptos',sans-serif; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Aptos; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: minor-bidi; mso-ansi-language: DE; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"">\[</span></p>
 <p><span style=""font-size: 12.0pt; line-height: 107%; font-family: 'Aptos',sans-serif; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Aptos; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: minor-bidi; mso-ansi-language: DE; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"">\begin{align*}<br>{@gl1@} &amp;= {@a@} \\<br>{@gl2@} &amp;= {@b@} \\<span style=""font-size: 12.0pt; line-height: 107%; font-family: 'Aptos',sans-serif; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Aptos; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: minor-bidi; mso-ansi-language: DE; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;""><br>{@gl3@} &amp;= {@c@}<br>\end{align*}<br>\]</span></span></p>
-<p><span style=""font-size: 12.0pt; line-height: 107%; font-family: 'Aptos',sans-serif; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Aptos; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: minor-bidi; mso-ansi-language: DE; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;""><span style=""font-size: 12.0pt; line-height: 107%; font-family: 'Aptos',sans-serif; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Aptos; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: minor-bidi; mso-ansi-language: DE; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"">[[input:ans1]] [[validation:ans1]]</span></span></p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans@}</p>;0;"<prt>
+<hr>
+<p>\(x = \) [[input:ans1]] [[validation:ans1]]</p>
+<p>\(y = \) [[input:ans2]] [[validation:ans2]]</p>
+<p>\(z = \) [[input:ans3]] [[validation:ans3]]</p>
+<p></p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans@}</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
       <feedbackstyle>1</feedbackstyle>
       <feedbackvariables>
-        <text>/*x:*/
-x_ans:lhs(ans1[1][1]);
-x_tans:lhs(tans[1][1]);
-
-/*y:*/
-y_ans:lhs(ans1[1][2]);
-y_tans:lhs(tans[1][2]);
-
-/*z:*/
-z_ans:lhs(ans1[1][3]);
-z_tans:lhs(tans[1][3]);
-
-/*x-Wert:*/
-x_value_ans:rhs(ans1[1][1]);
-x_value_tans:rhs(tans[1][1]);
-
-/*y-Wert:*/
-y_value_ans:rhs(ans1[1][2]);
-y_value_tans:rhs(tans[1][2]);
-
-/*z-Wert:*/
-z_value_ans:rhs(ans1[1][3]);
-z_value_tans:rhs(tans[1][3]);</text>
+        <text/>
       </feedbackvariables>
       <node>
         <name>0</name>
-        <description>Prüfe, ob Eingabe genau wie Musterlösung.</description>
-        <answertest>EqualComAss</answertest>
+        <description>Prüfe, ob x äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
         <sans>ans1</sans>
-        <tans>tans</tans>
+        <tans>tans1</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>1</truescore>
+        <truescore>0.4</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
+        <truenextnode>1</truenextnode>
         <trueanswernote>prt1-1-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
@@ -10583,19 +10323,19 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsenextnode>1</falsenextnode>
         <falseanswernote>prt1-1-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Der x-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>1</name>
-        <description>Prüfe, ob Variablenangabe x korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>x_ans</sans>
-        <tans>x_tans</tans>
+        <description>Prüfe, ob y äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans2</sans>
+        <tans>tans2</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
+        <truescore>0.3</truescore>
         <truepenalty/>
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
@@ -10608,21 +10348,21 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsenextnode>2</falsenextnode>
         <falseanswernote>prt1-2-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein erstes Element muss x sein.</p>]]></text>
+          <text><![CDATA[<p>Der y-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>2</name>
-        <description>Prüfe, ob Variablenangabe y korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>y_ans</sans>
-        <tans>y_tans</tans>
+        <description>Prüfe, ob z äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans3</sans>
+        <tans>tans3</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
+        <truescore>0.3</truescore>
         <truepenalty/>
-        <truenextnode>3</truenextnode>
+        <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-3-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
@@ -10630,132 +10370,68 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>3</falsenextnode>
+        <falsenextnode>-1</falsenextnode>
         <falseanswernote>prt1-3-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein zweites Element muss y sein.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>3</name>
-        <description>Prüfe, ob Variablenangabe z korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>z_ans</sans>
-        <tans>z_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
-        <truepenalty/>
-        <truenextnode>4</truenextnode>
-        <trueanswernote>prt1-4-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>4</falsenextnode>
-        <falseanswernote>prt1-4-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein drittes Element muss z sein.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>4</name>
-        <description>Prüfe, ob Variablenwert von x korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>x_value_ans</sans>
-        <tans>x_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>5</truenextnode>
-        <trueanswernote>prt1-5-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>5</falsenextnode>
-        <falseanswernote>prt1-5-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein x-Wert ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>5</name>
-        <description>Prüfe, ob Variablenwert von y korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>y_value_ans</sans>
-        <tans>y_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>6</truenextnode>
-        <trueanswernote>prt1-6-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>6</falsenextnode>
-        <falseanswernote>prt1-6-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein y-Wert ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>6</name>
-        <description>Prüfe, ob Variablenwert von z korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>z_value_ans</sans>
-        <tans>z_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-7-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-7-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein z-Wert ist nicht korrekt.</p>]]></text>
+          <text><![CDATA[<p>Der z-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
     </prt>
-    ";;;;;"<input>
+    ";;;;;"<input_fields><input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans</tans>
-      <boxsize>15</boxsize>
+      <tans>tans1</tans>
+      <boxsize>4</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
-      <syntaxhint>[x=..., y=..., z=...]</syntaxhint>
+      <syntaxhint/>
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>428065835</deployedseed>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>tans2</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>tans3</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>428065835</deployedseed>
     <deployedseed>916334508</deployedseed>
     <deployedseed>1821811957</deployedseed>
     <deployedseed>1952782064</deployedseed>
@@ -10771,8 +10447,8 @@ z_value_tans:rhs(tans[1][3]);</text>
     <deployedseed>1822028112</deployedseed>
     <deployedseed>1315893174</deployedseed>
     <deployedseed>2102888323</deployedseed>
-  </seed_fields>";;;Sebastian F
-6;equ;Gleichungssysteme;6;e;Lösen von linearen Gleichungssystemen II;LGS 3x3 allgemeine Form;"/*Listenformat -> [a, b, c, d, e, f, g, h, i, j]*/
+  </seed_fields>";;1;Sebastian F
+6;equ;Gleichungssysteme;6;e;Lösen von linearen Gleichungssystemen II;Lösen von linearen Gleichungssystemen 2 e);"/*Listenformat -> [a, b, c, d, e, f, g, h, i, j]*/
 list:[[-2,-3,5,1,-1,2,3,1,-2,4], [7,4,1,3,2,1,-1,1,1,2], [5,1,3,2,1,4,2,1,3,1], [10,20,5,3,1,1,2,3,1,2], [11,27,12,1,3,2,2,4,1,5]]; /*Liste für Konstanten, bei denen x, y, z Ganzzahlig sind*/
 
 list_element:list[1+rand(5)]; /*Zufälliges Listenelement*/
@@ -10795,57 +10471,39 @@ g1:x+d*y-e*z=a;
 g2:f*x-g*y-z=b;
 g3:h*x+i*y-j*z=c;
 
-tans:solve([g1, g2, g3], [x, y, z])[1];
+resultList:solve([g1, g2, g3], [x, y, z])[1];
+tans1:rhs(resultList[1]);
+tans2:rhs(resultList[2]);
+tans3:rhs(resultList[3]);
 
 /*Folgende Variablen nur für Dartsellungszwecke in Fragetext:*/
 gl1:x+d*y-e*z;
 gl2:f*x-g*y-z;
 gl3:h*x+i*y-j*z;";"<p>Bestimme die Lösungsmengen der Gleichungssysteme ausschließlich mit dem Additions- oder Gauß-Verfahren.</p>
-<p>(Hinweis: Gib deine Eingabe im Format [x=..., y=..., z=...] ein)</p>
 <p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[<br>\begin{align*}<br>{@gl1@} &amp;= {@a@} \\<br>{@gl2@} &amp;= {@b@} \\<br>{@gl3@} &amp;= {@c@}<br>\end{align*}<br>\]</span></p>
-<p></p>
-<p>[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans@}</p>;0;"<prt>
+<hr>
+<p>\(x = \) [[input:ans1]] [[validation:ans1]]</p>
+<p>\(y = \) [[input:ans2]] [[validation:ans2]]</p>
+<p>\(z = \) [[input:ans3]] [[validation:ans3]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans@}</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
       <feedbackstyle>1</feedbackstyle>
       <feedbackvariables>
-        <text>/*x:*/
-x_ans:lhs(ans1[1][1]);
-x_tans:lhs(tans[1][1]);
-
-/*y:*/
-y_ans:lhs(ans1[1][2]);
-y_tans:lhs(tans[1][2]);
-
-/*z:*/
-z_ans:lhs(ans1[1][3]);
-z_tans:lhs(tans[1][3]);
-
-/*x-Wert:*/
-x_value_ans:rhs(ans1[1][1]);
-x_value_tans:rhs(tans[1][1]);
-
-/*y-Wert:*/
-y_value_ans:rhs(ans1[1][2]);
-y_value_tans:rhs(tans[1][2]);
-
-/*z-Wert:*/
-z_value_ans:rhs(ans1[1][3]);
-z_value_tans:rhs(tans[1][3]);</text>
+        <text/>
       </feedbackvariables>
       <node>
         <name>0</name>
-        <description>Prüfe, ob Eingabe genau wie Musterlösung.</description>
-        <answertest>EqualComAss</answertest>
+        <description>Prüfe, ob x äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
         <sans>ans1</sans>
-        <tans>tans</tans>
+        <tans>tans1</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>1</truescore>
+        <truescore>0.4</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
+        <truenextnode>1</truenextnode>
         <trueanswernote>prt1-1-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
@@ -10856,19 +10514,19 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsenextnode>1</falsenextnode>
         <falseanswernote>prt1-1-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Der x-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>1</name>
-        <description>Prüfe, ob Variablenangabe x korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>x_ans</sans>
-        <tans>x_tans</tans>
+        <description>Prüfe, ob y äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans2</sans>
+        <tans>tans2</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
+        <truescore>0.3</truescore>
         <truepenalty/>
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
@@ -10881,21 +10539,21 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsenextnode>2</falsenextnode>
         <falseanswernote>prt1-2-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein erstes Element muss x sein.</p>]]></text>
+          <text><![CDATA[<p>Der y-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>2</name>
-        <description>Prüfe, ob Variablenangabe y korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>y_ans</sans>
-        <tans>y_tans</tans>
+        <description>Prüfe, ob z äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans3</sans>
+        <tans>tans3</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
+        <truescore>0.3</truescore>
         <truepenalty/>
-        <truenextnode>3</truenextnode>
+        <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-3-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
@@ -10903,132 +10561,68 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>3</falsenextnode>
+        <falsenextnode>-1</falsenextnode>
         <falseanswernote>prt1-3-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein zweites Element muss y sein.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>3</name>
-        <description>Prüfe, ob Variablenangabe z korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>z_ans</sans>
-        <tans>z_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
-        <truepenalty/>
-        <truenextnode>4</truenextnode>
-        <trueanswernote>prt1-4-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>4</falsenextnode>
-        <falseanswernote>prt1-4-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein drittes Element muss z sein.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>4</name>
-        <description>Prüfe, ob Variablenwert von x korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>x_value_ans</sans>
-        <tans>x_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>5</truenextnode>
-        <trueanswernote>prt1-5-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>5</falsenextnode>
-        <falseanswernote>prt1-5-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein x-Wert ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>5</name>
-        <description>Prüfe, ob Variablenwert von y korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>y_value_ans</sans>
-        <tans>y_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>6</truenextnode>
-        <trueanswernote>prt1-6-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>6</falsenextnode>
-        <falseanswernote>prt1-6-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein y-Wert ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>6</name>
-        <description>Prüfe, ob Variablenwert von z korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>z_value_ans</sans>
-        <tans>z_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-7-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-7-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein z-Wert ist nicht korrekt.</p>]]></text>
+          <text><![CDATA[<p>Der z-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
     </prt>
-    ";;;;;"<input>
+    ";;;;;"<input_fields><input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans</tans>
-      <boxsize>15</boxsize>
+      <tans>tans1</tans>
+      <boxsize>4</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
-      <syntaxhint>[x=..., y=..., z=...]</syntaxhint>
+      <syntaxhint/>
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>428065835</deployedseed>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>tans2</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>tans3</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>428065835</deployedseed>
     <deployedseed>916334508</deployedseed>
     <deployedseed>1821811957</deployedseed>
     <deployedseed>1952782064</deployedseed>
@@ -11044,8 +10638,8 @@ z_value_tans:rhs(tans[1][3]);</text>
     <deployedseed>1822028112</deployedseed>
     <deployedseed>1315893174</deployedseed>
     <deployedseed>2102888323</deployedseed>
-  </seed_fields>";;;Sebastian F
-6;equ;Gleichungssysteme;6;f;Lösen von linearen Gleichungssystemen II;LGS 3x3 allgemeine Form;"/*Listenformat -> [a, b, c, d, e, f, g, h, i, j]*/
+  </seed_fields>";;1;Sebastian F
+6;equ;Gleichungssysteme;6;f;Lösen von linearen Gleichungssystemen II;Lösen von linearen Gleichungssystemen 2 f);"/*Listenformat -> [a, b, c, d, e, f, g, h, i, j]*/
 list:[[9,6,4,1,3,2,1,1,2], [8,2,4,3,3,1,1,3,2], [7,5,3,2,1,3,1,2,1], [7,3,5,2,1,2,3,2,1], [4,6,5,3,2,1,2,1,3], [6,3,2,3,2,1,1,4,3], [8,7,3,1,1,2,3,4,2]]; /*Liste für Konstanten, bei denen x, y, z Ganzzahlig sind*/
 
 list_element:list[1+rand(7)]; /*Zufälliges Listenelement*/
@@ -11066,57 +10660,39 @@ g1:d*x-y+e*z=a;
 g2:x-f*y+z=b;
 g3:g*x-h*y+i*z=c;
 
-tans:solve([g1, g2, g3], [x, y, z])[1];
+resultList:solve([g1, g2, g3], [x, y, z])[1];
+tans1:rhs(resultList[1]);
+tans2:rhs(resultList[2]);
+tans3:rhs(resultList[3]);
 
 /*Folgende Variablen nur für Dartsellungszwecke in Fragetext:*/
 gl1:d*x-y+e*z;
 gl2:x-f*y+z;
 gl3:g*x-h*y+i*z;";"<p>Bestimme die Lösungsmengen der Gleichungssysteme ausschließlich mit dem Additions- oder Gauß-Verfahren.</p>
-<p>(Hinweis: Gib deine Eingabe im Format [x=..., y=..., z=...] ein)</p>
 <p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[<br>\begin{align*}<br>{@gl1@} &amp;= {@a@} \\<br>{@gl2@} &amp;= {@b@} \\<br>{@gl3@} &amp;= {@c@}<br>\end{align*}<br>\]</span></p>
-<p></p>
-<p>\(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans@}</p>;0;"<prt>
+<hr>
+<p>\(x = \) [[input:ans1]] [[validation:ans1]]</p>
+<p>\(y = \) [[input:ans2]] [[validation:ans2]]</p>
+<p>\(z = \) [[input:ans3]] [[validation:ans3]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans@}</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
       <feedbackstyle>1</feedbackstyle>
       <feedbackvariables>
-        <text>/*x:*/
-x_ans:lhs(ans1[1][1]);
-x_tans:lhs(tans[1][1]);
-
-/*y:*/
-y_ans:lhs(ans1[1][2]);
-y_tans:lhs(tans[1][2]);
-
-/*z:*/
-z_ans:lhs(ans1[1][3]);
-z_tans:lhs(tans[1][3]);
-
-/*x-Wert:*/
-x_value_ans:rhs(ans1[1][1]);
-x_value_tans:rhs(tans[1][1]);
-
-/*y-Wert:*/
-y_value_ans:rhs(ans1[1][2]);
-y_value_tans:rhs(tans[1][2]);
-
-/*z-Wert:*/
-z_value_ans:rhs(ans1[1][3]);
-z_value_tans:rhs(tans[1][3]);</text>
+        <text/>
       </feedbackvariables>
       <node>
         <name>0</name>
-        <description>Prüfe, ob Eingabe genau wie Musterlösung.</description>
-        <answertest>EqualComAss</answertest>
+        <description>Prüfe, ob x äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
         <sans>ans1</sans>
-        <tans>tans</tans>
+        <tans>tans1</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>1</truescore>
+        <truescore>0.4</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
+        <truenextnode>1</truenextnode>
         <trueanswernote>prt1-1-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
@@ -11127,19 +10703,19 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsenextnode>1</falsenextnode>
         <falseanswernote>prt1-1-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text/>
+          <text><![CDATA[<p>Der x-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>1</name>
-        <description>Prüfe, ob Variablenangabe x korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>x_ans</sans>
-        <tans>x_tans</tans>
+        <description>Prüfe, ob y äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans2</sans>
+        <tans>tans2</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
+        <truescore>0.3</truescore>
         <truepenalty/>
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
@@ -11152,21 +10728,21 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsenextnode>2</falsenextnode>
         <falseanswernote>prt1-2-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein erstes Element muss x sein.</p>]]></text>
+          <text><![CDATA[<p>Der y-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
       <node>
         <name>2</name>
-        <description>Prüfe, ob Variablenangabe y korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>y_ans</sans>
-        <tans>y_tans</tans>
+        <description>Prüfe, ob z äquiv zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans3</sans>
+        <tans>tans3</tans>
         <testoptions/>
         <quiet>0</quiet>
         <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
+        <truescore>0.3</truescore>
         <truepenalty/>
-        <truenextnode>3</truenextnode>
+        <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-3-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
@@ -11174,132 +10750,68 @@ z_value_tans:rhs(tans[1][3]);</text>
         <falsescoremode>+</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>3</falsenextnode>
+        <falsenextnode>-1</falsenextnode>
         <falseanswernote>prt1-3-F</falseanswernote>
         <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein zweites Element muss y sein.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>3</name>
-        <description>Prüfe, ob Variablenangabe z korrekt.</description>
-        <answertest>EqualComAss</answertest>
-        <sans>z_ans</sans>
-        <tans>z_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
-        <truepenalty/>
-        <truenextnode>4</truenextnode>
-        <trueanswernote>prt1-4-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>4</falsenextnode>
-        <falseanswernote>prt1-4-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein drittes Element muss z sein.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>4</name>
-        <description>Prüfe, ob Variablenwert von x korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>x_value_ans</sans>
-        <tans>x_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>5</truenextnode>
-        <trueanswernote>prt1-5-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>5</falsenextnode>
-        <falseanswernote>prt1-5-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein x-Wert ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>5</name>
-        <description>Prüfe, ob Variablenwert von y korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>y_value_ans</sans>
-        <tans>y_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>6</truenextnode>
-        <trueanswernote>prt1-6-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>6</falsenextnode>
-        <falseanswernote>prt1-6-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein y-Wert ist nicht korrekt.</p>]]></text>
-        </falsefeedback>
-      </node>
-      <node>
-        <name>6</name>
-        <description>Prüfe, ob Variablenwert von z korrekt.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>z_value_ans</sans>
-        <tans>z_value_tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.2</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-7-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>+</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-7-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text><![CDATA[<p>Dein z-Wert ist nicht korrekt.</p>]]></text>
+          <text><![CDATA[<p>Der z-Wert ist nicht korrekt.</p>]]></text>
         </falsefeedback>
       </node>
     </prt>
-    ";;;;;"<input>
+    ";;;;;"<input_fields><input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans</tans>
-      <boxsize>15</boxsize>
+      <tans>tans1</tans>
+      <boxsize>4</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
-      <syntaxhint>[x=..., y=..., z=...]</syntaxhint>
+      <syntaxhint/>
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>428065835</deployedseed>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>tans2</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>tans3</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>428065835</deployedseed>
     <deployedseed>916334508</deployedseed>
     <deployedseed>1821811957</deployedseed>
     <deployedseed>1952782064</deployedseed>
@@ -11315,7 +10827,7 @@ z_value_tans:rhs(tans[1][3]);</text>
     <deployedseed>1822028112</deployedseed>
     <deployedseed>1315893174</deployedseed>
     <deployedseed>2102888323</deployedseed>
-  </seed_fields>";;;Sebastian F
+  </seed_fields>";;1;Sebastian F
 6;equ;Gleichungssysteme;7;1a;Lösen von quadratischen Gleichungen I;Lösen von quadratischen Gleichungen 1 a);"convert_list_to_equation(list):=block(
     [list_length, i, result],
     list_length:length(list),
