@@ -15662,63 +15662,51 @@ tans:fkt;
     <deployedseed>2034632167</deployedseed>
     <deployedseed>134787595</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;90;a;Nullstellen quadratische Funktionen;Funktionen Aufgabe 7.1 a);"/*----------------Aufgabe a)---------------------*/
+7;fun;Funktionen;90;a;Nullstellen quadratischer Funktionen;Funktionen Aufgabe 7.1 a);"convert_list_to_equation(list):=block(
+    [list_length, i, result],
+    list_length:length(list),
+    i:1,
+    if list_length = 0 then (
+        return (none)
+    )
+    elseif list_length = 1 then (
+        return (list[1])
+    )
+    elseif list_length > 1 then (
+        result:list[i],
+        for i:2 thru list_length do (
+            result:result nounor list[i]
+        ),
+        return (result)
+    )
+);
+
+
+
+/*----------------Aufgabe a)---------------------*/
 list_gl:[[1,-6], [5,6], [-3,2], [4,3], [-7,12], [2,-8], [-4,3], [3,-10], [7,10], [-5,6], [8,15], [-6,5], [9,20], [10,21], [-8,16], [1,-2], [-9,20], [2,1], [4,4], [6,9], [8,16], [10,25]];
 
 i:rand_with_step(1,length(list_gl),1);           /*Laufvariable für a)*/
 b:list_gl[i][1];
 c:list_gl[i][2];
 gl:x^2+b*x+c;
-tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+ta1:solve([gl],[x]);
+ta1:convert_list_to_equation(ta1);
+";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
 <p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
-<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \([x_1 = ..., x_2 = ..., x_n = ...]\)</strong></p>
-<p>a) \(f(x) = {@gl@} \Rightarrow L = \) [[input:ans1]] [[validation:ans1]]</p>
-<p class=""MsoNormal""></p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@tans@} \)</p>;0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
+<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \(x = \ ... \ or \ x = \ ...\)</strong></p>
+<p>a) \(f(x) = {@gl@} \Rightarrow\) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;;;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans</tans>
+      <tans>ta1</tans>
       <boxsize>10</boxsize>
       <strictsyntax>1</strictsyntax>
-      <insertstars>0</insertstars>
+      <insertstars>1</insertstars>
       <syntaxhint/>
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -15745,8 +15733,28 @@ tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der fo
     <deployedseed>1807571295</deployedseed>
     <deployedseed>1062150962</deployedseed>
     <deployedseed>1220953813</deployedseed>
-  </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;90;b;Nullstellen quadratische Funktionen;Funktionen Aufgabe 7.1 b);"/*----------------Aufgabe b)---------------------*/
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;90;b;Nullstellen quadratischer Funktionen;Funktionen Aufgabe 7.1 b);"convert_list_to_equation(list):=block(
+    [list_length, i, result],
+    list_length:length(list),
+    i:1,
+    if list_length = 0 then (
+        return (none)
+    )
+    elseif list_length = 1 then (
+        return (list[1])
+    )
+    elseif list_length > 1 then (
+        result:list[i],
+        for i:2 thru list_length do (
+            result:result nounor list[i]
+        ),
+        return (result)
+    )
+);
+
+
+/*----------------Aufgabe b)---------------------*/
 list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
 
 i:rand_with_step(1,length(list),1);               /*Laufvariable für b)*/
@@ -15754,47 +15762,15 @@ a:list[i][1];
 b:list[i][2];
 c:list[i][3];
 gl:a*x^2+b*x+c;
-tans1:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+ta1:solve([gl],[x]);
+ta1:convert_list_to_equation(ta1);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
 <p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
-<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \([x_1 = ..., x_2 = ..., x_n = ...]\)</strong></p>
-<p>b) \(g(x) = {@gl@} \Rightarrow L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@tans1@} \)</p>;0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>tans1</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
+<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \(x = \ ... \ or \ x = \ ...\)</strong></p>
+<p>b) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>
+<p></p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;;;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans1</tans>
+      <tans>ta1</tans>
       <boxsize>10</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
@@ -15802,7 +15778,7 @@ tans1:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der f
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -15825,8 +15801,28 @@ tans1:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der f
     <deployedseed>1164326018</deployedseed>
     <deployedseed>29375749</deployedseed>
     <deployedseed>75314502</deployedseed>
-  </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;90;c;Nullstellen quadratische Funktionen;Funktionen Aufgabe 7.1 c);"list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;90;c;Nullstellen quadratischer Funktionen;Funktionen Aufgabe 7.1 c);"convert_list_to_equation(list):=block(
+    [list_length, i, result],
+    list_length:length(list),
+    i:1,
+    if list_length = 0 then (
+        return (none)
+    )
+    elseif list_length = 1 then (
+        return (list[1])
+    )
+    elseif list_length > 1 then (
+        result:list[i],
+        for i:2 thru list_length do (
+            result:result nounor list[i]
+        ),
+        return (result)
+    )
+);
+
+
+list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
 
 /*----------------Aufgabe c)---------------------*/
 i:rand_with_step(1,length(list),1);               /*Laufvariable für c)*/
@@ -15834,47 +15830,14 @@ a:list[i][1];
 b:list[i][2];
 c:list[i][3];
 gl:a*x^2+b*x+c;
-tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+ta1:solve([gl],[x]);
+ta1:convert_list_to_equation(ta1);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
 <p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
-<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \([x_1 = ..., x_2 = ..., x_n = ...]\)</strong></p>
-<p>c) \(h(x) = {@gl@} \Rightarrow L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@tans@} \)</p>;0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
+<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \(x = \ ... \ or \ x = \ ...\)</strong></p>
+<p>c) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;;;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans</tans>
+      <tans>ta1</tans>
       <boxsize>10</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
@@ -15882,7 +15845,7 @@ tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der fo
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -15902,8 +15865,28 @@ tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der fo
     <deployedseed>134251843</deployedseed>
     <deployedseed>289098256</deployedseed>
     <deployedseed>1814991282</deployedseed>
-  </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;90;d;Nullstellen quadratische Funktionen;Funktionen Aufgabe 7.1 d);"list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;90;d;Nullstellen quadratischer Funktionen;Funktionen Aufgabe 7.1 d);"convert_list_to_equation(list):=block(
+    [list_length, i, result],
+    list_length:length(list),
+    i:1,
+    if list_length = 0 then (
+        return (none)
+    )
+    elseif list_length = 1 then (
+        return (list[1])
+    )
+    elseif list_length > 1 then (
+        result:list[i],
+        for i:2 thru list_length do (
+            result:result nounor list[i]
+        ),
+        return (result)
+    )
+);
+
+
+list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
 
 
 /*----------------Aufgabe d)---------------------*/
@@ -15912,49 +15895,16 @@ a:list[i][1];
 b:list[i][2];
 c:list[i][3];
 gl:a*x^2+b*x+c;
-tans:solve([gl],[x]);
+ta1:solve([gl],[x]);
+ta1:convert_list_to_equation(ta1);
 
 ";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
 <p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
-<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \([x_1 = ..., x_2 = ..., x_n = ...]\)</strong></p>
-<p>d) \(i(x) = {@gl@} \Rightarrow L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@tans@} \)</p>;0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
+<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \(x = \ ... \ or \ x = \ ...\)</strong></p>
+<p>d) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;;;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans</tans>
+      <tans>ta1</tans>
       <boxsize>10</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
@@ -15962,7 +15912,7 @@ tans:solve([gl],[x]);
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -15988,8 +15938,28 @@ tans:solve([gl],[x]);
     <deployedseed>1941915329</deployedseed>
     <deployedseed>842171860</deployedseed>
     <deployedseed>1210278930</deployedseed>
-  </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;90;e;Nullstellen quadratische Funktionen;Funktionen Aufgabe 7.1 e);"list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;90;e;Nullstellen quadratischer Funktionen;Funktionen Aufgabe 7.1 e);"convert_list_to_equation(list):=block(
+    [list_length, i, result],
+    list_length:length(list),
+    i:1,
+    if list_length = 0 then (
+        return (none)
+    )
+    elseif list_length = 1 then (
+        return (list[1])
+    )
+    elseif list_length > 1 then (
+        result:list[i],
+        for i:2 thru list_length do (
+            result:result nounor list[i]
+        ),
+        return (result)
+    )
+);
+
+
+list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
 
 /*----------------Aufgabe e)---------------------*/
 i:rand_with_step(1,length(list),1);               /*Laufvariable für e)*/
@@ -15997,47 +15967,14 @@ a:list[i][1];
 b:list[i][2];
 c:list[i][3];
 gl:a*x^2+b*x+c;
-tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+ta1:solve([gl],[x]);
+ta1:convert_list_to_equation(ta1);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
 <p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
-<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \([x_1 = ..., x_2 = ..., x_n = ...]\)</strong></p>
-<p>e) \(j(x) = {@gl@} \Rightarrow L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@tans@} \)</p>;0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
+<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \(x = \ ... \ or \ x = \ ...\)</strong></p>
+<p>e) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;;;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans</tans>
+      <tans>ta1</tans>
       <boxsize>10</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
@@ -16045,7 +15982,7 @@ tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der fo
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -16063,8 +16000,28 @@ tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der fo
     <deployedseed>843951104</deployedseed>
     <deployedseed>231285176</deployedseed>
     <deployedseed>315095760</deployedseed>
-  </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;90;f;Nullstellen quadratische Funktionen;Funktionen Aufgabe 7.1 f);"list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;90;f;Nullstellen quadratischer Funktionen;Funktionen Aufgabe 7.1 f);"convert_list_to_equation(list):=block(
+    [list_length, i, result],
+    list_length:length(list),
+    i:1,
+    if list_length = 0 then (
+        return (none)
+    )
+    elseif list_length = 1 then (
+        return (list[1])
+    )
+    elseif list_length > 1 then (
+        result:list[i],
+        for i:2 thru list_length do (
+            result:result nounor list[i]
+        ),
+        return (result)
+    )
+);
+
+
+list:[[1,-5,6], [1,6,5], [1,-1,-6], [1,-9,14], [1,2,-35], [1,-7,10], [5,-20,15], [1,-4,3], [1,-6,5], [1,-7,12], [1,-11,30], [1,1,-12], [1,-6,8], [1,-9,20], [1,-13,36], [1,-8,15], [1,-3,2], [2,-15,28], [2,-7,3], [4,8,3], [2,-5,3], [2,-1,-6], [2,-3,-9], [4,-20,25]];
 
 /*----------------Aufgabe f)---------------------*/
 i:rand_with_step(1,length(list),1);               /*Laufvariable für f)*/
@@ -16072,47 +16029,14 @@ a:list[i][1];
 b:list[i][2];
 c:list[i][3];
 gl:a*x^2+b*x+c;
-tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+ta1:solve([gl],[x]);
+ta1:convert_list_to_equation(ta1);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
 <p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
-<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \([x_1 = ..., x_2 = ..., x_n = ...]\)</strong></p>
-<p>f) \(k(x) = {@gl@} \Rightarrow L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@tans@} \)</p>;0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfe, ob Lösungemenge äquivalent zu Musterlösung</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
+<p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \(x = \ ... \ or \ x = \ ...\)</strong></p>
+<p>f) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;;;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans</tans>
+      <tans>ta1</tans>
       <boxsize>10</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
@@ -16120,7 +16044,7 @@ tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der fo
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
-      <forbidfloat>1</forbidfloat>
+      <forbidfloat>0</forbidfloat>
       <requirelowestterms>1</requirelowestterms>
       <checkanswertype>0</checkanswertype>
       <mustverify>1</mustverify>
@@ -16144,7 +16068,7 @@ tans:solve([gl],[x]);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der fo
     <deployedseed>1200819982</deployedseed>
     <deployedseed>444237957</deployedseed>
     <deployedseed>1234196624</deployedseed>
-  </seed_fields>";;1;Sebastian F
+  </seed_fields>";;;Sebastian F
 7;fun;Funktionen;91;a;Textaufgabe;Funktionen Aufgabe 16 a);"a:rand_with_step(-10, 0, 1);
 b:rand_with_step(1, 50, 3);
 c:rand_with_step(1, 50, 2);
