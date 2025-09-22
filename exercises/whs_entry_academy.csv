@@ -7401,9 +7401,9 @@ b:float(round(10*(1+9*rand(1.0)))/10);
 aufgabe:a+x=b;
 
 tans:solve([aufgabe],[x])[1];        /*Musterlösung*/       
-equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen nach \(x\) auf.</p>
 <p>a) {@aufgabe@}</p>
-<p>  \(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+<p>  [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -7488,9 +7488,9 @@ equ1:(b/c)*x=d-a; /*erste Äquivalenzumformung*/
 
 tans:solve([aufgabe],[x])[1]; /*Musterlösung:*/
 
-equivList:[aufgabe, equ1, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+equivList:[aufgabe, equ1, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen nach \(x\) auf.</p>
 <p>b) \({@a@}+\large\frac{@b@}{@c@} \cdot x={@d@}\)</p>
-<p>     \(L = \) [[input:ans1]] [[validation:ans1]]</p>
+<p>     [[input:ans1]] [[validation:ans1]]</p>
 <p></p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
@@ -7590,9 +7590,9 @@ d:list[index][4];
 aufgabe:a*(t-b)=(c/d);                /*Ausgangsgleichung*/
 tans:solve([aufgabe],[t])[1];         /*Lösungsmenge*/
 equivList:[aufgabe, tans];
-";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+";"<p>Löse mit Hilfe von Äquivalenzumformungen nach \(t\) auf.</p>
 <p>c) {@aufgabe@}</p>
-<p> \( L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+<p> [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -7692,9 +7692,9 @@ d:list[index][4];
 
 aufgabe:a*(y-b)-y*(y-c)+y^2=d;
 tans:solve([aufgabe],[y])[1];
-equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen nach \(y\) auf.</p>
 <p>d) {@aufgabe@}</p>
-<p>  \(L = \)  [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+<p>  [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -7796,9 +7796,9 @@ e:list[index][5];
 
 aufgabe:a*x-(b*x+c)=d*x+e;
 tans:solve([aufgabe],[x])[1];
-equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen nach \(x\) auf.</p>
 <p>e) {@aufgabe@}</p>
-<p>   \(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+<p>   [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -7902,7 +7902,7 @@ aufgabe:a*(x+b)+x+c=-(x-d)+e*x+f;
 tans:solve([aufgabe],[x])[1];
 equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
 <p>f) {@aufgabe@}</p>
-<p>  \(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+<p>  [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -8007,9 +8007,9 @@ l:list[index][12];
 
 aufgabe:a*(b*x+c)+d*(e-f*x)=g*(h-i*x)-j*(x+k)+l;
 tans:solve([aufgabe],[x])[1];
-equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen nach \(x\) auf.</p>
 <p>g) {@aufgabe@}</p>
-<p>   \(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+<p>   [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -8132,7 +8132,7 @@ equivList:[aufgabe, convert_list_to_equation(tans)];
 <p><em>gib deine Eingabe im folgenden <strong>Format </strong>an: </em><strong><em>\( x= \ ... \ or \ x \ = \ ... \)</em></strong></p>
 <hr>
 <p>h) {@aufgabe@}</p>
-<p>   \(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+<p>   [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -8237,9 +8237,9 @@ e:list[index][5];
 
 aufgabe:(x+a)*(x-a)+(x-a)^2=(x-b)*(x+b)-c*(c*x-d)+x^2-e;
 tans:solve([aufgabe],[x])[1];
-equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen und gib die Lösungsmenge an.</p>
+equivList:[aufgabe, tans];";"<p>Löse mit Hilfe von Äquivalenzumformungen nach \(x\) auf.</p>
 <p>i) {@aufgabe@}</p>
-<p>  \(L = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
+<p>  [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@aufgabe@} \( \Rightarrow L = \{ {@tans@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
