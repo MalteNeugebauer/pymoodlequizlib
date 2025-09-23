@@ -15333,22 +15333,6 @@ tans:fkt;
     <deployedseed>451140076</deployedseed>
     <deployedseed>1548836190</deployedseed>
     <deployedseed>1503016976</deployedseed>
-    <deployedseed>233508732</deployedseed>
-    <deployedseed>738294988</deployedseed>
-    <deployedseed>526890043</deployedseed>
-    <deployedseed>246180067</deployedseed>
-    <deployedseed>339012468</deployedseed>
-    <deployedseed>1205999568</deployedseed>
-    <deployedseed>1258224003</deployedseed>
-    <deployedseed>1598415720</deployedseed>
-    <deployedseed>9791960</deployedseed>
-    <deployedseed>183358727</deployedseed>
-    <deployedseed>1629010692</deployedseed>
-    <deployedseed>769907329</deployedseed>
-    <deployedseed>546756702</deployedseed>
-    <deployedseed>398163302</deployedseed>
-    <deployedseed>2034632167</deployedseed>
-    <deployedseed>134787595</deployedseed>
   </seed_fields>";;;Sebastian F
 7;fun;Funktionen;80;b;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 b);"m:rand_with_prohib(-6,6,[0]);
 d:rand_with_step(-8,8,1);
@@ -15433,26 +15417,11 @@ tans:fkt;
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>964870650</deployedseed>
-    <deployedseed>451140076</deployedseed>
-    <deployedseed>1548836190</deployedseed>
-    <deployedseed>1503016976</deployedseed>
+    ";"<seed_fields>
     <deployedseed>233508732</deployedseed>
     <deployedseed>738294988</deployedseed>
     <deployedseed>526890043</deployedseed>
     <deployedseed>246180067</deployedseed>
-    <deployedseed>339012468</deployedseed>
-    <deployedseed>1205999568</deployedseed>
-    <deployedseed>1258224003</deployedseed>
-    <deployedseed>1598415720</deployedseed>
-    <deployedseed>9791960</deployedseed>
-    <deployedseed>183358727</deployedseed>
-    <deployedseed>1629010692</deployedseed>
-    <deployedseed>769907329</deployedseed>
-    <deployedseed>546756702</deployedseed>
-    <deployedseed>398163302</deployedseed>
-    <deployedseed>2034632167</deployedseed>
-    <deployedseed>134787595</deployedseed>
   </seed_fields>";;;Sebastian F
 7;fun;Funktionen;80;c;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 c);"m:rand_with_prohib(-6,6,[0]);
 d:rand_with_step(-8,8,1);
@@ -15537,26 +15506,11 @@ tans:fkt;
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>964870650</deployedseed>
-    <deployedseed>451140076</deployedseed>
-    <deployedseed>1548836190</deployedseed>
-    <deployedseed>1503016976</deployedseed>
-    <deployedseed>233508732</deployedseed>
-    <deployedseed>738294988</deployedseed>
-    <deployedseed>526890043</deployedseed>
-    <deployedseed>246180067</deployedseed>
+    ";"<seed_fields>
     <deployedseed>339012468</deployedseed>
     <deployedseed>1205999568</deployedseed>
     <deployedseed>1258224003</deployedseed>
     <deployedseed>1598415720</deployedseed>
-    <deployedseed>9791960</deployedseed>
-    <deployedseed>183358727</deployedseed>
-    <deployedseed>1629010692</deployedseed>
-    <deployedseed>769907329</deployedseed>
-    <deployedseed>546756702</deployedseed>
-    <deployedseed>398163302</deployedseed>
-    <deployedseed>2034632167</deployedseed>
-    <deployedseed>134787595</deployedseed>
   </seed_fields>";;;Sebastian F
 7;fun;Funktionen;80;d;Lineare Funktionsgleichung aufstellen;Funktionen Aufgabe 4.1 d);"m:rand_with_prohib(-6,6,[0]);
 d:rand_with_step(-8,8,1);
@@ -15641,26 +15595,11 @@ tans:fkt;
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>964870650</deployedseed>
-    <deployedseed>451140076</deployedseed>
-    <deployedseed>1548836190</deployedseed>
-    <deployedseed>1503016976</deployedseed>
-    <deployedseed>233508732</deployedseed>
-    <deployedseed>738294988</deployedseed>
-    <deployedseed>526890043</deployedseed>
-    <deployedseed>246180067</deployedseed>
-    <deployedseed>339012468</deployedseed>
-    <deployedseed>1205999568</deployedseed>
-    <deployedseed>1258224003</deployedseed>
-    <deployedseed>1598415720</deployedseed>
+    ";"<seed_fields>
     <deployedseed>9791960</deployedseed>
     <deployedseed>183358727</deployedseed>
     <deployedseed>1629010692</deployedseed>
     <deployedseed>769907329</deployedseed>
-    <deployedseed>546756702</deployedseed>
-    <deployedseed>398163302</deployedseed>
-    <deployedseed>2034632167</deployedseed>
-    <deployedseed>134787595</deployedseed>
   </seed_fields>";;;Sebastian F
 7;fun;Funktionen;90;a;Nullstellen quadratischer Funktionen;Funktionen Aufgabe 7.1 a);"convert_list_to_equation(list):=block(
     [list_length, i, result],
