@@ -17122,6 +17122,616 @@ loes:a2*x^2+b2*x+c2;";"<p></p><p>Bestimmen Sie die Funktion zum Graph und geben 
       <options/>
     </input>
     ";<seed_fields><deployedseed>1614717684</deployedseed><deployedseed>1100997606</deployedseed><deployedseed>1684148052</deployedseed><deployedseed>1959830273</deployedseed></seed_fields>;;0;2024-08-14 exercise number is 12 but set to 99 for technical reasons
+7;fun;Funktionen;93;a;Exponentialfunktion zeichnen;Funktionen - Aufgabenblatt Juli - Aufgabe 19 a);"g(x):=a*%e^(b*(x-h))+k;
+f(x):=%e^x;";"<p style=""display: visible;"">Die allgemeine Form einer Exponentialfunktion lautet \(f(x) = \) {@g(x)@}<br>Die Parameter a,b,h und k beeinflussen den Graphen der Exponentialfunktion auf unterschiedliche Weise.</p>
+<p style=""display: visible;"">Gegeben ist die Funktion \(f(x) = \) {@f(x)@}</p>
+<p style=""display: visible;"">a) Zeichne die Graphen dieser Funktionen in ein Koordinatensystem.</p>
+<p style=""display: visible;""><em>Du kannst dazu beide Eingabemöglichkeiten nutzen (Eingabefelder &amp; Slider)</em></p>
+<p style=""display: visible;"">\(a = \) [[input:ans1]] [[validation:ans1]]</p>
+<p style=""display: visible;"">\(b = \) [[input:ans2]] [[validation:ans2]]</p>
+<p style=""display: visible;"">\(h = \) [[input:ans3]] [[validation:ans3]]</p>
+<p style=""display: visible;"">\(k = \) [[input:ans4]] [[validation:ans4]]</p>
+<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1"" input-ref-ans2 = ""inputans2"" input-ref-ans3 = ""inputans3"" input-ref-ans4 = ""inputans4""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-10, 10, 10, -10], axis: true, grid: true, showNavigation: true, showCopyright: false }); var a = board.create('slider', [[-9,8], [-5,8], [-4, 0.5, 4]], { name: 'a = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); var b = board.create('slider', [[-9,6], [-5,6], [-4, 0.5, 4]], { name: 'b = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); var h = board.create('slider', [[-9,4], [-5,4], [-4, 0.5, 4]], { name: 'h = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); var k = board.create('slider', [[-9,2], [-5,2], [-4, 0.5, 4]], { name: 'k = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); stack_jxg.bind_slider(inputans1, a); stack_jxg.bind_slider(inputans2, b); stack_jxg.bind_slider(inputans3, h); stack_jxg.bind_slider(inputans4, k); var f = function(x) {return a.Value()*Math.E**(b.Value()*(x-h.Value()))+k.Value(); }; var graph = board.create('functiongraph', [f]); [[/jsxgraph]]</p>
+<p>b) Beschreibe wie der Vorfaktor a und die Veränderung von h die Form der Graphen beeinflusst.<br>c) Was ändert sich, wenn bei \(f(x)\) plötzlich b negativ wird?<br>d) Überlege was passiert, wenn k nicht Null ist, wie in den Beispielen oben.</p>";;;<p>[[feedback:prt1]]</p>;<p>\(f(x) = \){@f(x)@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>/* ans1 = a; ans2 = b; ans3 = h; ans4 = k */
+
+a_ans:ans1;
+b_ans:ans2;
+h_ans:ans3;
+k_ans:ans4;
+
+fx_ans:a_ans*%e^(b_ans*(x-h_ans))+k_ans;</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Funktion genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>fx_ans</sans>
+        <tans>f(x)</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Die gezeichnete Funktion ist nicht korrekt. {@fx_ans@}</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  ";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>1</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>1</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>0</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans4</name>
+      <type>algebraic</type>
+      <tans>0</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";;;1;Sebastian F
+7;fun;Funktionen;93;b;Exponentialfunktion zeichnen;Funktionen - Aufgabenblatt Juli - Aufgabe 19 b);"/*Funktion konvertiert Zahlen der Form 1.0, 2.0, 3.0 usw. zu 1, 2, 3*/
+konvertZahl(z):=block(
+    [newZ:0],
+    /*Wenn */
+    if floatnump(z) and floor(10 * (z - floor(z)))=0 then(
+        newZ:fix(z)
+        )
+    else(
+    newZ:z),
+return (newZ)
+);
+
+
+f(x):=a*%e^(b*(x-h))+k;
+
+a_list:delete(0, makelist(-4 + i/2, i, 0, 16));
+a_faktor:float(rand(a_list));
+a_faktor:konvertZahl(a_faktor);
+g(x):=a_faktor*%e^x;";"<p style=""display: visible;"">Die allgemeine Form einer Exponentialfunktion lautet \(f(x) = \) {@f(x)@}<br>Die Parameter a,b,h und k beeinflussen den Graphen der Exponentialfunktion auf unterschiedliche Weise.</p>
+<p style=""display: visible;"">Gegeben ist die Funktion \(g(x) = \) {@g(x)@}</p>
+<p style=""display: visible;"">a) Zeichne die Graphen dieser Funktionen in ein Koordinatensystem.</p>
+<p style=""display: visible;""><em>Du kannst dazu beide Eingabemöglichkeiten nutzen (Eingabefelder &amp; Slider)</em></p>
+<p style=""display: visible;"">\(a = \) [[input:ans1]] [[validation:ans1]]</p>
+<p style=""display: visible;"">\(b = \) [[input:ans2]] [[validation:ans2]]</p>
+<p style=""display: visible;"">\(h = \) [[input:ans3]] [[validation:ans3]]</p>
+<p style=""display: visible;"">\(k = \) [[input:ans4]] [[validation:ans4]]</p>
+<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1"" input-ref-ans2 = ""inputans2"" input-ref-ans3 = ""inputans3"" input-ref-ans4 = ""inputans4""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-10, 10, 10, -10], axis: true, grid: true, showNavigation: true, showCopyright: false }); var a = board.create('slider', [[-9,8], [-5,8], [-4, 0.5, 4]], { name: 'a = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); var b = board.create('slider', [[-9,6], [-5,6], [-4, 0.5, 4]], { name: 'b = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); var h = board.create('slider', [[-9,4], [-5,4], [-4, 0.5, 4]], { name: 'h = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); var k = board.create('slider', [[-9,2], [-5,2], [-4, 0.5, 4]], { name: 'k = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); stack_jxg.bind_slider(inputans1, a); stack_jxg.bind_slider(inputans2, b); stack_jxg.bind_slider(inputans3, h); stack_jxg.bind_slider(inputans4, k); var f = function(x) {return a.Value()*Math.E**(b.Value()*(x-h.Value()))+k.Value(); }; var graph = board.create('functiongraph', [f]); [[/jsxgraph]]</p>
+<p>b) Beschreibe wie der Vorfaktor a und die Veränderung von h die Form der Graphen beeinflusst.<br>c) Was ändert sich, wenn bei \(g(x)\) plötzlich b negativ wird?<br>d) Überlege was passiert, wenn k nicht Null ist, wie in den Beispielen oben.</p>";;;<p>[[feedback:prt1]]</p>;<p>\(g(x) = \){@g(x)@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>/* ans1 = a; ans2 = b; ans3 = h; ans4 = k */
+
+a_ans:ans1;
+b_ans:ans2;
+h_ans:ans3;
+k_ans:ans4;
+
+gx_ans:a_ans*%e^(b_ans*(x-h_ans))+k_ans;</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Funktion genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>gx_ans</sans>
+        <tans>g(x)</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Die gezeichnete Funktion ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>a_faktor</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>1</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>0</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans4</name>
+      <type>algebraic</type>
+      <tans>0</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>84283675</deployedseed>
+    <deployedseed>395498695</deployedseed>
+    <deployedseed>852236916</deployedseed>
+    <deployedseed>2006461716</deployedseed>
+    <deployedseed>1635795453</deployedseed>
+    <deployedseed>937853340</deployedseed>
+    <deployedseed>33291683</deployedseed>
+    <deployedseed>670494487</deployedseed>
+    <deployedseed>359948452</deployedseed>
+    <deployedseed>279703224</deployedseed>
+    <deployedseed>322905723</deployedseed>
+    <deployedseed>2082379244</deployedseed>
+  </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;93;c;Exponentialfunktion zeichnen;Funktionen - Aufgabenblatt Juli - Aufgabe 19 c);"/*Funktion konvertiert Zahlen der Form 1.0, 2.0, 3.0 usw. zu 1, 2, 3*/
+konvertZahl(z):=block(
+    [newZ:0],
+    /*Wenn */
+    if floatnump(z) and floor(10 * (z - floor(z)))=0 then(
+        newZ:fix(z)
+        )
+    else(
+    newZ:z),
+return (newZ)
+);
+
+
+f(x):=a*%e^(b*(x-h))+k;
+
+faktor_list:delete(0, makelist(-4 + i/2, i, 0, 16)); /*Liste von -4 -> +4 */
+a_faktor:float(rand(faktor_list));
+a_faktor:konvertZahl(a_faktor);
+
+h_faktor:float(rand(faktor_list));
+h_faktor:konvertZahl(h_faktor);
+
+h(x):=a_faktor*%e^(x+h_faktor);";"<p style=""display: visible;"">Die allgemeine Form einer Exponentialfunktion lautet \(f(x) = \) {@f(x)@}<br>Die Parameter a,b,h und k beeinflussen den Graphen der Exponentialfunktion auf unterschiedliche Weise.</p>
+<p style=""display: visible;"">Gegeben ist die Funktion \(h(x) = \) {@h(x)@}</p>
+<p style=""display: visible;"">a) Zeichne die Graphen dieser Funktionen in ein Koordinatensystem.</p>
+<p style=""display: visible;""><em>Du kannst dazu beide Eingabemöglichkeiten nutzen (Eingabefelder &amp; Slider)</em></p>
+<p style=""display: visible;"">\(a = \) [[input:ans1]] [[validation:ans1]]</p>
+<p style=""display: visible;"">\(b = \) [[input:ans2]] [[validation:ans2]]</p>
+<p style=""display: visible;"">\(h = \) [[input:ans3]] [[validation:ans3]]</p>
+<p style=""display: visible;"">\(k = \) [[input:ans4]] [[validation:ans4]]</p>
+<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1"" input-ref-ans2 = ""inputans2"" input-ref-ans3 = ""inputans3"" input-ref-ans4 = ""inputans4""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-10, 10, 10, -10], axis: true, grid: true, showNavigation: true, showCopyright: false }); var a = board.create('slider', [[-9,8], [-5,8], [-4, 0.5, 4]], { name: 'a = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); var b = board.create('slider', [[-9,6], [-5,6], [-4, 0.5, 4]], { name: 'b = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); var h = board.create('slider', [[-9,4], [-5,4], [-4, 0.5, 4]], { name: 'h = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); var k = board.create('slider', [[-9,2], [-5,2], [-4, 0.5, 4]], { name: 'k = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); stack_jxg.bind_slider(inputans1, a); stack_jxg.bind_slider(inputans2, b); stack_jxg.bind_slider(inputans3, h); stack_jxg.bind_slider(inputans4, k); var f = function(x) {return a.Value()*Math.E**(b.Value()*(x-h.Value()))+k.Value(); }; var graph = board.create('functiongraph', [f]); [[/jsxgraph]]</p>
+<p>b) Beschreibe wie der Vorfaktor a und die Veränderung von h die Form der Graphen beeinflusst.<br>c) Was ändert sich, wenn bei \(h(x)\) plötzlich b negativ wird?<br>d) Überlege was passiert, wenn k nicht Null ist, wie in den Beispielen oben.</p>";;;<p>[[feedback:prt1]]</p>;<p>\(h(x) = \){@h(x)@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>/* ans1 = a; ans2 = b; ans3 = h; ans4 = k */
+
+a_ans:ans1;
+b_ans:ans2;
+h_ans:ans3;
+k_ans:ans4;
+
+hx_ans:a_ans*%e^(b_ans*(x+h_ans))+k_ans;</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Funktion genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>hx_ans</sans>
+        <tans>h(x)</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Die gezeichnete Funktion ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>a_faktor</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>1</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>h_faktor</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans4</name>
+      <type>algebraic</type>
+      <tans>0</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>1438852609</deployedseed>
+    <deployedseed>1369128713</deployedseed>
+    <deployedseed>309338238</deployedseed>
+    <deployedseed>1720209655</deployedseed>
+    <deployedseed>1359121532</deployedseed>
+    <deployedseed>39950256</deployedseed>
+    <deployedseed>547826928</deployedseed>
+    <deployedseed>169238321</deployedseed>
+    <deployedseed>419204246</deployedseed>
+    <deployedseed>1607962516</deployedseed>
+    <deployedseed>172926687</deployedseed>
+    <deployedseed>1317559720</deployedseed>
+    <deployedseed>851246870</deployedseed>
+    <deployedseed>81566424</deployedseed>
+    <deployedseed>942207043</deployedseed>
+    <deployedseed>1004586713</deployedseed>
+    <deployedseed>1819170621</deployedseed>
+    <deployedseed>1177569320</deployedseed>
+    <deployedseed>1365668465</deployedseed>
+    <deployedseed>585515653</deployedseed>
+  </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;93;d;Exponentialfunktion zeichnen;Funktionen - Aufgabenblatt Juli - Aufgabe 19 d);"/*Funktion konvertiert Zahlen der Form 1.0, 2.0, 3.0 usw. zu 1, 2, 3*/
+konvertZahl(z):=block(
+    [newZ:0],
+    /*Wenn */
+    if floatnump(z) and floor(10 * (z - floor(z)))=0 then(
+        newZ:fix(z)
+        )
+    else(
+    newZ:z),
+return (newZ)
+);
+
+
+f(x):=a*%e^(b*(x-h))+k;
+
+faktor_list:delete(0, makelist(-4 + i/2, i, 0, 16)); /*Liste von -4 -> +4 */
+a_faktor:float(rand(faktor_list));
+a_faktor:konvertZahl(a_faktor);
+
+h_faktor:float(rand(faktor_list));
+h_faktor:konvertZahl(h_faktor);
+
+k_faktor:float(rand(faktor_list));
+k_faktor:konvertZahl(k_faktor);
+
+h(x):=a_faktor*%e^(x+h_faktor)+k_faktor;";"<p style=""display: visible;"">Die allgemeine Form einer Exponentialfunktion lautet \(f(x) = \) {@f(x)@}<br>Die Parameter a,b,h und k beeinflussen den Graphen der Exponentialfunktion auf unterschiedliche Weise.</p>
+<p style=""display: visible;"">Gegeben ist die Funktion \(i(x) = \) {@h(x)@}</p>
+<p style=""display: visible;"">a) Zeichne die Graphen dieser Funktionen in ein Koordinatensystem.</p>
+<p style=""display: visible;""><em>Du kannst dazu beide Eingabemöglichkeiten nutzen (Eingabefelder &amp; Slider)</em></p>
+<p style=""display: visible;"">\(a = \) [[input:ans1]] [[validation:ans1]]</p>
+<p style=""display: visible;"">\(b = \) [[input:ans2]] [[validation:ans2]]</p>
+<p style=""display: visible;"">\(h = \) [[input:ans3]] [[validation:ans3]]</p>
+<p style=""display: visible;"">\(k = \) [[input:ans4]] [[validation:ans4]]</p>
+<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1"" input-ref-ans2 = ""inputans2"" input-ref-ans3 = ""inputans3"" input-ref-ans4 = ""inputans4""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-10, 10, 10, -10], axis: true, grid: true, showNavigation: true, showCopyright: false }); var a = board.create('slider', [[-9,8], [-5,8], [-4, 0.5, 4]], { name: 'a = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); var b = board.create('slider', [[-9,6], [-5,6], [-4, 0.5, 4]], { name: 'b = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); var h = board.create('slider', [[-9,4], [-5,4], [-4, 0.5, 4]], { name: 'h = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); var k = board.create('slider', [[-9,2], [-5,2], [-4, 0.5, 4]], { name: 'k = ', visible: true, snapWidth: 0.5, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); stack_jxg.bind_slider(inputans1, a); stack_jxg.bind_slider(inputans2, b); stack_jxg.bind_slider(inputans3, h); stack_jxg.bind_slider(inputans4, k); var f = function(x) {return a.Value()*Math.E**(b.Value()*(x-h.Value()))+k.Value(); }; var graph = board.create('functiongraph', [f]); [[/jsxgraph]]</p>
+<p>b) Beschreibe wie der Vorfaktor a und die Veränderung von h die Form der Graphen beeinflusst.<br>c) Was ändert sich, wenn bei \(i(x)\) plötzlich b negativ wird?<br>d) Überlege was passiert, wenn k nicht Null ist, wie in den Beispielen oben.</p>";;;<p>[[feedback:prt1]]</p>;<p>\(i(x) = \){@h(x)@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>/* ans1 = a; ans2 = b; ans3 = h; ans4 = k */
+
+a_ans:ans1;
+b_ans:ans2;
+h_ans:ans3;
+k_ans:ans4;
+
+hx_ans:a_ans*%e^(b_ans*(x+h_ans))+k_ans;</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Funktion genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>hx_ans</sans>
+        <tans>h(x)</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Die gezeichnete Funktion ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>a_faktor</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>1</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>h_faktor</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans4</name>
+      <type>algebraic</type>
+      <tans>0</tans>
+      <boxsize>3</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>1438852609</deployedseed>
+    <deployedseed>1369128713</deployedseed>
+    <deployedseed>309338238</deployedseed>
+    <deployedseed>1720209655</deployedseed>
+    <deployedseed>1359121532</deployedseed>
+    <deployedseed>39950256</deployedseed>
+    <deployedseed>547826928</deployedseed>
+    <deployedseed>169238321</deployedseed>
+    <deployedseed>419204246</deployedseed>
+    <deployedseed>1607962516</deployedseed>
+    <deployedseed>172926687</deployedseed>
+    <deployedseed>1317559720</deployedseed>
+    <deployedseed>851246870</deployedseed>
+    <deployedseed>81566424</deployedseed>
+    <deployedseed>942207043</deployedseed>
+    <deployedseed>1004586713</deployedseed>
+    <deployedseed>1819170621</deployedseed>
+    <deployedseed>1177569320</deployedseed>
+    <deployedseed>1365668465</deployedseed>
+    <deployedseed>585515653</deployedseed>
+  </seed_fields>";;1;Sebastian F
 6;tri;;1;a;Trigonometrie;Trigonometrie Ia - Begriffsklärungen;"TRI_A:[
 [a1,[[1,true,""Hypothenuse""],[2,false,""Katheten""],[3,false,""Ankathete""],[4,false,""Gegenkathete""]],[[4,false,""Hypothenuse""],[2,false,""Katheten""],[3,false,""Ankathete""],[1,true,""Gegenkathete""]],[[3,false,""Hypothenuse""],[2,false,""Katheten""],[1,true,""Ankathete""],[4,false,""Gegenkathete""]],[""Richtig wäre: Hypothenuse. Die Hypothenuse bezeichnet die dem rechten Winkel gegenüberliegende Seite. Es ist die längste Seite des rechtwinkligen Dreiecks."", ""Richtig wäre: Gegenkathete. Die dem Winkel gegenüberliegende Seite wird als Gegenkathete bezeichnet."", ""Richtig wäre: Ankathete. Die dem Winkel anliegende Seite, die nicht die Hypothenuse ist, wird als Ankathete bezeichnet.""],[""\\(c\\) beschreibt die Länge der "",""."", ""Nennen wir den Winkel zwischen \\(c\\) und \\(b\\)\\(\\;\\alpha\\;\\). Dann beschreibt \\(a\\) die Länge der "","" von \\(\\alpha\\)"", ""und \\(b\\) die Länge der "","" von \\(\\alpha\\).""]],
 [a2,[[1,true,""Hypothenuse""],[2,false,""Katheten""],[3,false,""Ankathete""],[4,false,""Gegenkathete""]],[[3,false,""Hypothenuse""],[2,false,""Katheten""],[1,true,""Ankathete""],[4,false,""Gegenkathete""]],[[4,false,""Hypothenuse""],[2,false,""Katheten""],[3,false,""Ankathete""],[1,true,""Gegenkathete""]],[""Richtig wäre: Hypothenuse. Die Hypothenuse bezeichnet die dem rechten Winkel gegenüberliegende Seite. Es ist die längste Seite des rechtwinkligen Dreiecks."", ""Richtig wäre: Ankathete. Die dem Winkel anliegende Seite, die nicht die Hypothenuse ist, wird als Ankathete bezeichnet."", ""Richtig wäre: Gegenkathete. Die dem Winkel gegenüberliegende Seite wird als Gegenkathete bezeichnet.""],[""\\(c\\) beschreibt die Länge der "",""."", ""Nennen wir den Winkel zwischen \\(c\\) und \\(a\\)\\(\\;\\alpha\\;\\). Dann beschreibt \\(a\\) die Länge der "","" von \\(\\alpha\\)"", ""und \\(b\\) die Länge der "","" von \\(\\alpha\\).""]],
