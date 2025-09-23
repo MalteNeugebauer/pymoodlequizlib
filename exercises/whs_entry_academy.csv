@@ -16760,7 +16760,7 @@ validate(ans, list_element_ungerundet, list_element_gerundet):=block(
     <deployedseed>1164497941</deployedseed>
     <deployedseed>1308394592</deployedseed>
     <deployedseed>773241070</deployedseed>
-  </seed_fields>";;;Sebastian F
+  </seed_fields>";;1;Sebastian F
 7;fun;Funktionen;91;d;Textaufgabe;Funktionen Aufgabe 16 d);"/*---------------------------------Funktionen--------------------------*/
 
 /*Funktion rundet Elemente einer übergebenen Liste auf zwei Nachkommastellen.
