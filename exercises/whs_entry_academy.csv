@@ -14507,8 +14507,8 @@ list_coordinate:sort([[x1,y1],[x2,y2],[x3,y3],[x4,y4]]);
 
 /*Teilaufgabe a1)*/
 tans:f(0);";"<p>Gegebene Funktion: \(f(x) = {@f(x)@}\)</p>
-<p>\( a_1) \) Wie lautet der Schnittpunkt \(S\) der Funktion \(f(x)\) mit der y-Achse?</p>
-<p>    \(S\) = [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(f(x)\) = {@f(x)@};  \(S\) = {@tans@};</p>";0;"<prt>
+<p>\( a_1) \) Wie lautet der y-Achsenabschnitt \(b\) der Funktion \(f(x)\)?</p>
+<p>    \(b\) = [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(f(x)\) = {@f(x)@};  \(S\) = {@tans@};</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
