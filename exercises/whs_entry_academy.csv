@@ -12816,7 +12816,7 @@ tans_x2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gi
     <input>
       <name>ans2</name>
       <type>algebraic</type>
-      <tans>tans_x1</tans>
+      <tans>tans_x2</tans>
       <boxsize>4</boxsize>
       <strictsyntax>1</strictsyntax>
       <insertstars>0</insertstars>
