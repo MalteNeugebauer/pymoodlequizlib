@@ -16008,7 +16008,374 @@ ta1:convert_list_to_equation(ta1);";"<h6><strong>7.1</strong> Bestimme die Nulls
     <deployedseed>444237957</deployedseed>
     <deployedseed>1234196624</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;91;a;Textaufgabe;Funktionen Aufgabe 16 a);"a:rand_with_step(-10, 0, 1);
+7;fun;Funktionen;91;a;Textaufgabe quadratische Funktion;Funktionen Aufgabe 15 a);"/*[[a, d, e], ...]*/
+list:[[0.5, 2, 3], [0.5, 3 ,6], [1, 2, 5], [3, 1, 5], [1, 1, 3], [2, 1, 5], [0.25, 2, 5], [3, 1, 4], [1, 2, 7], [1, 1, 6]];
+
+i:rand_with_step(1, length(list), 1);
+a:list[i][1];
+d:list[i][2];
+e:list[i][3];
+f(x):=-a*(x-d)^2+e;                 /*z.B. -0.5*(x-2)^2+3 */
+
+startpunkt:f(0);                    /*y-Wert von Schnittpunkt mit y-Achse: 1 */
+list_S:solve([f(0)=f(x)],[x]);      /*Enhält alle zugehörigen x-Werte zu y = 1 ->[x=0,x=4] */
+
+/* list_S [x=0, x=4] zu list_formatted [0, 4] machen:*/
+list_formatted:[];
+for i:1 thru length(list_S) do block (
+list_formatted:append(list_formatted,[rhs(list_S[i])]));
+
+endpunkt:first(sublist(list_formatted, lambda([x], x # 0))); /*Ermittelt den anderen x-wert von 1 -> 4 */
+höhe:e;
+zeit1:rhs(solve([f(x)=höhe],[x])[1]);  /* 2 */
+zeit2:endpunkt;                        /* 4 */";"<p>[[feedback:prt1]]</p>
+<p>Jemand wirft seinen Papierflieger. Die Höhe h (in Metern) des Fliegers in Abhängigkeit von der Flugzeit t (in Sekunden) folgt einer parabelförmigen Flugbahn. Zu Beginn, also beim Abwurf, ist der Flieger {@startpunkt@} Meter hoch. Nach {@zeit1@} Sekunden erreicht der Flieger eine Höhe von {@höhe@} Metern. Nach {@zeit2@} Sekunden ist der Flieger wieder auf {@startpunkt@} Meter Höhe.</p>
+<hr>
+<p><br>a) Skizziere zunächst den Graphen mit allen oben angegebenen Informationen.</p>
+<p style=""display: none;"">[[input:ans1]] [[validation:ans1]]</p>
+<p style=""display: none;"">[[input:ans2]] [[validation:ans2]]</p>
+<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1"" input-ref-ans2 = ""inputans2""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-8, 8, 8, -8], axis: false, grid: true, showNavigation: true, showCopyright: false }); /*Default-Gitter mit axis:false deaktivieren. Sonst Gitter bei jedem zweiten Wert*/ /*Gitter manuell erzeugen: X-Achse mit Gitter bei jedem Wert*/ var xaxis = board.create('axis', [[0,0], [1,0]], { ticks: { drawLabels: true, tickDistance: 1, /*Gitterabstand 1*/ majorHeight: 10, minorTicks: 0 } }); /*Gitter manuell erzeugen: Y-Achse mit Gitter bei jedem Wert*/ var yaxis = board.create('axis', [[0,0], [0,1]], { ticks: { drawLabels: true, tickDistance: 1, majorHeight: 10, minorTicks: 0 } }); var scheitelpunkt = board.create('point', [0, 0], { name: 'S', fixed: false, color: '#003399', size: 4, showInfobox: true, snapToGrid:true }); stack_jxg.bind_point(inputans1, scheitelpunkt); /*Scheitelpunkt an Inputfeld ans1 binden*/ var slider_streckung = board.create('slider', [[2,6], [7,6], [-4, 0.25, 4]], { name: '', visible: true, snapWidth: 0.25, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); /*Automatisch generierten Wert RECHTS neben dem Slider ausblenden (Streckung = 'Streckungswert')*/ slider_streckung.label.setAttribute({visible: false}); /*Eigener Text UNTER dem Slider im Format (Streckung = 'Streckungswert')*/ var text_steigung = board.create('text', [ function() { return (slider_streckung.point1.X() + slider_streckung.point2.X()) / 2; }, function() { return slider_streckung.point1.Y() - 0.5; }, function() { return 'Streckung = ' + slider_streckung.Value().toFixed(2); } ], { anchorX: 'middle', anchorY: 'top', fontSize: 14 }); stack_jxg.bind_slider(inputans2, slider_streckung); /*Slider an Inputfeld ans2 binden*/ var f = function(x) {return slider_streckung.Value()*(x-scheitelpunkt.X())**2+scheitelpunkt.Y(); }; var graph = board.create('functiongraph', [f]); [[/jsxgraph]]</p>";;;;<p>\(f(x) = \) {@f(x)@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>ans1_Sx:ans1[1];                                      /*x-Koordinate des Scheitelpunktes*/
+ans1_Sy:ans1[2];                                      /*y-Koordnate des Scheitelpunktes*/
+ans_Funktion:ans2*(x-ans1_Sx)^2+ans1_Sy;              /*Funktion, welche die Studenten mit JSX zeichen.*/</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Funktion korrekt gezeichnet.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans_Funktion</sans>
+        <tans>f(x)</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>[d,e]</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>-a</tans>
+      <boxsize>10</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>273975296</deployedseed>
+    <deployedseed>1516775500</deployedseed>
+    <deployedseed>1738163661</deployedseed>
+    <deployedseed>1349688702</deployedseed>
+    <deployedseed>140038841</deployedseed>
+    <deployedseed>1280467271</deployedseed>
+    <deployedseed>2132450431</deployedseed>
+    <deployedseed>419605790</deployedseed>
+  </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;91;b;Textaufgabe quadratische Funktion;Funktionen Aufgabe 15 b);"a:1+rand(10);
+d:1+rand(10);
+e:1+rand(10);
+h(t):=-a*(t-d)^2+e;                 /*z.B. -0.5*(t-2)^2+3 */
+
+startpunkt:h(0);                    /*y-Wert von Schnittpunkt mit y-Achse: 1 */
+list_S:solve([h(0)=h(t)],[t]);      /*Enhält alle zugehörigen x-Werte zu y = 1 ->[t=0,t=4] */
+
+/* list_S [t=0, t=4] zu list_formatted [0, 4] machen:*/
+list_formatted:[];
+for i:1 thru length(list_S) do block (
+list_formatted:append(list_formatted,[rhs(list_S[i])]));
+
+endpunkt:first(sublist(list_formatted, lambda([t], x # 0))); /*Ermittelt den anderen x-wert von 1 -> 4 */
+höhe:e;
+zeit1:rhs(solve([h(t)=höhe],[t])[1]);  /* 2 */
+zeit2:endpunkt;                        /* 4 */
+
+/*Musterlösung:*/
+tans1:expand(h(t));";"<p>Jemand wirft seinen Papierflieger. Die Höhe h (in Metern) des Fliegers in Abhängigkeit von der Flugzeit t (in Sekunden) folgt einer parabelförmigen Flugbahn. Zu Beginn, also beim Abwurf, ist der Flieger {@startpunkt@} Meter hoch. Nach {@zeit1@} Sekunden erreicht der Flieger eine Höhe von {@höhe@} Metern. Nach {@zeit2@} Sekunden ist der Flieger wieder auf {@startpunkt@} Meter Höhe.</p>
+<p>b) Bestimme eine quadratische Funktion der Form \(h(t)=at²+bt+c\), die diese Flugbahn beschreibt.</p>
+<p>    \(h(t) = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans1@}</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfen, ob Funktion genau wie Musterlösung.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>tans1</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfen, ob Funktion der Scheitelpunktform entspricht.</description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>h(t)</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.5</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p>Achte darauf, in welcher Form die Funktion in der Aufgabenstellung verlangt wird. Deine Funktion entspricht der Scheitelpunktform.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans1</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";"<seed_fields><deployedseed>7088430</deployedseed>
+    <deployedseed>497692500</deployedseed>
+    <deployedseed>281027521</deployedseed>
+    <deployedseed>1178517827</deployedseed>
+    <deployedseed>570311195</deployedseed>
+    <deployedseed>744873384</deployedseed>
+    <deployedseed>1488642420</deployedseed>
+    <deployedseed>527358337</deployedseed>
+    <deployedseed>88897438</deployedseed>
+    <deployedseed>907202231</deployedseed>
+    <deployedseed>1326633350</deployedseed>
+    <deployedseed>863274609</deployedseed>
+    <deployedseed>896543792</deployedseed>
+    <deployedseed>713205433</deployedseed>
+    <deployedseed>576048533</deployedseed>
+    <deployedseed>1658365669</deployedseed>
+  </seed_fields>";;;Sebastian F
+7;fun;Funktionen;91;cd;Textaufgabe quadratische Funktion;Funktionen Aufgabe 15 cd);"a:1+rand(10);
+d:1+rand(10);
+e:1+rand(10);
+h(t):=-a*(t-d)^2+e;                 /*z.B. -0.5*(t-2)^2+3 */
+
+startpunkt:h(0);                    /*y-Wert von Schnittpunkt mit y-Achse: 1 */
+list_S:solve([h(0)=h(t)],[t]);      /*Enhält alle zugehörigen t-Werte zu h(t) = 1 ->[t=0,t=4] */
+
+/* list_S [t=0, t=4] zu list_formatted [0, 4] machen:*/
+list_formatted:[];
+for i:1 thru length(list_S) do block (
+list_formatted:append(list_formatted,[rhs(list_S[i])]));
+list_formatted;
+
+endpunkt:first(sublist(list_formatted, lambda([t], t # 0))); /*Ermittelt den anderen x-wert von 1 -> 4 */
+höhe:e;
+zeit1:rhs(solve([h(t)=höhe],[t])[1]);  /* 2 */
+zeit2:endpunkt;                        /* 4 */
+
+
+/*Musterlösungen:*/
+tans1:d;
+tans2:e;";"<p>Jemand wirft seinen Papierflieger. Die Höhe h (in Metern) des Fliegers in Abhängigkeit von der Flugzeit t (in Sekunden) folgt einer parabelförmigen Flugbahn. Zu Beginn, also beim Abwurf, ist der Flieger {@startpunkt@} Meter hoch. Nach {@zeit1@} Sekunden erreicht der Flieger eine Höhe von {@höhe@} Metern. Nach {@zeit2@} Sekunden ist der Flieger wieder auf {@startpunkt@} Meter Höhe.</p>
+<p>Hier die dazugehörige Funktion: \(h(t) = {@h(t)@}\)</p>
+<p>c) Berechne die maximale Höhe, die der Flieger erreicht und nach wie vielen Sekunden er diese erreicht.</p>
+<p>   \(HP = (\) [[input:ans1]] \(|\) [[input:ans2]] \()\)</p>
+<p>[[validation:ans1]]</p>
+<p>[[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(h(t) = \) = {@h(t)@};   \(HP = (\) {@tans1@} \(|\) {@tans2@} \()\)</p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description>Prüfe, ob s (tans1) äquivalent zu Musterlösung.</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans1</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.5</truescore>
+        <truepenalty/>
+        <truenextnode>1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Der Sekundenwert bzw. der x-Wert ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description>Prüfe, ob h äquivalent zu Musterlösung</description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans2</sans>
+        <tans>tans2</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.5</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>+</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Die Höhe bzw. der y-Wert ist nicht korrekt.</p>]]></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input_fields><input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans1</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>tans2</tans>
+      <boxsize>4</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>1</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    </input_fields>";"<seed_fields><deployedseed>1777260494</deployedseed>
+    <deployedseed>351492233</deployedseed>
+    <deployedseed>1991281778</deployedseed>
+    <deployedseed>1882317612</deployedseed>
+    <deployedseed>295542829</deployedseed>
+    <deployedseed>1327546172</deployedseed>
+    <deployedseed>507183238</deployedseed>
+    <deployedseed>1885602961</deployedseed>
+    <deployedseed>56832628</deployedseed>
+    <deployedseed>596335729</deployedseed>
+    <deployedseed>10754587</deployedseed>
+    <deployedseed>146815222</deployedseed>
+    <deployedseed>831312757</deployedseed>
+    <deployedseed>43053625</deployedseed>
+    <deployedseed>739006003</deployedseed>
+    <deployedseed>31201873</deployedseed>
+    <deployedseed>872286821</deployedseed>
+    <deployedseed>1542735202</deployedseed>
+    <deployedseed>1588254914</deployedseed>
+    <deployedseed>155467537</deployedseed>
+    <deployedseed>1515333917</deployedseed>
+    <deployedseed>1515704044</deployedseed>
+  </seed_fields>";;1;Sebastian F
+7;fun;Funktionen;92;a;Textaufgabe;Funktionen Aufgabe 16 a);"a:rand_with_step(-10, 0, 1);
 b:rand_with_step(1, 50, 3);
 c:rand_with_step(1, 50, 2);
 d:rand_with_step(20, 100, 1);
@@ -16125,7 +16492,7 @@ tans:h(sekunden);";"<p>In einem Experiment wird ein Objekt aus einer Höhe von {
     <deployedseed>108865669</deployedseed>
     <deployedseed>1230003432</deployedseed>
   </seed_fields>";;;Sebastian F
-7;fun;Funktionen;91;b;Textaufgabe;Funktionen Aufgabe 16 b);"/*---------------------------------Funktionen--------------------------*/
+7;fun;Funktionen;92;b;Textaufgabe;Funktionen Aufgabe 16 b);"/*---------------------------------Funktionen--------------------------*/
 /*Funktion zum formatieren einer Liste von [x=1, x=2, ...] zu [1, 2, ...]*/
 liste_formatieren(l):=block(
     [ergebnis:[], i],
@@ -16469,7 +16836,7 @@ validationtestresult3:validate(rhs(ans1[2]), rhs(tans_gerundet[2]));</text>
       <options/>
     </input>
     ";;;1;Sebastian F
-7;fun;Funktionen;91;c;Textaufgabe;Funktionen Aufgabe 16 c);"a:rand_with_step(-10, 0, 1);
+7;fun;Funktionen;92;c;Textaufgabe;Funktionen Aufgabe 16 c);"a:rand_with_step(-10, 0, 1);
 b:rand_with_step(1, 50, 3);
 c:rand_with_step(1, 50, 2);
 d:rand_with_step(20, 100, 1);
@@ -16700,7 +17067,7 @@ validate(ans, list_element_ungerundet, list_element_gerundet):=block(
     <deployedseed>1308394592</deployedseed>
     <deployedseed>773241070</deployedseed>
   </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;91;d;Textaufgabe;Funktionen Aufgabe 16 d);"/*---------------------------------Funktionen--------------------------*/
+7;fun;Funktionen;92;d;Textaufgabe;Funktionen Aufgabe 16 d);"/*---------------------------------Funktionen--------------------------*/
 
 /*Funktion rundet Elemente einer übergebenen Liste auf zwei Nachkommastellen.
 [12,12.1,12.2,12.994,12.995] -> [12.0,12.1,12.2,12.99,13.0]*/
@@ -16940,7 +17307,7 @@ validate(ans, list_element_ungerundet, list_element_gerundet):=block(
     <deployedseed>773912582</deployedseed>
     <deployedseed>1228201725</deployedseed>
   </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;92;a;Funktionsgleichung angeben;Funktion beschreiben – quadratisch_einfache Varianten_DOMAIN_1817680;"avar:rand_with_prohib(-3,3,[0]);
+7;fun;Funktionen;93;a;Funktionsgleichung angeben;Funktion beschreiben – quadratisch_einfache Varianten_DOMAIN_1817680;"avar:rand_with_prohib(-3,3,[0]);
 bvarprep:rand_with_step(-3,3,1);
 bvar:bvarprep/2;
 cvarprep:rand_with_prohib(-3,3,[0]);
@@ -17031,7 +17398,7 @@ loes:a2*x^2+b2*x+c2;";"<p></p><p>Bestimmen Sie die Funktion zum Graph und geben 
       <options/>
     </input>
     ";<seed_fields><deployedseed>1781061523</deployedseed><deployedseed>1455564596</deployedseed><deployedseed>861385721</deployedseed><deployedseed>1478236667</deployedseed></seed_fields>;;0;2024-08-14 exercise number is 12 but set to 99 for technical reasons
-7;fun;Funktionen;92;b;Funktionsgleichung angeben;Funktion beschreiben – quadratisch_schwere Varianten_DOMAIN_1817680;"avar:rand_with_prohib(-3,3,[0]);
+7;fun;Funktionen;93;b;Funktionsgleichung angeben;Funktion beschreiben – quadratisch_schwere Varianten_DOMAIN_1817680;"avar:rand_with_prohib(-3,3,[0]);
 bvarprep:rand_with_step(-3,3,1);
 bvar:bvarprep/2;
 cvarprep:rand_with_prohib(-3,3,[0]);
@@ -17122,7 +17489,7 @@ loes:a2*x^2+b2*x+c2;";"<p></p><p>Bestimmen Sie die Funktion zum Graph und geben 
       <options/>
     </input>
     ";<seed_fields><deployedseed>1614717684</deployedseed><deployedseed>1100997606</deployedseed><deployedseed>1684148052</deployedseed><deployedseed>1959830273</deployedseed></seed_fields>;;0;2024-08-14 exercise number is 12 but set to 99 for technical reasons
-7;fun;Funktionen;93;a;Exponentialfunktion zeichnen;Funktionen - Aufgabenblatt Juli - Aufgabe 19 a);"g(x):=a*%e^(b*(x-h))+k;
+7;fun;Funktionen;94;a;Exponentialfunktion zeichnen;Funktionen - Aufgabenblatt Juli - Aufgabe 19 a);"g(x):=a*%e^(b*(x-h))+k;
 f(x):=%e^x;";"<p style=""display: visible;"">Die allgemeine Form einer Exponentialfunktion lautet \(f(x) = \) {@g(x)@}<br>Die Parameter a,b,h und k beeinflussen den Graphen der Exponentialfunktion auf unterschiedliche Weise.</p>
 <p style=""display: visible;"">Gegeben ist die Funktion \(f(x) = \) {@f(x)@}</p>
 <p style=""display: visible;"">a) Zeichne die Graphen dieser Funktionen in ein Koordinatensystem.</p>
@@ -17246,7 +17613,7 @@ fx_ans:a_ans*%e^(b_ans*(x-h_ans))+k_ans;</text>
       <options/>
     </input>
     </input_fields>";;;1;Sebastian F
-7;fun;Funktionen;93;b;Exponentialfunktion zeichnen;Funktionen - Aufgabenblatt Juli - Aufgabe 19 b);"/*Funktion konvertiert Zahlen der Form 1.0, 2.0, 3.0 usw. zu 1, 2, 3*/
+7;fun;Funktionen;94;b;Exponentialfunktion zeichnen;Funktionen - Aufgabenblatt Juli - Aufgabe 19 b);"/*Funktion konvertiert Zahlen der Form 1.0, 2.0, 3.0 usw. zu 1, 2, 3*/
 konvertZahl(z):=block(
     [newZ:0],
     /*Wenn */
@@ -17399,7 +17766,7 @@ gx_ans:a_ans*%e^(b_ans*(x-h_ans))+k_ans;</text>
     <deployedseed>322905723</deployedseed>
     <deployedseed>2082379244</deployedseed>
   </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;93;c;Exponentialfunktion zeichnen;Funktionen - Aufgabenblatt Juli - Aufgabe 19 c);"/*Funktion konvertiert Zahlen der Form 1.0, 2.0, 3.0 usw. zu 1, 2, 3*/
+7;fun;Funktionen;94;c;Exponentialfunktion zeichnen;Funktionen - Aufgabenblatt Juli - Aufgabe 19 c);"/*Funktion konvertiert Zahlen der Form 1.0, 2.0, 3.0 usw. zu 1, 2, 3*/
 konvertZahl(z):=block(
     [newZ:0],
     /*Wenn */
@@ -17564,7 +17931,7 @@ hx_ans:a_ans*%e^(b_ans*(x+h_ans))+k_ans;</text>
     <deployedseed>1365668465</deployedseed>
     <deployedseed>585515653</deployedseed>
   </seed_fields>";;1;Sebastian F
-7;fun;Funktionen;93;d;Exponentialfunktion zeichnen;Funktionen - Aufgabenblatt Juli - Aufgabe 19 d);"/*Funktion konvertiert Zahlen der Form 1.0, 2.0, 3.0 usw. zu 1, 2, 3*/
+7;fun;Funktionen;94;d;Exponentialfunktion zeichnen;Funktionen - Aufgabenblatt Juli - Aufgabe 19 d);"/*Funktion konvertiert Zahlen der Form 1.0, 2.0, 3.0 usw. zu 1, 2, 3*/
 konvertZahl(z):=block(
     [newZ:0],
     /*Wenn */
