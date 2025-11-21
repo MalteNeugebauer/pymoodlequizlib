@@ -17236,7 +17236,7 @@ validate(ans, list_element_ungerundet, list_element_gerundet):=block(
 <p>d) Berechne die Geschwindigkeit des Objekts nach {@sekunden@} Sekunden \( (v_1) \) und beim Aufprall \( (v_2) \). Dafür benötigst du die Funktion für die Geschwindigkeit des Objektes als Ableitung von \( h(t) \). Also \( h'(t) \).</p>
 <p>\(v_1 \ und \ v_2 = \) [[input:ans1]] \( m/s \)</p>
 <p>[[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(h(t) = \) {@h(t)@}</p>
-<p>\(d) \ v_1 = \) {@tans_gerundet[1]@} \(; v_2 = \) {@tans_gerundet[2]@}</p>";0;"<prt>
+<p>\(d) \ v_1 = \) {@tans_gerundet[1]@} \(; v_2 = \) {@tans_gerundet[2]@}</p>";1;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -17306,7 +17306,7 @@ validate(ans, list_element_ungerundet, list_element_gerundet):=block(
     <deployedseed>1168213612</deployedseed>
     <deployedseed>773912582</deployedseed>
     <deployedseed>1228201725</deployedseed>
-  </seed_fields>";;1;Sebastian F
+  </seed_fields>";;1;Sebastian F (MN 2025-11-21: deactivated due to problem with calculation (original question authored by Sabrina))
 7;fun;Funktionen;93;a;Funktionsgleichung angeben;Funktion beschreiben – quadratisch_einfache Varianten_DOMAIN_1817680;"avar:rand_with_prohib(-3,3,[0]);
 bvarprep:rand_with_step(-3,3,1);
 bvar:bvarprep/2;
