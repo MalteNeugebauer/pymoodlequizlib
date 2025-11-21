@@ -16835,7 +16835,7 @@ validationtestresult3:validate(rhs(ans1[2]), rhs(tans_gerundet[2]));</text>
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";;;1;Sebastian F
+    ";<seed_fields><deployedseed>1843262728</deployedseed><deployedseed>2002059733</deployedseed><deployedseed>1300934958 </deployedseed><deployedseed>1392991994</deployedseed></seed_fields>;;1;Sebastian F
 7;fun;Funktionen;92;c;Textaufgabe;Funktionen Aufgabe 16 c);"a:rand_with_step(-10, 0, 1);
 b:rand_with_step(1, 50, 3);
 c:rand_with_step(1, 50, 2);
