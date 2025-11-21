@@ -247,7 +247,7 @@ class QuestionPool:
 
 
             if self.Question_Ver.callback_change_before_clone != None:
-                self.Question_Ver.callback_change_before_clone(Question=CopiedQuestion)
+                self.Question_Ver.callback_change_before_clone(Question=CopiedQuestion, **self.Question_Ver.callback_kwargs)
 
             if self.Question_Ver.variants_as_single == True:
                 print("special handling for variants as single")

@@ -149,6 +149,11 @@ def it_version_ted_feedback_abs_change_text(**kwargs):
         print("no question found for input change (it ted abs)")
         return False
     
+    add_spot_feedback_class_string = ""
+    spot_feedback_desired = kwargs.get("spot_feedback")
+    if spot_feedback_desired == True:
+        add_spot_feedback_class_string = " mco-spot-feedback"
+    
     # Add necessary function to question variables.
     maxima_code_convert_to_tree = """
 converttotree(expr):= block(
@@ -208,7 +213,7 @@ converttotree(expr):= block(
     # As the fetched script is not executed, this doesn't work. It has to be initiated by the main script ...qpool-instant-tutoring.js.
     #text_to_add = f"{text_to_add}\n<script>{javascript_code_formulate_distance}</script>"
     # At least we can insert a field for the feedback
-    text_to_add = f'{text_to_add}\n<div class="maxima-code-output mco-ted-feedback mco-ted-abs"></div>'
+    text_to_add = f'{text_to_add}\n<div class="maxima-code-output mco-ted-feedback mco-ted-abs{add_spot_feedback_class_string}"></div>'
     
     # Add script to the PRT node, that has no following node on false, or that are true but give 0 points and have no following node. Assume that node(s) to be the one(s) that say only "False" and mean "False and I don't know why".
     for prt in Question.root.iterchildren("prt"):
@@ -266,8 +271,10 @@ def it_version_ted_feedback_rel_change_text(**kwargs):
         return False
     
     # Replace the beforehand defined feedback field for absolute feedback to a relative feedback field.
-    search = '<div class="maxima-code-output mco-ted-feedback mco-ted-abs"></div>'
-    replace = '<div class="maxima-code-output mco-ted-feedback mco-ted-rel"></div>'
+    #search = '<div class="maxima-code-output mco-ted-feedback mco-ted-abs"></div>'
+    #replace = '<div class="maxima-code-output mco-ted-feedback mco-ted-rel"></div>'
+    search = 'mco-ted-abs'
+    replace = 'mco-ted-rel'
     
     outcomes = ["true", "false"]
     for prt in Question.root.iterchildren("prt"):
@@ -280,3 +287,6 @@ def it_version_ted_feedback_rel_change_text(**kwargs):
     return True
 
 InstantTutoringTEDRelVersion = stackassessxmllib.QuestionVersion("instant-tutoring-ted-rel", True, alquiz_instant_tutoring_script_tag, current_dir / "start-instant-tutoring.xml", current_dir / "config-instant-tutoring.xml", it_fixed_seed_amount, True, callback_last_quiz_element_text=it_version_config_text, callback_add_to_script=it_version_add_to_script_text, callback_change_before_clone=it_version_ted_feedback_rel_change_text, needs_exercises_as_callback_arg=True, seed_limit=it_fixed_seed_amount)
+
+#%%
+InstantTutoringTEDRelSpotFeedbackVersion = stackassessxmllib.QuestionVersion("instant-tutoring-ted-rel", True, alquiz_instant_tutoring_script_tag, current_dir / "start-instant-tutoring.xml", current_dir / "config-instant-tutoring.xml", it_fixed_seed_amount, True, callback_last_quiz_element_text=it_version_config_text, callback_add_to_script=it_version_add_to_script_text, callback_change_before_clone=it_version_ted_feedback_rel_change_text, needs_exercises_as_callback_arg=True, seed_limit=it_fixed_seed_amount, spot_feedback=True)
