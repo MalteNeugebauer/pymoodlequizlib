@@ -14058,7 +14058,7 @@ fkt:y=a*x+b;                                   /*Funktion*/
 cx1:rand_with_step(-20,20,1);                  /*x1-Koordinate*/
 cy1:a*cx1+b;                                   /*y1-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
 <p>a) \(A({@cx1@}|y)\)</p>
-<p>     y= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@fkt@} <span style=""font-size: 12.0pt; line-height: 107%;"">\[\Rightarrow\]</span> \(A({@cx1@}|{@cy1@})\)</p>";0;"<prt>
+<p>     y= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@fkt@} <span style=""font-size: 12.0pt; line-height: 107%;"">\[\Rightarrow\]</span> \(A({@cx1@}|{@cy1@})\)</p>";1;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -14138,7 +14138,7 @@ fkt:y=a*x+b;                                   /*Funktion*/
 cx1:rand_with_step(-20,20,1);                  /*x1-Koordinate*/
 cy1:a*cx1+b;                                   /*y1-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
 <p>b) \(B({@cx1@}|y)\)</p>
-<p>     y= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@fkt@} <span style=""font-size: 12.0pt; line-height: 107%;"">\[\Rightarrow\]</span> \(A({@cx1@}|{@cy1@})\)</p>";0;"<prt>
+<p>     y= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@fkt@} <span style=""font-size: 12.0pt; line-height: 107%;"">\[\Rightarrow\]</span> \(A({@cx1@}|{@cy1@})\)</p>";1;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -14219,7 +14219,7 @@ fkt:y=a*x+b;                                   /*Funktion*/
 cx1:rand_with_step(-20,20,1);                  /*x1-Koordinate*/
 cy1:a*cx1+b;                                   /*y1-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
 <p>c) \(C(x|{@cy1@})\)</p>
-<p>     x= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@fkt@} <span style=""font-size: 12.0pt; line-height: 107%;"">\[\Rightarrow\]</span> \(B({@cx1@}|{@cy1@})\)</p>";0;"<prt>
+<p>     x= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@fkt@} <span style=""font-size: 12.0pt; line-height: 107%;"">\[\Rightarrow\]</span> \(B({@cx1@}|{@cy1@})\)</p>";1;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -14300,7 +14300,7 @@ fkt:y=a*x+b;                                   /*Funktion*/
 cx1:rand_with_step(-20,20,1);                  /*x1-Koordinate*/
 cy1:a*cx1+b;                                   /*y1-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
 <p>d) \(D(x|{@cy1@})\)</p>
-<p>     x= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@fkt@} <span style=""font-size: 12.0pt; line-height: 107%;"">\[\Rightarrow\]</span> \(D({@cx1@}|{@cy1@})\)</p>";0;"<prt>
+<p>     x= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@fkt@} <span style=""font-size: 12.0pt; line-height: 107%;"">\[\Rightarrow\]</span> \(D({@cx1@}|{@cy1@})\)</p>";1;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
