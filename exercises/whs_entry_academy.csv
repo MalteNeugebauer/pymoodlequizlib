@@ -13757,15 +13757,15 @@ cx:(cy-b)/a;                  /*x-Koordinate*/";"<p>Bestimme die fehlende Koordi
       <options/>
     </input>
     ";<seed_fields><deployedseed>2055281321</deployedseed><deployedseed>312582178</deployedseed><deployedseed>825756305</deployedseed><deployedseed>2080480146</deployedseed></seed_fields>;;;Sebastian F
-6;fun;Funktionen;30;a;Geradengleichung aus Punkten erstellen;Funktionen Aufgabe 1.3 a);"a:rand_with_prohib(-20,20,[-1,1,0]);    /*Steigung*/
-b:rand_with_prohib(-20,20,[-1,1,0]);    /*y-Achsenabschnitt*/
+6;fun;Funktionen;30;a;Geradengleichung aus Punkten erstellen;Funktionen Aufgabe 1.3 a);"a:rand_with_prohib(-5,5,[-1,1,0]);    /*Steigung*/
+b:rand_with_prohib(-5,5,[-1,1,0]);    /*y-Achsenabschnitt*/
 tans:y=a*x+b;                           /*Funktion*/
 
-cx1:rand_with_step(-20,20,1);           /*x1-Koordinate*/
+cx1:1;           /*x1-Koordinate*/
 cy1:a*cx1+b;                            /*y1-Koordinate*/
 
-cx2:rand_with_prohib(-20,20,[cx1]);     /*x1-Koordinate*/
-cy2:a*cx2+b;                            /*y1-Koordinate*/";"<p>Von einer Geraden sind zwei Punkte bekannt. Bestimme die Geradengleichung.</p>
+cx2:-1;     /*x2-Koordinate*/
+cy2:a*cx2+b;                            /*y2-Koordinate*/";"<p>Von einer Geraden sind zwei Punkte bekannt. Bestimme die Geradengleichung.</p>
 <p>\(P_1({@cx1@}|{@cy1@});   P_2({@cx2@}|{@cy2@}) \Rightarrow\) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(P_1({@cx1@}|{@cy1@});   P_2({@cx2@}|{@cy2@}) \Rightarrow {@tans@}\)</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
@@ -13831,7 +13831,7 @@ cy2:a*cx2+b;                            /*y1-Koordinate*/";"<p>Von einer Geraden
       <tans>tans</tans>
       <boxsize>10</boxsize>
       <strictsyntax>1</strictsyntax>
-      <insertstars>0</insertstars>
+      <insertstars>7</insertstars>
       <syntaxhint>y=...</syntaxhint>
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
@@ -13843,36 +13843,16 @@ cy2:a*cx2+b;                            /*y1-Koordinate*/";"<p>Von einer Geraden
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>1599686867</deployedseed>
-    <deployedseed>798298404</deployedseed>
-    <deployedseed>1852543767</deployedseed>
-    <deployedseed>1213472987</deployedseed>
-    <deployedseed>1432360687</deployedseed>
-    <deployedseed>12804109</deployedseed>
-    <deployedseed>416726090</deployedseed>
-    <deployedseed>2105072680</deployedseed>
-    <deployedseed>720179898</deployedseed>
-    <deployedseed>1612280965</deployedseed>
-    <deployedseed>621259312</deployedseed>
-    <deployedseed>1085797159</deployedseed>
-    <deployedseed>1360789546</deployedseed>
-    <deployedseed>765326278</deployedseed>
-    <deployedseed>401921037</deployedseed>
-    <deployedseed>1545627937</deployedseed>
-    <deployedseed>1699981367</deployedseed>
-    <deployedseed>1210882201</deployedseed>
-    <deployedseed>959553624</deployedseed>
-    <deployedseed>167309559</deployedseed>
-  </seed_fields>";;1;Sebastian F
-6;fun;Funktionen;30;b;Geradengleichung aus Punkten erstellen;Funktionen Aufgabe 1.3 b);"a:rand_with_prohib(-20,20,[-1,1,0]);    /*Steigung*/
-b:rand_with_prohib(-20,20,[-1,1,0]);    /*y-Achsenabschnitt*/
+    ";<seed_fields><deployedseed>1410129319</deployedseed><deployedseed>1299836018</deployedseed><deployedseed>9812036</deployedseed><deployedseed>925741369</deployedseed></seed_fields>;;1;Sebastian F
+6;fun;Funktionen;30;b;Geradengleichung aus Punkten erstellen;Funktionen Aufgabe 1.3 b);"a:rand_with_prohib(-5,5,[-1,1,0]);    /*Steigung*/
+b:rand_with_prohib(-10,10,[-1,1,0]);    /*y-Achsenabschnitt*/
 tans:y=a*x+b;                           /*Funktion*/
 
-cx1:rand_with_step(-20,20,1);           /*x1-Koordinate*/
+cx1:rand_with_prohib(-5,5,[0]);           /*x1-Koordinate*/
 cy1:a*cx1+b;                            /*y1-Koordinate*/
 
-cx2:rand_with_prohib(-20,20,[cx1]);     /*x1-Koordinate*/
-cy2:a*cx2+b;                            /*y1-Koordinate*/";"<p>Von einer Geraden sind zwei Punkte bekannt. Bestimme die Geradengleichung.</p>
+cx2:rand_with_prohib(-5,5,[0,cx1]);     /*x2-Koordinate*/
+cy2:a*cx2+b;                            /*y2-Koordinate*/";"<p>Von einer Geraden sind zwei Punkte bekannt. Bestimme die Geradengleichung.</p>
 <p>\(P_1({@cx1@}|{@cy1@});   P_2({@cx2@}|{@cy2@}) \Rightarrow\) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(P_1({@cx1@}|{@cy1@});   P_2({@cx2@}|{@cy2@}) \Rightarrow {@tans@}\)</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
@@ -13938,7 +13918,7 @@ cy2:a*cx2+b;                            /*y1-Koordinate*/";"<p>Von einer Geraden
       <tans>tans</tans>
       <boxsize>10</boxsize>
       <strictsyntax>1</strictsyntax>
-      <insertstars>0</insertstars>
+      <insertstars>7</insertstars>
       <syntaxhint>y=...</syntaxhint>
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
@@ -13950,27 +13930,7 @@ cy2:a*cx2+b;                            /*y1-Koordinate*/";"<p>Von einer Geraden
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>1599686867</deployedseed>
-    <deployedseed>798298404</deployedseed>
-    <deployedseed>1852543767</deployedseed>
-    <deployedseed>1213472987</deployedseed>
-    <deployedseed>1432360687</deployedseed>
-    <deployedseed>12804109</deployedseed>
-    <deployedseed>416726090</deployedseed>
-    <deployedseed>2105072680</deployedseed>
-    <deployedseed>720179898</deployedseed>
-    <deployedseed>1612280965</deployedseed>
-    <deployedseed>621259312</deployedseed>
-    <deployedseed>1085797159</deployedseed>
-    <deployedseed>1360789546</deployedseed>
-    <deployedseed>765326278</deployedseed>
-    <deployedseed>401921037</deployedseed>
-    <deployedseed>1545627937</deployedseed>
-    <deployedseed>1699981367</deployedseed>
-    <deployedseed>1210882201</deployedseed>
-    <deployedseed>959553624</deployedseed>
-    <deployedseed>167309559</deployedseed>
-  </seed_fields>";;1;Sebastian F
+    ";<seed_fields><deployedseed>1410129319</deployedseed><deployedseed>1299836018</deployedseed><deployedseed>925741369</deployedseed><deployedseed>1685976111</deployedseed></seed_fields>;;1;Sebastian F
 6;fun;Funktionen;40;a;Koordinatenlücken berechnen;Funktionen Aufgabe 2.1 a);"a:2+rand(20);                                  /*Steigung*/
 b:2+rand(20);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
