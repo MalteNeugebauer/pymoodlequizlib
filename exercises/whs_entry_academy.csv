@@ -13517,11 +13517,11 @@ tans:is(cy=cy2_rand);";"<p>Überprüfe, ob die Punkte auf der Geraden \({@fkt@}\
     <deployedseed>2109075354</deployedseed>
     <deployedseed>387120696</deployedseed>
   </seed_fields>";;1;Sebastian F
-6;fun;Funktionen;20;a;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 a);"a:2+rand(20);                                  /*Steigung*/
-b:2+rand(20);                                  /*y-Achsenabschnitt*/
+6;fun;Funktionen;20;a;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 a);"a:2+rand(3);                                  /*Steigung*/
+b:1+rand(3);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
 
-cx:rand_with_step(-20,20,1);                  /*x-Koordinate*/
+cx:1;                  /*x-Koordinate*/
 cy:a*cx+b;                                    /*y-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
 <p>a) \(A({@cx@}|y)\)</p>
 <p>     y= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@fkt@} \( \Rightarrow A({@cx@}|{@cy@}) \)</p>;0;"<prt>
@@ -13576,32 +13576,12 @@ cy:a*cx+b;                                    /*y-Koordinate*/";"<p>Bestimme die
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>2127692390</deployedseed>
-    <deployedseed>1014340557</deployedseed>
-    <deployedseed>488529753</deployedseed>
-    <deployedseed>999569351</deployedseed>
-    <deployedseed>674548122</deployedseed>
-    <deployedseed>1490615055</deployedseed>
-    <deployedseed>795570498</deployedseed>
-    <deployedseed>2051523234</deployedseed>
-    <deployedseed>885045589</deployedseed>
-    <deployedseed>18572394</deployedseed>
-    <deployedseed>645520022</deployedseed>
-    <deployedseed>2084484285</deployedseed>
-    <deployedseed>1098741240</deployedseed>
-    <deployedseed>1160192328</deployedseed>
-    <deployedseed>119817511</deployedseed>
-    <deployedseed>759527330</deployedseed>
-    <deployedseed>1724676409</deployedseed>
-    <deployedseed>247718106</deployedseed>
-    <deployedseed>1627900164</deployedseed>
-    <deployedseed>286133126</deployedseed>
-  </seed_fields>";;;Sebastian F
-6;fun;Funktionen;20;b;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 b);"a:2+rand(20);                                  /*Steigung*/
-b:2+rand(20);                                  /*y-Achsenabschnitt*/
+    ";<seed_fields><deployedseed>1598975369</deployedseed><deployedseed>1249244947</deployedseed><deployedseed>1623440331</deployedseed><deployedseed>1035907405</deployedseed></seed_fields>;;;Sebastian F
+6;fun;Funktionen;20;b;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 b);"a:2+rand(3);                                  /*Steigung*/
+b:1+rand(3);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
 
-cx:rand_with_step(-20,20,1);                 /*x-Koordinate*/
+cx:rand_with_step(3,10,1);                 /*x-Koordinate*/
 cy:a*cx+b;                                   /*y-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
 <p>b) \(B({@cx@}|y)\)</p>
 <p>     y= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@fkt@} \( \Rightarrow B({@cx@}|{@cy@}) \)</p>;0;"<prt>
@@ -13656,33 +13636,13 @@ cy:a*cx+b;                                   /*y-Koordinate*/";"<p>Bestimme die 
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>1926388958</deployedseed>
-    <deployedseed>674229938</deployedseed>
-    <deployedseed>1001627615</deployedseed>
-    <deployedseed>628939321</deployedseed>
-    <deployedseed>1019050981</deployedseed>
-    <deployedseed>983269236</deployedseed>
-    <deployedseed>1396691948</deployedseed>
-    <deployedseed>1549710779</deployedseed>
-    <deployedseed>1938035983</deployedseed>
-    <deployedseed>1862445940</deployedseed>
-    <deployedseed>1908369555</deployedseed>
-    <deployedseed>1438782760</deployedseed>
-    <deployedseed>1599152293</deployedseed>
-    <deployedseed>479891480</deployedseed>
-    <deployedseed>453113511</deployedseed>
-    <deployedseed>1434286032</deployedseed>
-    <deployedseed>576667301</deployedseed>
-    <deployedseed>925997</deployedseed>
-    <deployedseed>737504805</deployedseed>
-    <deployedseed>1694534726</deployedseed>
-  </seed_fields>";;;Sebastian F
-6;fun;Funktionen;20;c;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 c);"a:2+rand(20);                                  /*Steigung*/
-b:2+rand(20);                                  /*y-Achsenabschnitt*/
+    ";<seed_fields><deployedseed>1698956821</deployedseed><deployedseed>1620719400</deployedseed><deployedseed>402939430</deployedseed><deployedseed>1690707092</deployedseed></seed_fields>;;;Sebastian F
+6;fun;Funktionen;20;c;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 c);"a:2+rand(3);                                  /*Steigung*/
+b:1+rand(3);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
 
-cx:rand_with_step(-20,20,1);                  /*x-Koordinate*/
-cy:a*cx+b;                                    /*y-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
+cy:(rand(4)+1)*(-1)*a+b;                                    /*y-Koordinate*/
+cx:(cy-b)/a;                  /*x-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
 <p>c) \(C(x|{@cy@})\)</p>
 <p>     x= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@fkt@} \( \Rightarrow C({@cx@}|{@cy@}) \)</p>;0;"<prt>
       <name>prt1</name>
@@ -13736,33 +13696,13 @@ cy:a*cx+b;                                    /*y-Koordinate*/";"<p>Bestimme die
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>1136162026</deployedseed>
-    <deployedseed>161376435</deployedseed>
-    <deployedseed>176490158</deployedseed>
-    <deployedseed>1238073190</deployedseed>
-    <deployedseed>2012633612</deployedseed>
-    <deployedseed>1413240940</deployedseed>
-    <deployedseed>883789179</deployedseed>
-    <deployedseed>1144281190</deployedseed>
-    <deployedseed>1521438533</deployedseed>
-    <deployedseed>1024102077</deployedseed>
-    <deployedseed>2038215111</deployedseed>
-    <deployedseed>1295909377</deployedseed>
-    <deployedseed>580307130</deployedseed>
-    <deployedseed>1794630918</deployedseed>
-    <deployedseed>740426622</deployedseed>
-    <deployedseed>198147383</deployedseed>
-    <deployedseed>202948275</deployedseed>
-    <deployedseed>1721935929</deployedseed>
-    <deployedseed>860006431</deployedseed>
-    <deployedseed>858221091</deployedseed>
-  </seed_fields>";;;Sebastian F
-6;fun;Funktionen;20;d;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 d);"a:2+rand(20);                                  /*Steigung*/
-b:2+rand(20);                                  /*y-Achsenabschnitt*/
+    ";<seed_fields><deployedseed>273106607</deployedseed><deployedseed>1592806426</deployedseed><deployedseed>2080480146</deployedseed><deployedseed>596413185</deployedseed></seed_fields>;;;Sebastian F
+6;fun;Funktionen;20;d;Koordinatenlücken berechnen;Funktionen Aufgabe 1.2 d);"a:2+rand(3);                                  /*Steigung*/
+b:1+rand(3);                                  /*y-Achsenabschnitt*/
 fkt:y=a*x+b;                                   /*Funktion*/
 
-cx:rand_with_step(-20,20,1);                 /*x-Koordinate*/
-cy:a*cx+b;                                   /*y-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
+cy:(rand(5)+3)*a+b;                                    /*y-Koordinate*/
+cx:(cy-b)/a;                  /*x-Koordinate*/";"<p>Bestimme die fehlende Koordinate so, dass die gegebenen Punkte auf der Geraden mit der Gleichung \({@fkt@}\) liegen.</p>
 <p>d) \(D(x|{@cy@})\)</p>
 <p>     x= [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@fkt@} \( \Rightarrow D({@cx@}|{@cy@}) \)</p>;0;"<prt>
       <name>prt1</name>
@@ -13816,27 +13756,7 @@ cy:a*cx+b;                                   /*y-Koordinate*/";"<p>Bestimme die 
       <showvalidation>1</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>125228795</deployedseed>
-    <deployedseed>1219345956</deployedseed>
-    <deployedseed>514354503</deployedseed>
-    <deployedseed>937077779</deployedseed>
-    <deployedseed>2052189976</deployedseed>
-    <deployedseed>1299381908</deployedseed>
-    <deployedseed>2134915871</deployedseed>
-    <deployedseed>1780203286</deployedseed>
-    <deployedseed>1378653705</deployedseed>
-    <deployedseed>1849641766</deployedseed>
-    <deployedseed>1351141585</deployedseed>
-    <deployedseed>1427329521</deployedseed>
-    <deployedseed>1224302633</deployedseed>
-    <deployedseed>1116175823</deployedseed>
-    <deployedseed>91100007</deployedseed>
-    <deployedseed>2051813643</deployedseed>
-    <deployedseed>696383167</deployedseed>
-    <deployedseed>419219342</deployedseed>
-    <deployedseed>1516607222</deployedseed>
-    <deployedseed>420401887</deployedseed>
-  </seed_fields>";;;Sebastian F
+    ";<seed_fields><deployedseed>2055281321</deployedseed><deployedseed>312582178</deployedseed><deployedseed>825756305</deployedseed><deployedseed>2080480146</deployedseed></seed_fields>;;;Sebastian F
 6;fun;Funktionen;30;a;Geradengleichung aus Punkten erstellen;Funktionen Aufgabe 1.3 a);"a:rand_with_prohib(-20,20,[-1,1,0]);    /*Steigung*/
 b:rand_with_prohib(-20,20,[-1,1,0]);    /*y-Achsenabschnitt*/
 tans:y=a*x+b;                           /*Funktion*/
