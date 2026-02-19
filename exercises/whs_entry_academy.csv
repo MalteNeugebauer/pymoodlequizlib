@@ -14254,26 +14254,41 @@ cy1:a*cx1+b;                                   /*y1-Koordinate*/";"<p>Bestimme d
     <deployedseed>197237524</deployedseed>
     <deployedseed>1744683973</deployedseed>
   </seed_fields>";;;Sebastian F
-6;fun;Funktionen;50;a0;Funktion bestimmen und analysieren;Funktionen Aufgabe 2.2 a0);"m:rand_with_prohib(-10,10,[0]);         /* Steigung */
-c:rand_with_prohib(-10,10,[0]);         /* y-Achsenabschnitt */
-f(x):=m*x+c;                            /* Funktion */
+6;fun;Funktionen;50;a0;Funktion bestimmen und analysieren;Lineare Funktion aus Wertetabelle zeichnen;"m:rand([1,-1])*rand([2,3,4,1/2,1/3,1/4]);
+c:rand_with_prohib(-5,5,[0]);
+eqn:y=m*x+c;
+ta_A:[0,c];
+x_b:lmax([1,abs(1/m)]);
+y_b:ev(rhs(eqn),x=x_b);
+/* check that (x_b, y_b) is inside the grid, and otherwise pick a different point */
+x_b:( if abs(y_b)>5 then -x_b else x_b);
+y_b:ev(rhs(eqn),x=x_b);
+ta_B:[x_b,y_b];
+solution:[ta_A,ta_B];
+wa1:[[0,c],[x_b,c]];
+wa2:[[0,c-1],[x_b,ev(rhs(eqn),x=x_b)-1]];
+ns : rhs(solve(rhs(eqn)=0)[1])
+
+/*Graphik für die Musterlösung*/
+f(x) := m*x+c
+bild : plot(f(x),[x,-7,7],[y,-7,7],[box, false], [yx_ratio, 1], [axes, solid], [xtics, -7, 1, 7],[ytics, -7, 1, 7],grid2d)
 
 /*x-Werte:*/
-x1:rand_with_step(-10,10,1);
-x2:rand_with_prohib(-10,10,[x1]);
-x3:rand_with_prohib(-10,10,[x1,x2]);
-x4:rand_with_prohib(-10,10,[x1,x2,x3]);
+x1:rand_with_step(-5,5,1);
+x2:rand_with_prohib(-5,5,[x1]);
+x3:rand_with_prohib(-5,5,[x1,x2]);
+x4:rand_with_prohib(-5,5,[x1,x2,x3]);
 /*y-Werte:*/
 y1:m*x1+c;
 y2:m*x2+c;
 y3:m*x3+c;
 y4:m*x4+c;
 
-/*Aufsteigend geordnete Liste mit Koordinaten:*/
-list_coordinate:sort([[x1,y1],[x2,y2],[x3,y3],[x4,y4]]);
 
-/*Aufgabenteil a0)*/
-tans:f(x);";"<p></p>
+/*Aufsteigend geordnete Liste mit Koordinaten:*/
+list_coordinate:sort([[x1,y1],[x2,y2],[x3,y3],[x4,y4]]);";"<p><p></p><p>Unten sehen Sie eine interaktive Grafik.&nbsp;</p>
+<p>Zeichnen Sie den Graphen der linearen Funktion, die durch folgende Wertetabelle definiert ist, indem Sie die zwei Punkte A und B in der Grafik verschieben.</p>
+<!---<p>Zeichnen Sie die Gerade \( {@eqn@}\) in das Koordinatensystem ein.</p>--->
 <table style=""border-collapse: collapse; width: 100%; border-width: 1px; margin-left: auto; margin-right: auto;"" border=""1""><colgroup><col style=""width: 19.9138%;""><col style=""width: 20.1724%;""><col style=""width: 20.0431%;""><col style=""width: 20.0431%;""><col style=""width: 19.7845%;""></colgroup>
 <tbody>
 <tr>
@@ -14304,27 +14319,31 @@ tans:f(x);";"<p></p>
 </tbody>
 </table>
 <hr>
-<p>\( a_0) \) Wie lautet die Funktion \(f(x)\) aus der gegebenen Wertetabelle?</p>
-<p>    \(f(x)\) = [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(f(x)\) = {@f(x)@};</p>";0;"<prt>
+<p style=""display: none;"">[[input:ans1]] [[validation:ans1]]</p>
+<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-7, 7, 7, -7], axis: true, grid: true, showNavigation: false, showCopyright: false }); var p1 = board.create('point', [-3, 1], { color: '#003399', name: 'A', showInfobox: true, snapToGrid: true }); var p2 = board.create('point', [3, 1], { color: '#003399', name: 'B', showInfobox: true, snapToGrid: true }); var v2 = board.create('line', [p1, p2], { strokeColor: '#7f99cc', showInfobox: true, fixed: true }); stack_jxg.bind_point_dual(inputans1, p1, p2); [[/jsxgraph]]</p>
+<p>[[feedback:prt1]]</p><p></p></p>";;;;{@eqn@} goes through \({@ta_A@}, {@ta_B@}\) Nullstelle: {@ns@};0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
       <feedbackstyle>1</feedbackstyle>
       <feedbackvariables>
-        <text/>
+        <text>ansA:ans1[1];
+ansB:ans1[2];
+their_m:(ansB[2]-ansA[2])/(ansB[1]-ansA[1]);
+their_eqn:y=expand(their_m*(x-ansA[1])+ansA[2]);
+their_c:ev(rhs(their_eqn),x=0);</text>
       </feedbackvariables>
       <node>
         <name>0</name>
-        <description>Prüfen, ob f(x) äquivalent zu Musterlösung.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>tans</tans>
-        <testoptions/>
+        <answertest>NumAbsolute</answertest>
+        <sans>their_m</sans>
+        <tans>m</tans>
+        <testoptions>0.05</testoptions>
         <quiet>0</quiet>
         <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
+        <truescore>0.5</truescore>
         <truepenalty/>
-        <truenextnode>-1</truenextnode>
+        <truenextnode>1</truenextnode>
         <trueanswernote>prt1-1-T</trueanswernote>
         <truefeedback format=""html"">
           <text/>
@@ -14332,290 +14351,120 @@ tans:f(x);";"<p></p>
         <falsescoremode>=</falsescoremode>
         <falsescore>0</falsescore>
         <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
+        <falsenextnode>1</falsenextnode>
         <falseanswernote>prt1-1-F</falseanswernote>
         <falsefeedback format=""html"">
+          <text><![CDATA[<p>Die Gerade hat nicht die richtige Steigung.<br></p>]]></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>NumAbsolute</answertest>
+        <sans>their_c</sans>
+        <tans>c</tans>
+        <testoptions>0.05</testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.5</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
           <text/>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text><![CDATA[<p>Die Gerade hat nicht den richtigen \(y\)-Achsenabschnitt.</p>]]></text>
         </falsefeedback>
       </node>
     </prt>
-    ";;;;;"<input>
+  ";;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
-      <tans>tans</tans>
-      <boxsize>6</boxsize>
+      <tans>solution</tans>
+      <boxsize>50</boxsize>
       <strictsyntax>1</strictsyntax>
-      <insertstars>1</insertstars>
+      <insertstars>5</insertstars>
       <syntaxhint/>
       <syntaxattribute>0</syntaxattribute>
       <forbidwords/>
       <allowwords/>
       <forbidfloat>0</forbidfloat>
-      <requirelowestterms>1</requirelowestterms>
+      <requirelowestterms>0</requirelowestterms>
       <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
+      <mustverify>0</mustverify>
+      <showvalidation>0</showvalidation>
       <options/>
     </input>
-    ";"<seed_fields><deployedseed>358156695</deployedseed>
-    <deployedseed>762892795</deployedseed>
-    <deployedseed>153255654</deployedseed>
-    <deployedseed>163497262</deployedseed>
-    <deployedseed>402276236</deployedseed>
-    <deployedseed>1458242895</deployedseed>
-    <deployedseed>1892104102</deployedseed>
-    <deployedseed>1172997271</deployedseed>
-    <deployedseed>258628054</deployedseed>
-    <deployedseed>726268769</deployedseed>
-    <deployedseed>1442164725</deployedseed>
-    <deployedseed>1850291302</deployedseed>
-    <deployedseed>1397666660</deployedseed>
-    <deployedseed>518797683</deployedseed>
-    <deployedseed>11293092</deployedseed>
-    <deployedseed>450721719</deployedseed>
-    <deployedseed>1476444701</deployedseed>
-    <deployedseed>2117132671</deployedseed>
-    <deployedseed>1438350113</deployedseed>
-    <deployedseed>1317863422</deployedseed>
-  </seed_fields>";;;Sebastian F
-6;fun;Funktionen;50;a1;Funktion bestimmen und analysieren;Funktionen Aufgabe 2.2 a1);"m:rand_with_prohib(-10,10,[0]);         /* Steigung */
-c:rand_with_prohib(-10,10,[0]);         /* y-Achsenabschnitt */
+    ";<seed_fields><deployedseed>960989297</deployedseed><deployedseed>718389159</deployedseed><deployedseed>1585117581</deployedseed><deployedseed>755338352</deployedseed></seed_fields>;;1;
+6;fun;Funktionen;50;a1;Funktion bestimmen und analysieren;Schnittpunkt linearer Funktion mit y-Achse aus Graphen ablesen;"m:rand_with_prohib(-5,5,[0]);         /* Steigung */
+c:rand_with_prohib(-5,5,[0]);         /* y-Achsenabschnitt */
 f(x):=m*x+c;                            /* Funktion */
+
+bild : plot(f(x),[x,-7,7],[y,-7,7],[box, false], [yx_ratio, 1], [axes, solid], [xtics, -7, 1, 7],[ytics, -7, 1, 7],grid2d)
 
 /*Aufsteigend geordnete Liste mit Koordinaten:*/
 list_coordinate:sort([[x1,y1],[x2,y2],[x3,y3],[x4,y4]]);
 
 /*Teilaufgabe a1)*/
-tans:f(0);";"<p>Gegebene Funktion: \(f(x) = {@f(x)@}\)</p>
-<p>\( a_1) \) Wie lautet der y-Achsenabschnitt \(b\) der Funktion \(f(x)\)?</p>
-<p>    \(b\) = [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(f(x)\) = {@f(x)@};  \(S\) = {@tans@};</p>";0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfen, ob S äquivalent zu Musterlösung.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>tans</tans>
-      <boxsize>3</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>0</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>1</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options>allowempty</options>
-    </input>
-    ";"<seed_fields><deployedseed>358156695</deployedseed>
-    <deployedseed>762892795</deployedseed>
-    <deployedseed>153255654</deployedseed>
-    <deployedseed>163497262</deployedseed>
-    <deployedseed>402276236</deployedseed>
-    <deployedseed>1458242895</deployedseed>
-    <deployedseed>1892104102</deployedseed>
-    <deployedseed>1172997271</deployedseed>
-    <deployedseed>258628054</deployedseed>
-    <deployedseed>726268769</deployedseed>
-    <deployedseed>1442164725</deployedseed>
-    <deployedseed>1850291302</deployedseed>
-    <deployedseed>1397666660</deployedseed>
-    <deployedseed>518797683</deployedseed>
-    <deployedseed>11293092</deployedseed>
-    <deployedseed>450721719</deployedseed>
-    <deployedseed>1476444701</deployedseed>
-    <deployedseed>2117132671</deployedseed>
-    <deployedseed>1438350113</deployedseed>
-    <deployedseed>1317863422</deployedseed>
-  </seed_fields>";;;Sebastian F
-6;fun;Funktionen;50;b;Funktion bestimmen und analysieren;Funktionen Aufgabe 2.2 b);"m:rand_with_prohib(-10, 10, [0]);
-c:rand_with_step(-10, 10, 1);
+ta1:f(0);";"<p>
+<p>Wie lautet der y-Achsenabschnitt \(b\) der im Bild dargestellten linearen Funktion \(f(x)\)?</p>
+{@bild@}
+</p>";<p>\(b\) = [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>;;;"<p>\(f(x)\) = {@f(x)@};  \(S\) = {@tans@};</p>";0;;;;;;;<seed_fields><deployedseed>358156695</deployedseed><deployedseed>897513413</deployedseed><deployedseed>1528162037</deployedseed><deployedseed>110618433</deployedseed></seed_fields>;;;
+6;fun;Funktionen;50;b;Funktion bestimmen und analysieren;Steigung linearer Funktion aus Graphen ablesen;"m:rand_with_prohib(-5, 5, [0]);
+c:rand_with_step(-5, 5, 1);
 f(x):=m*x+c;              /* Funktion */
 
+bild : plot(f(x),[x,-7,7],[y,-7,7],[box, false], [yx_ratio, 1], [axes, solid], [xtics, -7, 1, 7],[ytics, -7, 1, 7],grid2d)
+
 /*Teilaufgabe b)*/
-tans:m;";"<p>Gegebene Funktion: \(f(x) = {@f(x)@}\)</p>
-<p>b) Gib die Steigung der Funktion \(f(x)\) an.</p>
-<p>    \(m\) = [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(f(x)\) = {@f(x)@};  \(m\) = {@tans@};</p>";0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfen, ob m äquivalent zu Musterlösung.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>tans</tans>
-      <boxsize>3</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>0</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>1</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";"<seed_fields><deployedseed>551278031</deployedseed>
-    <deployedseed>894787018</deployedseed>
-    <deployedseed>1396110993</deployedseed>
-    <deployedseed>930267644</deployedseed>
-    <deployedseed>723118716</deployedseed>
-    <deployedseed>812847053</deployedseed>
-    <deployedseed>1810576547</deployedseed>
-    <deployedseed>455152806</deployedseed>
-    <deployedseed>864852476</deployedseed>
-    <deployedseed>1313672912</deployedseed>
-    <deployedseed>1993620868</deployedseed>
-    <deployedseed>1512316388</deployedseed>
-    <deployedseed>518535818</deployedseed>
-    <deployedseed>865941493</deployedseed>
-    <deployedseed>1997223305</deployedseed>
-    <deployedseed>687184751</deployedseed>
-    <deployedseed>1701669066</deployedseed>
-    <deployedseed>2128637949</deployedseed>
-    <deployedseed>945635048</deployedseed>
-    <deployedseed>1014759829</deployedseed>
-  </seed_fields>";;;Sebastian F
-6;fun;Funktionen;50;c;Funktion bestimmen und analysieren;Funktionen Aufgabe 2.2 c);"list:[[1, -5], [2, -6], [-3, 12], [5, 10], [4, 0], [-1, 7], [6, 18], [-2, -10], [7, -7], [-4, 8], [3, 12], [8, -48], [-6, 18], [9, 9], [10, -20], [-7, -21], [11, -44], [-9, 45], [12, 72], [-5, 45]];
+ta1:m;";"<p>
+<p>Wie lautet die Steigung \(m\) der im Bild dargestellten linearen Funktion \(f(x)\)?</p>
+{@bild@}
+</p>";<p>\(m\) = [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>;;;;0;;;;;;;<seed_fields><deployedseed>476270792</deployedseed><deployedseed>1041847913</deployedseed><deployedseed>1691252684</deployedseed><deployedseed>397884040</deployedseed></seed_fields>;;;
+6;fun;Funktionen;50;c;Funktion bestimmen und analysieren;Lineare Funktionsgleichung zum Graphen angeben;"m:rand_with_prohib(-5,5,[0]);         /* Steigung */
+c:rand_with_prohib(-5,5,[0]);         /* y-Achsenabschnitt */
+f(x):=m*x+c;                            /* Funktion */
+
+bild : plot(f(x),[x,-7,7],[y,-7,7],[box, false], [yx_ratio, 1], [axes, solid], [xtics, -7, 1, 7],[ytics, -7, 1, 7],grid2d)
+
+/*x-Werte:*/
+x1:rand_with_step(-10,10,1);
+x2:rand_with_prohib(-10,10,[x1]);
+x3:rand_with_prohib(-10,10,[x1,x2]);
+x4:rand_with_prohib(-10,10,[x1,x2,x3]);
+/*y-Werte:*/
+y1:m*x1+c;
+y2:m*x2+c;
+y3:m*x3+c;
+y4:m*x4+c;
+
+/*Aufsteigend geordnete Liste mit Koordinaten:*/
+list_coordinate:sort([[x1,y1],[x2,y2],[x3,y3],[x4,y4]]);
+
+/*Aufgabenteil a0)*/
+ta1:f(x);";"<p><p></p>
+<p>Wie lautet die Funktionsgleichung \(f(x)\) der im Bild dargestellten linearen Funktion?</p>
+{@bild@}
+</p>";<p>\(f(x)\) = [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>;;;;0;;;;;;;<seed_fields><deployedseed>358156695</deployedseed><deployedseed>1826464723</deployedseed><deployedseed>1591458086</deployedseed><deployedseed>1558964421</deployedseed></seed_fields>;;;
+6;fun;Funktionen;50;d;Funktion bestimmen und analysieren;Nullstelle linearer Funktion grafisch und rechnerisch bestimmen;"list:[[1, -5], [2, -6], [-1, 7], [7, -7]];
 
 i:1+rand(length(list));   /*Laufvariable*/
 m:list[i][1];
 c:list[i][2];
 f(x):=m*x+c;              /* Funktion */
 
+bild : plot(f(x),[x,-7,7],[y,-7,7],[box, false], [yx_ratio, 1], [axes, solid], [xtics, -7, 1, 7],[ytics, -7, 1, 7],grid2d)
+
 /*Teilaufgabe c)*/
-tans:rhs(solve([f(x)=0],[x])[1]);";"<p>Gegebene Funktion: \(f(x) = {@f(x)@}\)</p>
-<p>c) Bestimme die Nullstelle der Funktion \(f(x)\).</p>
-<p>    \(x_0\) = [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(f(x)\) = {@f(x)@};  \(x_0\) = {@tans@}</p>";0;"<prt>
-      <name>prt1</name>
-      <value>1.0000000</value>
-      <autosimplify>1</autosimplify>
-      <feedbackstyle>1</feedbackstyle>
-      <feedbackvariables>
-        <text/>
-      </feedbackvariables>
-      <node>
-        <name>0</name>
-        <description>Prüfen, ob NS genau wie Musterlösung.</description>
-        <answertest>AlgEquiv</answertest>
-        <sans>ans1</sans>
-        <tans>tans</tans>
-        <testoptions/>
-        <quiet>0</quiet>
-        <truescoremode>=</truescoremode>
-        <truescore>1</truescore>
-        <truepenalty/>
-        <truenextnode>-1</truenextnode>
-        <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
-        </truefeedback>
-        <falsescoremode>=</falsescoremode>
-        <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
-        <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
-        </falsefeedback>
-      </node>
-    </prt>
-    ";;;;;"<input>
-      <name>ans1</name>
-      <type>algebraic</type>
-      <tans>tans</tans>
-      <boxsize>5</boxsize>
-      <strictsyntax>1</strictsyntax>
-      <insertstars>0</insertstars>
-      <syntaxhint/>
-      <syntaxattribute>0</syntaxattribute>
-      <forbidwords/>
-      <allowwords/>
-      <forbidfloat>0</forbidfloat>
-      <requirelowestterms>1</requirelowestterms>
-      <checkanswertype>0</checkanswertype>
-      <mustverify>1</mustverify>
-      <showvalidation>1</showvalidation>
-      <options/>
-    </input>
-    ";"<seed_fields><deployedseed>931848908</deployedseed>
-    <deployedseed>1741432249</deployedseed>
-    <deployedseed>1598520126</deployedseed>
-    <deployedseed>1989093756</deployedseed>
-    <deployedseed>1021003657</deployedseed>
-    <deployedseed>2139599592</deployedseed>
-    <deployedseed>1385862653</deployedseed>
-    <deployedseed>1291580690</deployedseed>
-    <deployedseed>796124840</deployedseed>
-    <deployedseed>1441565158</deployedseed>
-    <deployedseed>1410240823</deployedseed>
-    <deployedseed>76199513</deployedseed>
-  </seed_fields>";;;Sebastian F
+ta1:rhs(solve([f(x)=0],[x])[1]);";"<p>
+<p>c) Bestimme die Nullstelle \(x_0\) der im Bild gezeigten Funktion \(f(x)\) graphisch und rechnerisch.</p>
+{@bild@}
+</p>";<p>\(x_0\) = [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>;;;;0;;;;;;;<seed_fields><deployedseed>113239597</deployedseed><deployedseed>1330280221</deployedseed><deployedseed>2048232356</deployedseed><deployedseed>1764819572</deployedseed></seed_fields>;;;
 6;fun;Funktionen;60;a;Graphen zeichnen;NEU Gerade zeichnen und Ns angeben_einfach_HS BO DigiTeach;"m:rand([1,-1])*rand([2,3,4,1/2,1/3,1/4]);
 c:rand_with_prohib(-5,5,[0]);
 eqn:y=m*x+c;
