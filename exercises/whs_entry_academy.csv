@@ -15330,6 +15330,89 @@ tans:fkt;
     <deployedseed>1629010692</deployedseed>
     <deployedseed>769907329</deployedseed>
   </seed_fields>";;;Sebastian F
+6;fun;Funktionen;80;e;Lineare Funktionsgleichung aufstellen;Funktionsgleichung aus Graphen ablesen - Achsenabschnitt und Steigung als Bruch;"m:((rand(2))*2+1)/2*rand([-1,1]);
+d:((rand(6)+1)*2+1)/2*rand([-1,1]);
+fkt:m*x+d;
+x_0:round(rhs(solve([m*x+d=0],[x])[1]));   /*gerundete, ganzzahlige Schnittstelle mit x-Achse*/
+S:d;                                /*Schnittstelle mit y-Achse*/
+size:max(abs(x_0),abs(S));          /*Definiert die größe des Koordinatenquadranten*/
+
+if size <= 7 then size:8;           /*Wenn zu kleine Werte für x_0 oder S herauskommen, soll der Auschnitt des Quadranten vergrößert werden*/
+
+if x_0 = 0 and S = 0 then
+    bild:plot(fkt, [x, -(size+2), 2], [y, -(size+2), 2], [xtics, -(size+2), 1, 2], [ytics, -(size+2), 1, 2], [axes, true], grid2d);
+
+if x_0 <= 0 and S < 0 then
+    bild:plot(fkt, [x, -(size+1), 1], [y, -(size+1), 1], [xtics, -(size+1), 1, 1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
+
+if x_0 <= 0 and S > 0 then
+    bild:plot(fkt, [x, -(size+1), 1], [y, -1, size+1], [xtics, -(size+1), 1, 1], [ytics, -1, 1, size+1], [axes, true], grid2d);
+
+if x_0 > 0 and S <= 0 then
+    bild:plot(fkt, [x, -1, size+1], [y, -(size+1), 1], [xtics, -1, 1, size+1], [ytics, -(size+1), 1, 1], [axes, true], grid2d);
+
+if x_0 > 0 and S > 0 then
+    bild:plot(fkt, [x, -1, size+1], [y, -1, size+1], [xtics, -1, 1, size], [ytics, -1, 1, size+1], [axes, true], grid2d);
+
+
+
+tans:fkt;";"<p></p>
+<p>Gib die Funktionsgleichung der folgenden linearen Funktion an.</p>
+<p>{@bild@}</p>
+<p>\(f(x) = \)[[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>{@tans@}</p>
+<p>{@bild@}</p>";0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text/>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description/>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>tans</tans>
+        <testoptions/>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty/>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text/>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty/>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text/>
+        </falsefeedback>
+      </node>
+    </prt>
+    ";;;;;"<input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>tans</tans>
+      <boxsize>5</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>1</insertstars>
+      <syntaxhint/>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords/>
+      <allowwords/>
+      <forbidfloat>1</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>1</showvalidation>
+      <options/>
+    </input>
+    ";<seed_fields><deployedseed>873051273</deployedseed><deployedseed>1010758845</deployedseed><deployedseed>606265069</deployedseed><deployedseed>1678023523</deployedseed></seed_fields>;;;
 6;fun;Funktionen;90;a;Nullstellen quadratischer Funktionen;Funktionen Aufgabe 7.1 a);"convert_list_to_equation(list):=block(
     [list_length, i, result],
     list_length:length(list),
