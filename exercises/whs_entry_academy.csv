@@ -14414,7 +14414,7 @@ list_coordinate:sort([[x1,y1],[x2,y2],[x3,y3],[x4,y4]]);
 ta1:f(0);";"<p>
 <p>Wie lautet der y-Achsenabschnitt \(b\) der im Bild dargestellten linearen Funktion \(f(x)\)?</p>
 {@bild@}
-</p>";<p>\(b\) = [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>;;;"<p>\(f(x)\) = {@f(x)@};  \(S\) = {@tans@};</p>";0;;;;;;;<seed_fields><deployedseed>358156695</deployedseed><deployedseed>897513413</deployedseed><deployedseed>1528162037</deployedseed><deployedseed>110618433</deployedseed></seed_fields>;;;
+</p>";<p>\(b\) = [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>;;;"\(f(x) = {@f(x)@}; b = {@ta1@}\)";0;;;;;;;<seed_fields><deployedseed>358156695</deployedseed><deployedseed>897513413</deployedseed><deployedseed>1528162037</deployedseed><deployedseed>110618433</deployedseed></seed_fields>;;;
 6;fun;Funktionen;50;b;Funktion bestimmen und analysieren;Steigung linearer Funktion aus Graphen ablesen;"m:rand_with_prohib(-5, 5, [0]);
 c:rand_with_step(-5, 5, 1);
 f(x):=m*x+c;              /* Funktion */
@@ -14425,7 +14425,7 @@ bild : plot(f(x),[x,-7,7],[y,-7,7],[box, false], [yx_ratio, 1], [axes, solid], [
 ta1:m;";"<p>
 <p>Wie lautet die Steigung \(m\) der im Bild dargestellten linearen Funktion \(f(x)\)?</p>
 {@bild@}
-</p>";<p>\(m\) = [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>;;;;0;;;;;;;<seed_fields><deployedseed>476270792</deployedseed><deployedseed>1041847913</deployedseed><deployedseed>1691252684</deployedseed><deployedseed>397884040</deployedseed></seed_fields>;;;
+</p>";<p>\(m\) = [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>;;;"\(f(x) = {@f(x)@}; m = {@ta1@}\)";0;;;;;;;<seed_fields><deployedseed>476270792</deployedseed><deployedseed>1041847913</deployedseed><deployedseed>1691252684</deployedseed><deployedseed>397884040</deployedseed></seed_fields>;;;
 6;fun;Funktionen;50;c;Funktion bestimmen und analysieren;Lineare Funktionsgleichung zum Graphen angeben;"m:rand_with_prohib(-5,5,[0]);         /* Steigung */
 c:rand_with_prohib(-5,5,[0]);         /* y-Achsenabschnitt */
 f(x):=m*x+c;                            /* Funktion */
@@ -14450,7 +14450,7 @@ list_coordinate:sort([[x1,y1],[x2,y2],[x3,y3],[x4,y4]]);
 ta1:f(x);";"<p><p></p>
 <p>Wie lautet die Funktionsgleichung \(f(x)\) der im Bild dargestellten linearen Funktion?</p>
 {@bild@}
-</p>";<p>\(f(x)\) = [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>;;;;0;;;;;;;<seed_fields><deployedseed>358156695</deployedseed><deployedseed>1826464723</deployedseed><deployedseed>1591458086</deployedseed><deployedseed>1558964421</deployedseed></seed_fields>;;;
+</p>";<p>\(f(x)\) = [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>;;;\(f(x) = {@f(x)@}\);0;;;;;;;<seed_fields><deployedseed>358156695</deployedseed><deployedseed>1826464723</deployedseed><deployedseed>1591458086</deployedseed><deployedseed>1558964421</deployedseed></seed_fields>;;;
 6;fun;Funktionen;50;d;Funktion bestimmen und analysieren;Nullstelle linearer Funktion grafisch und rechnerisch bestimmen;"list:[[1, -5], [2, -6], [-1, 7], [7, -7]];
 
 i:1+rand(length(list));   /*Laufvariable*/
@@ -14462,9 +14462,9 @@ bild : plot(f(x),[x,-7,7],[y,-7,7],[box, false], [yx_ratio, 1], [axes, solid], [
 
 /*Teilaufgabe c)*/
 ta1:rhs(solve([f(x)=0],[x])[1]);";"<p>
-<p>c) Bestimme die Nullstelle \(x_0\) der im Bild gezeigten Funktion \(f(x)\) graphisch und rechnerisch.</p>
+<p>Bestimme die Nullstelle \(x_0\) der im Bild gezeigten Funktion \(f(x)\) graphisch und rechnerisch.</p>
 {@bild@}
-</p>";<p>\(x_0\) = [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>;;;;0;;;;;;;<seed_fields><deployedseed>113239597</deployedseed><deployedseed>1330280221</deployedseed><deployedseed>2048232356</deployedseed><deployedseed>1764819572</deployedseed></seed_fields>;;;
+</p>";<p>\(x_0\) = [[input:ans1]] [[validation:ans1]][[feedback:prt1]]</p>;;;"\(f(x) = {@f(x)@};  x_0 = {@ta1@}\)";0;;;;;;;<seed_fields><deployedseed>113239597</deployedseed><deployedseed>1330280221</deployedseed><deployedseed>2048232356</deployedseed><deployedseed>1764819572</deployedseed></seed_fields>;;;
 6;fun;Funktionen;60;a;Graphen zeichnen;NEU Gerade zeichnen und Ns angeben_einfach_HS BO DigiTeach;"m:rand([1,-1])*rand([2,3,4,1/2,1/3,1/4]);
 c:rand_with_prohib(-5,5,[0]);
 eqn:y=m*x+c;
@@ -14899,11 +14899,11 @@ yS_koordSystem:floor(yS);
 tans:[x=xS, y=yS];
 
 /*Koordinatensystem und Funktionen:*/
-bild:plot([f(x), g(x)],[x, xS_koordSystem-5, xS_koordSystem+5],[y, yS_koordSystem-5, yS_koordSystem+5],[axes,true], [xtics, xS_koordSystem-5, 1, xS_koordSystem+5], [ytics, yS_koordSystem-5, 1, yS_koordSystem+5], grid2d);";"<p>b) Bestimme den Schnittpunkt \(S\) der beiden Graphen rechnerisch und prüfe dann durch Ablesen im Koordinatensystem.</p>
-<p>\( f(x) = {@f(x)@};  \ \ g(x) = {@g(x)@} \)</p>
+bild:plot([f(x), g(x)],[x, xS_koordSystem-5, xS_koordSystem+5],[y, yS_koordSystem-5, yS_koordSystem+5],[axes,true], [xtics, xS_koordSystem-5, 1, xS_koordSystem+5], [ytics, yS_koordSystem-5, 1, yS_koordSystem+5], grid2d);";"<p>Bestimme x- und y-Koordinate des Schnittpunkts der beiden Funktionen \(f(x)\) und \(g(x)\) rechnerisch und prüfe dann durch Ablesen im Koordinatensystem.</p>
+<p>\( f(x) = \frac{{@fx_zähler@}}{{@nenner@}}\,{@x+d@};  \ \ g(x) = {@if gx_zähler > 0 then ""-"" else """"@}\frac{{@abs(gx_zähler)@}}{{@nenner@}}\,{@x+c@}\)</p>
 <p>{@bild@}</p>
 <p><em>Gib den Schnittpunkt wie folgt ein: \( [x = ..., y = ...] \)</em></p>
-<p>\( S = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\( f(x) = {@f(x)@}; \ \ g(x) = {@g(x)@} \ \ \Rightarrow \ \ S({@xS@}|{@yS@}) \\\\ \)</p>
+<p>Der Schnittpunkt liegt bei [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\( f(x) = {@f(x)@}; \ \ g(x) = {@g(x)@} \ \ \Rightarrow \ \ S({@xS@}|{@yS@}) \\\\ \)</p>
 <p>{@bild@}</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
