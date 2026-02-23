@@ -15441,12 +15441,96 @@ i:rand_with_step(1,length(list_gl),1);           /*Laufvariable für a)*/
 b:list_gl[i][1];
 c:list_gl[i][2];
 gl:x^2+b*x+c;
-ta1:solve([gl],[x]);
-ta1:convert_list_to_equation(ta1);
+ta1_list:solve([gl],[x]);
+ta1:convert_list_to_equation(ta1_list);
 ";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
 <p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
 <p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \(x = \ ... \ or \ x = \ ...\)</strong></p>
-<p>a) \(f(x) = {@gl@} \Rightarrow\) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;;;;;;"<input>
+<p>a) \(f(x) = {@gl@} \Rightarrow\) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>is_in_ta_list:if member(ans1, ta1_list) = true then 1 else 0;</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du kannst noch weiter vereinfachen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description></description>
+        <answertest>CasEqual</answertest>
+        <sans>is_in_ta_list</sans>
+        <tans>1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du hast nur eine von zwei richtigen Lösungen eingegeben.</p>
+<p dir=""ltr"" style=""text-align: left;""></p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>";;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
       <tans>ta1</tans>
@@ -15513,12 +15597,96 @@ a:list[i][1];
 b:list[i][2];
 c:list[i][3];
 gl:a*x^2+b*x+c;
-ta1:solve([gl],[x]);
-ta1:convert_list_to_equation(ta1);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+ta1_list:solve([gl],[x]);
+ta1:convert_list_to_equation(ta1_list);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
 <p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
 <p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \(x = \ ... \ or \ x = \ ...\)</strong></p>
 <p>b) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>
-<p></p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;;;;;;"<input>
+<p></p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>is_in_ta_list:if member(ans1, ta1_list) = true then 1 else 0;</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du kannst noch weiter vereinfachen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description></description>
+        <answertest>CasEqual</answertest>
+        <sans>is_in_ta_list</sans>
+        <tans>1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du hast nur eine von zwei richtigen Lösungen eingegeben.</p>
+<p dir=""ltr"" style=""text-align: left;""></p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>";;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
       <tans>ta1</tans>
@@ -15581,11 +15749,95 @@ a:list[i][1];
 b:list[i][2];
 c:list[i][3];
 gl:a*x^2+b*x+c;
-ta1:solve([gl],[x]);
-ta1:convert_list_to_equation(ta1);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+ta1_list:solve([gl],[x]);
+ta1:convert_list_to_equation(ta1_list);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
 <p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
 <p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \(x = \ ... \ or \ x = \ ...\)</strong></p>
-<p>c) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;;;;;;"<input>
+<p>c) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>is_in_ta_list:if member(ans1, ta1_list) = true then 1 else 0;</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du kannst noch weiter vereinfachen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description></description>
+        <answertest>CasEqual</answertest>
+        <sans>is_in_ta_list</sans>
+        <tans>1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du hast nur eine von zwei richtigen Lösungen eingegeben.</p>
+<p dir=""ltr"" style=""text-align: left;""></p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>";;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
       <tans>ta1</tans>
@@ -15646,13 +15898,97 @@ a:list[i][1];
 b:list[i][2];
 c:list[i][3];
 gl:a*x^2+b*x+c;
-ta1:solve([gl],[x]);
-ta1:convert_list_to_equation(ta1);
+ta1_list:solve([gl],[x]);
+ta1:convert_list_to_equation(ta1_list);
 
 ";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
 <p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
 <p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \(x = \ ... \ or \ x = \ ...\)</strong></p>
-<p>d) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;;;;;;"<input>
+<p>d) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>is_in_ta_list:if member(ans1, ta1_list) = true then 1 else 0;</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du kannst noch weiter vereinfachen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description></description>
+        <answertest>CasEqual</answertest>
+        <sans>is_in_ta_list</sans>
+        <tans>1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du hast nur eine von zwei richtigen Lösungen eingegeben.</p>
+<p dir=""ltr"" style=""text-align: left;""></p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>";;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
       <tans>ta1</tans>
@@ -15718,11 +16054,95 @@ a:list[i][1];
 b:list[i][2];
 c:list[i][3];
 gl:a*x^2+b*x+c;
-ta1:solve([gl],[x]);
-ta1:convert_list_to_equation(ta1);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+ta1_list:solve([gl],[x]);
+ta1:convert_list_to_equation(ta1_list);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
 <p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
 <p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \(x = \ ... \ or \ x = \ ...\)</strong></p>
-<p>e) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;;;;;;"<input>
+<p>e) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>is_in_ta_list:if member(ans1, ta1_list) = true then 1 else 0;</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du kannst noch weiter vereinfachen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description></description>
+        <answertest>CasEqual</answertest>
+        <sans>is_in_ta_list</sans>
+        <tans>1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du hast nur eine von zwei richtigen Lösungen eingegeben.</p>
+<p dir=""ltr"" style=""text-align: left;""></p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>";;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
       <tans>ta1</tans>
@@ -15780,11 +16200,95 @@ a:list[i][1];
 b:list[i][2];
 c:list[i][3];
 gl:a*x^2+b*x+c;
-ta1:solve([gl],[x]);
-ta1:convert_list_to_equation(ta1);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
+ta1_list:solve([gl],[x]);
+ta1:convert_list_to_equation(ta1_list);";"<h6><strong>7.1</strong> Bestimme die Nullstellen der folgenden quadratischen Funktionen.</h6>
 <p><em>Hinweis: Löse mit p-q- oder Mitternachtsformel.</em></p>
 <p><strong><em>Achte bei der Eingabe auf folgende Syntax:</em> \(x = \ ... \ or \ x = \ ...\)</strong></p>
-<p>f) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;;;;;;"<input>
+<p>f) \(f(x) = {@gl@} \Rightarrow \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gl@} \Rightarrow {@ta1@} \)</p>;0;"<prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text>is_in_ta_list:if member(ans1, ta1_list) = true then 1 else 0;</text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>EqualComAss</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du kannst noch weiter vereinfachen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>2</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>2</name>
+        <description></description>
+        <answertest>CasEqual</answertest>
+        <sans>is_in_ta_list</sans>
+        <tans>1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-3-T</trueanswernote>
+        <truefeedback format=""html"">
+          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du hast nur eine von zwei richtigen Lösungen eingegeben.</p>
+<p dir=""ltr"" style=""text-align: left;""></p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-3-F</falseanswernote>
+        <falsefeedback format=""html"">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>";;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
       <tans>ta1</tans>
