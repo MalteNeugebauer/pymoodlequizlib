@@ -332,7 +332,7 @@ ta1alt:expand(num(fraction))/expand(denom(fraction))+mynumbers[2];";Addiere bzw.
       <options/>
     </input>
     ";<seed_fields><deployedseed>2108988964</deployedseed><deployedseed>323406766</deployedseed><deployedseed>403273518</deployedseed><deployedseed>1267109030</deployedseed></seed_fields>;;0;2024-08-16
-1;fra;Bruchrechnung;3;3i;Addition & Subtraktion von Brüchen;Addition von Brüchen: Mit Term erweitern 3;"mynum:rand(5)+1; myvars:rand_selection([a,b,c,x,y,z],2);  simp:false; summands:random_permutation([(mynum*myvars[1])/(mynum*(myvars[1]-myvars[2])),myvars[1]/mynum,(1-myvars[2])/myvars[1]]); exercise:summands[1]+summands[2]+summands[3];  simp:true; common_denom:denom(summands[1])*denom(summands[2])*denom(summands[3]); ta1:(num(summands[1])*denom(summands[2])*denom(summands[3])+num(summands[2])*denom(summands[1])*denom(summands[3])+num(summands[3])*denom(summands[1])*denom(summands[2]))/common_denom; ta1alt:expand(num(ta1))/expand(denom(ta1)); simp:false;";Addiere bzw. subtrahiere und fasse soweit wie möglich zusammen.;\({@exercise@} =\)[[input:ans1]] [[validation:ans1]] [[feedback:prt1]];Achtung: Summe im Nenner!;;\({@exercise@} = {@ta1@}\);0;"<prt>
+1;fra;Bruchrechnung;3;3i;Addition & Subtraktion von Brüchen;Addition von Brüchen: Mit Term erweitern 3;"mynum:rand(5)+1; myvars:rand_selection([a,b,c,x,y,z],2);  simp:false; summands:random_permutation([(mynum*myvars[1])/(mynum*(myvars[1]-myvars[2])),myvars[1]/mynum,(1-myvars[2])/myvars[1]]); exercise:summands[1]+summands[2]+summands[3];  simp:true; common_denom:denom(summands[1])*denom(summands[2])*denom(summands[3]); ta1:(num(summands[1])*denom(summands[2])*denom(summands[3])+num(summands[2])*denom(summands[1])*denom(summands[3])+num(summands[3])*denom(summands[1])*denom(summands[2]))/common_denom; ta1alt1:expand(num(ta1))/expand(denom(ta1)); ta1alt2:num(ta1)/expand(denom(ta1)); ta1alt3:expand(num(ta1))/denom(ta1); simp:false;";Addiere bzw. subtrahiere und fasse soweit wie möglich zusammen.;\({@exercise@} =\)[[input:ans1]] [[validation:ans1]] [[feedback:prt1]];Achtung: Summe im Nenner!;;\({@exercise@} = {@ta1@}\);0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -342,78 +342,130 @@ ta1alt:expand(num(fraction))/expand(denom(fraction))+mynumbers[2];";Addiere bzw.
       </feedbackvariables>
       <node>
         <name>0</name>
+        <description></description>
         <answertest>EqualComAss</answertest>
         <sans>ans1</sans>
         <tans>ta1</tans>
-        <testoptions/>
+        <testoptions></testoptions>
         <quiet>0</quiet>
         <truescoremode>=</truescoremode>
         <truescore>1</truescore>
-        <truepenalty/>
+        <truepenalty></truepenalty>
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-1-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
+        <truefeedback format=""moodle_auto_format"">
+          <text></text>
         </truefeedback>
         <falsescoremode>=</falsescoremode>
         <falsescore>0</falsescore>
-        <falsepenalty/>
+        <falsepenalty></falsepenalty>
         <falsenextnode>1</falsenextnode>
         <falseanswernote>prt1-1-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
+        <falsefeedback format=""moodle_auto_format"">
+          <text></text>
         </falsefeedback>
       </node>
       <node>
         <name>1</name>
+        <description></description>
         <answertest>EqualComAss</answertest>
         <sans>ans1</sans>
-        <tans>ta1alt</tans>
-        <testoptions/>
+        <tans>ta1alt1</tans>
+        <testoptions></testoptions>
         <quiet>0</quiet>
         <truescoremode>=</truescoremode>
         <truescore>1</truescore>
-        <truepenalty/>
+        <truepenalty></truepenalty>
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text/>
+        <truefeedback format=""moodle_auto_format"">
+          <text></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
-        <falsepenalty/>
+        <falsepenalty></falsepenalty>
         <falsenextnode>2</falsenextnode>
         <falseanswernote>prt1-2-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
+        <falsefeedback format=""moodle_auto_format"">
+          <text></text>
         </falsefeedback>
       </node>
       <node>
         <name>2</name>
-        <answertest>AlgEquiv</answertest>
+        <description></description>
+        <answertest>EqualComAss</answertest>
         <sans>ans1</sans>
-        <tans>ta1</tans>
-        <testoptions/>
+        <tans>ta1alt2</tans>
+        <testoptions></testoptions>
         <quiet>0</quiet>
-        <truescoremode>+</truescoremode>
-        <truescore>0.1</truescore>
-        <truepenalty/>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-3-T</trueanswernote>
-        <truefeedback format=""html"">
-          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du kannst noch weiter vereinfachen.<br></p>]]></text>
+        <truefeedback format=""moodle_auto_format"">
+          <text></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
-        <falsepenalty/>
-        <falsenextnode>-1</falsenextnode>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>3</falsenextnode>
         <falseanswernote>prt1-3-F</falseanswernote>
-        <falsefeedback format=""html"">
-          <text/>
+        <falsefeedback format=""moodle_auto_format"">
+          <text></text>
         </falsefeedback>
       </node>
-    </prt>
-  ";;;;;"<input>
+      <node>
+        <name>3</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1alt3</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-4-T</trueanswernote>
+        <truefeedback format=""moodle_auto_format"">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>4</falsenextnode>
+        <falseanswernote>prt1-4-F</falseanswernote>
+        <falsefeedback format=""moodle_auto_format"">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>4</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>+</truescoremode>
+        <truescore>0.1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-5-T</trueanswernote>
+        <truefeedback format=""moodle_auto_format"">
+          <text><![CDATA[<p dir=""ltr"" style=""text-align: left;"">Du kannst noch weiter vereinfachen.</p>]]></text>
+        </truefeedback>
+        <falsescoremode>-</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-5-F</falseanswernote>
+        <falsefeedback format=""moodle_auto_format"">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>";;;;;"<input>
       <name>ans1</name>
       <type>algebraic</type>
       <tans>ta1</tans>
