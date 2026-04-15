@@ -16393,16 +16393,22 @@ list_formatted:[];
 for i:1 thru length(list_S) do block (
 list_formatted:append(list_formatted,[rhs(list_S[i])]));
 
-endpunkt:first(sublist(list_formatted, lambda([x], x # 0))); /*Ermittelt den anderen x-wert von 1 -> 4 */
+endpunkt:f(list_formatted[2]); /* 1 */
 höhe:e;
 zeit1:rhs(solve([f(x)=höhe],[x])[1]);  /* 2 */
-zeit2:endpunkt;                        /* 4 */";"<p>[[feedback:prt1]]</p>
+zeit2:zeit1*2;                         /* 4 */";"<p>[[feedback:prt1]]</p>
 <p>Jemand wirft seinen Papierflieger. Die Höhe h (in Metern) des Fliegers in Abhängigkeit von der Flugzeit t (in Sekunden) folgt einer parabelförmigen Flugbahn. Zu Beginn, also beim Abwurf, ist der Flieger {@startpunkt@} Meter hoch. Nach {@zeit1@} Sekunden erreicht der Flieger eine Höhe von {@höhe@} Metern. Nach {@zeit2@} Sekunden ist der Flieger wieder auf {@startpunkt@} Meter Höhe.</p>
 <hr>
 <p><br>a) Skizziere zunächst den Graphen mit allen oben angegebenen Informationen.</p>
+<p><em>     Zur Erinnerung: \(a(x-d)^2+e\)</em></p>
 <p style=""display: none;"">[[input:ans1]] [[validation:ans1]]</p>
 <p style=""display: none;"">[[input:ans2]] [[validation:ans2]]</p>
-<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1"" input-ref-ans2 = ""inputans2""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-8, 8, 8, -8], axis: false, grid: true, showNavigation: true, showCopyright: false }); /*Default-Gitter mit axis:false deaktivieren. Sonst Gitter bei jedem zweiten Wert*/ /*Gitter manuell erzeugen: X-Achse mit Gitter bei jedem Wert*/ var xaxis = board.create('axis', [[0,0], [1,0]], { ticks: { drawLabels: true, tickDistance: 1, /*Gitterabstand 1*/ majorHeight: 10, minorTicks: 0 } }); /*Gitter manuell erzeugen: Y-Achse mit Gitter bei jedem Wert*/ var yaxis = board.create('axis', [[0,0], [0,1]], { ticks: { drawLabels: true, tickDistance: 1, majorHeight: 10, minorTicks: 0 } }); var scheitelpunkt = board.create('point', [0, 0], { name: 'S', fixed: false, color: '#003399', size: 4, showInfobox: true, snapToGrid:true }); stack_jxg.bind_point(inputans1, scheitelpunkt); /*Scheitelpunkt an Inputfeld ans1 binden*/ var slider_streckung = board.create('slider', [[2,6], [7,6], [-4, 0.25, 4]], { name: '', visible: true, snapWidth: 0.25, point1: {fixed: false}, point2: {fixed: false}, baseline: {fixed: false, needsRegularUpdate: true} }); /*Automatisch generierten Wert RECHTS neben dem Slider ausblenden (Streckung = 'Streckungswert')*/ slider_streckung.label.setAttribute({visible: false}); /*Eigener Text UNTER dem Slider im Format (Streckung = 'Streckungswert')*/ var text_steigung = board.create('text', [ function() { return (slider_streckung.point1.X() + slider_streckung.point2.X()) / 2; }, function() { return slider_streckung.point1.Y() - 0.5; }, function() { return 'Streckung = ' + slider_streckung.Value().toFixed(2); } ], { anchorX: 'middle', anchorY: 'top', fontSize: 14 }); stack_jxg.bind_slider(inputans2, slider_streckung); /*Slider an Inputfeld ans2 binden*/ var f = function(x) {return slider_streckung.Value()*(x-scheitelpunkt.X())**2+scheitelpunkt.Y(); }; var graph = board.create('functiongraph', [f]); [[/jsxgraph]]</p>";;;;<p>\(f(x) = \) {@f(x)@}</p>;0;"<prt>
+<p>[[jsxgraph width = ""360px"" height = ""360px"" input-ref-ans1 = ""inputans1"" input-ref-ans2 = ""inputans2""]] JXG.Options.axis.ticks.minorTicks = 0; var board = JXG.JSXGraph.initBoard(divid, { boundingbox: [-8, 8, 8, -8], axis: false, grid: true, showNavigation: true, showCopyright: false }); /*Default-Gitter mit axis:false deaktivieren. Sonst Gitter bei jedem zweiten Wert*/ /*Gitter manuell erzeugen: X-Achse mit Gitter bei jedem Wert*/ var xaxis = board.create('axis', [ [0, 0], [1, 0] ], { ticks: { drawLabels: true, tickDistance: 1, /*Gitterabstand 1*/ majorHeight: 10, minorTicks: 0 } }); /*Gitter manuell erzeugen: Y-Achse mit Gitter bei jedem Wert*/ var yaxis = board.create('axis', [ [0, 0], [0, 1] ], { ticks: { drawLabels: true, tickDistance: 1, majorHeight: 10, minorTicks: 0 } }); var scheitelpunkt = board.create('point', [0, 0], { name: 'S', fixed: false, color: '#003399', size: 4, showInfobox: true, snapToGrid: true }); stack_jxg.bind_point(inputans1, scheitelpunkt); /*Scheitelpunkt an Inputfeld ans1 binden*/ var slider_streckung = board.create('slider', [ [2, 6], [7, 6], [-4, 0.25, 4] ], { name: '', visible: true, snapWidth: 0.25, point1: { fixed: false }, point2: { fixed: false }, baseline: { fixed: false, needsRegularUpdate: true } }); /*Automatisch generierten Wert RECHTS neben dem Slider ausblenden (a= 'Streckungswert')*/ slider_streckung.label.setAttribute({ visible: false }); /*Eigener Text UNTER dem Slider im Format (a = 'Streckungswert')*/ var text_steigung = board.create('text', [function() { return (slider_streckung.point1.X() + slider_streckung.point2.X()) / 2; }, function() { return slider_streckung.point1.Y() - 0.5; }, function() { return 'a = ' + slider_streckung.Value().toFixed(2); }], { anchorX: 'middle', anchorY: 'top', fontSize: 14 }); stack_jxg.bind_slider(inputans2, slider_streckung); /*Slider an Inputfeld ans2 binden*/ var f = function(x) { return slider_streckung.Value() * (x - scheitelpunkt.X()) ** 2 + scheitelpunkt.Y(); }; var graph = board.create('functiongraph', [f]); [[/jsxgraph]]</p>";;;;"<p>\(f(x) = \) {@f(x)@}</p>
+<p>\(Startpunkt = {@startpunkt@}\)</p>
+<p>\(Zeit_1= {@zeit1@}\)</p>
+<p>\(Höhe= {@höhe@}\)</p>
+<p>\(Zeit_2= {@zeit2@}\)</p>
+<p>\(Endpunkt= {@endpunkt@}\)</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -16483,9 +16489,12 @@ ans_Funktion:ans2*(x-ans1_Sx)^2+ans1_Sy;              /*Funktion, welche die Stu
     <deployedseed>2132450431</deployedseed>
     <deployedseed>419605790</deployedseed>
   </seed_fields>";;1;Sebastian F
-6;fun;Funktionen;91;b;Textaufgabe quadratische Funktion;Funktionen Aufgabe 15 b);"a:1+rand(10);
-d:1+rand(10);
-e:1+rand(10);
+6;fun;Funktionen;91;b;Textaufgabe quadratische Funktion;Funktionen Aufgabe 15 b);"parameter_list:[[1, 1, 3], [0.76, 2, 4], [1, 1, 6], [2, 1, 6], [0.5, 2, 5], [1, 2, 7], [1, 1, 8], [0.5, 2, 3]];
+i:rand_with_step(1, length(parameter_list), 1);
+a:parameter_list[i][1];
+d:parameter_list[i][2];
+e:parameter_list[i][3];
+
 h(t):=-a*(t-d)^2+e;                 /*z.B. -0.5*(t-2)^2+3 */
 
 startpunkt:h(0);                    /*y-Wert von Schnittpunkt mit y-Achse: 1 */
@@ -16493,18 +16502,25 @@ list_S:solve([h(0)=h(t)],[t]);      /*Enhält alle zugehörigen x-Werte zu y = 1
 
 /* list_S [t=0, t=4] zu list_formatted [0, 4] machen:*/
 list_formatted:[];
-for i:1 thru length(list_S) do block (
-list_formatted:append(list_formatted,[rhs(list_S[i])]));
+for j:1 thru length(list_S) do block (
+list_formatted:append(list_formatted,[rhs(list_S[j])]));
 
-endpunkt:first(sublist(list_formatted, lambda([t], x # 0))); /*Ermittelt den anderen x-wert von 1 -> 4 */
+endpunkt:h(list_formatted[2]); /*1*/
 höhe:e;
 zeit1:rhs(solve([h(t)=höhe],[t])[1]);  /* 2 */
-zeit2:endpunkt;                        /* 4 */
+zeit2:zeit1*2;                         /* 4 */
 
 /*Musterlösung:*/
-tans1:expand(h(t));";"<p>Jemand wirft seinen Papierflieger. Die Höhe h (in Metern) des Fliegers in Abhängigkeit von der Flugzeit t (in Sekunden) folgt einer parabelförmigen Flugbahn. Zu Beginn, also beim Abwurf, ist der Flieger {@startpunkt@} Meter hoch. Nach {@zeit1@} Sekunden erreicht der Flieger eine Höhe von {@höhe@} Metern. Nach {@zeit2@} Sekunden ist der Flieger wieder auf {@startpunkt@} Meter Höhe.</p>
+tans1:expand(h(t));";"<p>Jemand wirft seinen Papierflieger. Die Höhe h (in Metern) des Fliegers in Abhängigkeit von der Flugzeit t (in Sekunden) folgt einer parabelförmigen Flugbahn. Zu Beginn, also beim Abwurf, ist der Flieger {@startpunkt@} Meter hoch. Nach {@zeit1@} Sekunden erreicht der Flieger eine Höhe von {@höhe@} Metern. Nach {@zeit2@} Sekunden ist der Flieger wieder auf {@endpunkt@} Meter Höhe.</p>
 <p>b) Bestimme eine quadratische Funktion der Form \(h(t)=at²+bt+c\), die diese Flugbahn beschreibt.</p>
-<p>    \(h(t) = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;<p>{@tans1@}</p>;0;"<prt>
+<p>    \(h(t) = \) [[input:ans1]] [[validation:ans1]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(h(t) = \){@tans1@};</p>
+<p>\(h(t) = \){@h(t)@};</p>
+<p>\(h(0)=\){@h(0)@};</p>
+<p>Startpunkt = {@startpunkt@}</p>
+<p>Zeit_1 = {@zeit1@}</p>
+<p>Höhe = {@höhe@}</p>
+<p>Zeit_2 = {@zeit2@}</p>
+<p>Endpunkt = {@endpunkt@}</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -16597,10 +16613,14 @@ tans1:expand(h(t));";"<p>Jemand wirft seinen Papierflieger. Die Höhe h (in Mete
     <deployedseed>713205433</deployedseed>
     <deployedseed>576048533</deployedseed>
     <deployedseed>1658365669</deployedseed>
-  </seed_fields>";;;Sebastian F
-6;fun;Funktionen;91;cd;Textaufgabe quadratische Funktion;Funktionen Aufgabe 15 cd);"a:1+rand(10);
-d:1+rand(10);
-e:1+rand(10);
+  </seed_fields>";;1;Sebastian F
+6;fun;Funktionen;91;cd;Textaufgabe quadratische Funktion;Funktionen Aufgabe 15 cd);"parameter_list: [[1, 1, 3], [0.76, 2, 4], [1, 1, 6], [2, 1, 6], [0.5, 2, 5], [1, 2, 7], [1, 1, 8]];
+i:rand_with_step(1, length(parameter_list), 1);
+
+a:parameter_list[i][1];
+d:parameter_list[i][2];
+e:parameter_list[i][3];
+
 h(t):=-a*(t-d)^2+e;                 /*z.B. -0.5*(t-2)^2+3 */
 
 startpunkt:h(0);                    /*y-Wert von Schnittpunkt mit y-Achse: 1 */
@@ -16608,24 +16628,29 @@ list_S:solve([h(0)=h(t)],[t]);      /*Enhält alle zugehörigen t-Werte zu h(t) 
 
 /* list_S [t=0, t=4] zu list_formatted [0, 4] machen:*/
 list_formatted:[];
-for i:1 thru length(list_S) do block (
-list_formatted:append(list_formatted,[rhs(list_S[i])]));
+for j:1 thru length(list_S) do block (
+list_formatted:append(list_formatted,[rhs(list_S[j])]));
 list_formatted;
 
-endpunkt:first(sublist(list_formatted, lambda([t], t # 0))); /*Ermittelt den anderen x-wert von 1 -> 4 */
+endpunkt:h(list_formatted[2]);         /* 1 */
 höhe:e;
 zeit1:rhs(solve([h(t)=höhe],[t])[1]);  /* 2 */
-zeit2:endpunkt;                        /* 4 */
+zeit2:zeit1*2;                         /* 4 */
 
 
 /*Musterlösungen:*/
 tans1:d;
-tans2:e;";"<p>Jemand wirft seinen Papierflieger. Die Höhe h (in Metern) des Fliegers in Abhängigkeit von der Flugzeit t (in Sekunden) folgt einer parabelförmigen Flugbahn. Zu Beginn, also beim Abwurf, ist der Flieger {@startpunkt@} Meter hoch. Nach {@zeit1@} Sekunden erreicht der Flieger eine Höhe von {@höhe@} Metern. Nach {@zeit2@} Sekunden ist der Flieger wieder auf {@startpunkt@} Meter Höhe.</p>
+tans2:e;";"<p>Jemand wirft seinen Papierflieger. Die Höhe h (in Metern) des Fliegers in Abhängigkeit von der Flugzeit t (in Sekunden) folgt einer parabelförmigen Flugbahn. Zu Beginn, also beim Abwurf, ist der Flieger {@startpunkt@} Meter hoch. Nach {@zeit1@} Sekunden erreicht der Flieger eine Höhe von {@höhe@} Metern. Nach {@zeit2@} Sekunden ist der Flieger wieder auf {@endpunkt@} Meter Höhe.</p>
 <p>Hier die dazugehörige Funktion: \(h(t) = {@h(t)@}\)</p>
 <p>c) Berechne die maximale Höhe, die der Flieger erreicht und nach wie vielen Sekunden er diese erreicht.</p>
 <p>   \(HP = (\) [[input:ans1]] \(|\) [[input:ans2]] \()\)</p>
 <p>[[validation:ans1]]</p>
-<p>[[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(h(t) = \) = {@h(t)@};   \(HP = (\) {@tans1@} \(|\) {@tans2@} \()\)</p>";0;"<prt>
+<p>[[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;"<p>\(h(t) = \) = {@h(t)@};   \(HP = (\) {@tans1@} \(|\) {@tans2@} \()\)</p>
+<p>\(Startpunkt = {@startpunkt@}\)</p>
+<p>\(Zeit_1= {@zeit1@}\)</p>
+<p>\(Höhe= {@höhe@}\)</p>
+<p>\(Zeit_2= {@zeit2@}\)</p>
+<p>\(Endpunkt= {@endpunkt@}\)</p>";0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
