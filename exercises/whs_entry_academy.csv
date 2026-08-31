@@ -10853,11 +10853,11 @@ gl3:g*x-h*y+i*z;";"<p>Bestimme die Lösungsmengen der Gleichungssysteme ausschli
 gleichung:x^2=koeffizient;
 ergebnisliste:solve([gleichung],[x]);
 tans_x1:rhs(ergebnisliste[1]);
-tans_x2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\] und \[x_2\] ein.</span></p>
+tans_x2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\) und \(x_2\) ein.</span></p>
 <p>a) {@gleichung@}</p>
-<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\]</span> immer der niedrigere Wert ist.)</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\]</span> = [[input:ans1]] [[validation:ans1]]</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[x_2\]</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_x1@} | {@tans_x2@} \} \)</p>;0;"<prt>
+<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\)</span> immer der niedrigere Wert ist.)</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\)</span> = [[input:ans1]] [[validation:ans1]]</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(x_2\)</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_x1@} | {@tans_x2@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -10904,7 +10904,7 @@ tans_x2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\] mit \[x_2\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\) mit \(x_2\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -10954,7 +10954,7 @@ tans_x2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_2\] mit \[x_1\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_2\) mit \(x_1\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -11022,11 +11022,11 @@ koeffizient:rand([4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 25
 gleichung:b^2-koeffizient=0;
 ergebnisliste:realroots(gleichung);
 tans_b1:rhs(ergebnisliste[1]);
-tans_b2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\[b_1\] und \[b_2\] ein.</span></p>
+tans_b2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\(b_1\) und \(b_2\) ein.</span></p>
 <p>b) {@gleichung@}</p>
-<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\[b_1\]</span> immer der niedrigere Wert ist.)</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[b_1\]</span> = [[input:ans1]] [[validation:ans1]]</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[b_2\]</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_b1@} | {@tans_b2@} \} \)</p>;0;"<prt>
+<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\(b_1\)</span> immer der niedrigere Wert ist.)</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(b_1\)</span> = [[input:ans1]] [[validation:ans1]]</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(b_2\)</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_b1@} | {@tans_b2@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -11073,7 +11073,7 @@ tans_b2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[b_1\] mit \[b_2\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(b_1\) mit \(b_2\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -11123,7 +11123,7 @@ tans_b2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[b_2\] mit \[b_1\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(b_2\) mit \(b_1\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -11190,11 +11190,11 @@ summand:rand_with_step(20,70,3);
 gleichung:s^2+summand=koeffizient+summand;
 ergebnisliste:realroots(gleichung);
 tans_s1:rhs(ergebnisliste[1]);
-tans_s2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\[s_1\] und \[s_2\] ein.</span></p>
+tans_s2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\(s_1\) und \(s_2\) ein.</span></p>
 <p>c) {@gleichung@}</p>
-<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\[s_1\]</span> immer der niedrigere Wert ist.)</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[s_1\]</span> = [[input:ans1]] [[validation:ans1]]</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[s_2\]</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_s1@} | {@tans_s2@} \} \)</p>;0;"<prt>
+<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\(s_1\)</span> immer der niedrigere Wert ist.)</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(s_1\)</span> = [[input:ans1]] [[validation:ans1]]</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(s_2\)</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_s1@} | {@tans_s2@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -11241,7 +11241,7 @@ tans_s2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[s_1\] mit \[s_2\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(s_1\) mit \(s_2\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -11291,7 +11291,7 @@ tans_s2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[s_2\] mit \[s_1\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(s_2\) mit \(s_1\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -11365,11 +11365,11 @@ faktor:rand_with_step(10,40,3);
 gleichung:faktor*a^2=(a_wert^2)*faktor
 ergebnisliste:realroots(gleichung);
 tans_a1:rhs(ergebnisliste[1]);
-tans_a2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\[a_1\] und \[a_2\] ein.</span></p>
+tans_a2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\(a_1\) und \(a_2\) ein.</span></p>
 <p>d) {@gleichung@}</p>
-<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\[a_1\]</span> immer der niedrigere Wert ist.)</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[a_1\]</span> = [[input:ans1]] [[validation:ans1]]</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[a_2\]</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_a1@} | {@tans_a2@} \} \)</p>;0;"<prt>
+<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\(a_1\)</span> immer der niedrigere Wert ist.)</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(a_1\)</span> = [[input:ans1]] [[validation:ans1]]</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(a_2\)</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_a1@} | {@tans_a2@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -11416,7 +11416,7 @@ tans_a2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[a_1\] mit \[a_2\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(a_1\) mit \(a_2\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -11466,7 +11466,7 @@ tans_a2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[a_2\] mit \[a_1\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(a_2\) mit \(a_1\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -11546,11 +11546,11 @@ i:1+rand(10);
 gleichung:(x^2)/a[i]=b[i]/c[i];
 ergebnisliste:realroots(gleichung);
 tans_x1:rhs(ergebnisliste[1]);
-tans_x2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\] und \[x_2\] ein.</span></p>
+tans_x2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\) und \(x_2\) ein.</span></p>
 <p>e) {@gleichung@}</p>
-<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\]</span> immer der niedrigere Wert ist.)</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\]</span> = [[input:ans1]] [[validation:ans1]]</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[x_2\]</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_x1@} | {@tans_x2@} \} \)</p>;0;"<prt>
+<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\)</span> immer der niedrigere Wert ist.)</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\)</span> = [[input:ans1]] [[validation:ans1]]</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(x_2\)</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_x1@} | {@tans_x2@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -11597,7 +11597,7 @@ tans_x2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\] mit \[x_2\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\) mit \(x_2\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -11647,7 +11647,7 @@ tans_x2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_2\] mit \[x_1\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_2\) mit \(x_1\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -11706,11 +11706,11 @@ tans_x2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
 gleichung:r*(r-subtrahend)=0;
 ergebnisliste:sort(realroots(gleichung));
 tans_r1:rhs(ergebnisliste[1]);
-tans_r2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\[r_1\] und \[r_2\] ein.</span></p>
+tans_r2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\(r_1\) und \(r_2\) ein.</span></p>
 <p>f) {@gleichung@}</p>
-<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\[r_1\]</span> immer der niedrigere Wert ist.)</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[r_1\]</span> = [[input:ans1]] [[validation:ans1]]</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[r_2\]</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_r1@} | {@tans_r2@} \} \)</p>;0;"<prt>
+<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\(r_1\)</span> immer der niedrigere Wert ist.)</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(r_1\)</span> = [[input:ans1]] [[validation:ans1]]</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(r_2\)</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_r1@} | {@tans_r2@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -11757,7 +11757,7 @@ tans_r2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[r_1\] mit \[r_2\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(r_1\) mit \(r_2\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -11807,7 +11807,7 @@ tans_r2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[r_2\] mit \[r_1\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(r_2\) mit \(r_1\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -11871,11 +11871,11 @@ tans_r2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
 gleichung:a^2-a-koeffizient=0;
 ergebnisliste:realroots(gleichung);
 tans_a1:rhs(ergebnisliste[1]);
-tans_a2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\[a_1\] und \[a_2\] ein.</span></p>
+tans_a2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\(a_1\) und \(a_2\) ein.</span></p>
 <p>a) {@gleichung@}</p>
-<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\[a_1\]</span> immer der niedrigere Wert ist.)</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[a_1\]</span> = [[input:ans1]] [[validation:ans1]]</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[a_2\]</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_a1@} | {@tans_a2@} \} \)</p>;0;"<prt>
+<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\(a_1\)</span> immer der niedrigere Wert ist.)</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(a_1\)</span> = [[input:ans1]] [[validation:ans1]]</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(a_2\)</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_a1@} | {@tans_a2@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -11922,7 +11922,7 @@ tans_a2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gi
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[a_1\] mit \[a_2\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(a_1\) mit \(a_2\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -11972,7 +11972,7 @@ tans_a2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gi
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[a_2\] mit \[a_1\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(a_2\) mit \(a_1\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -12038,11 +12038,11 @@ summand:fak_sum_list[i][2];
 gleichung:t^2-faktor*t+summand=0;
 ergebnisliste:realroots(gleichung);
 tans_t1:rhs(ergebnisliste[1]);
-tans_t2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\[t_1\] und \[t_2\] ein.</span></p>
+tans_t2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\(t_1\) und \(t_2\) ein.</span></p>
 <p>a) {@gleichung@}</p>
-<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\[t_1\]</span> immer der niedrigere Wert ist.)</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[t_1\]</span> = [[input:ans1]] [[validation:ans1]]</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[t_2\]</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_t1@} | {@tans_t2@} \} \)</p>;0;"<prt>
+<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\(t_1\)</span> immer der niedrigere Wert ist.)</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(t_1\)</span> = [[input:ans1]] [[validation:ans1]]</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(t_2\)</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_t1@} | {@tans_t2@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -12089,7 +12089,7 @@ tans_t2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gi
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[t_1\] mit \[t_2\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(t_1\) mit \(t_2\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -12139,7 +12139,7 @@ tans_t2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gi
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[t_2\] mit \[t_1\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(t_2\) mit \(t_1\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -12213,11 +12213,11 @@ b:list_a_b[i][2];
 gleichung:(x-a)^2=b;
 ergebnisliste:realroots(gleichung);
 tans_x1:rhs(ergebnisliste[1]);
-tans_x2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\] und \[x_2\] ein.</span></p>
+tans_x2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\) und \(x_2\) ein.</span></p>
 <p>a) {@gleichung@}</p>
-<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\]</span> immer der niedrigere Wert ist.)</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\]</span> = [[input:ans1]] [[validation:ans1]]</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[x_2\]</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_x1@} | {@tans_x2@} \} \)</p>;0;"<prt>
+<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\)</span> immer der niedrigere Wert ist.)</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\)</span> = [[input:ans1]] [[validation:ans1]]</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(x_2\)</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_x1@} | {@tans_x2@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -12264,7 +12264,7 @@ tans_x2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gi
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\] mit \[x_2\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\) mit \(x_2\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -12314,7 +12314,7 @@ tans_x2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gi
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_2\] mit \[x_1\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_2\) mit \(x_1\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -12388,11 +12388,11 @@ subtrahend:list_fak_sub[i][2];
 gleichung:faktor*s^2-subtrahend=s;
 ergebnisliste:realroots(gleichung);
 tans_s1:rhs(ergebnisliste[1]);
-tans_s2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\[s_1\] und \[s_2\] ein.</span></p>
+tans_s2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\(s_1\) und \(s_2\) ein.</span></p>
 <p>a) {@gleichung@}</p>
-<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\[s_1\]</span> immer der niedrigere Wert ist.)</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[s_1\]</span> = [[input:ans1]] [[validation:ans1]]</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[s_2\]</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_s1@} | {@tans_s2@} \} \)</p>;0;"<prt>
+<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\(s_1\)</span> immer der niedrigere Wert ist.)</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(s_1\)</span> = [[input:ans1]] [[validation:ans1]]</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(s_2\)</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_s1@} | {@tans_s2@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -12439,7 +12439,7 @@ tans_s2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gi
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[s_1\] mit \[s_2\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(s_1\) mit \(s_2\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -12489,7 +12489,7 @@ tans_s2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gi
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[s_2\] mit \[s_1\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(s_2\) mit \(s_1\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -12555,11 +12555,11 @@ c:list_a_c[i][2];
 gleichung:b^2-a*b=-c
 ergebnisliste:realroots(gleichung);
 tans_b1:rhs(ergebnisliste[1]);
-tans_b2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\[b_1\] und \[b_2\] ein.</span></p>
+tans_b2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\(b_1\) und \(b_2\) ein.</span></p>
 <p>a) {@gleichung@}</p>
-<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\[b_1\]</span> immer der niedrigere Wert ist.)</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[b_1\]</span> = [[input:ans1]] [[validation:ans1]]</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[b_2\]</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_b1@} | {@tans_b2@} \} \)</p>;0;"<prt>
+<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\(b_1\)</span> immer der niedrigere Wert ist.)</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(b_1\)</span> = [[input:ans1]] [[validation:ans1]]</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(b_2\)</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_b1@} | {@tans_b2@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -12606,7 +12606,7 @@ tans_b2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gi
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[b_1\] mit \[b_2\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(b_1\) mit \(b_2\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -12656,7 +12656,7 @@ tans_b2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gi
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[b_2\] mit \[b_1\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(b_2\) mit \(b_1\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -12734,11 +12734,11 @@ d:list[i][4];
 gleichung:a*x-(x+b)^2=(x-b)^2-c*(x+d);
 ergebnisliste:realroots(gleichung);
 tans_x1:rhs(ergebnisliste[1]);
-tans_x2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\] und \[x_2\] ein.</span></p>
+tans_x2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\) und \(x_2\) ein.</span></p>
 <p>a) {@gleichung@}</p>
-<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\]</span> immer der niedrigere Wert ist.)</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\]</span> = [[input:ans1]] [[validation:ans1]]</p>
-<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\[x_2\]</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_x1@} | {@tans_x2@} \} \)</p>;0;"<prt>
+<p>(Hinweis: Achte bei der Eingabe darauf, dass <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\)</span> immer der niedrigere Wert ist.)</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\)</span> = [[input:ans1]] [[validation:ans1]]</p>
+<p class=""MsoNormal""><span style=""font-size: 12.0pt; line-height: 107%;"">\(x_2\)</span> = [[input:ans2]] [[validation:ans2]]</p>";;;<p>[[feedback:prt1]]</p>;<p>\( {@gleichung@} \Rightarrow L = \{ {@tans_x1@} | {@tans_x2@} \} \)</p>;0;"<prt>
       <name>prt1</name>
       <value>1.0000000</value>
       <autosimplify>1</autosimplify>
@@ -12785,7 +12785,7 @@ tans_x2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gi
         <truenextnode>2</truenextnode>
         <trueanswernote>prt1-2-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_1\] mit \[x_2\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_1\) mit \(x_2\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
@@ -12835,7 +12835,7 @@ tans_x2:rhs(ergebnisliste[2]);";"<p>Löse mit einem Verfahren deiner Wahl und gi
         <truenextnode>-1</truenextnode>
         <trueanswernote>prt1-4-T</trueanswernote>
         <truefeedback format=""html"">
-          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\[x_2\] mit \[x_1\] vertauscht.</span></p>]]></text>
+          <text><![CDATA[<p>Du hast <span style=""font-size: 12.0pt; line-height: 107%;"">\(x_2\) mit \(x_1\) vertauscht.</span></p>]]></text>
         </truefeedback>
         <falsescoremode>-</falsescoremode>
         <falsescore>0</falsescore>
