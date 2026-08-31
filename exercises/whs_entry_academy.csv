@@ -11704,7 +11704,7 @@ tans_x2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von �
   </seed_fields>";;1;Sebastian F
 4;equ;Lineare & quadratische Gleichungen;7;1f;Lösen von quadratischen Gleichungen I;Lösen von quadratischen Gleichungen 1 f);"subtrahend:1+rand(20);
 gleichung:r*(r-subtrahend)=0;
-ergebnisliste:realroots(gleichung);
+ergebnisliste:sort(realroots(gleichung));
 tans_r1:rhs(ergebnisliste[1]);
 tans_r2:rhs(ergebnisliste[2]);";"<p>Löse (möglichst geschickt) mit Hilfe von Äquivalenzumformungen und gib die Werte für <span style=""font-size: 12.0pt; line-height: 107%;"">\[r_1\] und \[r_2\] ein.</span></p>
 <p>f) {@gleichung@}</p>
