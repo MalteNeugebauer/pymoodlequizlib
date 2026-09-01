@@ -18204,7 +18204,7 @@ b_ans:ans2;
 h_ans:ans3;
 k_ans:ans4;
 
-hx_ans:a_ans*%e^(b_ans*(x+h_ans))+k_ans;</text>
+hx_ans:a_ans*%e^(b_ans*(x-h_ans))+k_ans;</text>
       </feedbackvariables>
       <node>
         <name>0</name>
@@ -18372,7 +18372,7 @@ b_ans:ans2;
 h_ans:ans3;
 k_ans:ans4;
 
-hx_ans:a_ans*%e^(b_ans*(x+h_ans))+k_ans;</text>
+hx_ans:a_ans*%e^(b_ans*(x-h_ans))+k_ans;</text>
       </feedbackvariables>
       <node>
         <name>0</name>
