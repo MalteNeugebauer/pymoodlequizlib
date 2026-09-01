@@ -17712,7 +17712,7 @@ bild:plot(funk,[x,bvar-4,bvar+4],[y,cvar-4,cvar+4],[axes,true], grid2d);
 a2:avar;
 b2:-2*avar*bvar;
 c2:avar*bvar^2+cvar;
-loes:a2*x^2+b2*x+c2;";"<p></p><p>Bestimmen Sie die Funktion zum Graph und geben Sie die Gleichung in der Polynomschreibweise ein.</p>
+loes:a2*x^2+b2*x+c2;";"<p></p><p>Bestimmen Sie die Funktion zum Graph und geben Sie die Gleichung in der Form \(ax^2+bx+c\) (Polynomschreibweise) ein.</p>
 <p>&nbsp;</p>
 <p>{@bild@}</p>
 <p>&nbsp;</p>
@@ -17803,7 +17803,7 @@ bild:plot(funk,[x,bvar-4,bvar+4],[y,cvar-4,cvar+4],[axes,true], grid2d);
 a2:avar;
 b2:-2*avar*bvar;
 c2:avar*bvar^2+cvar;
-loes:a2*x^2+b2*x+c2;";"<p></p><p>Bestimmen Sie die Funktion zum Graph und geben Sie die Gleichung in der Polynomschreibweise ein.</p>
+loes:a2*x^2+b2*x+c2;";"<p></p><p>Bestimmen Sie die Funktion zum Graph und geben Sie die Gleichung in der Form \(ax^2+bx+c\) (Polynomschreibweise) ein.</p>
 <p>&nbsp;</p>
 <p>{@bild@}</p>
 <p>&nbsp;</p>
