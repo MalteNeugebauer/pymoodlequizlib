@@ -17886,7 +17886,7 @@ loes:a2*x^2+b2*x+c2;";"<p></p><p>Bestimmen Sie die Funktion zum Graph und geben 
 6;fun;Funktionen;94;a;Exponentialfunktion zeichnen;Funktionen - Aufgabenblatt Juli - Aufgabe 19 a);"g(x):=a*%e^(b*(x-h))+k;
 f(x):=%e^x;";"<p style=""display: visible;"">Die allgemeine Form einer Exponentialfunktion lautet \(f(x) = \) {@g(x)@}<br>Die Parameter a,b,h und k beeinflussen den Graphen der Exponentialfunktion auf unterschiedliche Weise.</p>
 <p style=""display: visible;"">Gegeben ist die Funktion \(f(x) = \) {@f(x)@}</p>
-<p style=""display: visible;"">a) Zeichne die Graphen dieser Funktionen in ein Koordinatensystem.</p>
+<p style=""display: visible;"">a) Zeichne den Graphen dieser Funktionen in das Koordinatensystem.</p>
 <p style=""display: visible;""><em>Du kannst dazu beide Eingabemöglichkeiten nutzen (Eingabefelder &amp; Slider)</em></p>
 <p style=""display: visible;"">\(a = \) [[input:ans1]] [[validation:ans1]]</p>
 <p style=""display: visible;"">\(b = \) [[input:ans2]] [[validation:ans2]]</p>
@@ -18027,7 +18027,7 @@ a_faktor:float(rand(a_list));
 a_faktor:konvertZahl(a_faktor);
 g(x):=a_faktor*%e^x;";"<p style=""display: visible;"">Die allgemeine Form einer Exponentialfunktion lautet \(f(x) = \) {@f(x)@}<br>Die Parameter a,b,h und k beeinflussen den Graphen der Exponentialfunktion auf unterschiedliche Weise.</p>
 <p style=""display: visible;"">Gegeben ist die Funktion \(g(x) = \) {@g(x)@}</p>
-<p style=""display: visible;"">a) Zeichne die Graphen dieser Funktionen in ein Koordinatensystem.</p>
+<p style=""display: visible;"">a) Zeichne den Graphen dieser Funktionen in das Koordinatensystem.</p>
 <p style=""display: visible;""><em>Du kannst dazu beide Eingabemöglichkeiten nutzen (Eingabefelder &amp; Slider)</em></p>
 <p style=""display: visible;"">\(a = \) [[input:ans1]] [[validation:ans1]]</p>
 <p style=""display: visible;"">\(b = \) [[input:ans2]] [[validation:ans2]]</p>
@@ -18184,7 +18184,7 @@ h_faktor:konvertZahl(h_faktor);
 
 h(x):=a_faktor*%e^(x+h_faktor);";"<p style=""display: visible;"">Die allgemeine Form einer Exponentialfunktion lautet \(f(x) = \) {@f(x)@}<br>Die Parameter a,b,h und k beeinflussen den Graphen der Exponentialfunktion auf unterschiedliche Weise.</p>
 <p style=""display: visible;"">Gegeben ist die Funktion \(h(x) = \) {@h(x)@}</p>
-<p style=""display: visible;"">a) Zeichne die Graphen dieser Funktionen in ein Koordinatensystem.</p>
+<p style=""display: visible;"">a) Zeichne den Graphen dieser Funktionen in das Koordinatensystem.</p>
 <p style=""display: visible;""><em>Du kannst dazu beide Eingabemöglichkeiten nutzen (Eingabefelder &amp; Slider)</em></p>
 <p style=""display: visible;"">\(a = \) [[input:ans1]] [[validation:ans1]]</p>
 <p style=""display: visible;"">\(b = \) [[input:ans2]] [[validation:ans2]]</p>
@@ -18352,7 +18352,7 @@ k_faktor:konvertZahl(k_faktor);
 
 h(x):=a_faktor*%e^(x+h_faktor)+k_faktor;";"<p style=""display: visible;"">Die allgemeine Form einer Exponentialfunktion lautet \(f(x) = \) {@f(x)@}<br>Die Parameter a,b,h und k beeinflussen den Graphen der Exponentialfunktion auf unterschiedliche Weise.</p>
 <p style=""display: visible;"">Gegeben ist die Funktion \(i(x) = \) {@h(x)@}</p>
-<p style=""display: visible;"">a) Zeichne die Graphen dieser Funktionen in ein Koordinatensystem.</p>
+<p style=""display: visible;"">a) Zeichne den Graphen dieser Funktionen in das Koordinatensystem.</p>
 <p style=""display: visible;""><em>Du kannst dazu beide Eingabemöglichkeiten nutzen (Eingabefelder &amp; Slider)</em></p>
 <p style=""display: visible;"">\(a = \) [[input:ans1]] [[validation:ans1]]</p>
 <p style=""display: visible;"">\(b = \) [[input:ans2]] [[validation:ans2]]</p>
